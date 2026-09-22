@@ -1,0 +1,189 @@
+! Elmer FEM Configuration: Variante Rotore Centrato a Z=0
+! 6 Bobine a Polarita Alternate Specchiate (N-S-N-S-N-S) con Pilotaggio a Semionde Pulsate
+! Delta_phi_k = (k - 1) * 60 gradi = [0, 60, 120, 180, 240, 300] gradi
+! Segno polare s_k = (-1)^(k-1) = [+1, -1, +1, -1, +1, -1]
+! Forma d'onda: J_z,k(t) = s_k * J0 * max(0, sin(omega*t - phi_k))
+! Discretizzazione: 40 timestep da 0.5 ms (T_tot = 20 ms, 2 periodi completi a 100 Hz, 1200 RPM)
+! Mantello in Rete Stirata Anisotropa con Rotazione Cilindrica MATC (Nominale 30 gradi)
+! Nucleo Ferromagnetico Equatoriale (|z| <= 7.5 mm, mu_r = 1000)
+! Calcolo Forza di Lorentz Ponderomotrice JxB attivato
+
+$ function pulsed_halfwave_current(tx) {\
+  x = tx(0); y = tx(1); z = tx(2); t = tx(3);\
+  res = 0.0;\
+  if (abs(z) > 0.05) { res = 0.0; } else {\
+    rsq = x*x + y*y;\
+    if (rsq < 0.0007) { res = 0.0; } else { if (rsq > 0.0019) { res = 0.0; } else {\
+      w = 125.66370614359172;\
+      rc = 0.035; rwsq = 4.9e-05; j0 = 1.0e+05;\
+      th0 = w * t;\
+      c0 = cos(th0); s0 = sin(th0);\
+      s60 = 0.8660254037844386;\
+      x1 = rc * c0; y1 = rc * s0;\
+      x2 = rc * (0.5*c0 - s60*s0); y2 = rc * (0.5*s0 + s60*c0);\
+      x3 = rc * (-0.5*c0 - s60*s0); y3 = rc * (-0.5*s0 + s60*c0);\
+      se = sin(628.3185307179586 * t); ce = cos(628.3185307179586 * t);\
+      s1 = se;\
+      s2 = 0.5*se - s60*ce;\
+      s3 = -0.5*se - s60*ce;\
+      d1 = (x-x1)*(x-x1) + (y-y1)*(y-y1);\
+      d2 = (x-x2)*(x-x2) + (y-y2)*(y-y2);\
+      d3 = (x-x3)*(x-x3) + (y-y3)*(y-y3);\
+      d4 = (x+x1)*(x+x1) + (y+y1)*(y+y1);\
+      d5 = (x+x2)*(x+x2) + (y+y2)*(y+y2);\
+      d6 = (x+x3)*(x+x3) + (y+y3)*(y+y3);\
+      if (d1 < rwsq) { res =  j0 * 0.5 * (s1 + abs(s1)); } else {\
+      if (d2 < rwsq) { res = -j0 * 0.5 * (s2 + abs(s2)); } else {\
+      if (d3 < rwsq) { res =  j0 * 0.5 * (s3 + abs(s3)); } else {\
+      if (d4 < rwsq) { res = -j0 * 0.5 * (abs(s1) - s1); } else {\
+      if (d5 < rwsq) { res =  j0 * 0.5 * (abs(s2) - s2); } else {\
+      if (d6 < rwsq) { res = -j0 * 0.5 * (abs(s3) - s3); } else { res = 0.0; }; }; }; }; }; };\
+    }; };\
+  };\
+  _pulsed_halfwave_current = res;\
+}
+
+$ function sigma_cyl(tx) {\
+  x = tx(0); y = tx(1);\
+  r = sqrt(x*x + y*y);\
+  if (r < 1.0e-5) { r = 1.0e-5; } else { r = r; };\
+  c = x / r; s = y / r;\
+  s_rr = 1.75e6; s_tt = 1.75e6; s_zz = 1.22e7; s_tz = 3.031089e6;\
+  sxz = -s_tz * s;\
+  syz =  s_tz * c;\
+  a = zeros(3,3);\
+  a(0,0) = s_rr; a(1,1) = s_tt; a(2,2) = s_zz;\
+  a(0,2) = sxz;  a(2,0) = sxz;\
+  a(1,2) = syz;  a(2,1) = syz;\
+  _sigma_cyl = a;\
+}
+
+Header
+  CHECK KEYWORDS Warn
+  Mesh DB "variants/rotore_centrato_z0/mesh" "macchina_centrata"
+  Include Path ""
+  Results Directory "variants/rotore_centrato_poli_alternati_semionda/results"
+End
+
+Simulation
+  Max Output Level = 3
+  Coordinate System = Cartesian 3D
+  Coordinate Mapping(3) = 1 2 3
+  Simulation Type = Transient
+  Steady State Max Iterations = 1
+  Output Intervals(1) = 1
+  Timestep Intervals(1) = 40
+  Timestep Sizes(1) = 0.0005
+End
+
+Constants
+  Permittivity of Vacuum = 8.8542e-12
+  Permeability of Vacuum = 1.2566370614e-6
+End
+
+Equation 1
+  Name = "Coupled Electromagnetics"
+  Active Solvers(3) = 1 2 3
+End
+
+Solver 1
+  Equation = "MGDynamics"
+  Variable = "AV"
+  Procedure = "MagnetoDynamics" "WhitneyAVSolver"
+
+  Fix Input Current Density = Logical False
+  Use Piola Transform = Logical False
+
+  Linear System Solver = "Direct"
+  Linear System Direct Method = Umfpack
+End
+
+Solver 2
+  Equation = "MGDynamicsCalc"
+  Procedure = "MagnetoDynamics" "MagnetoDynamicsCalcFields"
+
+  Potential Variable = String "AV"
+
+  Calculate Elemental Fields = Logical True
+  Calculate Nodal Fields = Logical True
+  Calculate Magnetic Flux Density = Logical True
+  Calculate Magnetic Vector Potential = Logical True
+  Calculate Current Density = Logical True
+  Calculate Electric Field = Logical True
+  Calculate Joule Heating = Logical True
+  Calculate JxB = Logical True
+
+  Linear System Solver = "Direct"
+  Linear System Direct Method = Umfpack
+End
+
+Solver 3
+  Equation = "ResultOutput"
+  Procedure = "ResultOutputSolve" "ResultOutputSolver"
+  Output File Name = "macchina_out"
+  Output Format = "vtu"
+  Vtu Format = Logical True
+  Save Geometry Ids = Logical True
+  Discontinuous Bodies = Logical True
+End
+
+Material 1
+  Name = "Air"
+  Relative Permeability = 1.0
+  Electric Conductivity = 0.0
+End
+
+Material 2
+  Name = "ExpandedMeshMantle"
+  Relative Permeability = 1.0
+  Electric Conductivity(3,3) = Variable Coordinate 1, Coordinate 2
+    Real MATC "sigma_cyl(tx)"
+End
+
+Material 3
+  Name = "FerromagneticCore"
+  Relative Permeability = 1000.0
+  Electric Conductivity = 0.0
+End
+
+Body Force 1
+  Current Density 3 = Variable Coordinate 1, Coordinate 2, Coordinate 3, time
+    Real MATC "pulsed_halfwave_current(tx)"
+End
+
+Body 1
+  Target Bodies(1) = 1
+  Name = "AirExterior"
+  Equation = 1
+  Material = 1
+End
+
+Body 2
+  Target Bodies(1) = 2
+  Name = "Aluminum"
+  Equation = 1
+  Material = 2
+End
+
+Body 3
+  Target Bodies(1) = 3
+  Name = "RotorAir"
+  Equation = 1
+  Material = 1
+  Body Force = 1
+End
+
+Body 4
+  Target Bodies(1) = 4
+  Name = "FerromagneticCore"
+  Equation = 1
+  Material = 3
+  Body Force = 1
+End
+
+Boundary Condition 1
+  Target Boundaries(1) = 1
+  Name = "FarFieldInfinity"
+  AV {e} = Real 0.0
+  AV = Real 0.0
+End
