@@ -24,24 +24,24 @@ By tilting the metallic micro-bridges at a calibrated **$30^\circ$ louver chiral
 $$\bar{\bar{\sigma}}_{\text{cyl}} = \begin{bmatrix} \sigma_{rr} & 0 & 0 \\ 0 & \sigma_{\theta\theta} & \sigma_{\theta z} \\ 0 & \sigma_{\theta z} & \sigma_{zz} \end{bmatrix} = \begin{bmatrix} 1.75\times 10^6 & 0 & 0 \\ 0 & 1.75\times 10^6 & 3.031\times 10^6 \\ 0 & 3.031\times 10^6 & 1.22\times 10^7 \end{bmatrix} \text{ S/m}$$
 
 Instead of opposing the rotating magnetic wave, the chiral mantle:
-- **Suppresses closed circular eddy loops**, slashing Joule thermal dissipation by **$-43.2\%$**.
+- **Suppresses closed circular eddy loops**, slashing Joule thermal dissipation by **$-43.2\%$** in continuous mode, and up to **$-99.9\%$** in pulsed half-wave mode.
 - **Couples azimuthal electric fields to axial currents** ($\sigma_{\theta z}$ cross-coupling), deflecting and **unrolling the magnetic flux outward into a $360^\circ$ omnidirectional radial induction wave**.
-- **Enables electromagnetic propulsion and levitation:** In a biconical induction configuration, the fixed $30^\circ$ chiral tilt breaks axial reflection parity ($\mathcal{P}_z$), producing a continuous, unidirectional upward ponderomotive Lorentz lift ($\langle F_z \rangle > 0$).
+- **Enables electromagnetic propulsion and levitation:** In a biconical induction configuration, the fixed $30^\circ$ chiral tilt breaks axial reflection parity ($\mathcal{P}_z$), producing a continuous, unidirectional upward ponderomotive Lorentz lift ($\langle F_z \rangle = +4.67\,\mu\text{N}$).
 
 ---
 
-## Core Architectures
+## Core Architectures & Comparative Benchmark
 
-| Parameter / Metric | Baseline Architecture (v1.0.0) | Centered Rotor Variant ($Z = 0$) | Delta / Physical Effect |
-| :--- | :---: | :---: | :---: |
-| **Core Geometry** | Ferromagnetic spider at bottom ($Z = -H/2$) | Ferromagnetic core centered at equator ($Z = 0$) | Symmetric equatorial magnetic bridge |
-| **Air Gaps** | Single open top aperture ($Z = +H/2$) | Symmetrical double air gap ($Z = \pm H/2$) | Bilateral open field venting |
-| **Flux Topology** | Asymmetric single bell nozzle / directional spiral cone | Symmetric biconical hourglass ($\mathcal{P}_z$-symmetric source) | Biconic dual-vortex focusing |
-| **Radial Field $B_{\text{rad}}$ ($R = 6\text{ cm}$)** | **$62.98\,\mu\text{T}$** | **$211.35\,\mu\text{T}$** | **$+235.6\%$ equatorial concentration boost** |
-| **Poynting Power Flux ($R=12\text{ cm}$)** | **$+7.282\text{ mW}$** | **$+2.620\text{ mW}$** | Directional radiation vs localized equatorial vortex |
-| **Net Axial Lorentz Force $\langle F_z \rangle$** | $\approx 0$ (asymmetric leakage) | **$+4.67\,\mu\text{N}$ ($+0.00467\text{ mN}$ net lift)** | **Macroscopic chiral parity breaking ($\mathcal{P}_z$)** |
-| **Joule Dissipation $P_J$ (60° Regime B)** | **$2.437\text{ W}$** ($-43.2\%$ vs synchronous) | **$2.510\text{ W}$** | Low-impedance helical current paths |
-| **Field Ripple Ratio** | **$86.7\%$** (smooth wave) | **$88.4\%$** | Minimal harmonics under polyphase drive |
+| Parameter / Metric | Baseline Architecture (v1.0.0) | Centered Continuous (Regime B) | Mirrored Polarity Pulsed Half-Wave (N-S-N-S-N-S) | Physical Mechanism / Specialty |
+| :--- | :---: | :---: | :---: | :---: |
+| **Core Geometry** | Ferromagnetic spider at bottom ($Z = -H/2$) | Ferromagnetic core at equator ($Z = 0$) | Ferromagnetic core at equator ($Z = 0$) | Equatorial magnetic flux bridge |
+| **Coil Excitation** | 60° Progressive Full Sine Wave | 60° Progressive Full Sine Wave | 60° Shifted Half-Wave Pulse Train ($J_k \ge 0$) | Directional vs Sequenced Pulsed Drive |
+| **Polarity Layout** | Unipolar Homogeneous | Unipolar Homogeneous | Alternating Mirrored: $s_k = (-1)^{k-1}$ | Adjacent N-S magnetic return loops |
+| **Radial Field $B_{\text{rad}}$ ($R = 6\text{ cm}$)** | **$62.98\,\mu\text{T}$** | **$211.35\,\mu\text{T}$** | **$135.84\,\mu\text{T}$** | Strong equatorial concentration (+115.7% vs baseline) |
+| **Poynting Power Flux ($R=12\text{ cm}$)** | **$+7.282\text{ mW}$** | **$+2.620\text{ mW}$** | **$+102.76\text{ mW}$** | **$+1311\%$ pulsed harmonic radiation boost** |
+| **Net Axial Lorentz Force $\langle F_z \rangle$** | $\approx 0$ (leakage) | **$+4.67\,\mu\text{N}$ ($+0.00467\text{ mN}$)** | **$-0.93\,\mu\text{N}$ ($\approx 0\text{ mN}$ balanced)** | Mirrored N-S cancellation of cross terms |
+| **Joule Dissipation $P_J$** | **$2.437\text{ W}$** | **$2.510\text{ W}$** | **$0.0019\text{ W}$ ($1.9\text{ mW}$)** | **$>99.9\%$ suppression of eddy heating** |
+| **Primary Optimal Use-Case** | Directional Wireless Venting | Continuous Electromagnetic Lift | Resonant Wireless Pulsed Power & Ultra-Low Heat | Mission-specific electromagnetic tuning |
 
 ---
 
@@ -49,17 +49,23 @@ Instead of opposing the rotating magnetic wave, the chiral mantle:
 
 <div align="center">
 
-### Radial Induction Projection & Polyphase Co-Rotating Optimization
+### 1. Radial Induction Projection & Polyphase Co-Rotating Optimization (Baseline)
 | 360° Omnidirectional Radial Projection | Phase-Shift Sweep & Joule Loss Minimization |
 | :---: | :---: |
 | <img src="figures/02_espulsione_radiale_simmetrica_360.png" width="450" alt="360° Radial Projection" /> | <img src="figures/04_sweep_sfasamento_confronto.png" width="450" alt="Phase Shift Sweep" /> |
 | *Uniform $360^\circ$ radial field expulsion through the chiral mantle.* | *Regime B ($60^\circ$ co-rotating) reduces Joule losses by $43.2\%$ and ripple to $86.7\%$.* |
 
-### Centered Variant ($Z = 0$): Biconical Flux & Net Electromagnetic Lift
+### 2. Centered Variant ($Z = 0$): Biconical Flux & Net Continuous Electromagnetic Lift
 | Hourglass Biconical Flux Streamlines (3D RK45) | Unidirectional Upward Lorentz Lift $F_z(t)$ |
 | :---: | :---: |
 | <img src="variants/rotore_centrato_z0/figures/fig_01_topologia_biconica_clessidra_3d.png" width="450" alt="Hourglass 3D Flux Lines" /> | <img src="variants/rotore_centrato_z0/figures/fig_03_forza_assiale_netta_Fz.png" width="450" alt="Net Upward Lorentz Lift" /> |
 | *Hourglass flux lines: upper horn ($+Z$), lower horn ($-Z$), and equatorial ejection ring.* | *Time-dependent axial force showing net positive DC lift ($\langle F_z \rangle = +4.67\,\mu\text{N}$).* |
+
+### 3. Mirrored Polarity Pulsed Half-Wave Variant (N-S-N-S-N-S at $Z = 0$)
+| Alternate N-S Polar Topology (3D RK45) | Pulsed Half-Wave Channels & Radial Profile | Lorentz Lift $F_z(t)$ Pulsed vs Continuous |
+| :---: | :---: | :---: |
+| <img src="variants/rotore_centrato_poli_alternati_semionda/figures/fig_01_topologia_poli_specchiati_3d.png" width="300" alt="N-S Polar Topology 3D" /> | <img src="variants/rotore_centrato_poli_alternati_semionda/figures/fig_02_forme_onda_semionda_e_profilo_radiale.png" width="300" alt="Pulsed Waveforms & Profile" /> | <img src="variants/rotore_centrato_poli_alternati_semionda/figures/fig_03_confronto_forza_lift_Fz_impulsi.png" width="300" alt="Lift Comparison Pulsed vs Continuous" /> |
+| *Short-range return loops between adjacent N-S pairs with radial ejection lobes.* | *6-channel $60^\circ$ pulsed half-wave drive and 6-lobe equatorial induction pattern.* | *Bipolar balanced oscillation of $F_z(t)$ with near-zero DC drift and ultra-low Joule heat ($1.9\text{ mW}$).* |
 
 </div>
 
@@ -71,17 +77,15 @@ All electromagnetic fields are solved using **Elmer FEM 9.0** via the transient 
 
 ### 1. Gauss Magnetic Solenoidality ($\oint_S \vec{B}\cdot\hat{n}\,dA = 0$)
 Solenoidality was certified via 2,500-point Fibonacci spherical integrations across concentric evaluation spheres:
-- **Near-Field Sphere ($R = 8.0\text{ cm}$):** Relative residual = **$0.031\%$** (`PASS`, $\Phi_{\text{net}} \sim 10^{-15}\text{ Wb}$)
-- **Mid-Field Sphere ($R = 12.0\text{ cm}$):** Relative residual = **$0.076\%$** (`PASS`)
-- **Far-Field Sphere ($R = 15.0\text{ cm}$):** Relative residual = **$1.402\%$** (`PASS`)
+- **Near-Field Sphere ($R = 8.0\text{ cm}$):** Relative residual = **$0.031\% - 0.993\%$** (`PASS`, $\Phi_{\text{net}} \sim 10^{-15} - 10^{-8}\text{ Wb}$)
+- **Mid-Field Sphere ($R = 12.0\text{ cm}$):** Relative residual = **$0.076\% - 5.018\%$** (`PASS`)
+- **Far-Field Sphere ($R = 15.0\text{ cm}$):** Relative residual = **$1.402\% - 2.694\%$** (`PASS`)
 
 ### 2. Poynting Vector & Remote Power Projection
-Integrating the Poynting vector $\vec{S} = \frac{1}{\mu_0} (\vec{E} \times \vec{B})$ across a $R=12\text{ cm}, H=20\text{ cm}$ cylindrical control surface demonstrates an active outward-directed guided power flow of **$+7.28\text{ mW}$** in the baseline and **$+2.62\text{ mW}$** in the centered variant.
-
-### 3. Remote Virtual Harvesting
-- **Inductive Radial Probe ($R = 10\text{ cm}$):** $V_{\text{ind, peak}} = 1.56\text{ mV}$, $V_{\text{ind, rms}} = 0.92\text{ mV}$.
-- **Axial Open-Aperture Probe ($R = 15\text{ cm}, Z = +10\text{ cm}$):** $V_{\text{ind, peak}} = 0.45\text{ mV}$.
-- **Capacitive Probe ($50\text{ cm}^2$ at $R = 12\text{ cm}$):** $I_{D, \text{rms}} = 10.52\text{ pA}$.
+Integrating the Poynting vector $\vec{S} = \frac{1}{\mu_0} (\vec{E} \times \vec{B})$ across a $R=12\text{ cm}, H=20\text{ cm}$ cylindrical control surface demonstrates:
+- **Baseline v1.0.0:** Active outward-directed guided power flow of **$+7.28\text{ mW}$**.
+- **Centered Continuous ($Z=0$):** Equatorially localized flux of **$+2.62\text{ mW}$**.
+- **Pulsed Half-Wave Variant:** High-frequency harmonic pulse train power projection of **$+102.76\text{ mW}$** with virtual suppression of thermal dissipation ($P_J = 1.9\text{ mW}$).
 
 ---
 
@@ -126,12 +130,18 @@ simulazione/
 │   ├── 05_vettore_poynting_e_campo_elettrico.png
 │   └── 06_accoppiamento_distanza_harvesting.png
 └── variants/
-    └── rotore_centrato_z0/                     (Equatorial Centered Variant Suite)
-        ├── mesh/                               (Gmsh & Elmer Conformal Meshes)
-        ├── config/                             (Synchronous & Regime B SIFs)
-        ├── scripts/                            (CAD generator, FEM runner, Post-processor)
-        ├── data/confronto_variante_centrata.json (Comparative Benchmark Dataset)
-        └── figures/                            (Hourglass Streamlines, Profiles, Lift)
+    ├── rotore_centrato_z0/                     (Equatorial Centered Variant Suite)
+    │   ├── mesh/                               (Gmsh & Elmer Conformal Meshes)
+    │   ├── config/                             (Synchronous & Regime B SIFs)
+    │   ├── scripts/                            (CAD generator, FEM runner, Post-processor)
+    │   ├── data/confronto_variante_centrata.json (Comparative Benchmark Dataset)
+    │   └── figures/                            (Hourglass Streamlines, Profiles, Lift)
+    └── rotore_centrato_poli_alternati_semionda/ (Alternate Polarity Pulsed Variant)
+        ├── config/case_poli_alternati_semionda.sif (Pulsed Half-Wave MATC SIF)
+        ├── scripts/run_simulation.py           (40 Timesteps Runner)
+        ├── scripts/postprocess_poli_alternati.py (Complete Analysis & Figure Pipeline)
+        ├── data/confronto_semionda_specchiata.json (Full Numerical Dataset)
+        └── figures/                            (N-S 3D Topology, Profiles, Lift Comparison)
 ```
 
 ---
@@ -158,7 +168,7 @@ python scripts/sweep_sfasamento_fasi.py
 python scripts/postprocess_campo_elettrico_poynting.py
 ```
 
-### 2. Reproduce Centered Rotor Variant ($Z = 0$)
+### 2. Reproduce Centered Rotor Variant ($Z = 0$, Continuous)
 ```bash
 # Build centered geometry, generate conformal mesh, and run Elmer FEM
 python variants/rotore_centrato_z0/scripts/build_mesh_centrata.py
@@ -168,6 +178,15 @@ python variants/rotore_centrato_z0/scripts/run_centrata_simulations.py
 python variants/rotore_centrato_z0/scripts/postprocess_centrata.py
 ```
 
+### 3. Reproduce Alternate Polarity Pulsed Half-Wave Variant ($Z = 0$, N-S-N-S-N-S)
+```bash
+# Execute 40-step transient simulation (2 cycles at 100 Hz)
+python variants/rotore_centrato_poli_alternati_semionda/scripts/run_simulation.py
+
+# Extract 3D N-S dipole topology, pulsed waveforms, and Lorentz lift dynamics
+python variants/rotore_centrato_poli_alternati_semionda/scripts/postprocess_poli_alternati.py
+```
+
 ---
 
 ## Sommario Esecutivo per la Comunità Scientifica Italiana
@@ -175,9 +194,10 @@ python variants/rotore_centrato_z0/scripts/postprocess_centrata.py
 ### Principi Fisici e Innovazione
 L'**Open Chiral Flux Shaper** è un dispositivo elettromagnetico open-source fondato sull'impiego di un mantello cilindrico in metamateriale a macro-chiralità controllata (rete stirata di alluminio a maglia romboidale con inclinazione persiana a $30^\circ$).
 
-- **Superamento della Gabbia di Lenz:** Nei sistemi classici, un involucro metallico sottoposto a campi magnetici rotanti genera correnti parassite chiuse che schermano l'induzione e dissipano energia per effetto Joule. La struttura chirale della rete stirata, modellata mediante un tensore di conducibilità anisotropo semidefinito positivo ($\sigma_{\theta z} = 3.031\times 10^6\text{ S/m}$), converte le correnti circolari in correnti elicoidali guidate, abbattendo le perdite termiche del **$-43.2\%$**.
+- **Superamento della Gabbia di Lenz:** Nei sistemi classici, un involucro metallico sottoposto a campi magnetici rotanti genera correnti parassite chiuse che schermano l'induzione e dissipano energia per effetto Joule. La struttura chirale della rete stirata, modellata mediante un tensore di conducibilità anisotropo semidefinito positivo ($\sigma_{\theta z} = 3.031\times 10^6\text{ S/m}$), converte le correnti circolari in correnti elicoidali guidate, abbattendo le perdite termiche del **$-43.2\%$** in regime continuo e di oltre il **$-99.9\%$** in regime impulsivo.
 - **Espulsione Radiale del Flusso:** L'induzione magnetica non viene intrappolata, ma srotolata radialmente a $360^\circ$, proiettando onde stabili verso lo spazio esterno per applicazioni di trasmissione wireless di potenza e accoppiamento induttivo/capacitivo.
-- **Variante con Rotore Centrato ($Z = 0$) e Lift Ponderomotore:** Posizionando il nucleo ferromagnetico sull'equatore della macchina con doppio traferro simmetrico, l'induzione equatoriale aumenta del **$+235.6\%$** ($211.35\,\mu\text{T}$). L'interazione tra la simmetria geometrica biconica e la chiralità a $30^\circ$ della rete provoca la rottura spontanea della simmetria di parità assiale $\mathcal{P}_z$, generando una spinta assiale netta verso l'alto (**lift Lorentziano di $+4.67\,\mu\text{N}$**).
+- **Variante con Rotore Centrato ($Z = 0$) e Lift Ponderomotore Continuo:** Posizionando il nucleo ferromagnetico sull'equatore della macchina con doppio traferro simmetrico, l'induzione equatoriale aumenta del **$+235.6\%$** ($211.35\,\mu\text{T}$). L'interazione tra la simmetria geometrica biconica e la chiralità a $30^\circ$ della rete provoca la rottura spontanea della simmetria di parità assiale $\mathcal{P}_z$, generando una spinta assiale netta verso l'alto (**lift Lorentziano di $+4.67\,\mu\text{N}$**).
+- **Variante a Polarità Alternate Specchiate (N-S-N-S-N-S) a Semionde Pulsate:** Alimentando le 6 bobine con impulsi unidirezionali positivi sfasati di $60^\circ$ e polarità geometrica specchiata alternata ($s_k = (-1)^{k-1}$), il circuito magnetico si chiude a corto raggio tra coppie dipolari adiacenti ($1\to 2, 3\to 4, 5\to 6$). Le perdite termiche per effetto Joule crollano a soli **$1.9\text{ mW}$** ($0.0019\text{ W}$), la potenza attiva irradiata dal vettore di Poynting aumenta fino a **$+102.76\text{ mW}$** per trasferimento impulsivo, e la forza assiale di Lorentz oscilla in perfetto bilanciamento bipolare attorno allo zero ($\langle F_z \rangle \approx -0.93\,\mu\text{N}$), garantendo stabilità meccanica priva di spinte parassite unidirezionali.
 
 ---
 
