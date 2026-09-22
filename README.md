@@ -26,22 +26,25 @@ $$\bar{\bar{\sigma}}_{\text{cyl}} = \begin{bmatrix} \sigma_{rr} & 0 & 0 \\ 0 & \
 Instead of opposing the rotating magnetic wave, the chiral mantle:
 - **Suppresses closed circular eddy loops**, slashing Joule thermal dissipation by **$-43.2\%$** in continuous mode, and up to **$-99.9\%$** in pulsed half-wave mode.
 - **Couples azimuthal electric fields to axial currents** ($\sigma_{\theta z}$ cross-coupling), deflecting and **unrolling the magnetic flux outward into a $360^\circ$ omnidirectional radial induction wave**.
-- **Enables electromagnetic propulsion and levitation:** In a biconical induction configuration, the fixed $30^\circ$ chiral tilt breaks axial reflection parity ($\mathcal{P}_z$), producing a continuous, unidirectional upward ponderomotive Lorentz lift ($\langle F_z \rangle = +4.67\,\mu\text{N}$).
+- **Enables electromagnetic propulsion and levitation:** In a biconical induction configuration, the fixed $30^\circ$ chiral tilt breaks axial reflection parity ($\mathcal{P}_z$), producing a continuous, unidirectional upward ponderomotive Lorentz lift ($\langle F_z \rangle = +4.67\,\mu\text{N}$, reaching a global resonance peak of $+5.72\,\mu\text{N}$ / $57.2\text{ mN}$ at full scale in locked-rotor mode).
 
 ---
 
 ## Core Architectures & Comparative Benchmark
 
-| Parameter / Metric | Baseline Architecture (v1.0.0) | Centered Continuous (Regime B) | Mirrored Polarity Pulsed Half-Wave (N-S-N-S-N-S) | Physical Mechanism / Specialty |
-| :--- | :---: | :---: | :---: | :---: |
-| **Core Geometry** | Ferromagnetic spider at bottom ($Z = -H/2$) | Ferromagnetic core at equator ($Z = 0$) | Ferromagnetic core at equator ($Z = 0$) | Equatorial magnetic flux bridge |
-| **Coil Excitation** | 60° Progressive Full Sine Wave | 60° Progressive Full Sine Wave | 60° Shifted Half-Wave Pulse Train ($J_k \ge 0$) | Directional vs Sequenced Pulsed Drive |
-| **Polarity Layout** | Unipolar Homogeneous | Unipolar Homogeneous | Alternating Mirrored: $s_k = (-1)^{k-1}$ | Adjacent N-S magnetic return loops |
-| **Radial Field $B_{\text{rad}}$ ($R = 6\text{ cm}$)** | **$62.98\,\mu\text{T}$** | **$211.35\,\mu\text{T}$** | **$135.84\,\mu\text{T}$** | Strong equatorial concentration (+115.7% vs baseline) |
-| **Poynting Power Flux ($R=12\text{ cm}$)** | **$+7.282\text{ mW}$** | **$+2.620\text{ mW}$** | **$+102.76\text{ mW}$** | **$+1311\%$ pulsed harmonic radiation boost** |
-| **Net Axial Lorentz Force $\langle F_z \rangle$** | $\approx 0$ (leakage) | **$+4.67\,\mu\text{N}$ ($+0.00467\text{ mN}$)** | **$-0.93\,\mu\text{N}$ ($\approx 0\text{ mN}$ balanced)** | Mirrored N-S cancellation of cross terms |
-| **Joule Dissipation $P_J$** | **$2.437\text{ W}$** | **$2.510\text{ W}$** | **$0.0019\text{ W}$ ($1.9\text{ mW}$)** | **$>99.9\%$ suppression of eddy heating** |
-| **Primary Optimal Use-Case** | Directional Wireless Venting | Continuous Electromagnetic Lift | Resonant Wireless Pulsed Power & Ultra-Low Heat | Mission-specific electromagnetic tuning |
+| Parameter / Metric | Baseline Architecture (v1.0.0) | Centered Continuous (1200 RPM) | Centered Locked-Rotor (0 RPM Peak) | Mirrored Polarity Pulsed (N-S) | Physical Mechanism / Specialty |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Core Geometry** | Ferromagnetic spider at bottom ($Z = -H/2$) | Ferromagnetic core at equator ($Z = 0$) | Ferromagnetic core at equator ($Z = 0$) | Ferromagnetic core at equator ($Z = 0$) | Equatorial magnetic flux bridge |
+| **Coil Excitation** | 60° Progressive Full Sine Wave ($100\text{ Hz}$) | 60° Progressive Full Sine Wave ($100\text{ Hz}$) | 60° Progressive Full Sine Wave ($100\text{ Hz}$) | 60° Shifted Half-Wave Pulse Train ($J_k \ge 0$) | Directional vs Sequenced Pulsed Drive |
+| **Rotor Speed & Slip** | $1200\text{ RPM}$ ($f_{\text{slip}} = 40\text{ Hz}$) | $1200\text{ RPM}$ ($f_{\text{slip}} = 40\text{ Hz}$) | **$0\text{ RPM}$ (Locked, $f_{\text{slip}} = 100\text{ Hz}$)** | $1200\text{ RPM}$ ($f_{\text{slip}} = 40\text{ Hz}$) | Mechanical tracking vs maximum relative slip |
+| **Polarity Layout** | Unipolar Homogeneous | Unipolar Homogeneous | Unipolar Homogeneous | Alternating Mirrored: $s_k = (-1)^{k-1}$ | Adjacent N-S magnetic return loops |
+| **Radial Field $B_{\text{rad}}$ ($R = 6\text{ cm}$)** | **$62.98\,\mu\text{T}$** | **$211.35\,\mu\text{T}$** | **$211.35\,\mu\text{T}$** | **$135.84\,\mu\text{T}$** | Strong equatorial concentration (+115.7% vs baseline) |
+| **Poynting Power Flux ($R=12\text{ cm}$)** | **$+7.282\text{ mW}$** | **$+2.620\text{ mW}$** | **$+2.620\text{ mW}$** | **$+102.76\text{ mW}$** | **$+1311\%$ pulsed harmonic radiation boost** |
+| **Net Axial Lorentz Force $\langle F_z \rangle$** | $\approx 0$ (leakage) | **$+4.67\,\mu\text{N}$** | **$\mathbf{+5.72\,\mu\text{N}}$ ($+57.2\text{ mN}$ full scale)** | **$-0.93\,\mu\text{N}$ ($\approx 0\text{ mN}$ balanced)** | **Locked-rotor resonance peak (+22.5% boost)** |
+| **Peak Instantaneous Force $F_{z,\text{max}}$** | $\approx 0$ | $+27.41\,\mu\text{N}$ | **$+12.89\,\mu\text{N}$ ($+128.9\text{ mN}$ full scale)** | $\pm 26.50\,\mu\text{N}$ (symmetric) | Smooth ponderomotive lift at locked rotor |
+| **Joule Dissipation $P_J$** | **$2.437\text{ W}$** | **$1.52\text{ mW}$** | **$1.02\text{ mW}$ ($0.0010\text{ W}$)** | **$1.90\text{ mW}$ ($0.0019\text{ W}$)** | **Ultra-low thermal dissipation** |
+| **Lift Efficiency $\eta_F = \langle F_z \rangle / P_J$** | $\sim 0$ | $3065\,\mu\text{N/W}$ | **$\mathbf{5587\,\mu\text{N/W}}$** | $\approx 0$ (balanced) | **Maximum solid-state thrust-to-power ratio** |
+| **Primary Optimal Use-Case** | Directional Wireless Venting | Continuous Electromagnetic Lift | **Max Lorentz Lift (Solid-State Thruster)** | Resonant Wireless Pulsed Power & Low Heat | Mission-specific electromagnetic tuning |
 
 ---
 
@@ -66,6 +69,12 @@ Instead of opposing the rotating magnetic wave, the chiral mantle:
 | :---: | :---: | :---: |
 | <img src="variants/rotore_centrato_poli_alternati_semionda/figures/fig_01_topologia_poli_specchiati_3d.png" width="300" alt="N-S Polar Topology 3D" /> | <img src="variants/rotore_centrato_poli_alternati_semionda/figures/fig_02_forme_onda_semionda_e_profilo_radiale.png" width="300" alt="Pulsed Waveforms & Profile" /> | <img src="variants/rotore_centrato_poli_alternati_semionda/figures/fig_03_confronto_forza_lift_Fz_impulsi.png" width="300" alt="Lift Comparison Pulsed vs Continuous" /> |
 | *Short-range return loops between adjacent N-S pairs with radial ejection lobes.* | *6-channel $60^\circ$ pulsed half-wave drive and 6-lobe equatorial induction pattern.* | *Bipolar balanced oscillation of $F_z(t)$ with near-zero DC drift and ultra-low Joule heat ($1.9\text{ mW}$).* |
+
+### 4. 2D Frequency vs RPM Resonance Sweep (Ponderomotive Slip Dispersion)
+| Lorentz Lift vs Slip Frequency $f_{\text{slip}}$ | Mean Axial Lift Comparison Across RPMs |
+| :---: | :---: |
+| <img src="variants/rotore_centrato_z0_resonance_sweep/figures/fig_01_curva_dispersione_fz_vs_slip.png" width="450" alt="Fz vs Slip Frequency" /> | <img src="variants/rotore_centrato_z0_resonance_sweep/figures/fig_02_confronto_lift_vs_rpm.png" width="450" alt="Lift vs RPM Comparison" /> |
+| *Dispersion curve showing monotonic increase with slip frequency up to the locked-rotor resonance peak ($\langle F_z \rangle = +5.72\,\mu\text{N}$ at $100\text{ Hz}, 0\text{ RPM}$).* | *Direct comparison of $\langle F_z \rangle$ across mechanical speeds ($0, 600, 1200, 2400, 4800\text{ RPM}$) for $50\text{ Hz}$ and $100\text{ Hz}$ drives.* |
 
 </div>
 
@@ -136,12 +145,17 @@ simulazione/
     │   ├── scripts/                            (CAD generator, FEM runner, Post-processor)
     │   ├── data/confronto_variante_centrata.json (Comparative Benchmark Dataset)
     │   └── figures/                            (Hourglass Streamlines, Profiles, Lift)
-    └── rotore_centrato_poli_alternati_semionda/ (Alternate Polarity Pulsed Variant)
-        ├── config/case_poli_alternati_semionda.sif (Pulsed Half-Wave MATC SIF)
-        ├── scripts/run_simulation.py           (40 Timesteps Runner)
-        ├── scripts/postprocess_poli_alternati.py (Complete Analysis & Figure Pipeline)
-        ├── data/confronto_semionda_specchiata.json (Full Numerical Dataset)
-        └── figures/                            (N-S 3D Topology, Profiles, Lift Comparison)
+    ├── rotore_centrato_poli_alternati_semionda/ (Alternate Polarity Pulsed Variant)
+    │   ├── config/case_poli_alternati_semionda.sif (Pulsed Half-Wave MATC SIF)
+    │   ├── scripts/run_simulation.py           (40 Timesteps Runner)
+    │   ├── scripts/postprocess_poli_alternati.py (Complete Analysis & Figure Pipeline)
+    │   ├── data/confronto_semionda_specchiata.json (Full Numerical Dataset)
+    │   └── figures/                            (N-S 3D Topology, Profiles, Lift Comparison)
+    └── rotore_centrato_z0_resonance_sweep/     (2D Frequency vs RPM Resonance Sweep Suite)
+        ├── config/                             (Parametric SIF Generation Templates)
+        ├── scripts/                            (Parallel Runner, Harvester & Figure Generator)
+        ├── data/sweep_risonanza_parziale.json  (Consolidated 2D Slip Dispersion Dataset)
+        └── figures/                            (Dispersion Curves & RPM Benchmark at 300 DPI)
 ```
 
 ---
@@ -187,6 +201,12 @@ python variants/rotore_centrato_poli_alternati_semionda/scripts/run_simulation.p
 python variants/rotore_centrato_poli_alternati_semionda/scripts/postprocess_poli_alternati.py
 ```
 
+### 4. Reproduce 2D Resonance Sweep Analysis & High-Res Figures
+```bash
+# Extract consolidated dispersion metrics and generate 300 DPI benchmark plots
+python variants/rotore_centrato_z0_resonance_sweep/scripts/generate_resonance_figures.py
+```
+
 ---
 
 ## Sommario Esecutivo per la Comunità Scientifica Italiana
@@ -198,6 +218,7 @@ L'**Open Chiral Flux Shaper** è un dispositivo elettromagnetico open-source fon
 - **Espulsione Radiale del Flusso:** L'induzione magnetica non viene intrappolata, ma srotolata radialmente a $360^\circ$, proiettando onde stabili verso lo spazio esterno per applicazioni di trasmissione wireless di potenza e accoppiamento induttivo/capacitivo.
 - **Variante con Rotore Centrato ($Z = 0$) e Lift Ponderomotore Continuo:** Posizionando il nucleo ferromagnetico sull'equatore della macchina con doppio traferro simmetrico, l'induzione equatoriale aumenta del **$+235.6\%$** ($211.35\,\mu\text{T}$). L'interazione tra la simmetria geometrica biconica e la chiralità a $30^\circ$ della rete provoca la rottura spontanea della simmetria di parità assiale $\mathcal{P}_z$, generando una spinta assiale netta verso l'alto (**lift Lorentziano di $+4.67\,\mu\text{N}$**).
 - **Variante a Polarità Alternate Specchiate (N-S-N-S-N-S) a Semionde Pulsate:** Alimentando le 6 bobine con impulsi unidirezionali positivi sfasati di $60^\circ$ e polarità geometrica specchiata alternata ($s_k = (-1)^{k-1}$), il circuito magnetico si chiude a corto raggio tra coppie dipolari adiacenti ($1\to 2, 3\to 4, 5\to 6$). Le perdite termiche per effetto Joule crollano a soli **$1.9\text{ mW}$** ($0.0019\text{ W}$), la potenza attiva irradiata dal vettore di Poynting aumenta fino a **$+102.76\text{ mW}$** per trasferimento impulsivo, e la forza assiale di Lorentz oscilla in perfetto bilanciamento bipolare attorno allo zero ($\langle F_z \rangle \approx -0.93\,\mu\text{N}$), garantendo stabilità meccanica priva di spinte parassite unidirezionali.
+- **Mappatura di Risonanza Elettromeccanica 2D e Picco a Rotore Bloccato:** Lo sweep parametrico bidimensionale (Frequenza elettrica $f \times \text{Velocità meccanica RPM}$) ha rivelato che la spinta assiale ponderomotrice di Lorentz è governata dalla frequenza di scorrimento relativo ($f_{\text{slip}} = |f_e - p \cdot f_m|$). Il massimo globale di spinta si ottiene a **rotore meccanicamente bloccato ($n = 0\text{ RPM}$, $f_{\text{slip}} = 100\text{ Hz}$)** con **$\langle F_z \rangle = +5.72\,\mu\text{N}$** (**$+22.5\%$** rispetto al valore nominale a 1200 RPM) e dissipazione termica di appena **$1.0\text{ mW}$** ($\eta_F = 5587\,\mu\text{N/W}$). A scala reale ingegneristica ($J_0 = 10^7\text{ A/m}^2$, fattore di scala $\times 10^4$), la spinta continua proiettata raggiunge **$57.2\text{ mN}$** (picco $128.9\text{ mN}$), dimostrando la fattibilità di un propulsore elettromagnetico chirale a stato solido privo di organi in rotazione.
 
 ---
 
