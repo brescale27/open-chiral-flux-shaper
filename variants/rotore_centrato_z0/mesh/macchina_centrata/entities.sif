@@ -1,0 +1,22 @@
+!------ Skeleton for body section -----
+Body 1
+  Name = AirExterior
+End
+
+Body 2
+  Name = Aluminum
+End
+
+Body 3
+  Name = RotorAir
+End
+
+Body 4
+  Name = FerromagneticCore
+End
+
+!------ Skeleton for boundary section -----
+Boundary Condition 1
+  Name = FarField
+End
+

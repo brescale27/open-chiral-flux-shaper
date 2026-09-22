@@ -1,0 +1,7 @@
+! ----- names for bodies -----
+$ AirExterior = 1
+$ Aluminum = 2
+$ RotorAir = 3
+$ FerromagneticCore = 4
+! ----- names for boundaries -----
+$ FarField = 1
