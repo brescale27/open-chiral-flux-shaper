@@ -1,0 +1,70 @@
+{
+  "gauss_conservation_spheres": [
+    {
+      "radius_m": 0.08,
+      "radius_cm": 8.0,
+      "area_m2": 0.0804247719318987,
+      "phi_net_Tm2": 7.87445453880867e-09,
+      "phi_abs_Tm2": 7.147398266562576e-07,
+      "relative_residual": 0.011017232052997835,
+      "mean_Bn_uT": 8.491019568738107
+    },
+    {
+      "radius_m": 0.12,
+      "radius_cm": 12.0,
+      "area_m2": 0.18095573684677208,
+      "phi_net_Tm2": -1.2681909029154177e-08,
+      "phi_abs_Tm2": 5.793771219219392e-07,
+      "relative_residual": 0.021888867418851883,
+      "mean_Bn_uT": 3.5463289442846175
+    },
+    {
+      "radius_m": 0.15,
+      "radius_cm": 15.0,
+      "area_m2": 0.2827433388230814,
+      "phi_net_Tm2": -4.897825868164754e-09,
+      "phi_abs_Tm2": 8.33255865497518e-07,
+      "relative_residual": 0.005877937456056715,
+      "mean_Bn_uT": 2.9672789001485778
+    }
+  ],
+  "sensitivity_louver_angle": [
+    {
+      "angle_deg": 25.0,
+      "sigma_theta_z_S_m": 2681155.550916423,
+      "delta_sigma_pct": -11.544806910808207,
+      "P_joule_W": 1.6540832639606469,
+      "delta_P_joule_pct": 7.696136373533932,
+      "mean_Brad_6cm_uT": 29.669412468576088,
+      "delta_Brad_pct": -0.01756027971344251,
+      "simulation_source": "results_25deg/macchina_out_t*.vtu"
+    },
+    {
+      "angle_deg": 30.0,
+      "sigma_theta_z_S_m": 3031088.913245535,
+      "delta_sigma_pct": 0.0,
+      "P_joule_W": 1.5358798557300277,
+      "delta_P_joule_pct": 0.0,
+      "mean_Brad_6cm_uT": 29.67462341545175,
+      "delta_Brad_pct": 0.0,
+      "simulation_source": "results_nominal_30deg/macchina_out_t*.vtu"
+    },
+    {
+      "angle_deg": 35.0,
+      "sigma_theta_z_S_m": 3288924.172750679,
+      "delta_sigma_pct": 8.506357513249819,
+      "P_joule_W": 1.430051033725701,
+      "delta_P_joule_pct": -6.890436228426509,
+      "mean_Brad_6cm_uT": 29.678725553980517,
+      "delta_Brad_pct": 0.013823725650479344,
+      "simulation_source": "results_35deg/macchina_out_t*.vtu"
+    }
+  ],
+  "baseline_reference": {
+    "frequency_hz": 100.0,
+    "rpm": 1200.0,
+    "P_joule_dc_W": 1.5358798557300277,
+    "mean_abs_Brad_6cm_uT": 29.67462341545175,
+    "volume_alu_m3": 9.141496605941359e-05
+  }
+}

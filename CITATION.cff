@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this hardware design, simulation pipeline or dataset, please cite it as below."
+title: "Open Chiral Flux Shaper: Macro-Chiral Metamaterial for Radial Magnetic Induction"
+authors:
+  - family-names: "Brescacin"
+    given-names: "Alessandro"
+version: "1.0.0"
+date-released: "2026-09-22"
+license: "CERN-OHL-S-2.0"
+repository-code: "https://github.com/brescale27/open-chiral-flux-shaper"

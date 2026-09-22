@@ -1,0 +1,5 @@
+radius_cm,max_Brad_solid_uT,max_Brad_mesh_uT,enhancement_factor,mean_Bmod_solid_uT,mean_Bmod_mesh_uT
+4.8,222.64,239.08,1.074,91.38,91.67
+6.0,123.27,122.43,0.993,45.18,45.68
+8.0,36.67,36.84,1.004,18.19,18.35
+12.0,19.23,19.21,0.999,8.03,8.06

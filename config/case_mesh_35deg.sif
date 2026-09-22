@@ -1,0 +1,165 @@
+! Elmer FEM Simulation: 3D Transient Electromechanical System
+! Mantello Reticolare: Sensitivita Angolo Louver alpha = 35.0 gradi
+! Tensore di Conducibilita Anisotropo con Rotazione Cilindrico-Cartesiana MATC
+$ f_audio = 100.0
+$ J0 = 1.0e+05
+$ RPM = 1200.0
+$ omega_rot = 2.0 * pi * (1200.0 / 60.0)
+$ R_c = 0.035
+$ r_wire = 0.007
+
+$ T_audio = 1.0 / 100.0
+$ dt = T_audio / 10
+$ n_steps = 10
+
+$ function rotating_current(tx) {\
+  x = tx(0); y = tx(1); z = tx(2); t = tx(3);\
+  if (abs(z) > 0.04) { res = 0.0; } else {\
+    w = 2.0 * pi * (1200.0 / 60.0);\
+    f = 100.0; j0 = 1.0e+05; rc = 0.035; rw = 0.007;\
+    th = w * t;\
+    x1 = rc * cos(th); y1 = rc * sin(th);\
+    d1sq = (x - x1)*(x - x1) + (y - y1)*(y - y1);\
+    d2sq = (x + x1)*(x + x1) + (y + y1)*(y + y1);\
+    rsq = rw * rw;\
+    s = sin(2*pi*f*t);\
+    res = 0.0;\
+    if (d1sq < rsq) res = res + j0 * 0.5 * (s + abs(s));\
+    if (d2sq < rsq) res = res + j0 * 0.5 * (s - abs(s));\
+  };\
+  _rotating_current = res;\
+}
+
+$ function sigma_cyl(tx) {\
+  x = tx(0); y = tx(1);\
+  r = sqrt(x*x + y*y);\
+  if (r < 1.0e-5) { r = 1.0e-5; } else { r = r; };\
+  c = x / r; s = y / r;\
+  s_rr = 1.75e6; s_tt = 1.75e6; s_zz = 1.22e7; s_tz = 3.288924e6;\
+  sxz = -s_tz * s;\
+  syz =  s_tz * c;\
+  a = zeros(3,3);\
+  a(0,0) = s_rr; a(1,1) = s_tt; a(2,2) = s_zz;\
+  a(0,2) = sxz;  a(2,0) = sxz;\
+  a(1,2) = syz;  a(2,1) = syz;\
+  _sigma_cyl = a;\
+}
+
+Header
+  CHECK KEYWORDS Warn
+  Mesh DB "mesh" "macchina"
+  Include Path ""
+  Results Directory "results_35deg"
+End
+
+Simulation
+  Max Output Level = 3
+  Coordinate System = Cartesian 3D
+  Coordinate Mapping(3) = 1 2 3
+  Simulation Type = Transient
+  Steady State Max Iterations = 1
+  Output Intervals(1) = 1
+  Timestep Intervals(1) = $ n_steps
+  Timestep Sizes(1) = $ dt
+End
+
+Constants
+  Permittivity of Vacuum = 8.8542e-12
+  Permeability of Vacuum = 1.2566370614e-6
+End
+
+Equation 1
+  Name = "Coupled Electromagnetics"
+  Active Solvers(3) = 1 2 3
+End
+
+Solver 1
+  Equation = "MGDynamics"
+  Variable = "AV"
+  Procedure = "MagnetoDynamics" "WhitneyAVSolver"
+
+  Fix Input Current Density = Logical False
+  Use Piola Transform = Logical False
+
+  Linear System Solver = "Direct"
+  Linear System Direct Method = Umfpack
+End
+
+Solver 2
+  Equation = "MGDynamicsCalc"
+  Procedure = "MagnetoDynamics" "MagnetoDynamicsCalcFields"
+
+  Potential Variable = String "AV"
+
+  Calculate Elemental Fields = Logical True
+  Calculate Nodal Fields = Logical True
+  Calculate Magnetic Flux Density = Logical True
+  Calculate Magnetic Vector Potential = Logical True
+  Calculate Current Density = Logical True
+  Calculate Electric Field = Logical True
+  Calculate Joule Heating = Logical True
+  Calculate JxB = Logical True
+
+  Linear System Solver = "Direct"
+  Linear System Direct Method = Umfpack
+End
+
+Solver 3
+  Equation = "ResultOutput"
+  Procedure = "ResultOutputSolve" "ResultOutputSolver"
+  Output File Name = "macchina_out"
+  Output Format = "vtu"
+  Vtu Format = Logical True
+  Save Geometry Ids = Logical True
+  Discontinuous Bodies = Logical True
+End
+
+Material 1
+  Name = "Air"
+  Relative Permeability = 1.0
+  Electric Conductivity = 0.0
+End
+
+Material 2
+  Name = "ExpandedMeshMantle"
+  Relative Permeability = 1.0
+  ! Tensore di conducibilita anisotropa cilindrico ruotato localmente nel piano cartesiano
+  ! sigma_rr = 1.75e6 S/m, sigma_theta_theta = 1.75e6 S/m, sigma_zz = 1.22e7 S/m
+  ! sigma_theta_z = 3.288924e6 S/m (accoppiamento louver persiana 35 gradi omogeneo su tutti i 360 gradi)
+  Electric Conductivity(3,3) = Variable Coordinate 1, Coordinate 2
+    Real MATC "sigma_cyl(tx)"
+End
+
+Body Force 1
+  Current Density 3 = Variable Coordinate 1, Coordinate 2, Coordinate 3, time
+    Real MATC "rotating_current(tx)"
+End
+
+Body 1
+  Target Bodies(1) = 1
+  Name = "AirExterior"
+  Equation = 1
+  Material = 1
+End
+
+Body 2
+  Target Bodies(1) = 2
+  Name = "ExpandedMeshShell"
+  Equation = 1
+  Material = 2
+End
+
+Body 3
+  Target Bodies(1) = 3
+  Name = "RotorInterior"
+  Equation = 1
+  Material = 1
+  Body Force = 1
+End
+
+Boundary Condition 1
+  Target Boundaries(1) = 1
+  Name = "FarFieldInfinity"
+  AV {e} = Real 0.0
+  AV = Real 0.0
+End

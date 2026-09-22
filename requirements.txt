@@ -1,0 +1,5 @@
+# Dipendenze scientifiche per la riproduzione e post-processing delle simulazioni Elmer FEM
+numpy>=1.22.0
+scipy>=1.8.0
+meshio>=5.3.0
+matplotlib>=3.5.0

@@ -1,0 +1,18 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Local backup & test archive
+_archive_backup/
+
+# Elmer FEM temp / lock files
+*.lck
+*.tmp
+*.dump
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,63 @@
+Copyright (c) 2026 Alessandro Brescacin
+SPDX-License-Identifier: CERN-OHL-S-2.0
+
+CERN Open Hardware Licence Version 2 - Strongly Reciprocal
+CERN-OHL-S
+
+Preamble
+CERN has developed this licence to promote collaboration on the hardware
+designs that it releases and to provide a legal framework for open hardware
+development. Although the licence has been written with CERN's own
+requirements in mind, it is intended to be used by other institutions and
+individuals as well.
+
+This licence is for hardware designs. Hardware designs may be in the form of
+schematics, layouts, mechanical drawings, solid models, HDL code, fabrication
+files or any other form of design documentation.
+
+The licence is "strongly reciprocal". This means that anyone who modifies the
+design or uses it in another design and distributes that design or products
+based on it, must make the sources for the modified or combined design
+available under the terms of this licence.
+
+1 Definitions
+1.1 "Licence" means this CERN Open Hardware Licence Version 2 - Strongly Reciprocal.
+1.2 "Source" means information such as design materials or documentation which
+    is used to generate or specify the Covered Product.
+1.3 "Covered Product" means any product, including hardware, software or data,
+    resulting from the use, modification or manufacture of the Source.
+1.4 "You" means an individual or legal entity exercising rights under this Licence.
+1.5 "Contributor" means any individual or legal entity that creates, contributes
+    to the creation of, or modifies the Source.
+
+2 Applicability
+2.1 This Licence governs the use, copying, modification, and distribution of the
+    Source, and the manufacture and distribution of Covered Products. By
+    exercising any of the rights granted in this Licence, You accept and agree to
+    be bound by its terms.
+
+3 Copying and Distribution of the Source
+3.1 You may copy and distribute verbatim copies of the Source, in any medium,
+    provided that You keep intact all copyright notices, licence notices and
+    disclaimers.
+
+4 Modification and Combined Designs
+4.1 You may modify the Source, or combine it with other designs, provided that:
+    a) You make the modified or combined Source available under the terms of this
+       Licence;
+    b) You include notices stating that You modified the Source and giving the
+       date of modification.
+
+5 Making and Distributing Covered Products
+5.1 You may manufacture and distribute Covered Products, provided that where
+    Covered Products are distributed, You make the Source available under the
+    terms of this Licence to any recipient of the Covered Products.
+
+6 Disclaimer of Warranty and Limitation of Liability
+6.1 THE SOURCE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOURCE OR THE USE OR OTHER DEALINGS IN THE
+    SOURCE.
