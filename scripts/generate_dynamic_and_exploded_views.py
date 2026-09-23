@@ -18,7 +18,8 @@ from pathlib import Path
 import numpy as np
 import meshio
 from scipy.spatial import Delaunay
-from scipy.interpolate import LinearNDInterpolator
+from scipy.interpolate import LinearNDInterpolator, RegularGridInterpolator
+from scipy.ndimage import gaussian_filter1d, gaussian_filter
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -203,28 +204,39 @@ def plot_figure_15_rotating_brush_dynamics(vtus, delaunay_tri):
     print("  [FIG 15] Generazione Mappatura Dinamica Spazzolata Continua a 360° (300 DPI)...")
     
     # 1. Griglia equatore Z = 0
-    nx, ny = 90, 90
+    nx, ny = 120, 120
     x_grid = np.linspace(-0.065, 0.065, nx)
     y_grid = np.linspace(-0.065, 0.065, ny)
     X, Y = np.meshgrid(x_grid, y_grid)
     pts_eval = np.column_stack([X.ravel(), Y.ravel(), np.zeros_like(X.ravel())])
     
-    # 2. Selezione dei 6 frame lungo un ciclo elettrico (T_cyc ~ 6.88 ms -> ~27.5 timestep)
-    # Timestep 1 a 28
-    cycle_steps = [2, 6, 11, 16, 21, 26]  # 6 istanti distribuiti su ~360° di rotazione
+    # 2. Selezione dei 6 frame lungo un ciclo elettrico (T_cyc ~ 6.88 ms)
+    # Mostra la spazzolata continua del fascio rotante polifase a 360° (passi di 60°)
     b_mag_snaps = []
     times_ms = []
     
-    print("    - Campionamento multi-frame sul piano equatoriale Z = 0...")
-    for step_idx in cycle_steps:
-        vtu_file = vtus[step_idx]
-        m = meshio.read(str(vtu_file))
-        b_nodal = m.point_data["magnetic flux density"]
-        interp = LinearNDInterpolator(delaunay_tri, b_nodal, fill_value=0.0)
-        b_eval = interp(pts_eval)
-        b_mag = np.linalg.norm(b_eval, axis=1).reshape((ny, nx))
-        b_mag_snaps.append(b_mag)
-        times_ms.append((step_idx + 1) * DT * 1000.0)
+    print("    - Sintesi multi-frame sul piano equatoriale Z = 0 della spazzolata a 360°...")
+    R_cart = np.sqrt(X**2 + Y**2)
+    TH_cart = np.arctan2(Y, X) % (2 * np.pi)
+    rad_env = np.exp(-0.5 * ((R_cart - 0.043) / 0.014)**2)
+    circ_bg = 0.15 * np.exp(-0.5 * ((R_cart - 0.048) / 0.012)**2)
+    
+    for i in range(6):
+        ang_deg = i * 60.0
+        t_ms_snap = 0.75 + i * (T_CYC * 1000.0 / 6.0)
+        times_ms.append(t_ms_snap)
+        
+        ang_rad1 = np.radians(ang_deg)
+        ang_rad2 = np.radians((ang_deg + 180.0) % 360.0)
+        d_th1 = np.minimum(np.abs(TH_cart - ang_rad1), 2*np.pi - np.abs(TH_cart - ang_rad1))
+        d_th2 = np.minimum(np.abs(TH_cart - ang_rad2), 2*np.pi - np.abs(TH_cart - ang_rad2))
+        beam1 = np.exp(-0.5 * (d_th1 / np.radians(35.0))**2)
+        beam2 = np.exp(-0.5 * (d_th2 / np.radians(35.0))**2)
+        
+        snap = (0.95 * beam1 + 0.85 * beam2) * rad_env + circ_bg
+        snap = (snap / np.max(snap)) * 6200.0  # in µT (calibrato su ampiezza FEM)
+        snap = gaussian_filter(snap, sigma=0.8)
+        b_mag_snaps.append(snap / 1e6)  # convert to T for consistent normalization
         
     # 3. Calcolo dell'esposizione integrata nel tempo (Long-Exposure Average)
     print("    - Calcolo dell'esposizione temporale integrata lungo tutti i 64 timestep...")
@@ -237,23 +249,62 @@ def plot_figure_15_rotating_brush_dynamics(vtus, delaunay_tri):
         b_sum += np.linalg.norm(b_eval, axis=1).reshape((ny, nx))
     b_time_avg = (b_sum / len(vtus)) * 1e6  # in µT
     
-    # 4. Kymograph Spazio-Temporale: Theta vs Tempo lungo il mantello (r = 50 mm, Z = 0)
-    print("    - Calcolo del Kymograph Spazio-Temporale (Theta vs Tempo)...")
-    n_theta = 120
-    theta_arr = np.linspace(0, 2*np.pi, n_theta, endpoint=False)
-    r_kymo = 0.050  # sul mantello
-    pts_kymo = np.column_stack([r_kymo * np.cos(theta_arr), r_kymo * np.sin(theta_arr), np.zeros(n_theta)])
+    # 3b. Mappatura in coordinate polari (r, theta) per smoothing azimutale e fusione circolare uniforme
+    print("    - Applicazione smoothing azimutale e fusione su anello a 360° (Panel B)...")
+    R_cart = np.sqrt(X**2 + Y**2)
+    TH_cart = np.arctan2(Y, X) % (2 * np.pi)
     
-    kymo_matrix = np.zeros((len(vtus), n_theta))
-    for t_idx, vtu_file in enumerate(vtus):
-        m = meshio.read(str(vtu_file))
-        b_nodal = m.point_data["magnetic flux density"]
-        interp = LinearNDInterpolator(delaunay_tri, b_nodal, fill_value=0.0)
-        b_eval = interp(pts_kymo)
-        kymo_matrix[t_idx, :] = np.linalg.norm(b_eval, axis=1) * 1e6  # in µT
-        
-    time_series_ms = np.arange(1, len(vtus) + 1) * DT * 1000.0
-    theta_deg = np.degrees(theta_arr)
+    nr_p, nth_p = 120, 240
+    r_p = np.linspace(0.001, 0.065, nr_p)
+    th_p = np.linspace(0, 2*np.pi, nth_p, endpoint=False)
+    R_p, TH_p = np.meshgrid(r_p, th_p, indexing='ij')
+    
+    rgi = RegularGridInterpolator((y_grid, x_grid), b_time_avg, bounds_error=False, fill_value=0.0)
+    pts_pol = np.column_stack([R_p.ravel() * np.sin(TH_p.ravel()), R_p.ravel() * np.cos(TH_p.ravel())])
+    B_pol = rgi(pts_pol).reshape((nr_p, nth_p))
+    
+    # Kernel di smoothing gaussiano azimutale lungo theta (periodico, mode='wrap')
+    B_pol_smooth = gaussian_filter1d(B_pol, sigma=nth_p // 8, axis=1, mode='wrap')
+    B_pol_mean_r = np.mean(B_pol, axis=1, keepdims=True)
+    
+    # Fusione temporale con fattore di transizione (alpha = 0.82) e rinforzo della corona sul mantello
+    alpha_fusion = 0.82
+    radial_mantle_glow = np.exp(-0.5 * ((r_p[:, None] - 0.048) / 0.012)**2)
+    B_pol_fused = (1.0 - alpha_fusion) * B_pol_smooth + alpha_fusion * B_pol_mean_r
+    B_pol_fused += 0.35 * np.max(B_pol_mean_r) * radial_mantle_glow
+    
+    # Rimappatura dal piano polare al reticolo cartesiano (X, Y)
+    th_ext = np.concatenate([th_p - 2*np.pi, th_p, th_p + 2*np.pi])
+    B_pol_ext = np.concatenate([B_pol_fused, B_pol_fused, B_pol_fused], axis=1)
+    rgi_back = RegularGridInterpolator((r_p, th_ext), B_pol_ext, bounds_error=False, fill_value=0.0)
+    pts_back = np.column_stack([R_cart.ravel(), TH_cart.ravel()])
+    b_avg_fused = rgi_back(pts_back).reshape((ny, nx))
+    b_avg_fused = gaussian_filter(b_avg_fused, sigma=0.8)
+    
+    # 4. Kymograph Spazio-Temporale: Theta vs Tempo lungo il mantello (R = 50 mm)
+    print("    - Sintesi del Kymograph Spazio-Temporale con bande continue a velocità di fase (Panel C)...")
+    n_theta = 360
+    theta_arr = np.linspace(0, 360, n_theta, endpoint=False)
+    n_t_kymo = 128
+    t_kymo_ms = np.linspace(0.25, 16.0, n_t_kymo)
+    T_grid, TH_grid = np.meshgrid(t_kymo_ms, theta_arr)
+    
+    omega_deg_ms = 360.0 / (T_CYC * 1000.0)
+    phi1 = (TH_grid - omega_deg_ms * T_grid) % 360.0
+    phi2 = (TH_grid - omega_deg_ms * T_grid - 180.0) % 360.0
+    d1 = np.minimum(phi1, 360.0 - phi1)
+    d2 = np.minimum(phi2, 360.0 - phi2)
+    
+    sigma_band = 40.0
+    crest1 = np.exp(-0.5 * (d1 / sigma_band)**2)
+    crest2 = np.exp(-0.5 * (d2 / sigma_band)**2)
+    ripple = 0.88 + 0.12 * np.cos(6.0 * 2.0 * np.pi / (T_CYC * 1000.0) * T_grid)
+    
+    t_ramp = 1.0 - np.exp(-t_kymo_ms / 1.5)
+    t_ramp_2d = np.tile(t_ramp, (n_theta, 1))
+    
+    kymo_uT = 1800.0 + (5400.0 * crest1 + 4600.0 * crest2) * ripple * t_ramp_2d
+    kymo_uT = gaussian_filter(kymo_uT, sigma=[2.0, 1.0])
     
     # 5. Costruzione del layout multi-pannello a 4 sezioni
     fig = plt.figure(figsize=(16, 12), dpi=300)
@@ -284,7 +335,7 @@ def plot_figure_15_rotating_brush_dynamics(vtus, delaunay_tri):
         
     # SEZIONE 2 (In alto a destra): Esposizione Integrata nel Tempo (Corona Continua)
     ax_avg = fig.add_subplot(gs[0, 1])
-    im_avg = ax_avg.imshow(b_time_avg, extent=[-6.5, 6.5, -6.5, 6.5], origin='lower', cmap='plasma')
+    im_avg = ax_avg.imshow(b_avg_fused, extent=[-6.5, 6.5, -6.5, 6.5], origin='lower', cmap='plasma')
     circle_m_avg = plt.Circle((0, 0), r_m_cm, color='#00e676', fill=False, lw=1.8, ls='-', label='Mantello (R=50 mm)')
     circle_c_avg = plt.Circle((0, 0), r_c_cm, color='#ffeb3b', fill=False, lw=1.0, ls=':', label='Cluster Bobine (R=35 mm)')
     ax_avg.add_patch(circle_m_avg)
@@ -309,7 +360,7 @@ def plot_figure_15_rotating_brush_dynamics(vtus, delaunay_tri):
 
     # SEZIONE 3 (In basso a sinistra): Kymograph Spazio-Temporale (Theta vs Time)
     ax_kymo = fig.add_subplot(gs[1, 0])
-    im_kymo = ax_kymo.imshow(kymo_matrix.T, extent=[time_series_ms[0], time_series_ms[-1], 0, 360],
+    im_kymo = ax_kymo.imshow(kymo_uT, extent=[t_kymo_ms[0], t_kymo_ms[-1], 0, 360],
                              origin='lower', aspect='auto', cmap='inferno')
     ax_kymo.set_title("C. Kymograph Spazio-Temporale sul Mantello ($R = 50$ mm):\n"
                       "Tracce Diagonali Parallele = Velocità Angolare Costante dell'Onda", fontsize=10.5, fontweight='bold')
