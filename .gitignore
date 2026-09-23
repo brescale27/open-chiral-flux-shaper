@@ -16,3 +16,9 @@ _archive_backup/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Temporary simulation directories & heavy VTU output
+work_dirs/
+**/work_dirs/
+*.vtu
+

@@ -237,8 +237,59 @@ End
     return sif
 
 def evaluate_point(params):
-    f_hz, rpm, elmer_bin, mesh_data = params
+    f_hz, rpm, elmer_bin, mesh_data, f_bias, cached_entry = params
+    f_slip = abs(f_hz - (P_POLE_PAIRS * rpm / 60.0))
+    dt_val = 1.0 / (TIMESTEPS_PER_CYCLE * f_hz)
+    
     run_dir = WORK_BASE / f"run_f{f_hz}_rpm{rpm}"
+    res_cached = run_dir / "result.json"
+    
+    # 1. Se gia presente nel file result.json del run_dir
+    if res_cached.is_file():
+        try:
+            with open(res_cached, "r", encoding="utf-8") as f:
+                c_res = json.load(f)
+            raw_val = c_res.get("mean_Fz_raw_uN", c_res.get("mean_Fz_uN", 0.0))
+            print(f"  [CACHE] f={f_hz:3d} Hz | n={rpm:4d} RPM -> <Fz_raw> = {raw_val:+6.2f} uN")
+            return c_res
+        except Exception:
+            pass
+
+    # 2. Se presente nei dati consolidati parziali
+    if cached_entry is not None:
+        mean_raw = cached_entry.get("mean_Fz_uN", 0.0)
+        mean_chiral = mean_raw - f_bias
+        pj = cached_entry.get("mean_Poule_W", cached_entry.get("mean_Joule_W", 0.0))
+        eff = mean_chiral / (pj + 1e-12)
+        res = {
+            "frequency_Hz": f_hz,
+            "rpm": rpm,
+            "f_slip_Hz": f_slip,
+            "omega_e_rad_s": 2.0 * np.pi * f_hz,
+            "omega_m_rad_s": 2.0 * np.pi * (rpm / 60.0),
+            "dt_s": cached_entry.get("dt_s", dt_val),
+            "mean_Fz_raw_mN": mean_raw * 1e-3,
+            "mean_Fz_raw_uN": mean_raw,
+            "mean_Fz_chiral_mN": mean_chiral * 1e-3,
+            "mean_Fz_chiral_uN": mean_chiral,
+            "mean_Fz_mN": mean_chiral * 1e-3,
+            "mean_Fz_uN": mean_chiral,
+            "peak_Fz_mN": cached_entry.get("peak_Fz_mN", 0.0),
+            "peak_Fz_uN": cached_entry.get("peak_Fz_uN", 0.0),
+            "min_Fz_mN": cached_entry.get("min_Fz_mN", 0.0),
+            "min_Fz_uN": cached_entry.get("min_Fz_uN", 0.0),
+            "mean_Poule_W": pj,
+            "efficiency_uN_per_W": eff,
+            "time_series_ms": cached_entry.get("time_series_ms", []),
+            "Fz_series_mN": cached_entry.get("Fz_series_mN", []),
+            "solve_duration_s": cached_entry.get("solve_duration_s", 0.0),
+            "status": cached_entry.get("status", "REUSED_PARTIAL"),
+            "steps_computed": cached_entry.get("steps_computed", 20)
+        }
+        print(f"  [REUSE] f={f_hz:3d} Hz | n={rpm:4d} RPM | f_slip={f_slip:5.1f} Hz -> <Fz_raw> = {mean_raw:+6.2f} uN | <Fz_chiral> = {mean_chiral:+6.2f} uN | P_J = {pj*1e3:6.2f} mW")
+        return res
+
+    # 3. Altrimenti esegui la simulazione con ElmerSolver
     run_dir.mkdir(parents=True, exist_ok=True)
     res_dir = run_dir / "results"
     res_dir.mkdir(parents=True, exist_ok=True)
@@ -252,19 +303,6 @@ def evaluate_point(params):
     startinfo = run_dir / "ELMERSOLVER_STARTINFO"
     with open(startinfo, "w", encoding="utf-8") as f:
         f.write("case.sif\n1\n")
-        
-    f_slip = abs(f_hz - (P_POLE_PAIRS * rpm / 60.0))
-    dt_val = 1.0 / (TIMESTEPS_PER_CYCLE * f_hz)
-    
-    res_cached = run_dir / "result.json"
-    if res_cached.is_file():
-        try:
-            with open(res_cached, "r", encoding="utf-8") as f:
-                cached_data = json.load(f)
-            print(f"  [CACHE] f={f_hz:3d} Hz | n={rpm:4d} RPM -> <Fz> = {cached_data['mean_Fz_uN']:+6.2f} uN (da cache)")
-            return cached_data
-        except Exception:
-            pass
 
     # Se nominale 100 Hz, 1200 RPM, riusa i 20 VTU gia calcolati se presenti
     if f_hz == 100 and rpm == 1200:
@@ -280,8 +318,9 @@ def evaluate_point(params):
     solve_duration = 0.0
     if len(vtus_exist) < TIMESTEPS_PER_CYCLE:
         t0 = time.time()
-        # Esecuzione isolata nel run_dir
-        p = subprocess.run([elmer_bin, "case.sif"], cwd=str(run_dir), capture_output=True, text=True)
+        env = os.environ.copy()
+        env["OMP_NUM_THREADS"] = "2"
+        p = subprocess.run([elmer_bin, "case.sif"], cwd=str(run_dir), env=env, capture_output=True, text=True)
         solve_duration = time.time() - t0
         
         if p.returncode != 0:
@@ -322,13 +361,15 @@ def evaluate_point(params):
     pj_series = np.array(pj_series)
     
     mean_fz = float(np.mean(fz_series))
+    mean_raw_uN = mean_fz * 1e6
+    mean_chiral_uN = mean_raw_uN - f_bias
     peak_fz = float(np.max(fz_series))
     min_fz = float(np.min(fz_series))
     mean_pj = float(np.mean(pj_series))
     
-    efficiency = (mean_fz * 1e6) / (mean_pj + 1e-12)  # uN / W
+    efficiency = mean_chiral_uN / (mean_pj + 1e-12)  # uN / W
     
-    # Se non è il punto nominale o non è un estremo, pulisci i VTU intermedi per risparmiare spazio su disco
+    # Pulisci i VTU intermedi per risparmiare spazio su disco
     is_nominal = (f_hz == 100 and rpm == 1200)
     if not is_nominal:
         for vf in vtus:
@@ -346,8 +387,12 @@ def evaluate_point(params):
         "omega_e_rad_s": 2.0 * np.pi * f_hz,
         "omega_m_rad_s": 2.0 * np.pi * (rpm / 60.0),
         "dt_s": dt_val,
-        "mean_Fz_mN": mean_fz * 1e3,
-        "mean_Fz_uN": mean_fz * 1e6,
+        "mean_Fz_raw_mN": mean_raw_uN * 1e-3,
+        "mean_Fz_raw_uN": mean_raw_uN,
+        "mean_Fz_chiral_mN": mean_chiral_uN * 1e-3,
+        "mean_Fz_chiral_uN": mean_chiral_uN,
+        "mean_Fz_mN": mean_chiral_uN * 1e-3,
+        "mean_Fz_uN": mean_chiral_uN,
         "peak_Fz_mN": peak_fz * 1e3,
         "peak_Fz_uN": peak_fz * 1e6,
         "min_Fz_mN": min_fz * 1e3,
@@ -356,7 +401,9 @@ def evaluate_point(params):
         "efficiency_uN_per_W": efficiency,
         "time_series_ms": (time_series * 1e3).tolist(),
         "Fz_series_mN": (fz_series * 1e3).tolist(),
-        "solve_duration_s": solve_duration
+        "solve_duration_s": solve_duration,
+        "status": f"COMPLETO ({TIMESTEPS_PER_CYCLE}/{TIMESTEPS_PER_CYCLE} step)",
+        "steps_computed": TIMESTEPS_PER_CYCLE
     }
     
     try:
@@ -365,14 +412,14 @@ def evaluate_point(params):
     except Exception:
         pass
         
-    print(f"  [DONE] f={f_hz:3d} Hz | n={rpm:4d} RPM | f_slip={f_slip:5.1f} Hz -> <Fz> = {mean_fz*1e6:+6.2f} uN | P_J = {mean_pj:6.3f} W | {solve_duration:.1f}s")
+    print(f"  [DONE] f={f_hz:3d} Hz | n={rpm:4d} RPM | f_slip={f_slip:5.1f} Hz -> <Fz_raw> = {mean_raw_uN:+6.2f} uN | <Fz_chiral> = {mean_chiral_uN:+6.2f} uN | P_J = {mean_pj*1e3:6.2f} mW | {solve_duration:.1f}s")
     return result
 
 def main():
-    print("=" * 80)
-    print("Sweep Parametrico 2D (Frequenza vs RPM): Massimizzazione Lift Assiale di Lorentz")
-    print("Variante Rotore Centrato a Z=0 - Griglia 5x5 (25 Combinazioni)")
-    print("=" * 80)
+    print("=" * 85)
+    print("FASE 2: SWEEP PARAMETRICO 2D (FREQUENZA VS RPM) SU GRIGLIA 5x5")
+    print("Variante Rotore Centrato a Z=0 - Decoupling Mesh Bias e Mappatura Risonanza")
+    print("=" * 85)
     
     SWEEP_DIR.mkdir(parents=True, exist_ok=True)
     WORK_BASE.mkdir(parents=True, exist_ok=True)
@@ -382,7 +429,34 @@ def main():
     elmer_bin = find_elmersolver()
     print(f"Solutore individuato: {elmer_bin}")
     
-    # Pre-caricamento mesh una sola volta
+    # 1. Carica Mesh Bias da validazione Fase 1
+    bias_json = DATA_DIR / "validazione_mst_chiral_bias.json"
+    f_bias = 0.0
+    if bias_json.is_file():
+        try:
+            with open(bias_json, "r", encoding="utf-8") as f:
+                b_data = json.load(f)
+            f_bias = b_data.get("bias_decoupling", {}).get("total_active_domain", {}).get("F_bias_uN", 0.0)
+            print(f"Mesh Bias caricato da validazione Fase 1: F_bias = {f_bias:+.3f} µN")
+        except Exception as e:
+            print(f"[WARN] Impossibile leggere F_bias da {bias_json}: {e}")
+    else:
+        print("[WARN] validazione_mst_chiral_bias.json non trovato, F_bias impostato a 0.0 µN")
+        
+    # 2. Carica punti parziali gia noti
+    partial_json = DATA_DIR / "sweep_risonanza_parziale.json"
+    partial_map = {}
+    if partial_json.is_file():
+        try:
+            with open(partial_json, "r", encoding="utf-8") as f:
+                p_data = json.load(f)
+            for c in p_data.get("configurations", []):
+                partial_map[(c["frequency_Hz"], c["rpm"])] = c
+            print(f"Caricati {len(partial_map)} punti pre-calcolati da sweep_risonanza_parziale.json")
+        except Exception as e:
+            print(f"[WARN] Impossibile leggere dati parziali: {e}")
+            
+    # 3. Pre-caricamento mesh
     ref_vtu = ROOT_DIR / "variants" / "rotore_centrato_z0" / "results_regime_B" / "macchina_out_t0001.vtu"
     if not ref_vtu.is_file():
         ref_vtu = ROOT_DIR / "variants" / "rotore_centrato_poli_alternati_semionda" / "results" / "macchina_out_t0001.vtu"
@@ -408,17 +482,20 @@ def main():
         "rotor_mask": (elem_r < 0.046) & (elem_z <= 0.051)
     }
     
-    # Preparazione task della matrice
+    # 4. Preparazione task della matrice 5x5
     tasks = []
     for f in FREQUENCIES:
         for n in RPMS:
-            tasks.append((f, n, elmer_bin, mesh_data))
+            c_entry = partial_map.get((f, n), None)
+            tasks.append((f, n, elmer_bin, mesh_data, f_bias, c_entry))
             
-    print(f"\nAvvio elaborazione parallela su {len(tasks)} combinazioni (4 worker concorrenti)...")
+    n_cached = sum(1 for t in tasks if t[5] is not None)
+    n_to_run = len(tasks) - n_cached
+    print(f"\nPunti della griglia 5x5: {len(tasks)} totali ({n_cached} riutilizzati da cache, {n_to_run} da calcolare)")
+    print(f"Avvio elaborazione parallela con 4 worker...")
     t_start = time.time()
     
     matrix_results = []
-    # Esecuzione parallela
     with ProcessPoolExecutor(max_workers=4) as executor:
         futures = {executor.submit(evaluate_point, t): (t[0], t[1]) for t in tasks}
         for fut in as_completed(futures):
@@ -431,17 +508,75 @@ def main():
                 print(f"[ECCEZIONE] Punto f={f_val}, n={n_val}: {e}")
                 
     total_time = time.time() - t_start
-    print("\n" + "=" * 80)
+    print("\n" + "=" * 85)
     print(f"Sweep 2D completato in {total_time:.1f}s ({total_time/60:.2f} minuti).")
     print(f"Combinazioni calcolate con successo: {len(matrix_results)}/25")
-    print("=" * 80)
+    print("=" * 85)
     
-    # Salva dataset intermedio
     matrix_results.sort(key=lambda r: (r["frequency_Hz"], r["rpm"]))
-    raw_path = DATA_DIR / "sweep_risonanza_raw.json"
-    with open(raw_path, "w", encoding="utf-8") as f:
-        json.dump(matrix_results, f, indent=2)
-    print(f"Dataset grezzo salvato in: {raw_path}")
+    
+    # Individua punto di picco e benchmark nominale
+    peak_point = max(matrix_results, key=lambda r: r["mean_Fz_chiral_uN"])
+    nominal_point = next((r for r in matrix_results if r["frequency_Hz"] == 100 and r["rpm"] == 1200), None)
+    
+    boost_pct = 0.0
+    if nominal_point and nominal_point["mean_Fz_chiral_uN"] != 0:
+        boost_pct = ((peak_point["mean_Fz_chiral_uN"] - nominal_point["mean_Fz_chiral_uN"]) / abs(nominal_point["mean_Fz_chiral_uN"])) * 100.0
+        
+    consolidated_output = {
+        "metadata": {
+            "title": "Sweep Parametrico 2D Frequenza vs RPM - Matrice Completa Consolidata",
+            "author": "Alessandro Brescacin",
+            "date": "2026-09-23",
+            "license": "CERN-OHL-S-2.0",
+            "variant": "rotore_centrato_z0",
+            "mantle": "rete stirata romboidale alluminio 30 gradi MATC cilindrico",
+            "core": "nucleo ferromagnetico equatoriale Z=0 (t=1.5cm)",
+            "mesh_bias_correction_uN": f_bias,
+            "total_points": len(matrix_results)
+        },
+        "key_findings": {
+            "peak_operating_point": {
+                "frequency_Hz": peak_point["frequency_Hz"],
+                "rpm": peak_point["rpm"],
+                "f_slip_Hz": peak_point["f_slip_Hz"],
+                "mean_Fz_raw_uN": peak_point["mean_Fz_raw_uN"],
+                "mean_Fz_chiral_uN": peak_point["mean_Fz_chiral_uN"],
+                "peak_Fz_uN": peak_point["peak_Fz_uN"],
+                "mean_Joule_W": peak_point["mean_Poule_W"],
+                "efficiency_uN_per_W": peak_point["efficiency_uN_per_W"],
+                "boost_vs_nominal_percentage": boost_pct
+            },
+            "nominal_benchmark": {
+                "frequency_Hz": 100,
+                "rpm": 1200,
+                "f_slip_Hz": 40.0,
+                "mean_Fz_raw_uN": nominal_point["mean_Fz_raw_uN"] if nominal_point else None,
+                "mean_Fz_chiral_uN": nominal_point["mean_Fz_chiral_uN"] if nominal_point else None,
+                "mean_Joule_W": nominal_point["mean_Poule_W"] if nominal_point else None
+            }
+        },
+        "full_scale_1e7_projection": {
+            "scale_factor_current": 100.0,
+            "scale_factor_Force": 10000.0,
+            "projected_peak_mean_Fz_mN": peak_point["mean_Fz_chiral_uN"] * 1e-3 * 10000.0 / 1e3,
+            "projected_nominal_mean_Fz_mN": (nominal_point["mean_Fz_chiral_uN"] * 1e-3 * 10000.0 / 1e3) if nominal_point else None
+        },
+        "configurations": matrix_results
+    }
+    
+    matrice_path = DATA_DIR / "sweep_risonanza_matrice.json"
+    with open(matrice_path, "w", encoding="utf-8") as f:
+        json.dump(consolidated_output, f, indent=2)
+    print(f"\nMatrice consolidata salvata in: {matrice_path}")
+    
+    # Stampa tabella riepilogativa ASCII
+    print("\n" + "=" * 95)
+    print(f"{'f [Hz]':>8} | {'RPM':>6} | {'f_slip [Hz]':>12} | {'<Fz_raw> [µN]':>14} | {'<Fz_chiral> [µN]':>16} | {'P_J [mW]':>10} | {'Efficienza [µN/W]':>18}")
+    print("-" * 95)
+    for r in matrix_results:
+        print(f"{r['frequency_Hz']:8d} | {r['rpm']:6d} | {r['f_slip_Hz']:12.1f} | {r['mean_Fz_raw_uN']:+14.2f} | {r['mean_Fz_chiral_uN']:+16.2f} | {r['mean_Poule_W']*1000.0:10.2f} | {r['efficiency_uN_per_W']:18.1f}")
+    print("=" * 95)
     
     return 0
 
