@@ -22,5 +22,9 @@ work_dirs/
 **/work_dirs/
 work_dirs_60rpm/
 **/work_dirs_60rpm/
+work_dirs_power_scaling/
+**/work_dirs_power_scaling/
+work_dirs*/
+**/work_dirs*/
 *.vtu
 
