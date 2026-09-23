@@ -87,19 +87,19 @@ The Open Chiral Flux Shaper is built around an enclosed cylindrical macro-chiral
 
 ## Core Architectures & Comparative Benchmark
 
-| Parameter / Metric | Baseline Architecture (v1.0.0) | Centered Continuous (1200 RPM) | Centered Locked-Rotor (0 RPM Peak) | Mirrored Polarity Pulsed (N-S) | Closed Can (1200 RPM, Lids) | Physical Mechanism / Specialty |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Core Geometry** | Ferromagnetic spider at bottom (Z = -H/2) | Ferromagnetic core at equator (Z = 0) | Ferromagnetic core at equator (Z = 0) | Ferromagnetic core at equator (Z = 0) | Equatorial Core (Z = 0), Closed Can (Z = ±H/2) | Equatorial magnetic flux bridge |
-| **Coil Excitation** | 60° Progressive Full Sine Wave (100 Hz) | 60° Progressive Full Sine Wave (100 Hz) | 60° Progressive Full Sine Wave (100 Hz) | 60° Shifted Half-Wave Pulse Train (J_k ≥ 0) | 60° Progressive Full Sine Wave (100 Hz) | Directional vs Sequenced Pulsed Drive |
-| **Rotor Speed & Slip** | 1200 RPM (f_slip = 40 Hz) | 1200 RPM (f_slip = 40 Hz) | **0 RPM (Locked, f_slip = 100 Hz)** | 1200 RPM (f_slip = 40 Hz) | 1200 RPM (f_slip = 40 Hz) | Mechanical tracking vs maximum relative slip |
-| **Polarity Layout** | Unipolar Homogeneous | Unipolar Homogeneous | Unipolar Homogeneous | Alternating Mirrored: s_k = (-1)^(k-1) | Unipolar Homogeneous | Adjacent N-S magnetic return loops |
-| **Radial Field B_rad (R = 6 cm)** | **62.98 µT** | **211.35 µT** | **211.35 µT** | **135.84 µT** | **185.2 µT** | Strong equatorial concentration (+115.7% vs baseline) |
-| **Poynting Power Flux (R = 12 cm)** | **+7.282 mW** | **+2.620 mW** | **+2.620 mW** | **+102.76 mW** | ≈ 0 mW (Confined) | **+1311% pulsed harmonic radiation boost** |
-| **Net Axial Lorentz Force <F_z>** | ≈ 0 (leakage) | **+4.67 µN** | **+5.72 µN (+57.2 mN full scale)** | **-0.93 µN (≈ 0 mN balanced)** | **-0.20 µN (F_z,chiral = -0.04 µN)** | **Locked-rotor resonance peak (+22.5% boost)** |
-| **Peak Instantaneous Force F_z,max** | ≈ 0 | +27.41 µN | **+12.89 µN (+128.9 mN full scale)** | ±26.50 µN (symmetric) | -2.96 µN | Smooth ponderomotive lift at locked rotor |
-| **Joule Dissipation P_J** | **2.437 W** | **1.52 mW** | **1.02 mW (0.0010 W)** | **1.90 mW (0.0019 W)** | **0.017 mW (17.4 µW)** | **-98.9% thermal collapse (Hermetic confinement)** |
-| **Lift Efficiency η_F = <F_z> / P_J** | ~ 0 | 3065 µN/W | **5587 µN/W** | ≈ 0 (balanced) | N/A (Confined Cavity) | **Maximum solid-state thrust-to-power ratio** |
-| **Primary Optimal Use-Case** | Directional Wireless Venting | Continuous Electromagnetic Lift | **Max Lorentz Lift (Solid-State Thruster)** | Resonant Wireless Pulsed Power & Low Heat | **Ultra-Low Loss Confined Cavity / Field Shielder** | Mission-specific electromagnetic tuning |
+| Parameter / Metric | Baseline Architecture (v1.0.0) | Centered Continuous (1200 RPM) | Centered Locked-Rotor (0 RPM Peak) | Mirrored Polarity Pulsed (N-S) | Closed Can (1200 RPM, Lids) | Closed Can Thirds Handover (Pulsed 1/3, 2/3, 1) | Physical Mechanism / Specialty |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Core Geometry** | Ferromagnetic spider at bottom (Z = -H/2) | Ferromagnetic core at equator (Z = 0) | Ferromagnetic core at equator (Z = 0) | Ferromagnetic core at equator (Z = 0) | Equatorial Core (Z = 0), Closed Can (Z = ±H/2) | Equatorial Core (Z = 0), Closed Can (Z = ±H/2) | Equatorial magnetic flux bridge |
+| **Coil Excitation** | 60° Progressive Full Sine Wave (100 Hz) | 60° Progressive Full Sine Wave (100 Hz) | 60° Progressive Full Sine Wave (100 Hz) | 60° Shifted Half-Wave Pulse Train (J_k ≥ 0) | 60° Progressive Full Sine Wave (100 Hz) | **Asymmetric Thirds Handover (1/3, 2/3, 100%)** | Directional vs Sequenced Pulsed Drive |
+| **Rotor Speed & Slip** | 1200 RPM (f_slip = 40 Hz) | 1200 RPM (f_slip = 40 Hz) | **0 RPM (Locked, f_slip = 100 Hz)** | 1200 RPM (f_slip = 40 Hz) | 1200 RPM (f_slip = 40 Hz) | **0 RPM (Solid-State Static Operation)** | Mechanical tracking vs maximum relative slip |
+| **Polarity Layout** | Unipolar Homogeneous | Unipolar Homogeneous | Unipolar Homogeneous | Alternating Mirrored: s_k = (-1)^(k-1) | Unipolar Homogeneous | **3 Diametral Pairs (180°), Opposed PN/NP Diodes** | Diametral flux antisymmetry |
+| **Radial Field B_rad (R = 6.5 cm)** | **62.98 µT** | **211.35 µT** | **211.35 µT** | **135.84 µT** | **185.2 µT** | **1970.2 µT** | Strong equatorial & cusp concentration |
+| **Poynting Power Flux (Far-Field R = 15 cm)** | **+7.282 mW** | **+2.620 mW** | **+2.620 mW** | **+102.76 mW** | ≈ 0 mW (Confined) | **+56.32 µW** (Gauss Residue 1.50%) | **Hermetic polar confinement with radial beaming** |
+| **Net Axial Lorentz Force <F_z>** | ≈ 0 (leakage) | **+4.67 µN** | **+5.72 µN (+57.2 mN full scale)** | **-0.93 µN (≈ 0 mN balanced)** | **-0.20 µN (F_z,chiral = -0.04 µN)** | **+0.028 µN (Positive DC Lift)** | **Locked-rotor resonance peak (+22.5% boost)** |
+| **Peak Instantaneous Force F_z,max** | ≈ 0 | +27.41 µN | **+12.89 µN (+128.9 mN full scale)** | ±26.50 µN (symmetric) | -2.96 µN | **+1.161 µN** | Smooth ponderomotive lift at locked rotor |
+| **Joule Dissipation P_J** | **2.437 W** | **1.52 mW** | **1.02 mW (0.0010 W)** | **1.90 mW (0.0019 W)** | **0.017 mW (17.4 µW)** | **0.0088 mW (8.83 µW)** | **-99.9996% loss collapse (Absolute low)** |
+| **Lift Efficiency η_F = <F_z> / P_J** | ~ 0 | 3065 µN/W | **5587 µN/W** | ≈ 0 (balanced) | N/A (Confined Cavity) | **3194 µN/W** | High solid-state thrust-to-power ratio |
+| **Primary Optimal Use-Case** | Directional Wireless Venting | Continuous Electromagnetic Lift | **Max Lorentz Lift (Solid-State Thruster)** | Resonant Wireless Pulsed Power & Low Heat | **Ultra-Low Loss Confined Cavity / Field Shielder** | **Solid-State Cusp Divergence & Sub-10 µW Thruster** | Mission-specific electromagnetic tuning |
 
 ---
 
@@ -141,6 +141,12 @@ The Open Chiral Flux Shaper is built around an enclosed cylindrical macro-chiral
 | :---: | :---: |
 | <img src="variants/rotore_centrato_mantello_chiuso/figures/fig_03_mappatura_sferica_3d_campo_B_E.png" width="450" alt="3D Spherical Field Mapping" /> | <img src="variants/rotore_centrato_mantello_chiuso/figures/fig_04_diagramma_radiazione_poynting_360.png" width="450" alt="360° Polar Radiation Diagram" /> |
 | *3D Fibonacci sphere mapping of |B|, |E|, and Poynting vector with oriented 3D direction quivers.* | *360° polar radiation diagrams demonstrating complete axial shielding by the lids (Z = ±H/2) and log radial decay.* |
+
+### 6. Diametral 3-Pair Asymmetric Thirds Handover (33.3% / 66.7% / 100%) with Closed Can
+| Current Waveforms & Handover Thresholds (300 DPI) | 3D Divergent Cusp Magnetic Field Topology (300 DPI) | Polar Radiation Patterns & Confinement (300 DPI) |
+| :---: | :---: | :---: |
+| <img src="variants/rotore_centrato_mantello_chiuso/figures/fig_05_forme_onda_terzi_handover.png" width="310" alt="Current Waveforms & Handover" /> | <img src="variants/rotore_centrato_mantello_chiuso/figures/fig_06_mappatura_3d_cuspide_divergente.png" width="310" alt="3D Divergent Cusp Topology" /> | <img src="variants/rotore_centrato_mantello_chiuso/figures/fig_07_diagrammi_radiazione_handover.png" width="310" alt="Radiation Diagrams" /> |
+| *Current waveforms of the 3 diametral pairs showing the exact 33.3% (1/3 rising), 66.7% (2/3 falling), and 100% peak handover thresholds, along with P_J(t) and F_z(t).* | *3D vector field of magnetic flux density B demonstrating divergent flux ejection from top lid (+Z), bottom lid (-Z), and lateral equator.* | *Equatorial (XY) and meridian (XZ) polar diagrams illustrating radial beaming and hermetic axial flux containment by the lids.* |
 
 </div>
 
@@ -368,6 +374,12 @@ python variants/rotore_centrato_mantello_chiuso/scripts/plot_closed_mantle_resul
 python variants/rotore_centrato_mantello_chiuso/scripts/mappa_sfere_campi_EB.py
 ```
 
+### 8. Reproduce Diametral 3-Pair Thirds Handover & 3D Cusp Mapping
+```bash
+# Execute 64-timestep transient FEM simulation with thirds handover MATC logic, Fibonacci sampling, and 300 DPI plots
+python variants/rotore_centrato_mantello_chiuso/scripts/run_pulsed_third_handover.py
+```
+
 ---
 
 ## Sommario Esecutivo per la Comunità Scientifica Italiana
@@ -383,6 +395,7 @@ L'**Open Chiral Flux Shaper** è un dispositivo elettromagnetico open-source fon
 - **Protocollo Scientifico di Falsificazione e Controllo di Parità:** Per escludere bias numerici (asimmetria stocastica della mesh 3D in Z), sono stati condotti 4 run di controllo rigorosi a 100 Hz, 0 RPM. Il test a mantello puramente isotropo (0°) e il test a chiralità speculare (-30°) hanno rivelato che la forza grezza calcolata di ~ +6 µN include una componente di bias da discretizzazione spaziale (F_bias ≈ +5.63 µN), mentre il contributo chirale netto puro delle lamelle a 30° è quantificabile in F_chiral = ½ (F_+30° - F_-30°) ≈ **+0.84 µN**. L'intero set di controllo a 4 quadranti è formalizzato e disponibile nel repository.
 - **Variante a Mantello Chiuso a Barattolo (Z = ±H/2) e Crollo Termico (-98.9%):** In perfetta conformità con il prototipo sperimentale reale (dotato di coperchio superiore e inferiore in rete metallica, configurazione chiusa a barattolo e non tubo aperto), è stata implementata e simulata la variante a mantello chiuso con scomposizione nei 4 settori fisici (parete laterale, coperchio superiore, coperchio inferiore, rotore interno). I coperchi conduttivi cortocircuitano le dispersioni assiali di flusso e riflettono le onde elettromagnetiche nella cavità: le perdite Joule totali crollano del **-98.9%** (da 1.524 mW a soli **0.017 mW / 17.4 µW** complessivi, e appena 8.49 µW sul barattolo di alluminio). Il disaccoppiamento speculare (±30°) abbatte il bias geometrico della mesh del 96.7% (F_bias = -0.16 µN) e conferma a 1200 RPM un lift chirale netto debolmente negativo (F_z,chiral = -0.041 µN), coerente con la fase induttiva a 40 Hz di slip.
 - **Mappatura Sferica 3D a 360° e Confinamento Polare di Poynting:** Il campionamento su reticoli sferici di Fibonacci (N = 1200 punti) a R = 6.5, 10.0, 15.0 cm certifica la solenoidalità di Gauss (residuo < 2% su Mid e Far Field). I diagrammi polari evidenziano la perfetta schermatura assiale esercitata dai coperchi conduttivi a Z = ±H/2, dove l'emissione di Poynting crolla a zero lungo l'asse Z, mentre il flusso viene espulso in lobi radiali sull'equatore (P_rad = 3.93 mW a 10 cm, 0.23 mW a 15 cm con decadimento logaritmico).
+- **Sequenza ad Handover a Terzi (33.3% / 66.7% / 100%) a Coppie Diametrali e Topologia di Cuspide:** Pilotando le 6 bobine a 3 coppie diametrali a 180° (Coppia A: 1-4, Coppia B: 2-5, Coppia C: 3-6) con diodi contrapposti (PN diretto e NP invertito, antisimmetria di flusso diametrale) e logica di handover asimmetrico a terzi (trigger B a 1/3 in salita su A, trigger C a 2/3 in discesa su B, chiusura ciclo al 100% picco di C su A), la macchina raggiunge un nuovo minimo assoluto di dissipazione termica: **P_J = 0.0088 mW (8.83 µW)**, con un abbattimento del **-99.9996%** rispetto al benchmark aperto. La forza assiale di Lorentz mantiene un valore medio netto positivo continuo (**⟨F_z⟩ = +0.028 µN**, picco +1.161 µN). La mappatura vettoriale 3D a 360° evidenzia la caratteristica topologia a cuspide divergente con espulsione simmetrica di flusso magnetico uscente da sopra (+Z), da sotto (-Z) e lateralmente sull'equatore.
 
 ### Scheda Tecnica Costruttiva, Materiali (BOM) e Cinematica Solid-State
 
