@@ -1,0 +1,26 @@
+!------ Skeleton for body section -----
+Body 1
+  Name = MantelloTriskelion
+End
+
+Body 2
+  Name = Coils24
+End
+
+Body 3
+  Name = CoreEsagramma
+End
+
+Body 4
+  Name = CavitaAriaInterna
+End
+
+Body 5
+  Name = AriaEsterna
+End
+
+!------ Skeleton for boundary section -----
+Boundary Condition 1
+  Name = FarField
+End
+

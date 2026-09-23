@@ -1,0 +1,8 @@
+! ----- names for bodies -----
+$ MantelloTriskelion = 1
+$ Coils24 = 2
+$ CoreEsagramma = 3
+$ CavitaAriaInterna = 4
+$ AriaEsterna = 5
+! ----- names for boundaries -----
+$ FarField = 1
