@@ -1,0 +1,135 @@
+{
+  "timestamp": "2026-09-23 13:54:45",
+  "simulation_variant": "rotore_centrato_mantello_chiuso",
+  "description": "Mappatura sferica 360 gradi dei campi B, E e vettore di Poynting su sfere di Fibonacci con verifica di Gauss",
+  "frequency_Hz": 100,
+  "rpm": 1200,
+  "timesteps": 20,
+  "dt_s": 0.0005,
+  "n_fibonacci_points": 1200,
+  "spheres": [
+    {
+      "radius_m": 0.065,
+      "radius_cm": 6.5,
+      "area_m2": 0.05309291584566751,
+      "n_points": 1200,
+      "gauss": {
+        "phi_net_Tm2": 5.847546977382197e-06,
+        "phi_abs_Tm2": 2.3019982756263532e-05,
+        "relative_residual": 0.2540204759943667,
+        "relative_residual_percent": 25.40204759943667,
+        "mean_step_residual_percent": 16.80909842096131,
+        "max_step_residual_percent": 48.66466430766755,
+        "certified_pass": false
+      },
+      "poynting": {
+        "p_rad_total_W": 3.2624414761098426,
+        "p_rad_total_uW": 3262441.476109843,
+        "p_rad_peak_uW": 34314448.9467759,
+        "mean_S_rad_uW_m2": 61447773.66519537,
+        "max_S_rad_uW_m2": 21024990726.073833,
+        "min_S_rad_uW_m2": -551213727.2948749,
+        "mean_S_mag_uW_m2": 278992850.7180763
+      },
+      "B_field": {
+        "mean_mag_uT": 1422.640171221832,
+        "max_mag_uT": 58747.39066816312,
+        "rms_mag_uT": 2121.261266325489,
+        "mean_Brad_uT": 110.13798892455006,
+        "mean_abs_Brad_uT": 433.5791769881105,
+        "mean_Btheta_uT": 0.5768862871432702,
+        "mean_Bphi_uT": 346.6859673583745
+      },
+      "E_field": {
+        "mean_mag_mV_m": 219.20509219851445,
+        "max_mag_mV_m": 422.58451449991094,
+        "rms_mag_mV_m": 1988.8194695339243,
+        "mean_Erad_mV_m": 184.31089818223478,
+        "mean_Etheta_mV_m": -1.5345665303316025,
+        "mean_Ephi_mV_m": 0.4774055648411535
+      }
+    },
+    {
+      "radius_m": 0.1,
+      "radius_cm": 10.0,
+      "area_m2": 0.12566370614359174,
+      "n_points": 1200,
+      "gauss": {
+        "phi_net_Tm2": 3.567153123764753e-08,
+        "phi_abs_Tm2": 1.4558114969705417e-06,
+        "relative_residual": 0.024502850326003776,
+        "relative_residual_percent": 2.4502850326003776,
+        "mean_step_residual_percent": 2.0398964877214385,
+        "max_step_residual_percent": 6.230712503493409,
+        "certified_pass": false
+      },
+      "poynting": {
+        "p_rad_total_W": 0.003926545474976657,
+        "p_rad_total_uW": 3926.545474976657,
+        "p_rad_peak_uW": 88624.10115018235,
+        "mean_S_rad_uW_m2": 31246.456080882457,
+        "max_S_rad_uW_m2": 9316437.06809031,
+        "min_S_rad_uW_m2": -8650031.483413475,
+        "mean_S_mag_uW_m2": 1767642.6918810636
+      },
+      "B_field": {
+        "mean_mag_uT": 27.918156244459684,
+        "max_mag_uT": 722.0324998355336,
+        "rms_mag_uT": 44.23995505613032,
+        "mean_Brad_uT": 0.2838650262064284,
+        "mean_abs_Brad_uT": 11.584979797643678,
+        "mean_Btheta_uT": 7.205163330473907,
+        "mean_Bphi_uT": -4.8639768315318195
+      },
+      "E_field": {
+        "mean_mag_mV_m": 54.7680994182098,
+        "max_mag_mV_m": 186.3855682793472,
+        "rms_mag_mV_m": 477.4652752765837,
+        "mean_Erad_mV_m": 33.25550468430083,
+        "mean_Etheta_mV_m": -0.694480385848881,
+        "mean_Ephi_mV_m": -0.25484918448421806
+      }
+    },
+    {
+      "radius_m": 0.15,
+      "radius_cm": 15.0,
+      "area_m2": 0.2827433388230814,
+      "n_points": 1200,
+      "gauss": {
+        "phi_net_Tm2": -5.731111743744551e-09,
+        "phi_abs_Tm2": 4.654055608815093e-07,
+        "relative_residual": 0.01231423131381415,
+        "relative_residual_percent": 1.231423131381415,
+        "mean_step_residual_percent": 1.0115792042219667,
+        "max_step_residual_percent": 3.0625338715937254,
+        "certified_pass": true
+      },
+      "poynting": {
+        "p_rad_total_W": 0.00023078841883086615,
+        "p_rad_total_uW": 230.78841883086614,
+        "p_rad_peak_uW": 1768.8209266700326,
+        "mean_S_rad_uW_m2": 816.2470592287781,
+        "max_S_rad_uW_m2": 50388.61353447959,
+        "min_S_rad_uW_m2": -51331.46564298801,
+        "mean_S_mag_uW_m2": 18262.748014935532
+      },
+      "B_field": {
+        "mean_mag_uT": 4.23248347765037,
+        "max_mag_uT": 10.79755433247161,
+        "rms_mag_uT": 7.0834357702004045,
+        "mean_Brad_uT": -0.020269661409532347,
+        "mean_abs_Brad_uT": 1.6460354568166278,
+        "mean_Btheta_uT": 2.6440344538076865,
+        "mean_Bphi_uT": -0.23666407379989776
+      },
+      "E_field": {
+        "mean_mag_mV_m": 2.025654765762574,
+        "max_mag_mV_m": 10.636014196427391,
+        "rms_mag_mV_m": 21.197060551846224,
+        "mean_Erad_mV_m": 0.15565901451727296,
+        "mean_Etheta_mV_m": -0.1576676496257307,
+        "mean_Ephi_mV_m": -0.023553969697939763
+      }
+    }
+  ]
+}
