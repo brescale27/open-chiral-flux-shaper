@@ -134,7 +134,7 @@ Every diametrically opposite coil pair ($\Delta\theta = 180^\circ$) operates in 
 - Current density is calibrated to $J_0 = 2.4405 \times 10^5\text{ A/m}^2$, delivering exactly **$100.0\text{ W}$ per solenoid** ($I^2 R = 100\text{ W}$).
 - Total active electrical stator power across the 24 coils: **$P_{\text{array}} = 2.40\text{ kW}$**.
 
-#### Key Physical & Electrodynamic Results:
+#### Key Physical & Electrodynamic Results (Balanced Waveguide):
 1. **Self-Balancing Low-Drift Ponderomotive Vector:**
    The net 3D volume Lorentz force exhibits a balanced, steady limit cycle:
    $$\langle F_x \rangle = +7.67\ \mu\text{N}, \quad \langle F_y \rangle = +11.93\ \mu\text{N}, \quad \langle F_z \rangle = -4.04\ \mu\text{N} \implies |\langle \vec{F} \rangle| = 14.75\ \mu\text{N}$$
@@ -147,6 +147,24 @@ Every diametrically opposite coil pair ($\Delta\theta = 180^\circ$) operates in 
    Fibonacci sphere evaluation certifies strict solenoidal compliance: **$1.896\%$** at Mid-Field ($10\text{ cm}$) and **$0.346\%$** at Far-Field ($15\text{ cm}$), both passing well below the 2.0% CERN-OHL numerical limit.
 5. **Magnetic Saturation Safety Margin:**
    Peak mantle induction is $B_{\text{max}} = 4.45\text{ mT}$, operating with a **$99.7\%$ linear margin** below the $1.5\text{ T}$ saturation threshold ($B_{\text{sat}}$).
+
+#### Accumulated Thrust Variant: Progressive Phase Law ($\Delta\theta_{\text{prog}} = 15^\circ$)
+In the pure Pisano mod 9 sequence, diametral phase conjugacy ($\phi_{k+12} = -\phi_k$) enforces a symmetric cancellation of antipodal dipole moments, causing the net magnetic dipole to collapse to zero twice per cycle. To break this antipodal self-cancellation and accumulate the volume Lorentz forces into a net directional propulsion vector while maintaining topological phase stability, a progressive directional phase shift was applied:
+$$\phi_k = \left( \frac{v_k}{9} \times 2\pi + k \cdot \Delta\theta_{\text{prog}} \right) \pmod{2\pi}, \quad \Delta\theta_{\text{prog}} = 15^\circ = \frac{\pi}{12}\text{ rad}$$
+- **Unidirectional Force Accumulation:**
+  * Transverse force component surges: $\langle F_x \rangle = \mathbf{+14.32\ \mu\text{N}}$ (+86.7% amplification compared to balanced baseline $+7.67\ \mu\text{N}$).
+  * Net vector magnitude: $|\langle \vec{F} \rangle| = \mathbf{16.16\ \mu\text{N}}$ ($\langle F_y \rangle = -6.22\ \mu\text{N}, \langle F_z \rangle = -4.16\ \mu\text{N}$).
+  * Peak instantaneous surge: $F_{\text{peak}} = \mathbf{46.20\ \mu\text{N}}$ (+49.8% amplification over the $30.85\ \mu\text{N}$ balanced peak).
+- **Subbody Thermal Audit & Flawless Outer Shielding:**
+  * Stator active electrical input: $2.40\text{ kW}$ ($100.0\text{ W}$ across each of the 24 coils).
+  * Total mantle eddy dissipation: **$0.316\text{ mW}$** ($0.000316\text{ W}$), reduced by 46.3% due to progressive wave coordination.
+  * Mantle subbody breakdown: Layer 1 (+30°): $0.315\text{ mW}$ (99.5%), Layer 2 (0°): $0.0014\text{ mW}$ (0.5%), **Layer 3 (-30° outer layer): exactly $0.0000\text{ W}$ (0.0%)** — impenetrable exterior thermal shielding maintained.
+  * Central PEEK core eddy dissipation: **$0.21\ \mu\text{W}$** ($0.00000021\text{ W}$) — absolute dielectric decoupling.
+- **Gauss Solenoidality & Saturation Limits:**
+  * Far-field ($R = 15\text{ cm}$) Gauss residual: **$0.200\%$** (`PASS`, certified below the 2.0% limit).
+  * Peak mantle induction: $B_{\text{max}} = 2.01\text{ mT}$, operating with a **$99.87\%$ linear margin** well below $B_{\text{sat}} = 1.50\text{ T}$.
+- **Deep-Space Radiative Thermal Balance (Stefan-Boltzmann):**
+  * Mantle equilibrium temperature in vacuum: $T_{\text{eq}} = 1122.0\text{ K}$ ($848.9^\circ\text{C}$). Auxiliary radiative cooling area required for continuous CW operation at $T \le 350\text{ K}$ ($76.9^\circ\text{C}$): $A_{\text{rad}} = 3.29\text{ m}^2$.
 
 ---
 
@@ -172,10 +190,11 @@ The following synoptic master table consolidates the entire electromagnetic, mec
 | **Dual 90° Spherical (1.5x Power)** | **Amagnetic PEEK Core** | Spherical X (µr = 1000, ±30°) | Dual Continuous 3-Phase NPNPNP | **0 RPM (High-Power)** | **12.4 mT (1.81 T mantle pk)** | **$\mathbf{\|\langle \vec{F} \rangle\| = 9.926\text{ N}}$** ($F_x=+8544, F_z=-4852$) | **290.10 N** | **2434.5 W** | **4.08 mN/W** | **Multi-Newton Solid-State Thruster** |
 | **Dual 90° Spherical (2.0x Power)** | **Amagnetic PEEK Core** | Spherical X (µr = 1000, ±30°) | Dual Continuous 3-Phase NPNPNP | **0 RPM (High-Power)** | **14.1 mT (1.38 T mantle pk)** | **$\mathbf{\|\langle \vec{F} \rangle\| = 6.664\text{ N}}$** ($F_x=+5483, F_z=-3734$) | **273.60 N** | **1549.3 W** | **4.30 mN/W** | **High-Output Vector Shaper** |
 | **Fibonacci 24x24 (100 W/Coil)** | **Amagnetic PEEK Core** | Spherical X (µr = 1000, ±30°) | 24-Sector Pisano mod 9 (100 Hz) | **0 RPM (Solid-State Waveguide)** | 60.3 µT (1.13 mT peak) | $\langle F_x \rangle = +7.67, \langle F_y \rangle = +11.93, \langle F_z \rangle = -4.04\ \mu\text{N}$ ($|\langle \vec{F} \rangle| = 14.75\ \mu\text{N}$) | 30.85 µN | **2.40 kW (100 W/coil)** | Self-Balancing Waveguide | **Pisano mod 9 Topological Shaper** |
+| **Fibonacci 24x24 (Spinta Accumulata)** | **Amagnetic PEEK Core** | Spherical X (µr = 1000, ±30°) | 24-Sector Pisano mod 9 + 15° Prog | **0 RPM (Accumulated Wave)** | 56.1 µT (668.5 µT peak) | $\langle F_x \rangle = +14.32, \langle F_y \rangle = -6.22, \langle F_z \rangle = -4.16\ \mu\text{N}$ ($|\langle \vec{F} \rangle| = 16.16\ \mu\text{N}$) | **46.20 µN** | **2.40 kW (100 W/coil)** | Unidirectional Accumulator | **Progressive Wave Vector Shaper** |
 
 ---
 
-### 6. Visual Showcase: Publication-Grade 300 DPI Diagnostic Plates (Figures 18-27) & Dynamic Animated Video
+### 6. Visual Showcase: Publication-Grade 300 DPI Diagnostic Plates (Figures 18-28) & Dynamic Animated Videos
 
 <div align="center">
 
@@ -244,6 +263,18 @@ The following synoptic master table consolidates the entire electromagnetic, mec
 | :---: |
 | <img src="figures/video_dinamica_fibonacci_24x24.gif" width="900" alt="Dynamic Video: Electrodynamic Forces and Rotating Fields" /> |
 | *Synchronized high-resolution electrodynamic simulation video over the 16.0 ms transient electrical cycle (64 timesteps, 100 Hz). Left: Equatorial plane (Z=0) 2D contour and vector streamplot of magnetic induction $|\vec{B}|(x, y, t)$ depicting the propagating chiral magnetic vortex and dynamic phase states of the 24 Fibonacci coils. Top Right: 3D state-space force hodograph tracking the instantaneous vector tip $\vec{F}(t)$ and its closed orbital limit cycle. Bottom Right: Real-time scrolling waveforms of vector forces ($F_x, F_y, F_z$) with traveling temporal synchronization cursor.* |
+
+#### Frontier Figure 28: Plate 9 — Fibonacci 24x24 Accumulated Thrust & Progressive Phase Law (300 DPI)
+| Progressive Phase Synthesis, Unidirectional Force Accumulation & Thermal Shielding Audit |
+| :---: |
+| <img src="figures/fig_28_fibonacci_24x24_spinta_accumulata.png" width="900" alt="Plate 9: Fibonacci 24x24 Accumulated Thrust" /> |
+| *Panel A: Polar map of the 24 sectors displaying progressive phase law $\phi_k = (v_k/9 \cdot 2\pi + k \cdot 15^\circ) \pmod{2\pi}$ breaking diametral cancellation to accumulate unidirectional thrust. Panel B: Micro-Newton Lorentz force waveforms showing directional bias ($\langle F_x \rangle = +14.32\ \mu\text{N}$, peak $46.20\ \mu\text{N}$). Panel C: Subbody Joule dissipation confirming 100.0 W/coil calibration ($2.40\text{ kW}$ total) and 0.00 W exterior heating on Layer 3 (-30° outer). Panel D: Far-field Gauss solenoidality (0.20% residual, PASS) and linear magnetic margin ($B_{\text{max}} = 2.01\text{ mT} \ll 1.5\text{ T}$).* |
+
+#### Frontier Animated Video: Accumulated Thrust Dynamics, Rotating Vortex & 3D Vector Hodograph (High-Resolution Video)
+| Dynamic 3D Propagating Chiral Vortex, Accumulated Force Tip Trajectory & Real-Time Waveforms |
+| :---: |
+| <img src="figures/video_dinamica_fibonacci_spinta_accumulata.gif" width="900" alt="Dynamic Video: Accumulated Thrust and Rotating Fields" /> |
+| *Synchronized high-resolution electrodynamic simulation video over the 16.0 ms transient electrical cycle (64 timesteps, 100 Hz). Left: Equatorial plane (Z=0) 2D contour and vector streamplot of magnetic induction $|\vec{B}|(x, y, t)$ depicting the unidirectional progressive chiral magnetic wave and dynamic excitation states of the 24 coils. Top Right: 3D state-space force hodograph tracking the instantaneous vector tip $\vec{F}(t)$ and its accumulated directional orbit. Bottom Right: Real-time scrolling waveforms of vector forces ($F_x, F_y, F_z$) with traveling temporal synchronization cursor.* |
 
 </div>
 
@@ -507,6 +538,9 @@ python scripts/run_power_scaling_study.py
 
 # 19. 24x24 Fibonacci Architecture Study & Dynamic Video Generation (Figure 27 & Video GIF)
 python scripts/run_fibonacci_24x24_simulation.py
+
+# 20. Fibonacci 24x24 Accumulated Thrust Study & Dynamic Video Generation (Figure 28 & Video GIF)
+python scripts/run_fibonacci_spinta_accumulata.py
 ```
 
 ---
@@ -540,6 +574,13 @@ La campagna transiente Elmer FEM su guscio sferico a 24 gruppi distribuiti lungo
 - **Vettore di Forza e Odografo 3D Bilanciato:** Forza media ponderomotrice $\langle F_x \rangle = +7.67\ \mu\text{N}$, $\langle F_y \rangle = +11.93\ \mu\text{N}$, $\langle F_z \rangle = -4.04\ \mu\text{N}$ ($|\langle \vec{F} \rangle| = 14.75\ \mu\text{N}$, picco $30.85\ \mu\text{N}$), descrivendo un'orbita chiusa regolare a bassa deriva.
 - **Calibrazione a 100 W per Bobina:** Potenza attiva nominale totale dell'array pari a $2.40\text{ kW}$ ($24 \times 100\text{ W}$). Le correnti parassite nel mantello risultano straordinariamente attenuate a soli $0.588\text{ mW}$, con lo Strato 3 esterno (-30°) attestato a $0.0000\text{ W}$ ($0.0\%$, totale isolamento termico esterno) e il nucleo PEEK a $0.29\ \mu\text{W}$.
 - **Solenoidalità di Gauss Rigorosa:** Residuo di flusso nullo pari a $1.896\%$ a Mid-Field ($10\text{ cm}$) e $0.346\%$ a Far-Field ($15\text{ cm}$), con un margine di saturazione magnetica del mantello del $99.7\%$ ($B_{\text{max}} = 4.45\text{ mT} \ll 1.5\text{ T}$).
+
+#### Variante a Spinta Accumulata: Legge di Fase Progressiva ($\Delta\theta_{\text{prog}} = 15^\circ$)
+Rompendo la cancellazione antipodale mediante l'introduzione di una progressione direzionale sincrona $\phi_k = (v_k/9 \cdot 2\pi + k \cdot 15^\circ) \pmod{2\pi}$:
+- **Raddoppio della Spinta Trasversale:** La componente media $\langle F_x \rangle$ sale da $+7.67\ \mu\text{N}$ a **$+14.32\ \mu\text{N}$** (+86.7%), portando il modulo vettoriale a **$|\langle \vec{F} \rangle| = 16.16\ \mu\text{N}$** con picco istantaneo di **$46.20\ \mu\text{N}$** (+49.8%).
+- **Isolamento Termico Esterno Perfetto:** Dissipazione parassita del mantello ridotta a soli **$0.316\text{ mW}$** su $2.40\text{ kW}$ attivi, con lo Strato 3 esterno a **$0.0000\text{ W}$** ($0.0\%$) e nucleo PEEK a $0.21\ \mu\text{W}$.
+- **Solenoidalità e Limiti di Saturazione:** Residuo di Gauss far-field pari a **$0.200\%$** (`PASS`) e induzione di picco nel mantello $B_{\text{max}} = 2.01\text{ mT}$ (margine lineare del $99.87\%$ rispetto a $B_{\text{sat}} = 1.50\text{ T}$).
+- **Equilibrio Radiativo di Stefan-Boltzmann:** Nel vuoto profondo la temperatura di equilibrio è pari a $1122.0\text{ K}$ ($848.9^\circ\text{C}$), gestibile continuativamente a $<77^\circ\text{C}$ con $3.29\text{ m}^2$ di superficie radiante o tramite funzionamento a treni d'impulso (*burst mode*).
 
 ### 5. Superamento della Gabbia di Lenz e Crollo Termico del -98.9% nel Barattolo Chiuso
 Nei gusci conduttivi tradizionali la legge di Lenz genera correnti parassite azimutali massive. L'orientazione lamellare a 30° devia le correnti parassite in percorsi elicoidali assiali, srotolando il flusso verso l'esterno in onde radiali omnidirezionali a 360°. Nella configurazione a barattolo chiuso ("Enclosed Can", coperchi a $Z = \pm H/2$), i coperchi riflettono il campo assiale eliminando le perdite di dispersione: le perdite Joule complessive crollano del **-98.9%** (da $1.524\text{ mW}$ a soli **$17.4\ \mu\text{W}$**).

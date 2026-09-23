@@ -1,0 +1,215 @@
+! Elmer FEM Configuration: Gabbia Sferica Ibrida a 24 Gruppi con Mappa di Fibonacci a Spinta Vettoriale Accumulata
+! Campagna di Test: Spinta Unidirezionale Progressiva (Periodo Pisano mod 9 + Sfasamento Angolare Sincrono Delta_theta = 15°)
+! Rimozione dell'auto-cancellazione diametrale reattiva per accumulare la spinta macroscopica lungo la circonferenza
+! Mantello sferico in Rete Stirata a Triplo Strato (+30° / 0° / -30°) Ferromagnetica (mu_r = 1000.0)
+! Array di 24 Gruppi di Solenoidi (576 nodi gerarchici equivalenti, Delta_theta = 15°)
+! Nucleo centrale amagnetico sferico in tecnopolimero PEEK (mu_r = 1.0, sigma = 0.0 S/m)
+! Risoluzione transiente su 64 timestep da dt = 0.25 ms (f = 100 Hz, T_tot = 16.0 ms, >1.6 cicli completi)
+! Potenza calibrata: 100 W per solenoide (J0 = 2.4405e5 A/m^2, Potenza Totale Array = 2.40 kW)
+
+$ function fibonacci_progressive_current(tx) {\
+  x = tx(0); y = tx(1); z = tx(2); t = tx(3);\
+  th = atan2(y, x);\
+  if (th < 0.0) { th = th + 6.283185307179586; } else { th = th; };\
+  d_th = 0.2617993877991494;\
+  k = floor((th + 0.1308996938995747) / d_th);\
+  if (k >= 24) { k = 0; } else { k = k; };\
+  p = zeros(24, 1);\
+  p(0)  = 0.698132; p(1)  = 0.959931; p(2)  = 1.919862; p(3)  = 2.879793;\
+  p(4)  = 4.537856; p(5)  = 0.610865; p(6)  = 4.363323; p(7)  = 3.926991;\
+  p(8)  = 0.698132; p(9)  = 3.054326; p(10) = 1.919862; p(11) = 2.879793;\
+  p(12) = 2.443461; p(13) = 2.705260; p(14) = 2.268928; p(15) = 1.832596;\
+  p(16) = 0.698132; p(17) = 5.148721; p(18) = 1.919862; p(19) = 2.879793;\
+  p(20) = 0.349066; p(21) = 4.799655; p(22) = 0.174533; p(23) = 6.021386;\
+  phi = p(k);\
+  w = 628.3185307179586;\
+  j0 = 2.4405e+05;\
+  res = j0 * sin(w * t + phi);\
+  _fibonacci_progressive_current = res;\
+}
+
+$ function sigma_spherical_X_layers(tx) {\
+  x = tx(0); y = tx(1); z = tx(2);\
+  r = sqrt(x*x + y*y + z*z);\
+  if (r < 1.0e-5) { r = 1.0e-5; } else { r = r; };\
+  rho = sqrt(x*x + y*y);\
+  if (rho < 1.0e-5) { rho = 1.0e-5; } else { rho = rho; };\
+  xi = (r - 0.047) / 0.003;\
+  if (xi < 0.0) { xi = 0.0; } else { if (xi > 1.0) { xi = 1.0; } else { xi = xi; }; };\
+  s_base = 3.031089e6;\
+  if (xi <= 0.3333333333333333) {\
+    s_tp = s_base;\
+  } else {\
+    if (xi <= 0.6666666666666666) {\
+      s_tp = 0.0;\
+    } else {\
+      s_tp = -s_base;\
+    };\
+  };\
+  s0 = 1.75e6;\
+  s_phi = 1.22e7;\
+  ds = s_phi - s0;\
+  px = -y / rho; py = x / rho;\
+  tx_c = (z / r) * (x / rho);\
+  ty_c = (z / r) * (y / rho);\
+  tz_c = -rho / r;\
+  a = zeros(3,3);\
+  a(0,0) = s0 + ds * px*px + 2.0 * s_tp * tx_c * px;\
+  a(1,1) = s0 + ds * py*py + 2.0 * s_tp * ty_c * py;\
+  a(2,2) = s0;\
+  c12 = ds * px*py + s_tp * (tx_c * py + px * ty_c);\
+  a(0,1) = c12; a(1,0) = c12;\
+  c13 = s_tp * px * tz_c;\
+  a(0,2) = c13; a(2,0) = c13;\
+  c23 = s_tp * py * tz_c;\
+  a(1,2) = c23; a(2,1) = c23;\
+  _sigma_spherical_X_layers = a;\
+}
+
+Header
+  CHECK KEYWORDS Warn
+  Mesh DB "mesh" "macchina_fibonacci_24x24"
+  Include Path ""
+  Results Directory "results"
+End
+
+Simulation
+  Max Output Level = 3
+  Coordinate System = Cartesian 3D
+  Coordinate Mapping(3) = 1 2 3
+  Simulation Type = Transient
+  Steady State Max Iterations = 1
+  Output Intervals(1) = 1
+  Timestep Intervals(1) = 64
+  Timestep Sizes(1) = 0.00025
+End
+
+Constants
+  Permittivity of Vacuum = 8.8542e-12
+  Permeability of Vacuum = 1.2566370614e-6
+End
+
+Equation 1
+  Name = "Coupled Electromagnetics"
+  Active Solvers(3) = 1 2 3
+End
+
+Solver 1
+  Equation = "MGDynamics"
+  Variable = "AV"
+  Procedure = "MagnetoDynamics" "WhitneyAVSolver"
+  Fix Input Current Density = Logical False
+  Use Piola Transform = Logical False
+  Linear System Solver = "Direct"
+  Linear System Direct Method = Umfpack
+End
+
+Solver 2
+  Equation = "MGDynamicsCalc"
+  Procedure = "MagnetoDynamics" "MagnetoDynamicsCalcFields"
+  Potential Variable = String "AV"
+  Calculate Elemental Fields = Logical True
+  Calculate Nodal Fields = Logical True
+  Calculate Magnetic Flux Density = Logical True
+  Calculate Magnetic Vector Potential = Logical True
+  Calculate Current Density = Logical True
+  Calculate Electric Field = Logical True
+  Calculate Joule Heating = Logical True
+  Calculate JxB = Logical True
+  Linear System Solver = "Direct"
+  Linear System Direct Method = Umfpack
+End
+
+Solver 3
+  Equation = "ResultOutput"
+  Procedure = "ResultOutputSolve" "ResultOutputSolver"
+  Output File Name = "macchina_fibonacci_accumulata_out"
+  Output Format = "vtu"
+  Vtu Format = Logical True
+  Save Geometry Ids = Logical True
+  Discontinuous Bodies = Logical True
+End
+
+! Material 1: Mantello Sferico Metamateriale a Triplo Strato X Ferromagnetico
+Material 1
+  Name = "FerromagneticSphericalCrossLayerMantle"
+  Relative Permeability = 1000.0
+  Electric Conductivity(3,3) = Variable Coordinate 1, Coordinate 2, Coordinate 3
+    Real MATC "sigma_spherical_X_layers(tx)"
+End
+
+! Material 2: Bobine Rame Cu-ETP (Array 24 Gruppi)
+Material 2
+  Name = "CopperCoilsFibonacci"
+  Relative Permeability = 1.0
+  Electric Conductivity = 5.8e7
+End
+
+! Material 3: Nucleo Centrale Sferico Amagnetico in PEEK
+Material 3
+  Name = "AmagneticPEEKCore"
+  Relative Permeability = 1.0
+  Electric Conductivity = 0.0
+End
+
+! Material 4: Aria (Cavità Interna ed Esterno)
+Material 4
+  Name = "Air"
+  Relative Permeability = 1.0
+  Electric Conductivity = 0.0
+End
+
+! Body Force 1: Array 24 Gruppi pilotati con Fase Progressiva Unidirezionale
+Body Force 1
+  Current Density 3 = Variable Coordinate 1, Coordinate 2, Coordinate 3, time
+    Real MATC "fibonacci_progressive_current(tx)"
+End
+
+! Body 1: Mantello Sferico
+Body 1
+  Target Bodies(1) = 1
+  Name = "MantelloSferico"
+  Equation = 1
+  Material = 1
+End
+
+! Body 2: Bobine Array Fibonacci 24
+Body 2
+  Target Bodies(1) = 2
+  Name = "CoilsFibonacci24"
+  Equation = 1
+  Material = 2
+  Body Force = 1
+End
+
+! Body 3: Nucleo PEEK
+Body 3
+  Target Bodies(1) = 3
+  Name = "RotorePEEKCore"
+  Equation = 1
+  Material = 3
+End
+
+! Body 4: Cavita Aria Interna
+Body 4
+  Target Bodies(1) = 4
+  Name = "CavitaAriaInterna"
+  Equation = 1
+  Material = 4
+End
+
+! Body 5: Aria Esterna
+Body 5
+  Target Bodies(1) = 5
+  Name = "AriaEsterna"
+  Equation = 1
+  Material = 4
+End
+
+! Boundary Condition 1: Far-Field all'Infinito
+Boundary Condition 1
+  Target Boundaries(1) = 1
+  Name = "FarFieldInfinity"
+  AV {e} = Real 0.0
+  AV = Real 0.0
+End
