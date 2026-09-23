@@ -1,0 +1,9 @@
+! ----- names for bodies -----
+$ MantelloSferico = 1
+$ Rotore1Coils = 2
+$ Rotore2Coils = 3
+$ RotorePEEKCore = 4
+$ CavitaAriaInterna = 5
+$ AriaEsterna = 6
+! ----- names for boundaries -----
+$ FarField = 1

@@ -1,0 +1,114 @@
+{
+  "variant": "gabbia_sferica_doppio_rotore_90deg",
+  "description": "Gabbia Sferica Metamateriale a Triplo Strato X (+30/0/-30) con Doppio Rotore Ortogonale a 90 gradi",
+  "parameters": {
+    "r_ext_m": 0.05,
+    "r_int_m": 0.047,
+    "thickness_m": 0.003,
+    "r_coil_m": 0.035,
+    "r_core_m": 0.012,
+    "mu_r_mantle": 1000.0,
+    "mu_r_core": 1.0,
+    "frequency_hz": 100.0,
+    "dt_s": 0.00025,
+    "timesteps": 64,
+    "t_cycle_s": 0.00687947,
+    "n_fibonacci": 2500
+  },
+  "lorentz_forces_mean_uN": {
+    "assembly_total": {
+      "fx": 657.5918886540393,
+      "fy": 38.982434765546714,
+      "fz": -490.52182119348174
+    },
+    "mantle": {
+      "fx": 50.970761367956094,
+      "fy": 7.638240110891873,
+      "fz": -325.9581177360917
+    },
+    "layer1_plus30": {
+      "fx": 55.815985057630684,
+      "fy": 13.831505896932843,
+      "fz": -309.80400186591476
+    },
+    "layer2_ortho": {
+      "fx": -4.845223689674599,
+      "fy": -6.193265786040973,
+      "fz": -16.154115870177
+    },
+    "layer3_minus30": {
+      "fx": 0.0,
+      "fy": 0.0,
+      "fz": 0.0
+    },
+    "rotor1_coils": {
+      "fx": 530.2856943992335,
+      "fy": 66.08132459267094,
+      "fz": -431.34360297236503
+    },
+    "rotor2_coils": {
+      "fx": 73.68896105052748,
+      "fy": -28.194430150085015,
+      "fz": 252.05377686769032
+    },
+    "peek_core": {
+      "fx": -2.4176011379299447,
+      "fy": -1.1582386888787224,
+      "fz": -2.4083532973872397
+    }
+  },
+  "joule_losses_mean_uW": {
+    "assembly_total": 182200.92351499634,
+    "mantle": 33009.951768375504,
+    "layer1_plus30": 31791.95592996331,
+    "layer2_ortho": 1217.9958384121933,
+    "layer3_minus30": 0.0,
+    "rotor1_coils": 80449.2479787544,
+    "rotor2_coils": 66197.38989425231,
+    "peek_core": 55.45718630182183
+  },
+  "spherical_sampling": {
+    "Near-Field (R=6.5 cm)": {
+      "radius_m": 0.065,
+      "gauss_net_weber": 1.1854908277413484e-09,
+      "gauss_abs_weber": 1.9060663755966656e-06,
+      "gauss_residual_pct": 0.06219567392401265,
+      "gauss_pass": true,
+      "b_mean_uT": 125.19962030461163,
+      "b_max_uT": 1401.347543700977,
+      "e_mean_mV_m": 321.77170130151444,
+      "poynting_rad_mW": 415.9437898017191,
+      "mst_fx_uN": -159.48803889697817,
+      "mst_fy_uN": -73.8850775379265,
+      "mst_fz_uN": -184.01682834687932
+    },
+    "Mid-Field (R=10.0 cm)": {
+      "radius_m": 0.1,
+      "gauss_net_weber": 1.719393144233392e-08,
+      "gauss_abs_weber": 2.0843127511247746e-06,
+      "gauss_residual_pct": 0.8249208969745743,
+      "gauss_pass": true,
+      "b_mean_uT": 34.132365942518675,
+      "b_max_uT": 81.302385453184,
+      "e_mean_mV_m": 292.95784640473494,
+      "poynting_rad_mW": 58.047056216745496,
+      "mst_fx_uN": -0.17642411493332252,
+      "mst_fy_uN": 6.280445273921384,
+      "mst_fz_uN": 1.5191124546979475
+    },
+    "Far-Field (R=15.0 cm)": {
+      "radius_m": 0.15,
+      "gauss_net_weber": 1.0501924235045541e-07,
+      "gauss_abs_weber": 4.618076403766986e-06,
+      "gauss_residual_pct": 2.2740906206053833,
+      "gauss_pass": false,
+      "b_mean_uT": 28.787434034780535,
+      "b_max_uT": 80.80006970103064,
+      "e_mean_mV_m": 1614.6658659018744,
+      "poynting_rad_mW": -50.20813594406885,
+      "mst_fx_uN": -0.3296037100427197,
+      "mst_fy_uN": 2.7771136187828875,
+      "mst_fz_uN": -2.239858844856454
+    }
+  }
+}

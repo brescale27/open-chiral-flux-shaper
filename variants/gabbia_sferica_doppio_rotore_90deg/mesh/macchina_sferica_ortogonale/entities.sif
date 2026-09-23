@@ -1,0 +1,30 @@
+!------ Skeleton for body section -----
+Body 1
+  Name = MantelloSferico
+End
+
+Body 2
+  Name = Rotore1Coils
+End
+
+Body 3
+  Name = Rotore2Coils
+End
+
+Body 4
+  Name = RotorePEEKCore
+End
+
+Body 5
+  Name = CavitaAriaInterna
+End
+
+Body 6
+  Name = AriaEsterna
+End
+
+!------ Skeleton for boundary section -----
+Boundary Condition 1
+  Name = FarField
+End
+
