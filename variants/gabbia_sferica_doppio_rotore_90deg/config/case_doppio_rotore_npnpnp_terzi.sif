@@ -1,0 +1,276 @@
+! Elmer FEM Configuration: Variante con Gabbia Sferica Metamateriale a Doppio Rotore Ortogonale a 90°
+! Campagna di Test: Eccitazione NPNPNP - Accensione Totale Simultanea a Terzi (120° Trifase)
+! Mantello sferico in Rete Stirata a Triplo Strato (+30° / 0° / -30°) Ferromagnetica (mu_r = 1000.0)
+! Doppio Rotore Ortogonale a 90°:
+!   - Rotore 1 (Equatoriale Z=0, asse Z): 6 solenoidi a 3 coppie diametrali NPNPNP simultanee sfasate di 120°
+!   - Rotore 2 (Trasversale X=0, asse X): 6 solenoidi a 3 coppie diametrali NPNPNP simultanee in quadratura di fase temporale (90°)
+! Nucleo centrale amagnetico sferico in tecnopolimero PEEK (mu_r = 1.0, sigma = 0.0 S/m)
+! Risoluzione transiente su 64 timestep da dt = 0.25 ms (f = 100 Hz, T_tot = 16.0 ms, >1.6 cicli completi)
+
+$ function rotor1_npnpnp_current(tx) {\
+  x = tx(0); y = tx(1); z = tx(2); t = tx(3);\
+  rc = 0.035; rwsq = 2.5e-05; j0 = 1.0e+05;\
+  s60 = 0.8660254037844386;\
+  x1 = rc; y1 = 0.0;\
+  x2 = 0.5 * rc; y2 = s60 * rc;\
+  x3 = -0.5 * rc; y3 = s60 * rc;\
+  w = 628.3185307179586;\
+  phi120 = 2.0943951023931953;\
+  phi240 = 4.1887902047863905;\
+  ja = cos(w * t);\
+  jb = cos(w * t - phi120);\
+  jc = cos(w * t - phi240);\
+  d1 = (x-x1)*(x-x1) + (y-y1)*(y-y1);\
+  d2 = (x-x2)*(x-x2) + (y-y2)*(y-y2);\
+  d3 = (x-x3)*(x-x3) + (y-y3)*(y-y3);\
+  d4 = (x+x1)*(x+x1) + (y+y1)*(y+y1);\
+  d5 = (x+x2)*(x+x2) + (y+y2)*(y+y2);\
+  d6 = (x+x3)*(x+x3) + (y+y3)*(y+y3);\
+  res = 0.0;\
+  if (d1 < rwsq) { res =  j0 * ja; } else {\
+  if (d2 < rwsq) { res = -j0 * jb; } else {\
+  if (d3 < rwsq) { res =  j0 * jc; } else {\
+  if (d4 < rwsq) { res = -j0 * ja; } else {\
+  if (d5 < rwsq) { res =  j0 * jb; } else {\
+  if (d6 < rwsq) { res = -j0 * jc; } else { res = 0.0; }; }; }; }; }; };\
+  _rotor1_npnpnp_current = res;\
+}
+
+$ function rotor2_npnpnp_current(tx) {\
+  x = tx(0); y = tx(1); z = tx(2); t = tx(3);\
+  rc = 0.035; rwsq = 2.5e-05; j0 = 1.0e+05;\
+  c30 = 0.8660254037844386;\
+  s30 = 0.5;\
+  y1 = rc * c30; z1 = rc * s30;\
+  y2 = 0.0;      z2 = rc;\
+  y3 = -rc * c30; z3 = rc * s30;\
+  w = 628.3185307179586;\
+  phi90 = 1.5707963267948966;\
+  phi210 = 3.665191429188092;\
+  phi330 = 5.759586531581287;\
+  ja = cos(w * t - phi90);\
+  jb = cos(w * t - phi210);\
+  jc = cos(w * t - phi330);\
+  d1 = (y-y1)*(y-y1) + (z-z1)*(z-z1);\
+  d2 = (y-y2)*(y-y2) + (z-z2)*(z-z2);\
+  d3 = (y-y3)*(y-y3) + (z-z3)*(z-z3);\
+  d4 = (y+y1)*(y+y1) + (z+z1)*(z+z1);\
+  d5 = (y+y2)*(y+y2) + (z+z2)*(z+z2);\
+  d6 = (y+y3)*(y+y3) + (z+z3)*(z+z3);\
+  res = 0.0;\
+  if (d1 < rwsq) { res =  j0 * ja; } else {\
+  if (d2 < rwsq) { res = -j0 * jb; } else {\
+  if (d3 < rwsq) { res =  j0 * jc; } else {\
+  if (d4 < rwsq) { res = -j0 * ja; } else {\
+  if (d5 < rwsq) { res =  j0 * jb; } else {\
+  if (d6 < rwsq) { res = -j0 * jc; } else { res = 0.0; }; }; }; }; }; };\
+  _rotor2_npnpnp_current = res;\
+}
+
+$ function sigma_spherical_X_layers(tx) {\
+  x = tx(0); y = tx(1); z = tx(2);\
+  r = sqrt(x*x + y*y + z*z);\
+  if (r < 1.0e-5) { r = 1.0e-5; } else { r = r; };\
+  rho = sqrt(x*x + y*y);\
+  if (rho < 1.0e-5) { rho = 1.0e-5; } else { rho = rho; };\
+  xi = (r - 0.047) / 0.003;\
+  if (xi < 0.0) { xi = 0.0; } else { if (xi > 1.0) { xi = 1.0; } else { xi = xi; }; };\
+  s_base = 3.031089e6;\
+  if (xi <= 0.3333333333333333) {\
+    s_tp = s_base;\
+  } else {\
+    if (xi <= 0.6666666666666666) {\
+      s_tp = 0.0;\
+    } else {\
+      s_tp = -s_base;\
+    };\
+  };\
+  s0 = 1.75e6;\
+  s_phi = 1.22e7;\
+  ds = s_phi - s0;\
+  px = -y / rho; py = x / rho;\
+  tx_c = (z / r) * (x / rho);\
+  ty_c = (z / r) * (y / rho);\
+  tz_c = -rho / r;\
+  a = zeros(3,3);\
+  a(0,0) = s0 + ds * px*px + 2.0 * s_tp * tx_c * px;\
+  a(1,1) = s0 + ds * py*py + 2.0 * s_tp * ty_c * py;\
+  a(2,2) = s0;\
+  c12 = ds * px*py + s_tp * (tx_c * py + px * ty_c);\
+  a(0,1) = c12; a(1,0) = c12;\
+  c13 = s_tp * px * tz_c;\
+  a(0,2) = c13; a(2,0) = c13;\
+  c23 = s_tp * py * tz_c;\
+  a(1,2) = c23; a(2,1) = c23;\
+  _sigma_spherical_X_layers = a;\
+}
+
+Header
+  CHECK KEYWORDS Warn
+  Mesh DB "mesh" "macchina_sferica_ortogonale"
+  Include Path ""
+  Results Directory "results"
+End
+
+Simulation
+  Max Output Level = 3
+  Coordinate System = Cartesian 3D
+  Coordinate Mapping(3) = 1 2 3
+  Simulation Type = Transient
+  Steady State Max Iterations = 1
+  Output Intervals(1) = 1
+  Timestep Intervals(1) = 64
+  Timestep Sizes(1) = 0.00025
+End
+
+Constants
+  Permittivity of Vacuum = 8.8542e-12
+  Permeability of Vacuum = 1.2566370614e-6
+End
+
+Equation 1
+  Name = "Coupled Electromagnetics"
+  Active Solvers(3) = 1 2 3
+End
+
+Solver 1
+  Equation = "MGDynamics"
+  Variable = "AV"
+  Procedure = "MagnetoDynamics" "WhitneyAVSolver"
+  Fix Input Current Density = Logical False
+  Use Piola Transform = Logical False
+  Linear System Solver = "Direct"
+  Linear System Direct Method = Umfpack
+End
+
+Solver 2
+  Equation = "MGDynamicsCalc"
+  Procedure = "MagnetoDynamics" "MagnetoDynamicsCalcFields"
+  Potential Variable = String "AV"
+  Calculate Elemental Fields = Logical True
+  Calculate Nodal Fields = Logical True
+  Calculate Magnetic Flux Density = Logical True
+  Calculate Magnetic Vector Potential = Logical True
+  Calculate Current Density = Logical True
+  Calculate Electric Field = Logical True
+  Calculate Joule Heating = Logical True
+  Calculate JxB = Logical True
+  Linear System Solver = "Direct"
+  Linear System Direct Method = Umfpack
+End
+
+Solver 3
+  Equation = "ResultOutput"
+  Procedure = "ResultOutputSolve" "ResultOutputSolver"
+  Output File Name = "macchina_sferica_out"
+  Output Format = "vtu"
+  Vtu Format = Logical True
+  Save Geometry Ids = Logical True
+  Discontinuous Bodies = Logical True
+End
+
+! Body 1: Mantello Sferico Metamateriale a Triplo Strato X Ferromagnetico
+Material 1
+  Name = "FerromagneticSphericalCrossLayerMantle"
+  Relative Permeability = 1000.0
+  Electric Conductivity(3,3) = Variable Coordinate 1, Coordinate 2, Coordinate 3
+    Real MATC "sigma_spherical_X_layers(tx)"
+End
+
+! Body 2: Bobine Rotore 1 (Rame Cu-ETP)
+Material 2
+  Name = "CopperCoilsRotor1"
+  Relative Permeability = 1.0
+  Electric Conductivity = 5.8e7
+End
+
+! Body 3: Bobine Rotore 2 (Rame Cu-ETP)
+Material 3
+  Name = "CopperCoilsRotor2"
+  Relative Permeability = 1.0
+  Electric Conductivity = 5.8e7
+End
+
+! Body 4: Nucleo Centrale Sferico Amagnetico in PEEK
+Material 4
+  Name = "AmagneticPEEKCore"
+  Relative Permeability = 1.0
+  Electric Conductivity = 0.0
+End
+
+! Body 5 & 6: Aria (Cavità Interna ed Esterno)
+Material 5
+  Name = "Air"
+  Relative Permeability = 1.0
+  Electric Conductivity = 0.0
+End
+
+! Eccitazione Rotore 1: Asse Z
+Body Force 1
+  Current Density 3 = Variable Coordinate 1, Coordinate 2, Coordinate 3, time
+    Real MATC "rotor1_npnpnp_current(tx)"
+End
+
+! Eccitazione Rotore 2: Asse X
+Body Force 2
+  Current Density 1 = Variable Coordinate 1, Coordinate 2, Coordinate 3, time
+    Real MATC "rotor2_npnpnp_current(tx)"
+End
+
+! Body 1: Mantello Sferico
+Body 1
+  Target Bodies(1) = 1
+  Name = "MantelloSferico"
+  Equation = 1
+  Material = 1
+End
+
+! Body 2: Bobine Rotore 1
+Body 2
+  Target Bodies(1) = 2
+  Name = "Rotore1Coils"
+  Equation = 1
+  Material = 2
+  Body Force = 1
+End
+
+! Body 3: Bobine Rotore 2
+Body 3
+  Target Bodies(1) = 3
+  Name = "Rotore2Coils"
+  Equation = 1
+  Material = 3
+  Body Force = 2
+End
+
+! Body 4: Nucleo PEEK
+Body 4
+  Target Bodies(1) = 4
+  Name = "RotorePEEKCore"
+  Equation = 1
+  Material = 4
+End
+
+! Body 5: Cavita Aria Interna
+Body 5
+  Target Bodies(1) = 5
+  Name = "CavitaAriaInterna"
+  Equation = 1
+  Material = 5
+End
+
+! Body 6: Aria Esterna
+Body 6
+  Target Bodies(1) = 6
+  Name = "AriaEsterna"
+  Equation = 1
+  Material = 5
+End
+
+! Boundary Condition 1: Far-Field all'Infinito
+Boundary Condition 1
+  Target Boundaries(1) = 1
+  Name = "FarFieldInfinity"
+  AV {e} = Real 0.0
+  AV = Real 0.0
+End

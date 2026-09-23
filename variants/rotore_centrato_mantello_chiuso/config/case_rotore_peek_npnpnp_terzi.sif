@@ -1,0 +1,196 @@
+! Elmer FEM Configuration: Variante con Mantello a Triplo Strato Incrociato a "X" e Rotore Amagnetico
+! Campagna di Test: Eccitazione NPNPNP - Accensione Totale Simultanea a Terzi (120° Trifase)
+! Mantello laterale e coperchi in Rete Stirata a Triplo Strato (+30° / 0° / -30°) Ferromagnetica (mu_r = 1000.0)
+! Rotore centrale amagnetico isolante (PEEK / Tecnopolimero: mu_r = 1.0, sigma = 0.0 S/m)
+! Tutte le 6 bobine accese simultaneamente a coppie diametrali con polarità N-P-N-P-N-P
+! Frequenza base = 100 Hz, 64 timestep da 0.25 ms (T_tot = 16.0 ms, >1.6 cicli completi)
+
+$ function npnpnp_terzi_current(tx) {\
+  x = tx(0); y = tx(1); z = tx(2); t = tx(3);\
+  res = 0.0;\
+  if (abs(z) > 0.05) { res = 0.0; } else {\
+    rsq = x*x + y*y;\
+    if (rsq < 0.0007) { res = 0.0; } else { if (rsq > 0.0019) { res = 0.0; } else {\
+      rc = 0.035; rwsq = 4.9e-05; j0 = 1.0e+05;\
+      s60 = 0.8660254037844386;\
+      x1 = rc; y1 = 0.0;\
+      x2 = 0.5 * rc; y2 = s60 * rc;\
+      x3 = -0.5 * rc; y3 = s60 * rc;\
+      w = 628.3185307179586;\
+      phi120 = 2.0943951023931953;\
+      phi240 = 4.1887902047863905;\
+      ja = cos(w * t);\
+      jb = cos(w * t - phi120);\
+      jc = cos(w * t - phi240);\
+      d1 = (x-x1)*(x-x1) + (y-y1)*(y-y1);\
+      d2 = (x-x2)*(x-x2) + (y-y2)*(y-y2);\
+      d3 = (x-x3)*(x-x3) + (y-y3)*(y-y3);\
+      d4 = (x+x1)*(x+x1) + (y+y1)*(y+y1);\
+      d5 = (x+x2)*(x+x2) + (y+y2)*(y+y2);\
+      d6 = (x+x3)*(x+x3) + (y+y3)*(y+y3);\
+      if (d1 < rwsq) { res =  j0 * ja; } else {\
+      if (d2 < rwsq) { res = -j0 * jb; } else {\
+      if (d3 < rwsq) { res =  j0 * jc; } else {\
+      if (d4 < rwsq) { res = -j0 * ja; } else {\
+      if (d5 < rwsq) { res =  j0 * jb; } else {\
+      if (d6 < rwsq) { res = -j0 * jc; } else { res = 0.0; }; }; }; }; }; };\
+    }; };\
+  };\
+  _npnpnp_terzi_current = res;\
+}
+
+$ function sigma_X_layers(tx) {\
+  x = tx(0); y = tx(1); z = tx(2);\
+  r = sqrt(x*x + y*y);\
+  if (r < 1.0e-5) { r = 1.0e-5; } else { r = r; };\
+  c = x / r; s = y / r;\
+  s_rr = 1.75e6; s_tt = 1.75e6; s_zz = 1.22e7; s_tz_base = 3.031089e6;\
+  abs_z = abs(z);\
+  if (abs_z > 0.050) {\
+    xi = (abs_z - 0.050) / 0.003;\
+  } else {\
+    xi = (r - 0.047) / 0.003;\
+  };\
+  if (xi < 0.0) { xi = 0.0; } else { if (xi > 1.0) { xi = 1.0; } else { xi = xi; }; };\
+  if (xi <= 0.3333333333333333) {\
+    s_tz = s_tz_base;\
+  } else {\
+    if (xi <= 0.6666666666666666) {\
+      s_tz = 0.0;\
+    } else {\
+      s_tz = -s_tz_base;\
+    };\
+  };\
+  sxz = -s_tz * s;\
+  syz =  s_tz * c;\
+  a = zeros(3,3);\
+  a(0,0) = s_rr; a(1,1) = s_tt; a(2,2) = s_zz;\
+  a(0,2) = sxz;  a(2,0) = sxz;\
+  a(1,2) = syz;  a(2,1) = syz;\
+  _sigma_X_layers = a;\
+}
+
+Header
+  CHECK KEYWORDS Warn
+  Mesh DB "mesh" "macchina_mantello_chiuso"
+  Include Path ""
+  Results Directory "results"
+End
+
+Simulation
+  Max Output Level = 3
+  Coordinate System = Cartesian 3D
+  Coordinate Mapping(3) = 1 2 3
+  Simulation Type = Transient
+  Steady State Max Iterations = 1
+  Output Intervals(1) = 1
+  Timestep Intervals(1) = 64
+  Timestep Sizes(1) = 0.00025
+End
+
+Constants
+  Permittivity of Vacuum = 8.8542e-12
+  Permeability of Vacuum = 1.2566370614e-6
+End
+
+Equation 1
+  Name = "Coupled Electromagnetics"
+  Active Solvers(3) = 1 2 3
+End
+
+Solver 1
+  Equation = "MGDynamics"
+  Variable = "AV"
+  Procedure = "MagnetoDynamics" "WhitneyAVSolver"
+  Fix Input Current Density = Logical False
+  Use Piola Transform = Logical False
+  Linear System Solver = "Direct"
+  Linear System Direct Method = Umfpack
+End
+
+Solver 2
+  Equation = "MGDynamicsCalc"
+  Procedure = "MagnetoDynamics" "MagnetoDynamicsCalcFields"
+  Potential Variable = String "AV"
+  Calculate Elemental Fields = Logical True
+  Calculate Nodal Fields = Logical True
+  Calculate Magnetic Flux Density = Logical True
+  Calculate Magnetic Vector Potential = Logical True
+  Calculate Current Density = Logical True
+  Calculate Electric Field = Logical True
+  Calculate Joule Heating = Logical True
+  Calculate JxB = Logical True
+  Linear System Solver = "Direct"
+  Linear System Direct Method = Umfpack
+End
+
+Solver 3
+  Equation = "ResultOutput"
+  Procedure = "ResultOutputSolve" "ResultOutputSolver"
+  Output File Name = "macchina_out"
+  Output Format = "vtu"
+  Vtu Format = Logical True
+  Save Geometry Ids = Logical True
+  Discontinuous Bodies = Logical True
+End
+
+Material 1
+  Name = "Air"
+  Relative Permeability = 1.0
+  Electric Conductivity = 0.0
+End
+
+Material 2
+  Name = "FerromagneticCrossLayerMantle"
+  Relative Permeability = 1000.0
+  Electric Conductivity(3,3) = Variable Coordinate 1, Coordinate 2, Coordinate 3
+    Real MATC "sigma_X_layers(tx)"
+End
+
+Material 3
+  Name = "AmagneticInsulatingCore"
+  Relative Permeability = 1.0
+  Electric Conductivity = 0.0
+End
+
+Body Force 1
+  Current Density 3 = Variable Coordinate 1, Coordinate 2, Coordinate 3, time
+    Real MATC "npnpnp_terzi_current(tx)"
+End
+
+Body 1
+  Target Bodies(1) = 1
+  Name = "AirExterior"
+  Equation = 1
+  Material = 1
+End
+
+Body 2
+  Target Bodies(1) = 2
+  Name = "FerromagneticCrossLayerMantleAndLids"
+  Equation = 1
+  Material = 2
+End
+
+Body 3
+  Target Bodies(1) = 3
+  Name = "RotorAir"
+  Equation = 1
+  Material = 1
+  Body Force = 1
+End
+
+Body 4
+  Target Bodies(1) = 4
+  Name = "AmagneticInsulatingCore"
+  Equation = 1
+  Material = 3
+  Body Force = 1
+End
+
+Boundary Condition 1
+  Target Boundaries(1) = 1
+  Name = "FarFieldInfinity"
+  AV {e} = Real 0.0
+  AV = Real 0.0
+End
