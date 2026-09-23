@@ -20,5 +20,7 @@ desktop.ini
 # Temporary simulation directories & heavy VTU output
 work_dirs/
 **/work_dirs/
+work_dirs_60rpm/
+**/work_dirs_60rpm/
 *.vtu
 
