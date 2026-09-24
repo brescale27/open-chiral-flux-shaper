@@ -48,6 +48,11 @@ pipelines = [
         "name": "Concentric Spheres Polarization Benchmark",
         "script": SCRIPT_DIR / "run_polarization_spherical_sweep.py",
         "json": ROOT_DIR / "data" / "polarization_spherical_sweep_benchmark.json"
+    },
+    {
+        "name": "Chiral Diode Asymmetric Pulse (48 Coils)",
+        "script": SCRIPT_DIR / "run_chiral_diode_asymmetric_pulse_simulation.py",
+        "json": ROOT_DIR / "variants" / "gabbia_sferica_chiral_diode_asymmetric_pulse" / "data" / "chiral_diode_asymmetric_pulse.json"
     }
 ]
 
@@ -182,7 +187,26 @@ for item in results_summary:
         fig34_path = ROOT_DIR / "figures" / "fig_34_concentric_polarization_field_maps.png"
         if fig34_path.exists():
             print(f"  • Mappatura Visiva Odografi (Fig 34):    Generata ({fig34_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
+    elif "polarization_and_chiral_diode" in data:
+        # Chiral Diode Asymmetric Pulse
+        pol = data["polarization_and_chiral_diode"]
+        sc = data.get("scaled_regime", {})
+        mag = data.get("magnetic_field_and_gauss", {})
+        kin = data.get("dynamic_kinematic_transient", {})
+        p_layers = sc.get("power_mantle_layers_W", {})
+        print(f"  • Isolamento Diodo Chirale:       Isolamento = {pol.get('non_reciprocal_isolation_db', 0):.2f} dB (T_fwd = {pol.get('forward_transmission_pct', 0)}%, T_bwd = {pol.get('backward_transmission_pct', 0)}%)")
+        print(f"  • Fattore di Rettificazione:       {pol.get('diode_rectification_factor', 0):.2f}x (Non-reciprocità magnetica)")
+        print(f"  • Purezza Circolare (CP):          {pol.get('circular_purity_pct', 0):.2f}% (AR = {pol.get('axial_ratio_db', 0):.2f} dB, Stokes s3 = {pol.get('stokes_s3', 0):+.4f}) [{pol.get('ieee_cp_status', '')}]")
+        print(f"  • Spinta Risultante Lorentz:       |F| = {sc.get('mean_fmag_N', 0):.3f} N (Fx={sc.get('mean_fx_N', 0):+.3f}, Fy={sc.get('mean_fy_N', 0):+.3f}, Fz={sc.get('mean_fz_N', 0):+.3f} N)")
+        print(f"  • Dissipazione e Zero-Eddy:        Totale = {sc.get('total_joule_power_W', 0):.1f} W | Nucleo PEEK = {sc.get('power_peek_core_W', 0):.3f} W | Mantello Strato 3 = {p_layers.get('layer3_outer_minus22deg_W', 0):.3f} W")
+        print(f"  • Induzione Mantello B:            {mag.get('peak_b_mantle_T', 0):.3f} T (Margine saturazione: +{mag.get('saturation_margin_pct', 0):.2f}%)")
+        print(f"  • Rampa Cinematica (0->1200 RPM):  alpha = {kin.get('acceleration_rad_s2', 0):.2f} rad/s² | Coppia Giroscopica = {kin.get('peak_gyroscopic_torque_Nm', 0):.2f} Nm")
+        gauss = mag.get("gauss_solenoidality_residuals_pct", {})
+        print(f"  • Solenoidalità di Gauss:          Far-Field = {gauss.get('Far-Field (R=15.0 cm)', 'N/A')}% [{mag.get('far_field_gauss_status', '')}]")
+        fig35_path = ROOT_DIR / "figures" / "fig_35_chiral_diode_asymmetric_pulse.png"
+        if fig35_path.exists():
+            print(f"  • Mappatura Visiva Diodo (Fig 35):       Generata ({fig35_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
 
 print("\n" + "=" * 90)
-print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 5 PIPELINE ===")
+print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 6 PIPELINE ===")
 print("=" * 90)

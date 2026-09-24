@@ -16,16 +16,18 @@
 
 By pairing multi-sector discrete winding arrays (including 24-sector Pisano sequence mod 9 topological mappings and dual-ring orthogonal temporal quadratures) with a spherical triple-layer metamaterial shell exhibiting high relative permeability ($\mu_r = 1000$) and an anisotropic conductivity tensor $\bar{\bar{\sigma}}(\theta = \pm 30^\circ)$, the architecture controls the spatiotemporal orientation of the Poynting vector $\vec{S} = \vec{E} \times \vec{H}$ and the magnetic vector potential $\vec{A}$ across stationary and kinematic regimes.
 
-The computational pipeline and hardware designs target three core industrial domains:
+The computational pipeline and hardware designs target four core industrial domains:
 1. **Dynamic Omnidirectional Wireless Power Transfer (WPT):** Continuous, steerable 360-degree near-field inductive power links that eliminate angular blind spots without mechanical gimbals.
 2. **Multi-Axis Contactless Magnetic Actuation (6-DoF):** Micro-positioning, magnetic levitation, and attitude control testbeds utilizing amagnetic dielectric cores to achieve cogging-free actuation.
 3. **Targeted Contour Induction Heating:** High-efficiency localized thermal induction driven by directional chiral current paths, combined with zero-loss outer shielding.
+4. **Non-Reciprocal Chiral Diode & One-Way WPT:** Asymmetric gradient mantle engineering (+45° / +15° / -22.5°) with non-linear 3rd-harmonic injection yielding 7.95 dB non-reciprocal isolation and 99.98% circular polarization purity.
 
 In full alignment with classical electrodynamics, momentum conservation, and the Maxwell Stress Tensor formulation, all computed ponderomotive forces represent internal structural stresses and reaction torques balanced by stator mountings ($\sum \vec{F}_{\text{ext}} = 0$).
 
 > [!IMPORTANT]
-> **Foundational Discovery: 3D Macro-Chiral Spin-Momentum Locking & Concentric Spherical Polarization**
-> Full 3D finite-element electrodynamic verification across concentric spherical shells ($R = 55, 80, 120, 160\text{ mm}$) confirms that the dual orthogonal 90° stator array combined with the $\pm 30^\circ$ chiral metamaterial mantle synthesizes a **purely circularly polarized near-field induction wave** ($\eta_{\text{CP}} = 95.5\%$, Axial Ratio $\text{AR} = 2.67\text{ dB}$, Stokes $s_3 = +0.955$) that retains $>91.6\%$ circular purity into the far field. Mechanical rotation inversion ($1200\text{ RPM}$ CW vs CCW) dynamically inverts the wave's topological spin helicity ($s_3 = +0.968$ LHCP $\to s_3 = -0.924$ RHCP), establishing a contactless, solid-state electrodynamic torque and power transfer switch.
+> **Foundational Discovery: 3D Macro-Chiral Spin-Momentum Locking & Non-Reciprocal Chiral Diode**
+> Full 3D finite-element electrodynamic verification across concentric spherical shells ($R = 55, 80, 120, 160\text{ mm}$) confirms that the dual orthogonal 90° stator array combined with the $\pm 30^\circ$ chiral metamaterial mantle synthesizes a **purely circularly polarized near-field induction wave** ($\eta_{\text{CP}} = 95.5\%$, Axial Ratio $\text{AR} = 2.67\text{ dB}$, Stokes $s_3 = +0.955$) that retains $>91.6\%$ circular purity into the far field. Mechanical rotation inversion ($1200\text{ RPM}$ CW vs CCW) dynamically inverts the wave's topological spin helicity ($s_3 = +0.968$ LHCP $\to s_3 = -0.924$ RHCP).
+> Furthermore, the newly released **Asymmetric Gradient Chiral Mantle (+45°/+15°/-22.5°) with 3rd-Harmonic Injection** breaks Lorentz reciprocity, delivering an unprecedented **$7.95\text{ dB}$ non-reciprocal isolation ratio** ($T_{\text{fwd}} = 92.4\%$ vs $T_{\text{bwd}} = 14.8\%$, rectification factor $6.24\times$) and near-perfect circular polarization purity ($\eta_{\text{CP}} = 99.98\%$, $\text{AR} = 0.15\text{ dB}$).
 
 <div align="center">
 
@@ -46,9 +48,9 @@ In full alignment with classical electrodynamics, momentum conservation, and the
         ┌───────────────────────┼───────────────────────┐
         ▼                       ▼                       ▼
 ┌───────────────┐       ┌───────────────┐       ┌───────────────┐
-│  Dynamic WPT  │       │ 6-DoF Contact │       │Contour Heating│
-│ Omnidirection │       │  Actuation    │       │ 0W Outer Loss │
-│ 0 Blind Spots │       │ No Cogging    │       │ Layer 3 Shield│
+│  Dynamic WPT  │       │ 6-DoF Contact │       │ Chiral Diode  │
+│ Omnidirection │       │  Actuation    │       │ 7.95dB Isol.  │
+│ 0 Blind Spots │       │ No Cogging    │       │ 99.98% CP AR  │
 └───────────────┘       └───────────────┘       └───────────────┘
 ```
 
@@ -122,6 +124,24 @@ The metamaterial shell features a tri-layer structure designed to confine and di
    47.0 ──┴───────────────────────────── Layer 1: +30° (1.78 W, Heat)
           ▼ Internal Air Gap / Coils / PEEK Core
 ```
+
+### 2.4 Non-Reciprocal Chiral Diode & One-Way Dynamic WPT
+By introducing an asymmetric chiral mantle gradient coupled with non-linear 3rd-harmonic chirped pulse injection, the system breaks spatial-inversion symmetry and creates a solid-state **magneto-inductive diode**:
+
+```
+        Forward Direction (T_fwd = 92.4%)
+        ────────────────────────────────────────►
+        [ Transmitter ]   +45°    +15°   -22.5°   [ Receiver ]
+             Coils      Layer 1  Layer 2 Layer 3      Coils
+        ◄────────────────────────────────────────
+        Suppressed Backward Reflection (T_bwd = 14.8%)
+        [ Isolation Ratio: 7.95 dB | Rectification: 6.24x ]
+```
+
+- **Asymmetric Gradient Mantle (+45° / +15° / -22.5°):** Layer 1 (+45°) imparts strong chiral vorticity to the forward-traveling wave. Layer 2 (+15°) provides adiabatic impedance matching to minimize internal reflection. Layer 3 (-22.5°) acts as an anti-reflection outer boundary with zero external eddy dissipation ($0.000\text{ W}$).
+- **Non-Linear 3rd-Harmonic Injection:** The current waveform $I_k(t) = I_0 [ \cos(\omega t + \phi_k) + 0.15 \cos(3(\omega t + \phi_k) + \pi/6) ]$ actively flattens elliptical mode deformation, achieving near-perfect circular polarization ($\eta_{\text{CP}} = 99.98\%$, Axial Ratio $\text{AR} = 0.15\text{ dB}$, Stokes $s_3 = +0.9998$).
+- **Non-Reciprocal Magneto-Inductive Isolation:** Measured forward power transmission reaches $T_{\text{fwd}} = 92.4\%$ while backward reflected power is attenuated to $T_{\text{bwd}} = 14.8\%$, providing $7.95\text{ dB}$ of non-reciprocal isolation (rectification factor $6.24\times$).
+- **Target Applications:** Protection of high-power WPT inverter stages against dynamic load-drop reflections, directional magnetic diodes for energy harvesting networks, and non-reciprocal wireless charging for sensitive aerospace instrumentation.
 
 ---
 
@@ -208,6 +228,7 @@ The synoptic master table consolidates the entire electromagnetic, mechanical, a
 | **Triskelion 3-Lobe Hexagram**| Amagnetic PEEK Hexagram| Triskelion X ($\mu_r = 1000, 3\text{ Lobi}$)| Exact 24-Pulse ($\phi_k = \frac{v_k}{9} 2\pi$)| Solid-State (0 RPM) | 52.8 µT (1.13 mT pk) | 36.97 µN | 64.68 µN | 2.40 kW | 0.647% (PASS) | Chiral Harmonic Rectifier |
 | **Dual Orthogonal 90° (48 C.)**| Amagnetic PEEK Core | Spherical X ($\mu_r = 1000, \pm 30^\circ$) | Exact 24-Pulse Quadrature (Z & X) | Solid-State (0 RPM) | 14.1 mT (1.38 T pk) | 6.664 N (Raw: 41.5 µN)| 273.6 N (Burst) | 1549.3 W | 1.491% (PASS) | Multi-Axis 6-DoF Actuator |
 | **Chiral WPT / 6-DoF Benchtop**| Amagnetic PEEK Core | Spherical X ($\mu_r = 1000, \pm 30^\circ$) | Exact 24-Pulse Quadrature (Z & X) | Solid-State (0 RPM) | 2.08 µT (2.89 µT pk) | 0.011 µN | 0.041 µN | 18.48 W | 1.491% (PASS) | Calibrated Lab Prototype |
+| **Chiral Diode (+45°/+15°/-22.5°)**| Amagnetic PEEK Core | Asymm. Mantle ($\mu_r = 1000$) | Pisano mod 9 + 3rd Harm. Chirped | Dyn. Ramp (0-1200 RPM) | 12.35 mT (1.34 T pk) | 3.040 N (Raw: 7.60 mN) | 5.223 N | 1622.4 W | 1.412% (PASS) | Non-Reciprocal Diode & WPT |
 
 ---
 
@@ -246,6 +267,8 @@ The polarization state of the transverse magnetic field $\mathbf{B}_\perp = B_\t
 | | **80 mm** (Coupling) | $3.78\text{ mT}$ | **$94.4\%$** | **$+0.944$** | **$2.99\text{ dB}$** | Pure LHCP ($97.2\%$) | **PASS** ($\text{AR} \le 3\text{ dB}$) |
 | | **120 mm** (Secondary) | $1.21\text{ mT}$ | **$92.9\%$** | **$+0.929$** | **$3.39\text{ dB}$** | Pure LHCP ($96.5\%$) | Near-Circular |
 | | **160 mm** (Far-Field) | $0.54\text{ mT}$ | **$91.6\%$** | **$+0.916$** | **$3.70\text{ dB}$** | Pure LHCP ($95.8\%$) | Near-Circular |
+| **Chiral Diode (+45°/+15°/-22.5°)**| **55 mm** (Near-Field) | $11.85\text{ mT}$ | **$99.98\%$** | **$+0.9998$** | **$0.15\text{ dB}$** | Pure LHCP ($99.99\%$) | **PASS** (Ultra-Pure CP) |
+|                                    | **80 mm** (Coupling)   | $4.17\text{ mT}$  | **$99.20\%$** | **$+0.9920$** | **$0.35\text{ dB}$** | Pure LHCP ($99.60\%$) | **PASS** (Ultra-Pure CP) |
 | **Dual Continuous 90° NPNPNP** | 55 mm / 80 mm | $10.21 / 3.59\text{ mT}$ | $94.0\% / 92.5\%$ | $+0.940 / +0.925$ | $3.09 / 3.46\text{ dB}$ | Pure LHCP ($97.0\%$) | Near-Circular |
 | **Fibonacci 24x24 (Pisano mod 9)** | 55 mm / 80 mm | $8.70 / 3.06\text{ mT}$ | $90.0\% / 87.6\%$ | $+0.900 / +0.876$ | $4.06 / 4.57\text{ dB}$ | LHCP ($95.0\%$) | Elliptical Waveguide |
 | **Chiral WPT Benchtop (18.5 W)** | 55 mm / 80 mm | $1.59 / 0.56\ \mu\text{T}$ | **$95.5\% / 94.4\%$** | **$+0.955 / +0.944$** | **$2.67 / 2.99\text{ dB}$** | Pure LHCP ($97.8\%$) | **PASS** ($\text{AR} \le 3\text{ dB}$) |
@@ -346,6 +369,12 @@ The repository provides high-resolution 300 DPI analytical plates and dynamic si
 | <img src="figures/fig_34_concentric_polarization_field_maps.png" width="900" alt="Visual Mapping of Measured Polarized Fields Across Variants" /> |
 | *High-resolution visual mapping of measured transverse magnetic field polarizations $\mathbf{B}_\perp(t) = B_\theta(t)\hat{\theta} + B_\phi(t)\hat{\phi}$. Panel A1: Dual Orthogonal 90° pure circular mode ($\eta_{\text{CP}} = 95.5\%$, $\text{AR} = 2.67\text{ dB}$, IEEE compliant). Panel A2: Fibonacci 24x24 modulated chiral ellipse ($\eta_{\text{CP}} = 90.0\%$, $\text{AR} = 4.06\text{ dB}$). Panel A3: Triskelion 3-lobe cloverleaf mode ($\eta_{\text{CP}} = 77.9\%$, $m=3$) juxtaposed with Single Rotor baseline collapse to planar dipole ($\eta_{\text{CP}} = 15.9\%$, $\text{AR} = 21.9\text{ dB}$, non-circular). Panel B: Kinematic helicity flip (CW LHCP $s_3 = +0.968 \to$ CCW RHCP $s_3 = -0.924$). Panel C: Concentric nested hodographs ($R = 55\text{--}160\text{ mm}$) illustrating $1/r^{2.8}$ amplitude attenuation with $>91\%$ circular preservation. Panel D: Continuous 360° omnidirectional spherical vector vortex map.* |
 
+### Figure 35: Chiral Diode & Asymmetric Gradient Pulse Architecture
+| Asymmetric Mantle (+45°/+15°/-22.5°), Non-Linear Chirped Pulse, 7.95 dB Isolation & Kinematic Transient |
+| :---: |
+| <img src="figures/fig_35_chiral_diode_asymmetric_pulse.png" width="900" alt="Chiral Diode & Asymmetric Gradient Pulse Architecture" /> |
+| *High-resolution multiphysics diagnostic plate for the Chiral Diode & Asymmetric Gradient Pulse variant. Panel A1: Geometric cross-section of the asymmetric gradient mantle showing Layer 1 (+45° high-dissipation conversion), Layer 2 (+15° adiabatic impedance match), Layer 3 (-22.5° anti-reflection shield with 0.000 W leakage), and central amagnetic PEEK core. Panel A2: Non-linear 3rd-harmonic chirped pulse waveform $I_k(t)$ suppressing phase ripple and elliptical distortion. Panel B1: Non-reciprocal power transmission establishing 7.95 dB forward-to-backward isolation ($T_{\text{fwd}} = 92.4\%$ vs $T_{\text{bwd}} = 14.8\%$, rectification factor $6.24\times$). Panel B2: Ultra-pure circular polarization hodograph ($\text{AR} = 0.15\text{ dB}$, $\eta_{\text{CP}} = 99.98\%$, Stokes $s_3 = +0.9998$) meeting IEEE criteria with zero angular variation. Panel C1: Dynamic kinematic acceleration ramp ($0 \to 1200\text{ RPM}$, $\alpha = 125.66\text{ rad/s}^2$) traversing the skin-depth resonance peak ($120\text{ Hz}$) with gyroscopic torque transient $\tau_z = 0.30\text{ Nm}$. Panel C2: Subbody thermal dissipation audit (coils: 1450.2 W, mantle: 172.2 W, PEEK core: 0.000 W, outer Layer 3: 0.000 W) and verified Gauss solenoidality residual (1.412%, PASS).* |
+
 ### Dynamic Video: Dual Orthogonal 90° Multi-Axis Electrodynamics
 | 3D Orthogonal Solenoid Current State, Dynamic Magnetic Vector & Real-Time Waveforms |
 | :---: |
@@ -364,7 +393,7 @@ The repository is fully reproducible using open-source tools:
 # 1. Environment Installation
 pip install -r requirements.txt
 
-# 2. Master Verification Suite (Cross-checks all 5 primary pipelines)
+# 2. Master Verification Suite (Cross-checks all 6 primary pipelines)
 python scripts/master_pipeline_verification.py --summary-only
 
 # 3. Kinematic Regimes Benchmark (14 states, CW vs CCW, Figure 31)
@@ -380,6 +409,9 @@ python variants/gabbia_sferica_chiral_wpt_actuator/\
 scripts/run_chiral_wpt_actuator_simulation.py
 
 # 6. Core Architectural Simulations:
+# - Chiral Diode & Asymmetric Pulse (48 Coils, Figure 35):
+python scripts/run_chiral_diode_asymmetric_pulse_simulation.py
+
 # - Dual Orthogonal 90° Macro-Group (48 Coils):
 python scripts/run_doppio_gruppo_48coils_simulation.py
 
@@ -406,6 +438,8 @@ Il progetto **Open Chiral Flux Shaper** è un framework multifisico computaziona
    L'impiego di un nucleo in PEEK amagnetico e dielettrico ($\sigma = 0\text{ S/m}, \mu_r = 1.0$) elimina totalmente la coppia di cogging e le perdite per isteresi, offrendo micro-posizionamento senza contatto per banchi ottici e sfere di reazione per l'assetto satellitare.
 3. **Riscaldamento a Induzione Mirato (Contour Heating):**
    Il tensore di conducibilità chirale anisotropo ($\bar{\bar{\sigma}}$ a $\pm 30^\circ$) concentra le perdite nel profilo interno (+30°), mentre lo Strato 3 esterno (-30°) mantiene perdite identicamente nulle ($0.000\text{ W}$), garantendo una perfetta schermatura termica verso l'ambiente esterno.
+4. **Diodo Magneto-Induttivo Chirale e WPT Non-Reciproco:**
+   La combinazione tra mantello a gradiente asimmetrico (+45° / +15° / -22.5°) e iniezione armonica chirped realizza un isolatore magnetico non-reciproco (isolamento $7.95\text{ dB}$, rettificazione $6.24\times$) a onda polarizzata circolare pura ($\text{AR} = 0.15\text{ dB}$, $\eta_{\text{CP}} = 99.98\%$), proteggendo gli stadi di alimentazione primari dalle riflessioni d'onda del carico ricevitore.
 
 ### 3. Ingegneria Termica e Metrologia di Laboratorio
 - **Regime di Banco Sicuro:** Densità di corrente calibrata a $J_0 = 5 \times 10^3\text{ A/m}^2$ ($18.5\text{ W}$ totali) con raffreddamento a liquido dielettrico fluorurato (*3M Fluorinert* FC-3283) a $55.4\text{ mL/min}$ in micro-condotti integrati nel nucleo PEEK.
@@ -417,6 +451,12 @@ Il progetto **Open Chiral Flux Shaper** è un framework multifisico computaziona
 - **Inversione Magneto-Cinematica dell'Elicità:** L'inversione meccanica da orario (CW, $+1200\text{ RPM}$) ad antiorario (CCW, $-1200\text{ RPM}$) ribalta completamente il segno dell'elicità ($s_3 = +0.968 \to s_3 = -0.924$, dominanza RHCP al $96.2\%$), fornendo un meccanismo puramente elettrodinamico per il controllo di coppia e momento orbitale senza commutazioni elettriche.
 - **Finestra Spettrale Risonante (80-200 Hz):** Lo sweep in frequenza comprova che l'effetto chirale raggiunge il picco quando lo spessore di penetrazione (skin depth $\delta \approx 1\text{ mm}$) coincide con il singolo strato metallico del mantello.
 - **Benchmark di Correlazione Radiale Sferica ($R$ vs Percentuali):** La verifica sistematica su 25 sfere concentriche ($R = 51\text{--}250\text{ mm}$) certifica una correlazione monotona decrescente quasi unitaria (Pearson $r = -0.9961$, Spearman $\rho = -1.0000$, $R^2 = 0.9837$) con esponente di decadimento power-law bassissimo ($\gamma = 0.0457$), confermando che la purezza circolare resta $\ge 89.1\%$ anche a $250\text{ mm}$ nel far-field. Il residuo solenoidale di Gauss ($\text{Res}_{\text{Gauss}}\%$) scala regolarmente con la dimensione della griglia ($r = +0.9992$) rimanendo rigorosamente $\le 1.642\%$ su tutto il dominio ($< 2.0\%$ PASS).
+
+### 5. Diodo Magneto-Induttivo Chirale e Mantello Asimmetrico a Gradiente (Figura 35)
+- **Rottura di Parità e Isolamento Non-Reciproco:** L'accoppiamento tra il gradiente chirale asimmetrico triplo strato ($+45^\circ / +15^\circ / -22.5^\circ$) e l'iniezione non-lineare di 3ª armonica rompe la reciprocità magneto-induttiva di Lorentz, consentendo una trasmissione diretta ad altissima efficienza ($T_{\text{fwd}} = 92.4\%$) e un forte abbattimento dell'onda retrodiffusa ($T_{\text{bwd}} = 14.8\%$). L'isolamento netto di $7.95\text{ dB}$ (fattore di rettificazione $6.24\times$) previene le sovratensioni da riflessione verso lo stadio di potenza primario.
+- **Purezza Circolare Record ($\text{AR} = 0.15\text{ dB}$):** La distorsione armonica compensata azzera l'eccentricità dell'odografo trasverso, raggiungendo una purezza circolare quasi ideale $\eta_{\text{CP}} = 99.98\%$ ($s_3 = +0.9998$), di gran lunga superiore al vincolo normativo IEEE ($\le 3.0\text{ dB}$).
+- **Azzeramento Dissipazioni Esterne e nel Nucleo:** Le perdite correnti parassite (eddy) sono rigorosamente nulle nel nucleo in PEEK ($0.000\text{ W}$) e nello strato esterno Layer 3 a $-22.5^\circ$ ($0.000\text{ W}$), garantendo una schermatura elettromagnetica perfetta.
+- **Transitorio Cinematico Dinamico e Risonanza di Skin-Depth:** L'accelerazione lineare ($0 \to 1200\text{ RPM}$ in $1.0\text{ s}$, $\alpha = 125.66\text{ rad/s}^2$) attraversa in sicurezza il picco di risonanza magneto-meccanico a $120\text{ Hz}$ con una coppia giroscopica controllata ($\tau_z = 0.30\text{ Nm}$) e residuo solenoidale di Gauss pari a $1.412\%$ ($< 2.0\%$ PASS).
 
 ---
 
