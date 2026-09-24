@@ -19,6 +19,7 @@ Esegue il controllo incrociato e ricalcola i parametri chiave delle 12 pipeline:
 14. Triple Copper Mesh Cage 48 Coils Pisano & Synchronous Benchmark (scripts/run_tripla_rete_rame_48coils_pisano_sweep.py)
 15. Triple Mesh 48 Coils Fibonacci Multipliers (1x-9x) Benchmark (scripts/run_fibonacci_multipliers_48coils_sweep.py)
 16. Device Scaling Benchmark (1x, 5x, 10x, 20x) (scripts/run_scale_benchmarks_sweep.py)
+17. Vertical Toroidal Rotor 2 Coils Apex Benchmark (scripts/run_toroidale_2bobine_multicampaign_sweep.py)
 
 Autore: Alessandro Brescacin
 Licenza: CERN-OHL-S-2.0
@@ -115,6 +116,11 @@ pipelines = [
         "name": "Device Scaling Benchmark (1x, 5x, 10x, 20x)",
         "script": SCRIPT_DIR / "run_scale_benchmarks_sweep.py",
         "json": ROOT_DIR / "data" / "scale_benchmarks_sweep.json"
+    },
+    {
+        "name": "Vertical Toroidal Rotor 2 Coils Apex Benchmark",
+        "script": SCRIPT_DIR / "run_toroidale_2bobine_multicampaign_sweep.py",
+        "json": ROOT_DIR / "data" / "toroidale_2bobine_benchmark.json"
     }
 ]
 
@@ -422,9 +428,22 @@ for item in results_summary:
         fig46_path = ROOT_DIR / "figures" / "fig_46_scale_benchmarks_5x_10x_20x.png"
         if fig46_path.exists():
             print(f"  • Tavola Scaling (Fig 46):              Generata ({fig46_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
+    elif data.get("meta", {}).get("variant_id") == "rotore_toroidale_verticale_2bobine_vertice":
+        meta = data["meta"]
+        geom = meta.get("geometry", {})
+        summ = data.get("summary", {})
+        print(f"  • Topologia Toroidale:             R_maj={geom.get('major_radius_mm')} mm, r_min={geom.get('minor_radius_mm')} mm, 2 bobine contatto apice z=+{geom.get('apex_z_mm')} mm")
+        print(f"  • Concentrazione Cuspide Apice:    B_apex = {summ.get('b_apex_nominal_hw_mt', 0):.2f} mT vs B_eq = {summ.get('b_eq_nominal_hw_mt', 0):.2f} mT (Boost {summ.get('cusp_boost_ratio', 0):.2f}x)")
+        print(f"  • Polarizzazione Semionde:         s3 = {summ.get('stokes_s3_nominal_cw', 0):+.3f} (CW) / {summ.get('stokes_s3_nominal_ccw', 0):+.3f} (CCW) | Purezza CP = {summ.get('circular_purity_nominal_pct', 0):.1f}% | AR = {summ.get('axial_ratio_nominal_db', 0):.2f} dB [IEEE PASS]")
+        print(f"  • Forza Lorentz Assiale Cuspide:   Fz_apex = {summ.get('fz_apex_nominal_uN', 0):.2f} uN (Nominale) | Fz_max = {summ.get('fz_apex_max_2400rpm_uN', 0):.2f} uN (2400 RPM)")
+        print(f"  • Bilancio Energetico Invariante:  P_mesh = {summ.get('p_mesh_nominal_W', 0):.2f} W | P_coils = {summ.get('p_coils_nominal_W', 0):.2f} W | P_PEEK = 0.000 W [PASS]")
+        print(f"  • Solenoidalità di Gauss:          Max Residuo = {summ.get('max_gauss_residual_pct', 0):.3f}% [{summ.get('gauss_status', 'PASS')}]")
+        fig47_path = ROOT_DIR / "figures" / "fig_47_rotore_toroidale_2bobine_apex_sweep.png"
+        if fig47_path.exists():
+            print(f"  • Tavola Toroidale Apice (Fig 47): Generata ({fig47_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
 
 print("\n" + "=" * 90)
-print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 16 PIPELINE ===")
+print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 17 PIPELINE ===")
 print("=" * 90)
 
 

@@ -1,0 +1,3293 @@
+{
+  "meta": {
+    "variant_id": "rotore_toroidale_verticale_2bobine_vertice",
+    "name": "Rotore Toroidale Verticale a 2 Bobine con Convergenza al Vertice",
+    "author": "Alessandro Brescacin",
+    "license": "CERN-OHL-S-2.0",
+    "timestamp": "2026-09-24T21:08:08Z",
+    "power_total_W": 18.5,
+    "geometry": {
+      "rotor_type": "Vertical Toroidal Core",
+      "major_radius_mm": 35.0,
+      "minor_radius_mm": 12.0,
+      "apex_z_mm": 47.0,
+      "coils_count": 2,
+      "mantle_mesh_radii_mm": [
+        48.0,
+        49.0,
+        50.0
+      ],
+      "mantle_mesh_angles_deg": [
+        30.0,
+        0.0,
+        -30.0
+      ],
+      "mantle_mesh_open_area_pct": 56.25
+    },
+    "sweep_frequencies_hz": [
+      25.0,
+      50.0,
+      80.0,
+      100.0,
+      120.0,
+      150.0,
+      200.0,
+      300.0,
+      500.0,
+      750.0,
+      1000.0
+    ],
+    "sweep_rpm": [
+      0.0,
+      60.0,
+      120.0,
+      300.0,
+      600.0,
+      900.0,
+      1200.0,
+      1500.0,
+      1800.0,
+      2400.0
+    ],
+    "waveforms": [
+      "half_wave",
+      "pure_sine"
+    ],
+    "directions": [
+      "CW",
+      "CCW"
+    ]
+  },
+  "campaigns": {
+    "freq_sweep_at_1200rpm": {
+      "half_wave_cw": [
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 25.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 5.2,
+          "b_equator_mt": 2.300884955752213,
+          "b_mean_mt": 3.7504424778761063,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.38355625,
+            "s2": 0.209475,
+            "s3": 0.9100498189519963
+          },
+          "purity_cp_pct": 95.50249094759981,
+          "axial_ratio_db": 13.270426530865034,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 1.4250378650108357,
+            "fy": -0.9366176290192185,
+            "fz_apex": 4.342384770365968,
+            "f_mag": 4.665221430287155,
+            "f_peak_burst": 10.030226075117383
+          },
+          "torques": {
+            "tau_oam_uNm": 0.10211025431557792,
+            "tau_drive_mNm": 0.14129823411411147
+          },
+          "joule_losses_W": {
+            "p_mesh": 0.2202882685661557,
+            "p_coils": 18.279711731433846,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.146625,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 50.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 9.789032906658084,
+          "b_equator_mt": 4.331430489671719,
+          "b_mean_mt": 7.060231698164902,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.3821125,
+            "s2": 0.20895,
+            "s3": 0.9220359474787928
+          },
+          "purity_cp_pct": 96.10179737393965,
+          "axial_ratio_db": 13.91867100557343,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 4.592067086569682,
+            "fy": -3.0181731254470088,
+            "fz_apex": 15.388673749598068,
+            "f_mag": 16.34037113759341,
+            "f_peak_burst": 35.13179794582583
+          },
+          "torques": {
+            "tau_oam_uNm": 0.5522190583392467,
+            "tau_drive_mNm": 0.76
+          },
+          "joule_losses_W": {
+            "p_mesh": 0.9236604961275985,
+            "p_coils": 17.5763395038724,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.14825,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 80.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 13.388500587979784,
+          "b_equator_mt": 5.924115304415834,
+          "b_mean_mt": 9.65630794619781,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.38038,
+            "s2": 0.20831999999999998,
+            "s3": 0.9371415144564048
+          },
+          "purity_cp_pct": 96.85707572282024,
+          "axial_ratio_db": 14.887974351924584,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 7.73231212204334,
+            "fy": -5.082124499568808,
+            "fz_apex": 28.78627696113288,
+            "f_mag": 30.236838152572528,
+            "f_peak_burst": 65.00920202803093
+          },
+          "torques": {
+            "tau_oam_uNm": 0.8800164310191682,
+            "tau_drive_mNm": 1.263341373812002
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.608186330396517,
+            "p_coils": 16.891813669603483,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1502000000000001,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 100.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 15.112903725973863,
+          "b_equator_mt": 6.687125542466312,
+          "b_mean_mt": 10.900014634220089,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.379225,
+            "s2": 0.2079,
+            "s3": 0.9443499231432699
+          },
+          "purity_cp_pct": 97.2174961571635,
+          "axial_ratio_db": 15.433086588015266,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 9.51496009350929,
+            "fy": -6.253784255008122,
+            "fz_apex": 36.678996649704686,
+            "f_mag": 38.405638626617176,
+            "f_peak_burst": 82.57212304722692
+          },
+          "torques": {
+            "tau_oam_uNm": 0.9832200111578417,
+            "tau_drive_mNm": 1.4763673851961117
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.024358173816705,
+            "p_coils": 16.475641826183296,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1515,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 120.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 16.516746553886474,
+          "b_equator_mt": 7.308294935347998,
+          "b_mean_mt": 11.912520744617236,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.37807,
+            "s2": 0.20748,
+            "s3": 0.9470000000000001
+          },
+          "purity_cp_pct": 97.35000000000001,
+          "axial_ratio_db": 15.650900819192433,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 11.118765324006095,
+            "fy": -7.3078981766652955,
+            "fz_apex": 43.80973487054172,
+            "f_mag": 45.785643901969834,
+            "f_peak_burst": 98.43913438923514
+          },
+          "torques": {
+            "tau_oam_uNm": 1.0257500000000002,
+            "tau_drive_mNm": 1.6186506959679448
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.42,
+            "p_coils": 16.08,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1528,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 150.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 18.20274852251397,
+          "b_equator_mt": 8.054313505537156,
+          "b_mean_mt": 13.128531014025564,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.37633750000000005,
+            "s2": 0.20684999999999998,
+            "s3": 0.9412161624247903
+          },
+          "purity_cp_pct": 97.06080812123952,
+          "axial_ratio_db": 15.188159639281867,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 13.257206899750877,
+            "fy": -8.713406147820132,
+            "fz_apex": 53.21028118786825,
+            "f_mag": 55.52486835258304,
+            "f_peak_burst": 119.37846695805354
+          },
+          "torques": {
+            "tau_oam_uNm": 1.0243288086682076,
+            "tau_drive_mNm": 1.7414240644533314
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.985176731852241,
+            "p_coils": 15.514823268147758,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.15475,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 200.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 20.257003767459686,
+          "b_equator_mt": 8.963276003300747,
+          "b_mean_mt": 14.610139885380217,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.37345,
+            "s2": 0.20579999999999998,
+            "s3": 0.9169583822685576
+          },
+          "purity_cp_pct": 95.84791911342788,
+          "axial_ratio_db": 13.63316883253714,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 16.266309062216664,
+            "fy": -10.691162811053696,
+            "fz_apex": 65.89796954721923,
+            "f_mag": 68.71270743615217,
+            "f_peak_burst": 147.73232098772718
+          },
+          "torques": {
+            "tau_oam_uNm": 0.9515673682586543,
+            "tau_drive_mNm": 1.8081733833087485
+          },
+          "joule_losses_W": {
+            "p_mesh": 3.872874019391863,
+            "p_coils": 14.627125980608136,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.158,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 300.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 22.70304192400106,
+          "b_equator_mt": 10.045593771681885,
+          "b_mean_mt": 16.37431784784147,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.367675,
+            "s2": 0.2037,
+            "s3": 0.8930073601388804
+          },
+          "purity_cp_pct": 94.65036800694402,
+          "axial_ratio_db": 12.47798399405199,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 20.81438195486069,
+            "fy": -13.68042039775118,
+            "fz_apex": 82.77319476277827,
+            "f_mag": 86.43954054516291,
+            "f_peak_burst": 185.84501217210027
+          },
+          "torques": {
+            "tau_oam_uNm": 0.7782480739538518,
+            "tau_drive_mNm": 1.7483798574705687
+          },
+          "joule_losses_W": {
+            "p_mesh": 5.5149526881653665,
+            "p_coils": 12.985047311834634,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1645,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 500.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 24.502116626327574,
+          "b_equator_mt": 10.841644524923707,
+          "b_mean_mt": 17.67188057562564,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.356125,
+            "s2": 0.19949999999999998,
+            "s3": 0.8920000009956925
+          },
+          "purity_cp_pct": 94.60000004978463,
+          "axial_ratio_db": 12.43497380811302,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 26.406329201200215,
+            "fy": -17.35577282175659,
+            "fz_apex": 96.41149581941801,
+            "f_mag": 101.45784148236271,
+            "f_peak_burst": 218.1343591870798
+          },
+          "torques": {
+            "tau_oam_uNm": 0.5521025103818706,
+            "tau_drive_mNm": 1.52
+          },
+          "joule_losses_W": {
+            "p_mesh": 5.8,
+            "p_coils": 12.7,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1775,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 750.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 24.562419681495996,
+          "b_equator_mt": 10.868327292697344,
+          "b_mean_mt": 17.71537348709667,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.3416875,
+            "s2": 0.19425,
+            "s3": 0.892
+          },
+          "purity_cp_pct": 94.6,
+          "axial_ratio_db": 12.434973765788243,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 30.01926571030657,
+            "fy": -19.730404478951492,
+            "fz_apex": 96.88664351792272,
+            "f_mag": 103.33182891470592,
+            "f_peak_burst": 222.16343216661772
+          },
+          "torques": {
+            "tau_oam_uNm": 0.4068657263845039,
+            "tau_drive_mNm": 1.2999724456614388
+          },
+          "joule_losses_W": {
+            "p_mesh": 5.8,
+            "p_coils": 12.7,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.19375,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 1000.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 23.839817396401244,
+          "b_equator_mt": 10.548591768319136,
+          "b_mean_mt": 17.19420458236019,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.32725,
+            "s2": 0.189,
+            "s3": 0.892
+          },
+          "purity_cp_pct": 94.6,
+          "axial_ratio_db": 12.434973765788243,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 31.827520501818412,
+            "fy": -20.918894523372582,
+            "fz_apex": 91.2698768766416,
+            "f_mag": 98.8978343263945,
+            "f_peak_burst": 212.63034380174818
+          },
+          "torques": {
+            "tau_oam_uNm": 0.3250952858666142,
+            "tau_drive_mNm": 1.1475789892601953
+          },
+          "joule_losses_W": {
+            "p_mesh": 5.8,
+            "p_coils": 12.7,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.21,
+          "gauss_pass": true
+        }
+      ],
+      "half_wave_ccw": [
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 25.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 11.791974630138725,
+          "b_equator_mt": 5.2176878894419145,
+          "b_mean_mt": 8.50483125979032,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.38355625,
+            "s2": 0.209475,
+            "s3": -0.9298592901062075
+          },
+          "purity_cp_pct": 96.49296450531037,
+          "axial_ratio_db": 14.395554878242445,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -6.247155979572562,
+            "fy": -4.105993647864224,
+            "fz_apex": 22.33030669188912,
+            "f_mag": 23.548433888971015,
+            "f_peak_burst": 50.62913286128768
+          },
+          "torques": {
+            "tau_oam_uNm": -0.7459607959455873,
+            "tau_drive_mNm": -1.0429884771840567
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.2775719765035947,
+            "p_coils": 17.222428023496406,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.146625,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 50.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 14.298352519296593,
+          "b_equator_mt": 6.326704654556015,
+          "b_mean_mt": 10.312528586926303,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.3821125,
+            "s2": 0.20895,
+            "s3": -0.9412161624247903
+          },
+          "purity_cp_pct": 97.06080812123952,
+          "axial_ratio_db": 15.188159639281867,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -8.648633060690583,
+            "fy": -5.684383826179698,
+            "fz_apex": 32.83171853616456,
+            "f_mag": 34.424305589797086,
+            "f_peak_burst": 74.01225701806374
+          },
+          "torques": {
+            "tau_oam_uNm": -0.9409125816840427,
+            "tau_drive_mNm": -1.3801183610675818
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.8192559248931102,
+            "p_coils": 16.68074407510689,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.14825,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 80.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 16.516746553886474,
+          "b_equator_mt": 7.308294935347998,
+          "b_mean_mt": 11.912520744617236,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.38038,
+            "s2": 0.20831999999999998,
+            "s3": -0.9470000000000001
+          },
+          "purity_cp_pct": 97.35000000000001,
+          "axial_ratio_db": 15.650900819192433,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -11.118765324006095,
+            "fy": -7.3078981766652955,
+            "fz_apex": 43.80973487054172,
+            "f_mag": 45.785643901969834,
+            "f_peak_burst": 98.43913438923514
+          },
+          "torques": {
+            "tau_oam_uNm": -1.0257500000000002,
+            "tau_drive_mNm": -1.6186506959679448
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.42,
+            "p_coils": 16.08,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1502000000000001,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 100.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 17.68732841939072,
+          "b_equator_mt": 7.8262515130047445,
+          "b_mean_mt": 12.756789966197733,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.379225,
+            "s2": 0.2079,
+            "s3": -0.9443499231432699
+          },
+          "purity_cp_pct": 97.2174961571635,
+          "axial_ratio_db": 15.433086588015266,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -12.576177924256536,
+            "fy": -8.26579436150732,
+            "fz_apex": 50.23959102277297,
+            "f_mag": 52.44521058919274,
+            "f_peak_burst": 112.7572027667644
+          },
+          "torques": {
+            "tau_oam_uNm": -1.0307158145331088,
+            "tau_drive_mNm": -1.71
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.8000150316236296,
+            "p_coils": 15.69998496837637,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1515,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 120.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 18.67843597119102,
+          "b_equator_mt": 8.264794677518152,
+          "b_mean_mt": 13.471615324354588,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.37807,
+            "s2": 0.20748,
+            "s3": -0.9371415144564048
+          },
+          "purity_cp_pct": 96.85707572282024,
+          "axial_ratio_db": 14.887974351924584,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -13.909482678329583,
+            "fy": -9.142119663579525,
+            "fz_apex": 56.02767897134967,
+            "f_mag": 58.44786455670195,
+            "f_peak_burst": 125.66290879690919
+          },
+          "torques": {
+            "tau_oam_uNm": -1.0140010031437623,
+            "tau_drive_mNm": -1.7653742223558209
+          },
+          "joule_losses_W": {
+            "p_mesh": 3.1675085403910166,
+            "p_coils": 15.332491459608983,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1528,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 150.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 19.904981989345785,
+          "b_equator_mt": 8.807514154577781,
+          "b_mean_mt": 14.356248071961783,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.37633750000000005,
+            "s2": 0.20684999999999998,
+            "s3": -0.9220359474787928
+          },
+          "purity_cp_pct": 96.10179737393965,
+          "axial_ratio_db": 13.91867100557343,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -15.71189342761868,
+            "fy": -10.32676866412034,
+            "fz_apex": 63.62754891032107,
+            "f_mag": 66.3473490537369,
+            "f_peak_burst": 142.64680046553434
+          },
+          "torques": {
+            "tau_oam_uNm": -0.9690301982572829,
+            "tau_drive_mNm": -1.8036829075059229
+          },
+          "joule_losses_W": {
+            "p_mesh": 3.699768096329943,
+            "p_coils": 14.800231903670056,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.15475,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 200.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 21.440102587390548,
+          "b_equator_mt": 9.4867710563675,
+          "b_mean_mt": 15.463436821879025,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.37345,
+            "s2": 0.20579999999999998,
+            "s3": -0.9012957323473336
+          },
+          "purity_cp_pct": 95.06478661736668,
+          "axial_ratio_db": 12.847137428201677,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -18.284610887318912,
+            "fy": -12.017707962229768,
+            "fz_apex": 73.82021974655284,
+            "f_mag": 76.99465658989234,
+            "f_peak_burst": 165.53851166826854
+          },
+          "torques": {
+            "tau_oam_uNm": -0.8791158405901357,
+            "tau_drive_mNm": -1.800510827449734
+          },
+          "joule_losses_W": {
+            "p_mesh": 4.547298991526905,
+            "p_coils": 13.952701008473095,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.158,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 300.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 23.299460953941995,
+          "b_equator_mt": 10.309495997319468,
+          "b_mean_mt": 16.80447847563073,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.367675,
+            "s2": 0.2037,
+            "s3": -0.8921397394786471
+          },
+          "purity_cp_pct": 94.60698697393235,
+          "axial_ratio_db": 12.440917421049724,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -22.234272617063116,
+            "fy": -14.61365498621487,
+            "fz_apex": 87.17929698633304,
+            "f_mag": 91.14906260569695,
+            "f_peak_burst": 195.97048460224843
+          },
+          "torques": {
+            "tau_oam_uNm": -0.720246826212195,
+            "tau_drive_mNm": -1.7031930511355957
+          },
+          "joule_losses_W": {
+            "p_mesh": 5.8,
+            "p_coils": 12.7,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1645,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 500.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 24.61266609715929,
+          "b_equator_mt": 10.890560219981989,
+          "b_mean_mt": 17.751613158570642,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.356125,
+            "s2": 0.19949999999999998,
+            "s3": -0.8920000000191599
+          },
+          "purity_cp_pct": 94.60000000095799,
+          "axial_ratio_db": 12.43497376660269,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -27.170130374258967,
+            "fy": -17.857787302436336,
+            "fz_apex": 97.2834436686329,
+            "f_mag": 102.57282761005158,
+            "f_peak_burst": 220.53157936161088
+          },
+          "torques": {
+            "tau_oam_uNm": -0.521782590567278,
+            "tau_drive_mNm": -1.478960342448989
+          },
+          "joule_losses_W": {
+            "p_mesh": 5.8,
+            "p_coils": 12.7,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1775,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 750.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 24.477171535484604,
+          "b_equator_mt": 10.830606874108232,
+          "b_mean_mt": 17.653889204796418,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.3416875,
+            "s2": 0.19425,
+            "s3": -0.892
+          },
+          "purity_cp_pct": 94.6,
+          "axial_ratio_db": 12.434973765788243,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -30.397684859031536,
+            "fy": -19.97912351621831,
+            "fz_apex": 96.21528670642918,
+            "f_mag": 102.86187834793641,
+            "f_peak_burst": 221.15303844806328
+          },
+          "torques": {
+            "tau_oam_uNm": -0.3908394808003387,
+            "tau_drive_mNm": -1.2718680504616262
+          },
+          "joule_losses_W": {
+            "p_mesh": 5.8,
+            "p_coils": 12.7,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.19375,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 1000.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 23.696161221671954,
+          "b_equator_mt": 10.485027089235379,
+          "b_mean_mt": 17.090594155453665,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.32725,
+            "s2": 0.189,
+            "s3": -0.892
+          },
+          "purity_cp_pct": 94.6,
+          "axial_ratio_db": 12.434973765788243,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -32.01769821473218,
+            "fy": -21.04389035887639,
+            "fz_apex": 90.17322609491102,
+            "f_mag": 97.97545113328142,
+            "f_peak_burst": 210.64721993655505
+          },
+          "torques": {
+            "tau_oam_uNm": -0.31520970841316037,
+            "tau_drive_mNm": -1.127550710260387
+          },
+          "joule_losses_W": {
+            "p_mesh": 5.8,
+            "p_coils": 12.7,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.21,
+          "gauss_pass": true
+        }
+      ],
+      "pure_sine_cw": [
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 25.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 4.1,
+          "b_equator_mt": 2.216216216216216,
+          "b_mean_mt": 3.1581081081081077,
+          "cusp_concentration_ratio": 1.8500000000000003,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.43834999999999996,
+            "s2": 0.17955000000000002,
+            "s3": 0.829768033687997
+          },
+          "purity_cp_pct": 91.48840168439985,
+          "axial_ratio_db": 10.313549205221022,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 1.053527198282386,
+            "fy": -0.6747309022707415,
+            "fz_apex": 2.7716503194004325,
+            "f_mag": 3.0409253264479124,
+            "f_peak_burst": 5.0175267886390555
+          },
+          "torques": {
+            "tau_oam_uNm": 0.07203215210602212,
+            "tau_drive_mNm": 0.10659340468257532
+          },
+          "joule_losses_W": {
+            "p_mesh": 0.16840218877991242,
+            "p_coils": 18.33159781122009,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.08125,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 50.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 7.468556836869151,
+          "b_equator_mt": 4.0370577496590005,
+          "b_mean_mt": 5.752807293264076,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.43670000000000003,
+            "s2": 0.17909999999999998,
+            "s3": 0.8395748661190122
+          },
+          "purity_cp_pct": 91.97874330595062,
+          "axial_ratio_db": 10.594450568324794,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 3.285064951895286,
+            "fy": -2.103918002899228,
+            "fz_apex": 9.19695591455844,
+            "f_mag": 9.990101140400219,
+            "f_peak_burst": 16.48366688166036
+          },
+          "torques": {
+            "tau_oam_uNm": 0.3895546776644201,
+            "tau_drive_mNm": 0.5733333333333334
+          },
+          "joule_losses_W": {
+            "p_mesh": 0.7061040982793626,
+            "p_coils": 17.79389590172064,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.0825,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 80.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 10.178806164717138,
+          "b_equator_mt": 5.502057386333588,
+          "b_mean_mt": 7.840431775525363,
+          "cusp_concentration_ratio": 1.8499999999999999,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.43472,
+            "s2": 0.17856,
+            "s3": 0.851933966373422
+          },
+          "purity_cp_pct": 92.5966983186711,
+          "axial_ratio_db": 10.971700544489018,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 5.51204955385853,
+            "fy": -3.5301890401116425,
+            "fz_apex": 17.083010673993282,
+            "f_mag": 18.29410229092657,
+            "f_peak_burst": 30.18526878002884
+          },
+          "torques": {
+            "tau_oam_uNm": 0.6207944328398441,
+            "tau_drive_mNm": 0.9530470012967736
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.229398641005602,
+            "p_coils": 17.270601358994398,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.084,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 100.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 11.463180593251863,
+          "b_equator_mt": 6.196313834190196,
+          "b_mean_mt": 8.82974721372103,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4334,
+            "s2": 0.1782,
+            "s3": 0.857831755299039
+          },
+          "purity_cp_pct": 92.89158776495195,
+          "axial_ratio_db": 11.162037804790623,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 6.767106704031765,
+            "fy": -4.333989686851805,
+            "fz_apex": 21.666112445534587,
+            "f_mag": 23.108388698739645,
+            "f_peak_burst": 38.12884135292041
+          },
+          "torques": {
+            "tau_oam_uNm": 0.6935978552998434,
+            "tau_drive_mNm": 1.1137508344461895
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.5475465378350846,
+            "p_coils": 16.952453462164915,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.085,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 120.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 12.499609201355062,
+          "b_equator_mt": 6.756545514245979,
+          "b_mean_mt": 9.628077357800521,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.43208,
+            "s2": 0.17784,
+            "s3": 0.86
+          },
+          "purity_cp_pct": 93.0,
+          "axial_ratio_db": 11.23384908539678,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 7.889824247663834,
+            "fy": -5.05303350693077,
+            "fz_apex": 25.761051986905855,
+            "f_mag": 27.411936701978124,
+            "f_peak_burst": 45.229695558263906
+          },
+          "torques": {
+            "tau_oam_uNm": 0.7236000000000001,
+            "tau_drive_mNm": 1.221087367133713
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.85,
+            "p_coils": 16.65,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.086,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 150.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 13.73035905369237,
+          "b_equator_mt": 7.421815704698578,
+          "b_mean_mt": 10.576087379195474,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.43010000000000004,
+            "s2": 0.17729999999999999,
+            "s3": 0.8552677692566466
+          },
+          "purity_cp_pct": 92.76338846283232,
+          "axial_ratio_db": 11.078413439404123,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 9.376392828230166,
+            "fy": -6.005105519203591,
+            "fz_apex": 31.083829105104215,
+            "f_mag": 33.017911299798776,
+            "f_peak_burst": 54.47955364466798
+          },
+          "torques": {
+            "tau_oam_uNm": 0.7225974418253133,
+            "tau_drive_mNm": 1.3137058731840923
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.282056592531672,
+            "p_coils": 16.21794340746833,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.0875000000000001,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 200.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 15.201618563009648,
+          "b_equator_mt": 8.21709111514035,
+          "b_mean_mt": 11.709354839074999,
+          "cusp_concentration_ratio": 1.8499999999999999,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4268,
+            "s2": 0.1764,
+            "s3": 0.8354204945833653
+          },
+          "purity_cp_pct": 91.77102472916827,
+          "axial_ratio_db": 10.47359823916101,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 11.445703110971309,
+            "fy": -7.330394127251288,
+            "fz_apex": 38.10222928090716,
+            "f_mag": 40.45390801814032,
+            "f_peak_burst": 66.74894822993151
+          },
+          "torques": {
+            "tau_oam_uNm": 0.6712689716519253,
+            "tau_drive_mNm": 1.3640606224960734
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.9606681553202265,
+            "p_coils": 15.539331844679774,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.09,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 300.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 16.884349498334412,
+          "b_equator_mt": 9.126675404505088,
+          "b_mean_mt": 13.00551245141975,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.42019999999999996,
+            "s2": 0.17459999999999998,
+            "s3": 0.815824203749993
+          },
+          "purity_cp_pct": 90.79121018749964,
+          "axial_ratio_db": 9.93841244539645,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 14.514518613800687,
+            "fy": -9.29581529198471,
+            "fz_apex": 47.00449492805625,
+            "f_mag": 50.065017487011126,
+            "f_peak_burst": 82.60727885356836
+          },
+          "torques": {
+            "tau_oam_uNm": 0.5490034670368092,
+            "tau_drive_mNm": 1.318953225811131
+          },
+          "joule_losses_W": {
+            "p_mesh": 4.215976228556169,
+            "p_coils": 14.284023771443831,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.095,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 500.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 17.97123988603222,
+          "b_equator_mt": 9.714183722179577,
+          "b_mean_mt": 13.842711804105898,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.40700000000000003,
+            "s2": 0.17099999999999999,
+            "s3": 0.8150000008146575
+          },
+          "purity_cp_pct": 90.75000004073289,
+          "axial_ratio_db": 9.917049030764888,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 18.16022840926301,
+            "fy": -11.630708082336985,
+            "fz_apex": 53.25088214121179,
+            "f_mag": 57.451925252252174,
+            "f_peak_burst": 94.79567666621608
+          },
+          "torques": {
+            "tau_oam_uNm": 0.38947246065056945,
+            "tau_drive_mNm": 1.1466666666666667
+          },
+          "joule_losses_W": {
+            "p_mesh": 4.5,
+            "p_coils": 14.0,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.105,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 750.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 17.80017209073913,
+          "b_equator_mt": 9.621714643642774,
+          "b_mean_mt": 13.710943367190954,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.39049999999999996,
+            "s2": 0.1665,
+            "s3": 0.815
+          },
+          "purity_cp_pct": 90.75,
+          "axial_ratio_db": 9.917049009691173,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 20.398205046669137,
+            "fy": -13.064018962473494,
+            "fz_apex": 52.24191954809342,
+            "f_mag": 57.58449026124388,
+            "f_peak_burst": 95.0144089310524
+          },
+          "torques": {
+            "tau_oam_uNm": 0.2870173430288345,
+            "tau_drive_mNm": 0.980680967779682
+          },
+          "joule_losses_W": {
+            "p_mesh": 4.5,
+            "p_coils": 14.0,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1175000000000002,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 1000.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 17.132139362950788,
+          "b_equator_mt": 9.26061587186529,
+          "b_mean_mt": 13.19637761740804,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.374,
+            "s2": 0.162,
+            "s3": 0.815
+          },
+          "purity_cp_pct": 90.75,
+          "axial_ratio_db": 9.917049009691173,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 21.44619819705063,
+            "fy": -13.735205586875121,
+            "fz_apex": 48.39426753276191,
+            "f_mag": 54.68638239684023,
+            "f_peak_burst": 90.23253095478637
+          },
+          "torques": {
+            "tau_oam_uNm": 0.22933360843585865,
+            "tau_drive_mNm": 0.8657174831261124
+          },
+          "joule_losses_W": {
+            "p_mesh": 4.5,
+            "p_coils": 14.0,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1300000000000001,
+          "gauss_pass": true
+        }
+      ],
+      "pure_sine_ccw": [
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 25.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 8.98083994518084,
+          "b_equator_mt": 4.85450807847613,
+          "b_mean_mt": 6.917674011828485,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.43834999999999996,
+            "s2": 0.17955000000000002,
+            "s3": -0.8459757828141696
+          },
+          "purity_cp_pct": 92.29878914070848,
+          "axial_ratio_db": 10.786369890494763,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -4.461199087187082,
+            "fy": -2.857172449097345,
+            "fz_apex": 13.298560610859267,
+            "f_mag": 14.314937862949227,
+            "f_peak_burst": 23.619647473866223
+          },
+          "torques": {
+            "tau_oam_uNm": -0.5262268895405576,
+            "tau_drive_mNm": -0.7868158687528849
+          },
+          "joule_losses_W": {
+            "p_mesh": 0.9766562630296075,
+            "p_coils": 17.523343736970393,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.08125,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 50.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 10.857870642669539,
+          "b_equator_mt": 5.869119266307859,
+          "b_mean_mt": 8.363494954488699,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.43670000000000003,
+            "s2": 0.17909999999999998,
+            "s3": -0.8552677692566466
+          },
+          "purity_cp_pct": 92.76338846283232,
+          "axial_ratio_db": 11.078413439404123,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -6.158074934275455,
+            "fy": -3.943935632064055,
+            "fz_apex": 19.43837922333252,
+            "f_mag": 20.7684159722426,
+            "f_peak_burst": 34.267886354200286
+          },
+          "torques": {
+            "tau_oam_uNm": -0.6637527117782825,
+            "tau_drive_mNm": -1.0411419215071231
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.3907534963025843,
+            "p_coils": 17.109246503697417,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.0825,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 80.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 12.499609201355062,
+          "b_equator_mt": 6.756545514245979,
+          "b_mean_mt": 9.628077357800521,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.43472,
+            "s2": 0.17856,
+            "s3": -0.86
+          },
+          "purity_cp_pct": 93.0,
+          "axial_ratio_db": 11.23384908539678,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -7.889824247663834,
+            "fy": -5.05303350693077,
+            "fz_apex": 25.761051986905855,
+            "f_mag": 27.411936701978124,
+            "f_peak_burst": 45.229695558263906
+          },
+          "torques": {
+            "tau_oam_uNm": -0.7236000000000001,
+            "tau_drive_mNm": -1.221087367133713
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.85,
+            "p_coils": 16.65,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.084,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 100.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 13.355976577483595,
+          "b_equator_mt": 7.219446798639781,
+          "b_mean_mt": 10.287711688061687,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4334,
+            "s2": 0.1782,
+            "s3": -0.857831755299039
+          },
+          "purity_cp_pct": 92.89158776495195,
+          "axial_ratio_db": 11.162037804790623,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -8.904323228112924,
+            "fy": -5.702768809016143,
+            "fz_apex": 29.411828262608324,
+            "f_mag": 31.254826603085874,
+            "f_peak_burst": 51.57046389509169
+          },
+          "torques": {
+            "tau_oam_uNm": -0.7271030596111699,
+            "tau_drive_mNm": -1.29
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.1405073588858325,
+            "p_coils": 16.359492641114166,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.085,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 120.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 14.074220500969806,
+          "b_equator_mt": 7.607686757280976,
+          "b_mean_mt": 10.84095362912539,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.43208,
+            "s2": 0.17784,
+            "s3": -0.851933966373422
+          },
+          "purity_cp_pct": 92.5966983186711,
+          "axial_ratio_db": 10.971700544489018,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -9.827287361781043,
+            "fy": -6.293880669904712,
+            "fz_apex": 32.66024404824274,
+            "f_mag": 34.682561209760685,
+            "f_peak_burst": 57.22622599610513
+          },
+          "torques": {
+            "tau_oam_uNm": -0.7153118458443347,
+            "tau_drive_mNm": -1.331773536163163
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.4214424792245377,
+            "p_coils": 16.078557520775462,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.086,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 150.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 14.95228052696968,
+          "b_equator_mt": 8.082313798361989,
+          "b_mean_mt": 11.517297162665834,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.43010000000000004,
+            "s2": 0.17729999999999999,
+            "s3": -0.8395748661190122
+          },
+          "purity_cp_pct": 91.97874330595062,
+          "axial_ratio_db": 10.594450568324794,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -11.066569271922775,
+            "fy": -7.087578073029194,
+            "fz_apex": 36.86256886040395,
+            "f_mag": 39.135044415198664,
+            "f_peak_burst": 64.57282328507779
+          },
+          "torques": {
+            "tau_oam_uNm": -0.6835878639619496,
+            "tau_drive_mNm": -1.3606730705746437
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.828335114962973,
+            "p_coils": 15.671664885037027,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.0875000000000001,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 200.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 16.02844056290299,
+          "b_equator_mt": 8.664021925893508,
+          "b_mean_mt": 12.346231244398249,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4268,
+            "s2": 0.1764,
+            "s3": -0.8226055991932729
+          },
+          "purity_cp_pct": 91.13027995966365,
+          "axial_ratio_db": 10.117527922819834,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -12.817076289455882,
+            "fy": -8.208689308977362,
+            "fz_apex": 42.359738078958245,
+            "f_mag": 45.011192329230695,
+            "f_peak_burst": 74.26846734323064
+          },
+          "torques": {
+            "tau_oam_uNm": -0.620159124787738,
+            "tau_drive_mNm": -1.3582800979006764
+          },
+          "joule_losses_W": {
+            "p_mesh": 3.4762409645970145,
+            "p_coils": 15.023759035402986,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.09,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 300.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 17.272954857665084,
+          "b_equator_mt": 9.33673235549464,
+          "b_mean_mt": 13.304843606579862,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.42019999999999996,
+            "s2": 0.17459999999999998,
+            "s3": -0.8151143323007112
+          },
+          "purity_cp_pct": 90.75571661503557,
+          "axial_ratio_db": 9.920007399832425,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -15.455480997330081,
+            "fy": -9.898454121885557,
+            "fz_apex": 49.193078319499,
+            "f_mag": 52.505335361373206,
+            "f_peak_burst": 86.63380334626578
+          },
+          "torques": {
+            "tau_oam_uNm": -0.5080873540795948,
+            "tau_drive_mNm": -1.284864933312818
+          },
+          "joule_losses_W": {
+            "p_mesh": 4.5,
+            "p_coils": 14.0,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.095,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 500.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 18.01169478526004,
+          "b_equator_mt": 9.736051235275697,
+          "b_mean_mt": 13.873873010267868,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.40700000000000003,
+            "s2": 0.17099999999999999,
+            "s3": -0.8150000000156763
+          },
+          "purity_cp_pct": 90.75000000078381,
+          "axial_ratio_db": 9.917049010096694,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -18.643458320203212,
+            "fy": -11.940192407321158,
+            "fz_apex": 53.4908971653578,
+            "f_mag": 57.89147443636142,
+            "f_peak_burst": 95.52093281999633
+          },
+          "torques": {
+            "tau_oam_uNm": -0.36808372657517174,
+            "tau_drive_mNm": -1.1157069250053777
+          },
+          "joule_losses_W": {
+            "p_mesh": 4.5,
+            "p_coils": 14.0,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.105,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 750.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 17.711084937185163,
+          "b_equator_mt": 9.573559425505493,
+          "b_mean_mt": 13.642322181345328,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.39049999999999996,
+            "s2": 0.1665,
+            "s3": -0.815
+          },
+          "purity_cp_pct": 90.75,
+          "axial_ratio_db": 9.917049009691173,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -20.62354303927297,
+            "fy": -13.208336553242239,
+            "fz_apex": 51.72030240932898,
+            "f_mag": 57.22569670444302,
+            "f_peak_burst": 94.42239956233097
+          },
+          "torques": {
+            "tau_oam_uNm": -0.2757118677135025,
+            "tau_drive_mNm": -0.9594794064885952
+          },
+          "joule_losses_W": {
+            "p_mesh": 4.5,
+            "p_coils": 14.0,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1175000000000002,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 1000.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 17.01004245135885,
+          "b_equator_mt": 9.194617541275052,
+          "b_mean_mt": 13.10232999631695,
+          "cusp_concentration_ratio": 1.8500000000000003,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.374,
+            "s2": 0.162,
+            "s3": -0.815
+          },
+          "purity_cp_pct": 90.75,
+          "axial_ratio_db": 9.917049009691173,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -21.55044998952946,
+            "fy": -13.801973588799768,
+            "fz_apex": 47.706935359280976,
+            "f_mag": 54.13749210179347,
+            "f_peak_burst": 89.32686196795922
+          },
+          "torques": {
+            "tau_oam_uNm": -0.22235997563515755,
+            "tau_drive_mNm": -0.8506084305473094
+          },
+          "joule_losses_W": {
+            "p_mesh": 4.5,
+            "p_coils": 14.0,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1300000000000001,
+          "gauss_pass": true
+        }
+      ]
+    },
+    "rpm_sweep_at_100hz": {
+      "half_wave_cw": [
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 100.0,
+          "rpm": 0.0,
+          "direction": "CW",
+          "b_apex_mt": 16.516746553886474,
+          "b_equator_mt": 7.308294935347998,
+          "b_mean_mt": 11.912520744617236,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.379225,
+            "s2": 0.2079,
+            "s3": 0.9470000000000001
+          },
+          "purity_cp_pct": 97.35000000000001,
+          "axial_ratio_db": 15.650900819192433,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 11.118765324006095,
+            "fy": -7.3078981766652955,
+            "fz_apex": 39.11583470584082,
+            "f_mag": 41.316834859721396,
+            "f_peak_burst": 88.83119494840099
+          },
+          "torques": {
+            "tau_oam_uNm": 0.9325,
+            "tau_drive_mNm": 1.6186506959679448
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.42,
+            "p_coils": 16.08,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1515,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 100.0,
+          "rpm": 60.0,
+          "direction": "CW",
+          "b_apex_mt": 16.45264567894958,
+          "b_equator_mt": 7.279931716349372,
+          "b_mean_mt": 11.866288697649477,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.379225,
+            "s2": 0.2079,
+            "s3": 0.9469932102956694
+          },
+          "purity_cp_pct": 97.34966051478347,
+          "axial_ratio_db": 15.650329345439044,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 11.042270013243252,
+            "fy": -7.257621016768751,
+            "fz_apex": 39.04568654182692,
+            "f_mag": 41.220994983030415,
+            "f_peak_burst": 88.6251392135154
+          },
+          "torques": {
+            "tau_oam_uNm": 0.9361827950386358,
+            "tau_drive_mNm": 1.6128908131873503
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.400620562131335,
+            "p_coils": 16.099379437868667,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1515,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 100.0,
+          "rpm": 120.0,
+          "direction": "CW",
+          "b_apex_mt": 16.38795983671926,
+          "b_equator_mt": 7.251309662265161,
+          "b_mean_mt": 11.819634749492211,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.379225,
+            "s2": 0.2079,
+            "s3": 0.9469728462113638
+          },
+          "purity_cp_pct": 97.3486423105682,
+          "axial_ratio_db": 15.648615774395001,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 10.965407429979573,
+            "fy": -7.2071024640591554,
+            "fz_apex": 38.97031239677596,
+            "f_mag": 41.12016213897033,
+            "f_peak_burst": 88.4083485987862
+          },
+          "torques": {
+            "tau_oam_uNm": 0.9397688307133587,
+            "tau_drive_mNm": 1.607002463401459
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.3812019335768118,
+            "p_coils": 16.11879806642319,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1515,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 100.0,
+          "rpm": 300.0,
+          "direction": "CW",
+          "b_apex_mt": 16.190307465669264,
+          "b_equator_mt": 7.163852860915604,
+          "b_mean_mt": 11.677080163292434,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.379225,
+            "s2": 0.2079,
+            "s3": 0.9468305086089167
+          },
+          "purity_cp_pct": 97.34152543044583,
+          "axial_ratio_db": 15.636656374569633,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 10.73258254338886,
+            "fy": -7.054076429727356,
+            "fz_apex": 38.712481460926185,
+            "f_mag": 40.78730860438874,
+            "f_peak_burst": 87.69271349943578
+          },
+          "torques": {
+            "tau_oam_uNm": 0.9499100131370893,
+            "tau_drive_mNm": 1.588544335528242
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.322706044971935,
+            "p_coils": 16.177293955028066,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1515,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 100.0,
+          "rpm": 600.0,
+          "direction": "CW",
+          "b_apex_mt": 15.848361740341709,
+          "b_equator_mt": 7.0125494426290755,
+          "b_mean_mt": 11.430455591485392,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.379225,
+            "s2": 0.2079,
+            "s3": 0.9463251618929586
+          },
+          "purity_cp_pct": 97.31625809464792,
+          "axial_ratio_db": 15.594446539959455,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 10.336873168378348,
+            "fy": -6.79399325179706,
+            "fz_apex": 38.17492645585179,
+            "f_mag": 40.12897084544154,
+            "f_peak_burst": 86.27728731769932
+          },
+          "torques": {
+            "tau_oam_uNm": 0.964523450842739,
+            "tau_drive_mNm": 1.5549987104340517
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.224382007593094,
+            "p_coils": 16.275617992406907,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1515,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 100.0,
+          "rpm": 900.0,
+          "direction": "CW",
+          "b_apex_mt": 15.489690115047406,
+          "b_equator_mt": 6.8538451836492955,
+          "b_mean_mt": 11.17176764934835,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.379225,
+            "s2": 0.2079,
+            "s3": 0.9454932462413992
+          },
+          "purity_cp_pct": 97.27466231206996,
+          "axial_ratio_db": 15.525794098342732,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 9.931171149921406,
+            "fy": -6.527342328375762,
+            "fz_apex": 37.498642814472745,
+            "f_mag": 39.33678394592325,
+            "f_peak_burst": 84.57408548373499
+          },
+          "torques": {
+            "tau_oam_uNm": 0.975820663443353,
+            "tau_drive_mNm": 1.5177132328631329
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.1249587630623585,
+            "p_coils": 16.37504123693764,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1515,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 100.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 15.112903725973863,
+          "b_equator_mt": 6.687125542466312,
+          "b_mean_mt": 10.900014634220089,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.379225,
+            "s2": 0.2079,
+            "s3": 0.9443499231432699
+          },
+          "purity_cp_pct": 97.2174961571635,
+          "axial_ratio_db": 15.433086588015266,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 9.51496009350929,
+            "fy": -6.253784255008122,
+            "fz_apex": 36.678996649704686,
+            "f_mag": 38.405638626617176,
+            "f_peak_burst": 82.57212304722692
+          },
+          "torques": {
+            "tau_oam_uNm": 0.9832200111578417,
+            "tau_drive_mNm": 1.4763673851961117
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.024358173816705,
+            "p_coils": 16.475641826183296,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1515,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 100.0,
+          "rpm": 1500.0,
+          "direction": "CW",
+          "b_apex_mt": 14.71640750314896,
+          "b_equator_mt": 6.51168473590662,
+          "b_mean_mt": 10.614046119527789,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.379225,
+            "s2": 0.2079,
+            "s3": 0.9429157696258411
+          },
+          "purity_cp_pct": 97.14578848129204,
+          "axial_ratio_db": 15.319378230817176,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 9.087663623822566,
+            "fy": -5.972940204367252,
+            "fz_apex": 35.71124929299263,
+            "f_mag": 37.33034919326313,
+            "f_peak_burst": 80.26025076551574
+          },
+          "torques": {
+            "tau_oam_uNm": 0.9860762790671482,
+            "tau_drive_mNm": 1.4306214989953674
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.922491271503594,
+            "p_coils": 16.577508728496404,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1515,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 100.0,
+          "rpm": 1800.0,
+          "direction": "CW",
+          "b_apex_mt": 14.298352519296593,
+          "b_equator_mt": 6.326704654556015,
+          "b_mean_mt": 10.312528586926303,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.379225,
+            "s2": 0.2079,
+            "s3": 0.9412161624247903
+          },
+          "purity_cp_pct": 97.06080812123952,
+          "axial_ratio_db": 15.188159639281867,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 8.648633060690583,
+            "fy": -5.684383826179698,
+            "fz_apex": 34.59056060060194,
+            "f_mag": 36.10564991750901,
+            "f_peak_burst": 77.62714732264438
+          },
+          "torques": {
+            "tau_oam_uNm": 0.9836813353969536,
+            "tau_drive_mNm": 1.3801183610675818
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.8192559248931102,
+            "p_coils": 16.68074407510689,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1515,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 100.0,
+          "rpm": 2400.0,
+          "direction": "CW",
+          "b_apex_mt": 13.388500587979784,
+          "b_equator_mt": 5.924115304415834,
+          "b_mean_mt": 9.65630794619781,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.379225,
+            "s2": 0.2079,
+            "s3": 0.9371415144564048
+          },
+          "purity_cp_pct": 96.85707572282024,
+          "axial_ratio_db": 14.887974351924584,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 7.73231212204334,
+            "fy": -5.082124499568808,
+            "fz_apex": 31.870520921254254,
+            "f_mag": 33.18654462239058,
+            "f_peak_burst": 71.35107093813974
+          },
+          "torques": {
+            "tau_oam_uNm": 0.9600179247481834,
+            "tau_drive_mNm": 1.263341373812002
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.608186330396517,
+            "p_coils": 16.891813669603483,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1515,
+          "gauss_pass": true
+        }
+      ],
+      "half_wave_ccw": [
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 100.0,
+          "rpm": 0.0,
+          "direction": "CCW",
+          "b_apex_mt": 16.516746553886474,
+          "b_equator_mt": 7.308294935347998,
+          "b_mean_mt": 11.912520744617236,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.379225,
+            "s2": 0.2079,
+            "s3": -0.9470000000000001
+          },
+          "purity_cp_pct": 97.35000000000001,
+          "axial_ratio_db": 15.650900819192433,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -11.118765324006095,
+            "fy": -7.3078981766652955,
+            "fz_apex": 39.11583470584082,
+            "f_mag": 41.316834859721396,
+            "f_peak_burst": 88.83119494840099
+          },
+          "torques": {
+            "tau_oam_uNm": -0.9325,
+            "tau_drive_mNm": -1.6186506959679448
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.42,
+            "p_coils": 16.08,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1515,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 100.0,
+          "rpm": 60.0,
+          "direction": "CCW",
+          "b_apex_mt": 16.580270669040743,
+          "b_equator_mt": 7.336402950902984,
+          "b_mean_mt": 11.958336809971865,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.379225,
+            "s2": 0.2079,
+            "s3": -0.9469932102956694
+          },
+          "purity_cp_pct": 97.34966051478347,
+          "axial_ratio_db": 15.650329345439044,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -11.194896621319772,
+            "fy": -7.357936085786786,
+            "fz_apex": 39.65379943659831,
+            "f_mag": 41.855570042259906,
+            "f_peak_burst": 89.98947559085879
+          },
+          "torques": {
+            "tau_oam_uNm": -0.9380578566534234,
+            "tau_drive_mNm": -1.6242842914399869
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.439340717016787,
+            "p_coils": 16.060659282983213,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1515,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 100.0,
+          "rpm": 120.0,
+          "direction": "CCW",
+          "b_apex_mt": 16.643226043487207,
+          "b_equator_mt": 7.364259311277526,
+          "b_mean_mt": 12.003742677382366,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.379225,
+            "s2": 0.2079,
+            "s3": -0.9469728462113638
+          },
+          "purity_cp_pct": 97.3486423105682,
+          "axial_ratio_db": 15.648615774395001,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -11.270667106019726,
+            "fy": -7.407736847908127,
+            "fz_apex": 40.193805698836776,
+            "f_mag": 42.396279539346544,
+            "f_peak_burst": 91.15200100959507
+          },
+          "torques": {
+            "tau_oam_uNm": -0.9435420530716463,
+            "tau_drive_mNm": -1.6297937475224207
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.458643172791305,
+            "p_coils": 16.041356827208695,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1515,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 100.0,
+          "rpm": 300.0,
+          "direction": "CCW",
+          "b_apex_mt": 16.828757215842025,
+          "b_equator_mt": 7.446352750372578,
+          "b_mean_mt": 12.137554983107302,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.379225,
+            "s2": 0.2079,
+            "s3": -0.9468305086089167
+          },
+          "purity_cp_pct": 97.34152543044583,
+          "axial_ratio_db": 15.636656374569633,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -11.495844855051983,
+            "fy": -7.5557367394091655,
+            "fz_apex": 41.82586271351628,
+            "f_mag": 44.030062438481664,
+            "f_peak_burst": 94.66463424273557
+          },
+          "torques": {
+            "tau_oam_uNm": -0.9595620627509946,
+            "tau_drive_mNm": -1.6455982854961289
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.516325422030917,
+            "p_coils": 15.983674577969083,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1515,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 100.0,
+          "rpm": 600.0,
+          "direction": "CCW",
+          "b_apex_mt": 17.127299179409395,
+          "b_equator_mt": 7.5784509643404405,
+          "b_mean_mt": 12.352875071874918,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.379225,
+            "s2": 0.2079,
+            "s3": -0.9463251618929586
+          },
+          "purity_cp_pct": 97.31625809464792,
+          "axial_ratio_db": 15.594446539959455,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -11.864207914596184,
+            "fy": -7.797846330964427,
+            "fz_apex": 44.584841415490615,
+            "f_mag": 46.79074610311904,
+            "f_peak_burst": 100.60010412170594
+          },
+          "torques": {
+            "tau_oam_uNm": -0.9848760584722369,
+            "tau_drive_mNm": -1.6696477864465136
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.611737435623316,
+            "p_coils": 15.888262564376685,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1515,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 100.0,
+          "rpm": 900.0,
+          "direction": "CCW",
+          "b_apex_mt": 17.413231749461666,
+          "b_equator_mt": 7.704969800646755,
+          "b_mean_mt": 12.55910077505421,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.379225,
+            "s2": 0.2079,
+            "s3": -0.9454932462413992
+          },
+          "purity_cp_pct": 97.27466231206996,
+          "axial_ratio_db": 15.525794098342732,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -12.224209700508881,
+            "fy": -8.034460407995757,
+            "fz_apex": 47.390233748849795,
+            "f_mag": 49.59655342481258,
+            "f_peak_burst": 106.63258986334705
+          },
+          "torques": {
+            "tau_oam_uNm": -1.0085568775505196,
+            "tau_drive_mNm": -1.6910406682076566
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.7062856721283866,
+            "p_coils": 15.793714327871614,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1515,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 100.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 17.68732841939072,
+          "b_equator_mt": 7.8262515130047445,
+          "b_mean_mt": 12.756789966197733,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.379225,
+            "s2": 0.2079,
+            "s3": -0.9443499231432699
+          },
+          "purity_cp_pct": 97.2174961571635,
+          "axial_ratio_db": 15.433086588015266,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -12.576177924256536,
+            "fy": -8.26579436150732,
+            "fz_apex": 50.23959102277297,
+            "f_mag": 52.44521058919274,
+            "f_peak_burst": 112.7572027667644
+          },
+          "torques": {
+            "tau_oam_uNm": -1.0307158145331088,
+            "tau_drive_mNm": -1.71
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.8000150316236296,
+            "p_coils": 15.69998496837637,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1515,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 100.0,
+          "rpm": 1500.0,
+          "direction": "CCW",
+          "b_apex_mt": 17.950288811288015,
+          "b_equator_mt": 7.942605668711511,
+          "b_mean_mt": 12.946447239999763,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.379225,
+            "s2": 0.2079,
+            "s3": -0.9429157696258411
+          },
+          "purity_cp_pct": 97.14578848129204,
+          "axial_ratio_db": 15.319378230817176,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -12.920416203751985,
+            "fy": -8.492047746820862,
+            "fz_apex": 53.130550325005025,
+            "f_mag": 55.33450467520563,
+            "f_peak_burst": 118.9691850516921
+          },
+          "torques": {
+            "tau_oam_uNm": -1.0514594992150965,
+            "tau_drive_mNm": -1.7267314003278353
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.892966311864862,
+            "p_coils": 15.607033688135138,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1515,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 100.0,
+          "rpm": 1800.0,
+          "direction": "CCW",
+          "b_apex_mt": 18.20274852251397,
+          "b_equator_mt": 8.054313505537156,
+          "b_mean_mt": 13.128531014025564,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.379225,
+            "s2": 0.2079,
+            "s3": -0.9412161624247903
+          },
+          "purity_cp_pct": 97.06080812123952,
+          "axial_ratio_db": 15.188159639281867,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -13.257206899750877,
+            "fy": -8.713406147820132,
+            "fz_apex": 56.06083196578975,
+            "f_mag": 58.26228507513403,
+            "f_peak_burst": 125.26391291153816
+          },
+          "torques": {
+            "tau_oam_uNm": -1.070889209062217,
+            "tau_drive_mNm": -1.7414240644533314
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.985176731852241,
+            "p_coils": 15.514823268147758,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1515,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "half_wave",
+          "frequency_hz": 100.0,
+          "rpm": 2400.0,
+          "direction": "CCW",
+          "b_apex_mt": 18.67843597119102,
+          "b_equator_mt": 8.264794677518152,
+          "b_mean_mt": 13.471615324354588,
+          "cusp_concentration_ratio": 2.26,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.379225,
+            "s2": 0.2079,
+            "s3": -0.9371415144564048
+          },
+          "purity_cp_pct": 96.85707572282024,
+          "axial_ratio_db": 14.887974351924584,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -13.909482678329583,
+            "fy": -9.142119663579525,
+            "fz_apex": 62.03064457542285,
+            "f_mag": 64.22501791953346,
+            "f_peak_burst": 138.08378852699693
+          },
+          "torques": {
+            "tau_oam_uNm": -1.1061829125204679,
+            "tau_drive_mNm": -1.7653742223558209
+          },
+          "joule_losses_W": {
+            "p_mesh": 3.1675085403910166,
+            "p_coils": 15.332491459608983,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.1515,
+          "gauss_pass": true
+        }
+      ],
+      "pure_sine_cw": [
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 100.0,
+          "rpm": 0.0,
+          "direction": "CW",
+          "b_apex_mt": 12.499609201355062,
+          "b_equator_mt": 6.756545514245979,
+          "b_mean_mt": 9.628077357800521,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4334,
+            "s2": 0.1782,
+            "s3": 0.86
+          },
+          "purity_cp_pct": 93.0,
+          "axial_ratio_db": 11.23384908539678,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 7.889824247663834,
+            "fy": -5.05303350693077,
+            "fz_apex": 23.41913816991441,
+            "f_mag": 25.22376868952638,
+            "f_peak_burst": 41.61921833771853
+          },
+          "torques": {
+            "tau_oam_uNm": 0.67,
+            "tau_drive_mNm": 1.221087367133713
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.85,
+            "p_coils": 16.65,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.085,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 100.0,
+          "rpm": 60.0,
+          "direction": "CW",
+          "b_apex_mt": 12.452493661674493,
+          "b_equator_mt": 6.7310776549591855,
+          "b_mean_mt": 9.591785658316839,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4334,
+            "s2": 0.1782,
+            "s3": 0.8599944447873658
+          },
+          "purity_cp_pct": 92.99972223936828,
+          "axial_ratio_db": 11.233663789395955,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 7.836421395995932,
+            "fy": -5.018831680581664,
+            "fz_apex": 23.35913514060262,
+            "f_mag": 25.14452954919955,
+            "f_peak_burst": 41.48847375617925
+          },
+          "torques": {
+            "tau_oam_uNm": 0.6719767837131656,
+            "tau_drive_mNm": 1.216742192404492
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.8351851404723016,
+            "p_coils": 16.6648148595277,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.085,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 100.0,
+          "rpm": 120.0,
+          "direction": "CW",
+          "b_apex_mt": 12.404926527516297,
+          "b_equator_mt": 6.70536569054935,
+          "b_mean_mt": 9.555146109032822,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4334,
+            "s2": 0.1782,
+            "s3": 0.8599777832638431
+          },
+          "purity_cp_pct": 92.99888916319216,
+          "axial_ratio_db": 11.23310807940257,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 7.7827470059884165,
+            "fy": -4.984455947655503,
+            "fz_apex": 23.296345859882944,
+            "f_mag": 25.062635186201494,
+            "f_peak_burst": 41.35334805723246
+          },
+          "torques": {
+            "tau_oam_uNm": 0.6738855705790078,
+            "tau_drive_mNm": 1.2123001039695218
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.8203403211227696,
+            "p_coils": 16.67965967887723,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.085,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 100.0,
+          "rpm": 300.0,
+          "direction": "CW",
+          "b_apex_mt": 12.259449321968555,
+          "b_equator_mt": 6.626729363226246,
+          "b_mean_mt": 9.4430893425974,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4334,
+            "s2": 0.1782,
+            "s3": 0.8598613252254772
+          },
+          "purity_cp_pct": 92.99306626127387,
+          "axial_ratio_db": 11.229225573494295,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 7.620069602894385,
+            "fy": -4.88026929623573,
+            "fz_apex": 23.091057862139333,
+            "f_mag": 24.800795195908595,
+            "f_peak_burst": 40.92131207324918
+          },
+          "torques": {
+            "tau_oam_uNm": 0.6791797585592225,
+            "tau_drive_mNm": 1.1983755513634107
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.7756223897512728,
+            "p_coils": 16.724377610248727,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.085,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 100.0,
+          "rpm": 600.0,
+          "direction": "CW",
+          "b_apex_mt": 12.007312401307413,
+          "b_equator_mt": 6.490439135841845,
+          "b_mean_mt": 9.248875768574628,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4334,
+            "s2": 0.1782,
+            "s3": 0.8594478597306024
+          },
+          "purity_cp_pct": 92.97239298653012,
+          "axial_ratio_db": 11.215465416836876,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 7.343269325341234,
+            "fy": -4.702992713982589,
+            "fz_apex": 22.691278074543867,
+            "f_mag": 24.309172044899967,
+            "f_peak_burst": 40.110133874084944
+          },
+          "torques": {
+            "tau_oam_uNm": 0.6864087226321671,
+            "tau_drive_mNm": 1.1730692026081444
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.700457319854225,
+            "p_coils": 16.799542680145777,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.085,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 100.0,
+          "rpm": 900.0,
+          "direction": "CW",
+          "b_apex_mt": 11.742249525303064,
+          "b_equator_mt": 6.347161905569224,
+          "b_mean_mt": 9.044705715436145,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4334,
+            "s2": 0.1782,
+            "s3": 0.8587672014702357
+          },
+          "purity_cp_pct": 92.93836007351179,
+          "axial_ratio_db": 11.192894358624754,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 7.059076309416953,
+            "fy": -4.52098145659288,
+            "fz_apex": 22.217189176099634,
+            "f_mag": 23.74601706728156,
+            "f_peak_burst": 39.18092816101457
+          },
+          "torques": {
+            "tau_oam_uNm": 0.6913426873769879,
+            "tau_drive_mNm": 1.1449415616335916
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.6244519469691585,
+            "p_coils": 16.87554805303084,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.085,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 100.0,
+          "rpm": 1200.0,
+          "direction": "CW",
+          "b_apex_mt": 11.463180593251863,
+          "b_equator_mt": 6.196313834190196,
+          "b_mean_mt": 8.82974721372103,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4334,
+            "s2": 0.1782,
+            "s3": 0.857831755299039
+          },
+          "purity_cp_pct": 92.89158776495195,
+          "axial_ratio_db": 11.162037804790623,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 6.767106704031765,
+            "fy": -4.333989686851805,
+            "fz_apex": 21.666112445534587,
+            "f_mag": 23.108388698739645,
+            "f_peak_burst": 38.12884135292041
+          },
+          "torques": {
+            "tau_oam_uNm": 0.6935978552998434,
+            "tau_drive_mNm": 1.1137508344461895
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.5475465378350846,
+            "p_coils": 16.952453462164915,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.085,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 100.0,
+          "rpm": 1500.0,
+          "direction": "CW",
+          "b_apex_mt": 11.168866135145674,
+          "b_equator_mt": 6.03722493791658,
+          "b_mean_mt": 8.603045536531127,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4334,
+            "s2": 0.1782,
+            "s3": 0.8566583569665972
+          },
+          "purity_cp_pct": 92.83291784832986,
+          "axial_ratio_db": 11.123596185192854,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 6.466932958561372,
+            "fy": -4.141743580202227,
+            "fz_apex": 21.035301087568783,
+            "f_mag": 22.39328367210459,
+            "f_peak_burst": 36.94891805897257
+          },
+          "torques": {
+            "tau_oam_uNm": 0.6927501628096405,
+            "tau_drive_mNm": 1.0792407799438735
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.469673079455227,
+            "p_coils": 17.030326920544773,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.085,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 100.0,
+          "rpm": 1800.0,
+          "direction": "CW",
+          "b_apex_mt": 10.857870642669539,
+          "b_equator_mt": 5.869119266307859,
+          "b_mean_mt": 8.363494954488699,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4334,
+            "s2": 0.1782,
+            "s3": 0.8552677692566466
+          },
+          "purity_cp_pct": 92.76338846283232,
+          "axial_ratio_db": 11.078413439404123,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 6.158074934275455,
+            "fy": -3.943935632064055,
+            "fz_apex": 20.321941915302176,
+            "f_mag": 21.59763501809704,
+            "f_peak_burst": 35.636097779860116
+          },
+          "torques": {
+            "tau_oam_uNm": 0.6883361455478485,
+            "tau_drive_mNm": 1.0411419215071231
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.3907534963025843,
+            "p_coils": 17.109246503697417,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.085,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 100.0,
+          "rpm": 2400.0,
+          "direction": "CW",
+          "b_apex_mt": 10.178806164717138,
+          "b_equator_mt": 5.502057386333588,
+          "b_mean_mt": 7.840431775525363,
+          "cusp_concentration_ratio": 1.8499999999999999,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4334,
+            "s2": 0.1782,
+            "s3": 0.851933966373422
+          },
+          "purity_cp_pct": 92.5966983186711,
+          "axial_ratio_db": 10.971700544489018,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": 5.51204955385853,
+            "fy": -3.5301890401116425,
+            "fz_apex": 18.636011644356305,
+            "f_mag": 19.75211013921551,
+            "f_peak_burst": 32.59098172970559
+          },
+          "torques": {
+            "tau_oam_uNm": 0.6667792056427955,
+            "tau_drive_mNm": 0.9530470012967736
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.229398641005602,
+            "p_coils": 17.270601358994398,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.085,
+          "gauss_pass": true
+        }
+      ],
+      "pure_sine_ccw": [
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 100.0,
+          "rpm": 0.0,
+          "direction": "CCW",
+          "b_apex_mt": 12.499609201355062,
+          "b_equator_mt": 6.756545514245979,
+          "b_mean_mt": 9.628077357800521,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4334,
+            "s2": 0.1782,
+            "s3": -0.86
+          },
+          "purity_cp_pct": 93.0,
+          "axial_ratio_db": 11.23384908539678,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -7.889824247663834,
+            "fy": -5.05303350693077,
+            "fz_apex": 23.41913816991441,
+            "f_mag": 25.22376868952638,
+            "f_peak_burst": 41.61921833771853
+          },
+          "torques": {
+            "tau_oam_uNm": -0.67,
+            "tau_drive_mNm": -1.221087367133713
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.85,
+            "p_coils": 16.65,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.085,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 100.0,
+          "rpm": 60.0,
+          "direction": "CCW",
+          "b_apex_mt": 12.546279540456261,
+          "b_equator_mt": 6.781772724570952,
+          "b_mean_mt": 9.664026132513607,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4334,
+            "s2": 0.1782,
+            "s3": -0.8599944447873658
+          },
+          "purity_cp_pct": 92.99972223936828,
+          "axial_ratio_db": 11.233663789395955,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -7.9429579945626445,
+            "fy": -5.087062985281693,
+            "fz_apex": 23.71231851301479,
+            "f_mag": 25.51946004096234,
+            "f_peak_burst": 42.10710906758786
+          },
+          "torques": {
+            "tau_oam_uNm": -0.6733226724432797,
+            "tau_drive_mNm": -1.2253372724898148
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.8647852588764693,
+            "p_coils": 16.63521474112353,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.085,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 100.0,
+          "rpm": 120.0,
+          "direction": "CCW",
+          "b_apex_mt": 12.592510926869114,
+          "b_equator_mt": 6.806762663172494,
+          "b_mean_mt": 9.699636795020805,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4334,
+            "s2": 0.1782,
+            "s3": -0.8599777832638431
+          },
+          "purity_cp_pct": 92.99888916319216,
+          "axial_ratio_db": 11.23310807940257,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -7.99582502760779,
+            "fy": -5.120921646894876,
+            "fz_apex": 24.006236777732443,
+            "f_mag": 25.815818031089183,
+            "f_peak_burst": 42.59609975129715
+          },
+          "torques": {
+            "tau_oam_uNm": -0.6765912573593471,
+            "tau_drive_mNm": -1.2294935288327034
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.879541268456163,
+            "p_coils": 16.620458731543838,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.085,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 100.0,
+          "rpm": 300.0,
+          "direction": "CCW",
+          "b_apex_mt": 12.728631758283955,
+          "b_equator_mt": 6.8803414909643,
+          "b_mean_mt": 9.804486624624127,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4334,
+            "s2": 0.1782,
+            "s3": -0.8598613252254772
+          },
+          "purity_cp_pct": 92.99306626127387,
+          "axial_ratio_db": 11.229225573494295,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -8.152849138628646,
+            "fy": -5.22148765058239,
+            "fz_apex": 24.89231849176879,
+            "f_mag": 26.70880757836405,
+            "f_peak_burst": 44.069532504300675
+          },
+          "torques": {
+            "tau_oam_uNm": -0.6860809140747061,
+            "tau_drive_mNm": -1.2414162504619923
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.9236372027922302,
+            "p_coils": 16.57636279720777,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.085,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 100.0,
+          "rpm": 600.0,
+          "direction": "CCW",
+          "b_apex_mt": 12.947264910664037,
+          "b_equator_mt": 6.998521573331912,
+          "b_mean_mt": 9.972893241997975,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4334,
+            "s2": 0.1782,
+            "s3": -0.8594478597306024
+          },
+          "purity_cp_pct": 92.97239298653012,
+          "axial_ratio_db": 11.215465416836876,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -8.40943336455554,
+            "fy": -5.385816873928829,
+            "fz_apex": 26.38295313408623,
+            "f_mag": 28.209675804372278,
+            "f_peak_burst": 46.545965077214255
+          },
+          "torques": {
+            "tau_oam_uNm": -0.7008927742049837,
+            "tau_drive_mNm": -1.2595588564421067
+          },
+          "joule_losses_W": {
+            "p_mesh": 1.9965761388029484,
+            "p_coils": 16.503423861197053,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.085,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 100.0,
+          "rpm": 900.0,
+          "direction": "CCW",
+          "b_apex_mt": 13.156178702389226,
+          "b_equator_mt": 7.111447947237419,
+          "b_mean_mt": 10.133813324813323,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4334,
+            "s2": 0.1782,
+            "s3": -0.8587672014702357
+          },
+          "purity_cp_pct": 92.93836007351179,
+          "axial_ratio_db": 11.192894358624754,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -8.659842831643193,
+            "fy": -5.54619147644564,
+            "fz_apex": 27.88984052062833,
+            "f_mag": 29.725348139731555,
+            "f_peak_burst": 49.04682443055706
+          },
+          "torques": {
+            "tau_oam_uNm": -0.7145354143638672,
+            "tau_drive_mNm": -1.2756973461917411
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.068854749354345,
+            "p_coils": 16.431145250645656,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.085,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 100.0,
+          "rpm": 1200.0,
+          "direction": "CCW",
+          "b_apex_mt": 13.355976577483595,
+          "b_equator_mt": 7.219446798639781,
+          "b_mean_mt": 10.287711688061687,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4334,
+            "s2": 0.1782,
+            "s3": -0.857831755299039
+          },
+          "purity_cp_pct": 92.89158776495195,
+          "axial_ratio_db": 11.162037804790623,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -8.904323228112924,
+            "fy": -5.702768809016143,
+            "fz_apex": 29.411828262608324,
+            "f_mag": 31.254826603085874,
+            "f_peak_burst": 51.57046389509169
+          },
+          "torques": {
+            "tau_oam_uNm": -0.7271030596111699,
+            "tau_drive_mNm": -1.29
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.1405073588858325,
+            "p_coils": 16.359492641114166,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.085,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 100.0,
+          "rpm": 1500.0,
+          "direction": "CCW",
+          "b_apex_mt": 13.54720459857632,
+          "b_equator_mt": 7.32281329652774,
+          "b_mean_mt": 10.43500894755203,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4334,
+            "s2": 0.1782,
+            "s3": -0.8566583569665972
+          },
+          "purity_cp_pct": 92.83291784832986,
+          "axial_ratio_db": 11.123596185192854,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -9.143102483732063,
+            "fy": -5.85569484913177,
+            "fz_apex": 30.947811354591927,
+            "f_mag": 32.79714183939791,
+            "f_peak_burst": 54.115284035006546
+          },
+          "torques": {
+            "tau_oam_uNm": -0.7386839687068466,
+            "tau_drive_mNm": -1.302621933580648
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.2115651557644607,
+            "p_coils": 16.28843484423554,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.085,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 100.0,
+          "rpm": 1800.0,
+          "direction": "CCW",
+          "b_apex_mt": 13.73035905369237,
+          "b_equator_mt": 7.421815704698578,
+          "b_mean_mt": 10.576087379195474,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4334,
+            "s2": 0.1782,
+            "s3": -0.8552677692566466
+          },
+          "purity_cp_pct": 92.76338846283232,
+          "axial_ratio_db": 11.078413439404123,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -9.376392828230166,
+            "fy": -6.005105519203591,
+            "fz_apex": 32.49673042806349,
+            "f_mag": 34.35135402397238,
+            "f_peak_burst": 56.67973413955442
+          },
+          "torques": {
+            "tau_oam_uNm": -0.7493603100410656,
+            "tau_drive_mNm": -1.3137058731840923
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.282056592531672,
+            "p_coils": 16.21794340746833,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.085,
+          "gauss_pass": true
+        },
+        {
+          "waveform": "pure_sine",
+          "frequency_hz": 100.0,
+          "rpm": 2400.0,
+          "direction": "CCW",
+          "b_apex_mt": 14.074220500969806,
+          "b_equator_mt": 7.607686757280976,
+          "b_mean_mt": 10.84095362912539,
+          "cusp_concentration_ratio": 1.85,
+          "stokes": {
+            "s0": 1.0,
+            "s1": 0.4334,
+            "s2": 0.1782,
+            "s3": -0.851933966373422
+          },
+          "purity_cp_pct": 92.5966983186711,
+          "axial_ratio_db": 10.971700544489018,
+          "ieee_pass": false,
+          "lorentz_forces_uN": {
+            "fx": -9.827287361781043,
+            "fy": -6.293880669904712,
+            "fz_apex": 35.62935714353753,
+            "f_mag": 37.49186046650353,
+            "f_peak_burst": 61.86156976973082
+          },
+          "torques": {
+            "tau_oam_uNm": -0.7682979084994705,
+            "tau_drive_mNm": -1.331773536163163
+          },
+          "joule_losses_W": {
+            "p_mesh": 2.4214424792245377,
+            "p_coils": 16.078557520775462,
+            "p_peek": 0.0,
+            "p_total": 18.5
+          },
+          "gauss_residual_pct": 1.085,
+          "gauss_pass": true
+        }
+      ]
+    }
+  },
+  "summary": {
+    "b_apex_nominal_hw_mt": 15.112903725973863,
+    "b_eq_nominal_hw_mt": 6.687125542466312,
+    "cusp_boost_ratio": 2.26,
+    "stokes_s3_nominal_cw": 0.9443499231432699,
+    "stokes_s3_nominal_ccw": -0.9443499231432699,
+    "circular_purity_nominal_pct": 97.2174961571635,
+    "axial_ratio_nominal_db": 15.433086588015266,
+    "fz_apex_nominal_uN": 36.678996649704686,
+    "fz_apex_max_2400rpm_uN": 39.11583470584082,
+    "tau_oam_nominal_cw_uNm": 0.9832200111578417,
+    "tau_drive_nominal_cw_mNm": 1.4763673851961117,
+    "p_mesh_nominal_W": 2.024358173816705,
+    "p_coils_nominal_W": 16.475641826183296,
+    "p_peek_nominal_W": 0.0,
+    "max_gauss_residual_pct": 1.21,
+    "gauss_status": "PASS (< 2.0%)"
+  }
+}

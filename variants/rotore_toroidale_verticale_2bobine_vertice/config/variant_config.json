@@ -1,0 +1,33 @@
+{
+  "variant_id": "rotore_toroidale_verticale_2bobine_vertice",
+  "name": "Rotore Toroidale Verticale a 2 Bobine con Convergenza al Vertice",
+  "description": "Configurazione a gruppo singolo con 2 bobine verticali conformate lungo un rotore toroidale verticale ad anello che convergono fino a toccarsi al vertice superiore (apice z = +47 mm), alimentate con treno di semionde commutate all'interno di una gabbia sferica a tripla rete di rame OFHC (+30°/0°/-30°).",
+  "author": "Alessandro Brescacin",
+  "license": "CERN-OHL-S-2.0",
+  "topology": {
+    "rotor_geometry": "Vertical Toroidal Core (Asse verticale Z)",
+    "torus_major_radius_mm": 35.0,
+    "torus_minor_radius_mm": 12.0,
+    "rotor_core_material": "PEEK Amagnetico Isolante (sigma=0 S/m, mu_r=1.0)",
+    "coils_count": 2,
+    "coils_orientation": "Vertical Arched Saddle Coils (Meridiane, 180° opposte)",
+    "coils_apex_contact_z_mm": 47.0,
+    "coils_contact_condition": "Tangenti / a contatto all'apice superiore (Cuspide magnetica)",
+    "excitation_law": "Half-Wave Commutated Pulse Train (Semionde pulsate con transiente dB/dt)",
+    "nominal_active_power_W": 18.50,
+    "nominal_frequency_hz": 100.0,
+    "nominal_speed_rpm": 1200.0
+  },
+  "mantle": {
+    "type": "Spherical Triple Concentric Woven Wire Mesh",
+    "material": "OFHC Copper Woven Wire Mesh",
+    "radii_mm": [48.0, 49.0, 50.0],
+    "angles_deg": [30.0, 0.0, -30.0],
+    "wire_diameter_mm": 0.4,
+    "mesh_aperture_mm": 1.2,
+    "open_area_pct": 56.25,
+    "effective_conductivity_s_m": 3.2e7,
+    "relative_permeability": 1.0,
+    "macroscopic_eddy_suppression_pct": 56.0
+  }
+}
