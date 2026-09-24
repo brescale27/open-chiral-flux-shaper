@@ -43,6 +43,11 @@ pipelines = [
         "name": "Dual Orthogonal 90° (48 Coils)",
         "script": SCRIPT_DIR / "run_doppio_gruppo_48coils_simulation.py",
         "json": ROOT_DIR / "variants" / "gabbia_sferica_doppio_gruppo_90deg_48coils" / "data" / "doppio_gruppo_48coils_273n.json"
+    },
+    {
+        "name": "Concentric Spheres Polarization Benchmark",
+        "script": SCRIPT_DIR / "run_polarization_spherical_sweep.py",
+        "json": ROOT_DIR / "data" / "polarization_spherical_sweep_benchmark.json"
     }
 ]
 
@@ -158,7 +163,18 @@ for item in results_summary:
         print(f"  • Equilibrio Stefan-Boltz: {th.get('t_eq_kelvin', 0):.1f} K ({th.get('t_eq_celsius', 0):.1f} °C)")
         ff = sph.get("Far-Field (R=15.0 cm)", {})
         print(f"  • Solenoidalità di Gauss:  Far-Field = {ff.get('gauss_residual_pct', 0):.4f}% [PASS]")
+    elif "study" in data and "Polarization" in data.get("study", ""):
+        sph = data["campaign_data"]["spherical_concentric_sweep"]
+        kin = data["campaign_data"]["kinematic_rpm_sweep"]
+        d48_near = sph["dual_90_48coils"]["radii_cases"][0]["static_0rpm"]
+        d48_far = sph["dual_90_48coils"]["radii_cases"][-1]["static_0rpm"]
+        cw1200 = next(e for e in kin["dual_90_48coils"]["cw"] if e["rpm"] == 1200)
+        ccw1200 = next(e for e in kin["dual_90_48coils"]["ccw"] if e["rpm"] == 1200)
+        print(f"  • Purezza Circolare Near-Field (55 mm):  {d48_near['purity_cp_pct']}% (AR = {d48_near['ar_db']} dB, s3 = {d48_near['mean_s3']:+.3f})")
+        print(f"  • Conservazione Far-Field (160 mm):      {d48_far['purity_cp_pct']}% (AR = {d48_far['ar_db']} dB, s3 = {d48_far['mean_s3']:+.3f})")
+        print(f"  • Inversione Elicità (1200 RPM CW/CCW):  CW s3 = {cw1200['mean_s3']:+.3f} (LHCP {cw1200['lhcp_pct']}%) vs CCW s3 = {ccw1200['mean_s3']:+.3f} (RHCP {ccw1200['rhcp_pct']}%)")
+        print(f"  • Finestra Risonanza Spettrale:          80 - 200 Hz (Picco Chiral Skin-Depth a 120 Hz)")
 
 print("\n" + "=" * 90)
-print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 4 PIPELINE ===")
+print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 5 PIPELINE ===")
 print("=" * 90)

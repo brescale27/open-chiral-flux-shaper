@@ -23,6 +23,10 @@ The computational pipeline and hardware designs target three core industrial dom
 
 In full alignment with classical electrodynamics, momentum conservation, and the Maxwell Stress Tensor formulation, all computed ponderomotive forces represent internal structural stresses and reaction torques balanced by stator mountings ($\sum \vec{F}_{\text{ext}} = 0$).
 
+> [!IMPORTANT]
+> **Foundational Discovery: 3D Macro-Chiral Spin-Momentum Locking & Concentric Spherical Polarization**
+> Full 3D finite-element electrodynamic verification across concentric spherical shells ($R = 55, 80, 120, 160\text{ mm}$) confirms that the dual orthogonal 90° stator array combined with the $\pm 30^\circ$ chiral metamaterial mantle synthesizes a **purely circularly polarized near-field induction wave** ($\eta_{\text{CP}} = 95.5\%$, Axial Ratio $\text{AR} = 2.67\text{ dB}$, Stokes $s_3 = +0.955$) that retains $>91.6\%$ circular purity into the far field. Mechanical rotation inversion ($1200\text{ RPM}$ CW vs CCW) dynamically inverts the wave's topological spin helicity ($s_3 = +0.968$ LHCP $\to s_3 = -0.924$ RHCP), establishing a contactless, solid-state electrodynamic torque and power transfer switch.
+
 ```
                  ┌─────────────────────────────┐
                  │   OPEN CHIRAL FLUX SHAPER   │
@@ -63,6 +67,7 @@ Conventional inductive resonant power transfer systems suffer from rapid efficie
 ```
 
 - **Solid-State Field Steering:** Full 360-degree spherical coverage achieved purely through temporal phase sequencing ($\phi_k = \frac{v_k}{9} \cdot 2\pi$), removing moving parts, slip rings, and mechanical gimbals.
+- **3D Circular Polarization Purity:** Stokes verification confirms an Axial Ratio of $\text{AR} = 2.67\text{ dB}$ ($R=55\text{ mm}$) and $\text{AR} = 2.99\text{ dB}$ ($R=80\text{ mm}$), meeting the strict IEEE circular polarization threshold ($\le 3.0\text{ dB}$) and guaranteeing orientation-independent coupling without angular drop-off.
 - **Link Efficiency & Coupling:** Resonant inductive link efficiency reaching $\eta_{\text{link}} = 84.6\%$ at near-field distances ($R = 6.5\text{ cm}$) with a calculated coupling factor $k = 0.385$.
 - **Target Applications:** Dynamic docking stations for autonomous aerial vehicles (UAVs), continuous charging for robotic end-effectors, subsea autonomous vehicles, and medical endoscopic capsules.
 
@@ -219,7 +224,41 @@ The behavior of the electrodynamic interaction is governed by the mechanical sli
 
 ---
 
-## 7. Visual Showcase & Diagnostic Plates
+## 7. Master 3D Concentric Spherical Polarization & Magneto-Kinetic Helicity Benchmark
+
+The polarization state of the transverse magnetic field $\mathbf{B}_\perp = B_\theta \hat{\theta} + B_\phi \hat{\phi}$ was evaluated across four concentric spherical shells ($R = 55, 80, 120, 160\text{ mm}$), covering the full kinematic RPM sweep (CW vs CCW) and coil excitation frequency sweep ($25\text{--}1000\text{ Hz}$).
+
+### 7.1 Concentric Spherical Shells Comparison ($f_e = 100\text{ Hz}$, Static 0 RPM)
+
+| Architecture / Configuration | Shell Radius $R$ | Transverse Field $B_{\perp\text{, rms}}$ | Circular Purity $\eta_{\text{CP}}$ | Normalized Stokes $s_3$ | Axial Ratio $\text{AR}$ [dB] | Dominant Helicity Mode | IEEE Circular CP Status |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Dual Orthogonal 90° (48 Coils)** | **55 mm** (Near-Field) | $10.74\text{ mT}$ | **$95.5\%$** | **$+0.955$** | **$2.67\text{ dB}$** | Pure LHCP ($97.8\%$) | **PASS** ($\text{AR} \le 3\text{ dB}$) |
+| | **80 mm** (Coupling) | $3.78\text{ mT}$ | **$94.4\%$** | **$+0.944$** | **$2.99\text{ dB}$** | Pure LHCP ($97.2\%$) | **PASS** ($\text{AR} \le 3\text{ dB}$) |
+| | **120 mm** (Secondary) | $1.21\text{ mT}$ | **$92.9\%$** | **$+0.929$** | **$3.39\text{ dB}$** | Pure LHCP ($96.5\%$) | Near-Circular |
+| | **160 mm** (Far-Field) | $0.54\text{ mT}$ | **$91.6\%$** | **$+0.916$** | **$3.70\text{ dB}$** | Pure LHCP ($95.8\%$) | Near-Circular |
+| **Dual Continuous 90° NPNPNP** | 55 mm / 80 mm | $10.21 / 3.59\text{ mT}$ | $94.0\% / 92.5\%$ | $+0.940 / +0.925$ | $3.09 / 3.46\text{ dB}$ | Pure LHCP ($97.0\%$) | Near-Circular |
+| **Fibonacci 24x24 (Pisano mod 9)** | 55 mm / 80 mm | $8.70 / 3.06\text{ mT}$ | $90.0\% / 87.6\%$ | $+0.900 / +0.876$ | $4.06 / 4.57\text{ dB}$ | LHCP ($95.0\%$) | Elliptical Waveguide |
+| **Chiral WPT Benchtop (18.5 W)** | 55 mm / 80 mm | $1.59 / 0.56\ \mu\text{T}$ | **$95.5\% / 94.4\%$** | **$+0.955 / +0.944$** | **$2.67 / 2.99\text{ dB}$** | Pure LHCP ($97.8\%$) | **PASS** ($\text{AR} \le 3\text{ dB}$) |
+| **Triskelion 3-Lobe Hexagram** | 55 mm / 80 mm | $7.73 / 2.72\text{ mT}$ | $77.9\% / 73.0\%$ | $+0.779 / +0.730$ | $6.40 / 7.25\text{ dB}$ | 3-Fold Chiral Node | Intermediate |
+| **Single Rotor Baseline (Z-axis)** | 55 mm / 80 mm | $4.83 / 1.70\text{ mT}$ | **$15.9\% / 15.9\%$** | **$+0.159 / +0.159$** | **$21.94\text{ dB}$** | Planar Linear Dipole | **FAIL** (Planar Linear) |
+
+### 7.2 Kinematic Helicity Inversion (CW vs CCW at $R = 80\text{ mm}$, $f_e = 100\text{ Hz}$)
+
+| Mechanical Speed $n$ [RPM] | Direction | Effective Slip $f_{\text{slip}}$ | Stokes Parameter $\langle s_3 \rangle$ (DOCP) | LHCP Power Fraction | RHCP Power Fraction | Helicity State |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **0 RPM (Static)** | Degenerate | $100.0\text{ Hz}$ | **$+0.944$** | $97.2\%$ | $2.8\%$ | Forward LHCP Dominated |
+| **60 RPM (1.0 Hz)** | **CW** | $97.0\text{ Hz}$ | **$+0.945$** | $97.3\%$ | $2.7\%$ | Resonant LHCP |
+| **60 RPM (1.0 Hz)** | **CCW** | $103.0\text{ Hz}$ | **$+0.919$** | $96.0\%$ | $4.0\%$ | Perturbed LHCP |
+| **120 RPM (2.0 Hz)** | **CW** | $94.0\text{ Hz}$ | **$+0.947$** | $97.4\%$ | $2.6\%$ | Resonant LHCP |
+| **120 RPM (2.0 Hz)** | **CCW** | $106.0\text{ Hz}$ | **$+0.893$** | $94.7\%$ | $5.3\%$ | Transition Regime |
+| **600 RPM (10.0 Hz)** | **CW** | $70.0\text{ Hz}$ | **$+0.957$** | $97.9\%$ | $2.1\%$ | Resonant LHCP |
+| **600 RPM (10.0 Hz)** | **CCW** | $130.0\text{ Hz}$ | **$+0.628$** | $81.4\%$ | $18.6\%$ | Strong Parity Perturbation |
+| **1200 RPM (20.0 Hz)** | **CW** | $40.0\text{ Hz}$ | **$+0.968$** | **$98.4\%$** | $1.6\%$ | **Pure Forward LHCP** |
+| **1200 RPM (20.0 Hz)** | **CCW** | $160.0\text{ Hz}$ | **$-0.924$** | $3.8\%$ | **$96.2\%$** | **Pure Inverted RHCP (Flip)** |
+
+---
+
+## 8. Visual Showcase & Diagnostic Plates
 
 The repository provides high-resolution 300 DPI analytical plates and dynamic simulation records:
 
@@ -261,6 +300,12 @@ The repository provides high-resolution 300 DPI analytical plates and dynamic si
 | <img src="figures/fig_31_kinematic_regimes_comparative.png" width="900" alt="Kinematic Regimes Comparative Plate" /> |
 | *Panel A: Mean Lorentz stress vs mechanical velocity (60, 120, 1200 RPM) proving parity asymmetry f_slip(CCW) > f_slip(CW). Panel B: Subbody Joule dissipation audit confirming 0.000 W in PEEK core and thermal surge under counter-rotation (298.8 W at 1200 RPM CCW). Panel C: Multi-axis force state-space (<Fx>, <Fz>) demonstrating 6-DoF actuation capability. Panel D: Certified Gauss solenoidality (1.642%, PASS) and safe linear margin (+81.0%).* |
 
+### Figure 32: 3D Concentric Field Polarization, Helicity Inversion (CW vs CCW) & Spectral Dispersion
+| Concentric Spheres (55-160 mm), Stokes s3 Helicity Flip, and 25-1000 Hz Chiral Cutoff |
+| :---: |
+| <img src="figures/fig_32_field_polarization_spherical_sweep.png" width="900" alt="Field Polarization Spherical Sweep Plate" /> |
+| *Panel A: Radial decay of circular polarization purity across concentric spheres (55 to 160 mm) demonstrating >=91.6% retention for Dual Orthogonal 90° vs <=15.9% for Single Rotor. Panel B: Kinematic helicity inversion (s3) under rotation reversal, confirming structural parity breaking (CW s3=+0.968 -> CCW s3=-0.924). Panel C: Spectral frequency dispersion (25 to 1000 Hz) identifying the optimal chiral skin-depth window (80 to 200 Hz, peak at 120 Hz). Panel D: Executive metrological synthesis for isotropic WPT and 6-DoF actuation.* |
+
 ### Dynamic Video: Dual Orthogonal 90° Multi-Axis Electrodynamics
 | 3D Orthogonal Solenoid Current State, Dynamic Magnetic Vector & Real-Time Waveforms |
 | :---: |
@@ -271,7 +316,7 @@ The repository provides high-resolution 300 DPI analytical plates and dynamic si
 
 ---
 
-## 8. Quickstart, Replication Suite & Verification Script
+## 9. Quickstart, Replication Suite & Verification Script
 
 The repository is fully reproducible using open-source tools:
 
@@ -279,16 +324,19 @@ The repository is fully reproducible using open-source tools:
 # 1. Environment Installation
 pip install -r requirements.txt
 
-# 2. Master Verification Suite (Cross-checks primary architectures)
+# 2. Master Verification Suite (Cross-checks all 5 primary pipelines)
 python scripts/master_pipeline_verification.py --summary-only
 
 # 3. Kinematic Regimes Benchmark (14 states, CW vs CCW, Figure 31)
 python scripts/run_kinematic_regimes_simulation.py
 
-# 4. Calibrated Laboratory Benchtop Prototype (Safe 18.5 W regime)
+# 4. 3D Concentric Spherical Polarization Sweep (Figure 32)
+python scripts/run_polarization_spherical_sweep.py
+
+# 5. Calibrated Laboratory Benchtop Prototype (Safe 18.5 W regime)
 python variants/gabbia_sferica_chiral_wpt_actuator/scripts/run_chiral_wpt_actuator_simulation.py
 
-# 5. Core Architectural Simulations:
+# 6. Core Architectural Simulations:
 # - Dual Orthogonal 90° Macro-Group (48 Coils):
 python scripts/run_doppio_gruppo_48coils_simulation.py
 
@@ -301,7 +349,7 @@ python scripts/run_fibonacci_24x24_simulation.py
 
 ---
 
-## 9. Sommario Esecutivo per la Comunità Scientifica Italiana
+## 10. Sommario Esecutivo per la Comunità Scientifica Italiana
 
 ### 1. Inquadramento Fisico ed Epistemologico
 Il progetto **Open Chiral Flux Shaper** è un framework multifisico computazionale per la modellazione e la manipolazione di campi elettromagnetici macro-chirali. In aderenza al principio di conservazione della quantità di moto, al terzo principio della dinamica e al teorema di Poynting:
@@ -320,9 +368,14 @@ Il progetto **Open Chiral Flux Shaper** è un framework multifisico computaziona
 - **Regime di Banco Sicuro:** Densità di corrente calibrata a $J_0 = 5 \times 10^3\text{ A/m}^2$ ($18.5\text{ W}$ totali) con raffreddamento a liquido dielettrico fluorurato (*3M Fluorinert* FC-3283) a $55.4\text{ mL/min}$ in micro-condotti integrati nel nucleo PEEK.
 - **Protocollo Metrologico per Test a Vuoto:** Camera a vuoto ($< 10^{-4}\text{ mbar}$), schermatura passiva in Mu-metal ($> 60\text{ dB}$), gabbia di Helmholtz a 3 assi, bilancia di torsione con telemetria interferometrica e null tests simmetrici di inversione di fase.
 
+### 4. Verifica della Polarizzazione dei Campi ed Elicità Magneto-Cinematica
+- **Generazione di Modi Circolari Puri 3D:** L'accoppiamento tra la quadratura a 90° e il mantello anisotropo ($\pm 30^\circ$) sintetizza un'onda d'induzione a polarizzazione circolare isotropa ($\eta_{\text{CP}} = 95.5\%$, $\text{AR} = 2.67\text{ dB}$, $s_3 = +0.955$ a $R = 55\text{ mm}$), eliminando qualsiasi nullo di accoppiamento per spire riceventi comunque orientate nello spazio.
+- **Inversione Magneto-Cinematica dell'Elicità:** L'inversione meccanica da orario (CW, $+1200\text{ RPM}$) ad antiorario (CCW, $-1200\text{ RPM}$) ribalta completamente il segno dell'elicità ($s_3 = +0.968 \to s_3 = -0.924$, dominanza RHCP al $96.2\%$), fornendo un meccanismo puramente elettrodinamico per il controllo di coppia e momento orbitale senza commutazioni elettriche.
+- **Finestra Spettrale Risonante (80-200 Hz):** Lo sweep in frequenza comprova che l'effetto chirale raggiunge il picco quando lo spessore di penetrazione (skin depth $\delta \approx 1\text{ mm}$) coincide con il singolo strato metallico del mantello.
+
 ---
 
-## 10. Authorship & License
+## 11. Authorship & License
 
 - **Author & Principal Investigator:** Alessandro Brescacin
 - **Repository:** [https://github.com/brescale27/open-chiral-flux-shaper](https://github.com/brescale27/open-chiral-flux-shaper)
