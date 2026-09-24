@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "variant_id": "inner_coils_copper_collimator",
+    "name": "Inner Coils (28 mm) with Coaxial Copper Collimator Tube (200 mm)",
+    "author": "Alessandro Brescacin",
+    "license": "CERN-OHL-S-2.0",
+    "timestamp": "2026-09-24T21:25:00Z",
+    "power_total_W": 18.5,
+    "dimensions": {
+      "rotor_radius_mm": 20.0,
+      "coils_radius_mm": 28.0,
+      "mantle_radius_mm": 50.0,
+      "tube_inner_radius_mm": 38.0,
+      "tube_outer_radius_mm": 43.0,
+      "tube_length_mm": 200.0,
+      "tube_conductivity_s_m": 58000000.0
+    }
+  },
+  "axial_collimation_profile": [
+    {
+      "z_mm": 50.0,
+      "b_free_space_mt": 8.5437,
+      "b_collimated_mt": 8.5437,
+      "collimation_gain": 1.0,
+      "inside_tube": false
+    },
+    {
+      "z_mm": 55.0,
+      "b_free_space_mt": 6.419,
+      "b_collimated_mt": 12.6088,
+      "collimation_gain": 1.96,
+      "inside_tube": true
+    },
+    {
+      "z_mm": 75.0,
+      "b_free_space_mt": 2.5315,
+      "b_collimated_mt": 11.8271,
+      "collimation_gain": 4.67,
+      "inside_tube": true
+    },
+    {
+      "z_mm": 100.0,
+      "b_free_space_mt": 1.068,
+      "b_collimated_mt": 10.9178,
+      "collimation_gain": 10.22,
+      "inside_tube": true
+    },
+    {
+      "z_mm": 125.0,
+      "b_free_space_mt": 0.5468,
+      "b_collimated_mt": 10.0784,
+      "collimation_gain": 18.43,
+      "inside_tube": true
+    },
+    {
+      "z_mm": 150.0,
+      "b_free_space_mt": 0.3164,
+      "b_collimated_mt": 9.3035,
+      "collimation_gain": 29.4,
+      "inside_tube": true
+    },
+    {
+      "z_mm": 175.0,
+      "b_free_space_mt": 0.1993,
+      "b_collimated_mt": 8.5882,
+      "collimation_gain": 43.1,
+      "inside_tube": true
+    },
+    {
+      "z_mm": 200.0,
+      "b_free_space_mt": 0.1335,
+      "b_collimated_mt": 7.9279,
+      "collimation_gain": 59.39,
+      "inside_tube": true
+    },
+    {
+      "z_mm": 225.0,
+      "b_free_space_mt": 0.0938,
+      "b_collimated_mt": 7.3184,
+      "collimation_gain": 78.06,
+      "inside_tube": true
+    },
+    {
+      "z_mm": 255.0,
+      "b_free_space_mt": 0.0644,
+      "b_collimated_mt": 6.6485,
+      "collimation_gain": 103.23,
+      "inside_tube": true
+    },
+    {
+      "z_mm": 275.0,
+      "b_free_space_mt": 0.0514,
+      "b_collimated_mt": 5.2063,
+      "collimation_gain": 101.38,
+      "inside_tube": false
+    },
+    {
+      "z_mm": 300.0,
+      "b_free_space_mt": 0.0396,
+      "b_collimated_mt": 2.7675,
+      "collimation_gain": 69.97,
+      "inside_tube": false
+    }
+  ],
+  "summary": {
+    "b_inner_gap_mt": 48.65,
+    "b_exit_free_space_mt": 0.0644,
+    "b_exit_collimated_mt": 6.6485,
+    "collimator_exit_gain": 103.23,
+    "tau_oam_at_exit_cw_uNm": 18.42,
+    "tau_oam_at_exit_ccw_uNm": -8.65,
+    "soac_efficiency_pct": 95.8,
+    "oam_purity_pct": 97.8,
+    "q_seawater_l_min": 38.5,
+    "delta_p_seawater_pa": 1.85,
+    "q_galinstan_l_min": 145.2,
+    "delta_p_galinstan_kpa": 3.25,
+    "max_gauss_residual_pct": 1.145,
+    "peek_losses_W": 0.0
+  }
+}

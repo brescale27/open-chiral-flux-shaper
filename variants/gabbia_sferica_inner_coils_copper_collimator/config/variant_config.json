@@ -1,0 +1,31 @@
+{
+  "variant_id": "inner_coils_copper_collimator",
+  "name": "Inner Coils with Coaxial Copper Collimator Tube",
+  "type": "Concentrated Near-Rotor Stator with Guided Waveguide Collimation",
+  "author": "Alessandro Brescacin",
+  "license": "CERN-OHL-S-2.0",
+  "dimensions": {
+    "rotor_radius_mm": 20.0,
+    "inner_coils_radius_mm": 28.0,
+    "mantle_inner_radius_mm": 48.0,
+    "mantle_outer_radius_mm": 52.0,
+    "copper_tube": {
+      "material": "OFHC Electrolytic Copper",
+      "conductivity_s_m": 5.8e7,
+      "inner_radius_mm": 38.0,
+      "outer_radius_mm": 43.0,
+      "wall_thickness_mm": 5.0,
+      "z_start_mm": 55.0,
+      "z_end_mm": 255.0,
+      "optimal_length_mm": 200.0
+    }
+  },
+  "electrodynamics": {
+    "nominal_power_w": 18.5,
+    "operating_frequency_hz": 120.0,
+    "kinematic_rpm_nominal": 1200.0,
+    "coils_count": 48,
+    "spatial_quadrature": "3D Orthogonal Arrays Nested at 28 mm",
+    "chiral_mantle_angles_deg": [45.0, 15.0, -22.5]
+  }
+}

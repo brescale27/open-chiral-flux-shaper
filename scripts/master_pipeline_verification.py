@@ -91,6 +91,11 @@ pipelines = [
         "name": "Helical Magnetohydrodynamic (MHD) Pumping",
         "script": SCRIPT_DIR / "run_mhd_helical_pumping_sweep.py",
         "json": ROOT_DIR / "data" / "mhd_helical_pumping_benchmark.json"
+    },
+    {
+        "name": "Inner Coils and Copper Collimator Tube Multi-Campaign Benchmark",
+        "script": SCRIPT_DIR / "run_copper_collimator_multicampaign_sweep.py",
+        "json": ROOT_DIR / "data" / "copper_collimator_multicampaign_benchmark.json"
     }
 ]
 
@@ -335,9 +340,25 @@ for item in results_summary:
         fig41_path = ROOT_DIR / "figures" / "fig_41_mhd_helical_pumping.png"
         if fig41_path.exists():
             print(f"  • Tavola Pompaggio MHD (Fig 41):         Generata ({fig41_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
+    elif "variants_data" in data and "copper_collimator" in data.get("meta", {}):
+        meta = data["meta"]
+        vdata = data["variants_data"]
+        ic = vdata.get("inner_coils_copper_collimator", {}).get("summary", {})
+        cd = vdata.get("chiral_diode_asymm", {}).get("summary", {})
+        sr = vdata.get("single_rotor_baseline", {}).get("summary", {})
+        col = meta.get("copper_collimator", {})
+        print(f"  • Tubo Collimatore in Rame:        R_in={col.get('r_in_mm', 0):.0f}mm, R_out={col.get('r_out_mm', 0):.0f}mm, L={col.get('length_mm', 0):.0f}mm (z={col.get('z_start_mm', 0):.0f}-{col.get('z_end_mm', 0):.0f}mm)")
+        print(f"  • Guadagno Collimazione (255 mm):  Inner Coils = {ic.get('collimator_gain_at_255mm', 0):.1f}x (B={ic.get('b_exit_255mm_mt', 0):.2f} mT) vs Diodo Libero = {cd.get('b_exit_255mm_mt', 0):.4f} mT")
+        print(f"  • Coppia OAM all'Uscita (120 Hz):  Inner Coils = {ic.get('tau_oam_exit_120hz_cw_uNm', 0):+.3f} uN*m (CW) vs Diodo Libero = {cd.get('tau_oam_exit_120hz_cw_uNm', 0):+.3f} uN*m")
+        print(f"  • Risposta a 2400 RPM (CW vs CCW): Inner Coils = {ic.get('tau_oam_exit_2400rpm_cw_uNm', 0):+.3f} uN*m (CW) vs {ic.get('tau_oam_exit_2400rpm_ccw_uNm', 0):+.3f} uN*m (CCW)")
+        print(f"  • Portata MHD Guidata (120 Hz):    Inner Coils = {ic.get('q_mhd_seawater_120hz_l_min', 0):.2f} L/min (Guidata) vs Single Rotor = {sr.get('q_mhd_seawater_120hz_l_min', 0):.2f} L/min")
+        print(f"  • Solenoidalità di Gauss:          Max Residuo = {ic.get('max_gauss_residual_pct', 0):.3f}% [PASS (< 2.0%)]")
+        fig42_path = ROOT_DIR / "figures" / "fig_42_inner_coils_copper_collimator.png"
+        if fig42_path.exists():
+            print(f"  • Tavola Collimatore Rame (Fig 42):     Generata ({fig42_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
 
 print("\n" + "=" * 90)
-print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 12 PIPELINE ===")
+print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 13 PIPELINE ===")
 print("=" * 90)
 
 

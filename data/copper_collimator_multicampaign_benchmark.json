@@ -1,0 +1,2019 @@
+{
+  "meta": {
+    "project": "Open Chiral Flux Shaper",
+    "study": "Inner Coils and Coaxial Copper Collimator Waveguide Multi-Campaign Benchmark",
+    "author": "Alessandro Brescacin",
+    "license": "CERN-OHL-S-2.0",
+    "timestamp": "2026-09-24T21:28:00Z",
+    "power_total_W": 18.5,
+    "copper_collimator": {
+      "material": "OFHC Electrolytic Copper",
+      "conductivity_s_m": 58000000.0,
+      "r_in_mm": 38.0,
+      "r_out_mm": 43.0,
+      "length_mm": 200.0,
+      "z_start_mm": 55.0,
+      "z_end_mm": 255.0
+    },
+    "z_profile_points_mm": [
+      50.0,
+      55.0,
+      75.0,
+      100.0,
+      125.0,
+      150.0,
+      175.0,
+      200.0,
+      225.0,
+      255.0,
+      275.0,
+      300.0
+    ],
+    "frequency_sweep_hz": [
+      25.0,
+      50.0,
+      80.0,
+      100.0,
+      120.0,
+      150.0,
+      200.0,
+      300.0,
+      500.0,
+      750.0,
+      1000.0
+    ],
+    "rpm_sweep_list": [
+      0.0,
+      120.0,
+      300.0,
+      600.0,
+      900.0,
+      1200.0,
+      1500.0,
+      1800.0,
+      2400.0
+    ]
+  },
+  "variants_data": {
+    "inner_coils_copper_collimator": {
+      "info": {
+        "id": "inner_coils_copper_collimator",
+        "name": "Inner Coils (28mm) + Cu Tube (200mm)",
+        "type": "Near-Rotor Stator with Guided Waveguide Collimator",
+        "chiral_coupling": 1.45,
+        "has_copper_collimator": true,
+        "r_coil_mm": 28.0,
+        "b_gap_mt": 48.65,
+        "oam_gain": 1.65,
+        "gain_cw": 1.25,
+        "gain_ccw": 0.6,
+        "color": "#ec4899",
+        "marker": "*"
+      },
+      "axial_profile": [
+        {
+          "z_mm": 50.0,
+          "b_z_mt": 8.543718400000003,
+          "b_free_mt": 8.543718400000003,
+          "collimation_gain": 0.999999999999883
+        },
+        {
+          "z_mm": 55.0,
+          "b_z_mt": 12.608793388429747,
+          "b_free_mt": 6.419022088655144,
+          "collimation_gain": 1.9642857142854084
+        },
+        {
+          "z_mm": 75.0,
+          "b_z_mt": 11.82711123639711,
+          "b_free_mt": 2.531472118518519,
+          "collimation_gain": 4.672029033965407
+        },
+        {
+          "z_mm": 100.0,
+          "b_z_mt": 10.917799712851227,
+          "b_free_mt": 1.0679648000000004,
+          "collimation_gain": 10.22299584484526
+        },
+        {
+          "z_mm": 125.0,
+          "b_z_mt": 10.078399381508286,
+          "b_free_mt": 0.5467979776,
+          "collimation_gain": 18.43166908869316
+        },
+        {
+          "z_mm": 150.0,
+          "b_z_mt": 9.303535214483258,
+          "b_free_mt": 0.31643401481481487,
+          "collimation_gain": 29.40118564655105
+        },
+        {
+          "z_mm": 175.0,
+          "b_z_mt": 8.588245435673192,
+          "b_free_mt": 0.19927040000000001,
+          "collimation_gain": 43.09845032493583
+        },
+        {
+          "z_mm": 200.0,
+          "b_z_mt": 7.927949748450338,
+          "b_free_mt": 0.13349560000000005,
+          "collimation_gain": 59.38734870955258
+        },
+        {
+          "z_mm": 225.0,
+          "b_z_mt": 7.318420006126324,
+          "b_free_mt": 0.09375822661179696,
+          "collimation_gain": 78.05629725005315
+        },
+        {
+          "z_mm": 255.0,
+          "b_z_mt": 6.648521230043086,
+          "b_free_mt": 0.06440749334720432,
+          "collimation_gain": 103.22589631146461
+        },
+        {
+          "z_mm": 275.0,
+          "b_z_mt": 5.2063257354567325,
+          "b_free_mt": 0.05135217670924118,
+          "collimation_gain": 101.3847137353855
+        },
+        {
+          "z_mm": 300.0,
+          "b_z_mt": 2.767502062894845,
+          "b_free_mt": 0.03955425185185186,
+          "collimation_gain": 69.96724582708315
+        }
+      ],
+      "oam_freq_sweep": [
+        {
+          "frequency_hz": 25.0,
+          "tau_oam_uNm": 12.01703691107766,
+          "q_mhd_l_min": 10.556638804838354,
+          "dp_mhd_pa": 0.40091331092612126
+        },
+        {
+          "frequency_hz": 50.0,
+          "tau_oam_uNm": 12.605859045641598,
+          "q_mhd_l_min": 19.96072035364378,
+          "dp_mhd_pa": 0.8411152806558116
+        },
+        {
+          "frequency_hz": 80.0,
+          "tau_oam_uNm": 13.810396333144192,
+          "q_mhd_l_min": 32.60707865504907,
+          "dp_mhd_pa": 1.474379219461354
+        },
+        {
+          "frequency_hz": 100.0,
+          "tau_oam_uNm": 15.222484374489342,
+          "q_mhd_l_min": 43.447500497017835,
+          "dp_mhd_pa": 2.031414784279088
+        },
+        {
+          "frequency_hz": 120.0,
+          "tau_oam_uNm": 16.26768516777539,
+          "q_mhd_l_min": 54.2137037037037,
+          "dp_mhd_pa": 2.605074074074074
+        },
+        {
+          "frequency_hz": 150.0,
+          "tau_oam_uNm": 14.903362600227222,
+          "q_mhd_l_min": 60.04005731151744,
+          "dp_mhd_pa": 2.9832427851569947
+        },
+        {
+          "frequency_hz": 200.0,
+          "tau_oam_uNm": 13.40099800438622,
+          "q_mhd_l_min": 68.94327325107031,
+          "dp_mhd_pa": 3.5766810200608874
+        },
+        {
+          "frequency_hz": 300.0,
+          "tau_oam_uNm": 12.55003350374901,
+          "q_mhd_l_min": 91.13332413002253,
+          "dp_mhd_pa": 5.024342211598203
+        },
+        {
+          "frequency_hz": 500.0,
+          "tau_oam_uNm": 12.094736314358359,
+          "q_mhd_l_min": 135.58141685240844,
+          "dp_mhd_pa": 8.070110488048687
+        },
+        {
+          "frequency_hz": 750.0,
+          "tau_oam_uNm": 11.90349110478763,
+          "q_mhd_l_min": 188.34568959117001,
+          "dp_mhd_pa": 11.9137556097564
+        },
+        {
+          "frequency_hz": 1000.0,
+          "tau_oam_uNm": 11.813086911175576,
+          "q_mhd_l_min": 238.6946357453299,
+          "dp_mhd_pa": 15.764364612882632
+        }
+      ],
+      "rpm_cw_sweep": [
+        {
+          "rpm": 0.0,
+          "tau_oam_uNm": 13.232681201262466
+        },
+        {
+          "rpm": 120.0,
+          "tau_oam_uNm": 13.431661518585152
+        },
+        {
+          "rpm": 300.0,
+          "tau_oam_uNm": 13.730131994569186
+        },
+        {
+          "rpm": 600.0,
+          "tau_oam_uNm": 14.227582787875903
+        },
+        {
+          "rpm": 900.0,
+          "tau_oam_uNm": 14.72503358118262
+        },
+        {
+          "rpm": 1200.0,
+          "tau_oam_uNm": 15.222484374489342
+        },
+        {
+          "rpm": 1500.0,
+          "tau_oam_uNm": 15.719935167796057
+        },
+        {
+          "rpm": 1800.0,
+          "tau_oam_uNm": 16.217385961102778
+        },
+        {
+          "rpm": 2400.0,
+          "tau_oam_uNm": 17.212287547716215
+        }
+      ],
+      "rpm_ccw_sweep": [
+        {
+          "rpm": 0.0,
+          "tau_oam_uNm": -6.351686976605984
+        },
+        {
+          "rpm": 120.0,
+          "tau_oam_uNm": -6.4471975289208725
+        },
+        {
+          "rpm": 300.0,
+          "tau_oam_uNm": -6.590463357393209
+        },
+        {
+          "rpm": 600.0,
+          "tau_oam_uNm": -6.8292397381804335
+        },
+        {
+          "rpm": 900.0,
+          "tau_oam_uNm": -7.068016118967658
+        },
+        {
+          "rpm": 1200.0,
+          "tau_oam_uNm": -7.306792499754884
+        },
+        {
+          "rpm": 1500.0,
+          "tau_oam_uNm": -7.545568880542107
+        },
+        {
+          "rpm": 1800.0,
+          "tau_oam_uNm": -7.7843452613293325
+        },
+        {
+          "rpm": 2400.0,
+          "tau_oam_uNm": -8.261898022903784
+        }
+      ],
+      "summary": {
+        "b_near_gap_mt": 8.544,
+        "b_exit_255mm_mt": 6.6485,
+        "collimator_gain_at_255mm": 103.23,
+        "tau_oam_exit_120hz_cw_uNm": 16.2677,
+        "tau_oam_exit_2400rpm_cw_uNm": 17.2123,
+        "tau_oam_exit_2400rpm_ccw_uNm": -8.2619,
+        "q_mhd_seawater_120hz_l_min": 54.214,
+        "max_gauss_residual_pct": 1.145,
+        "peek_losses_W": 0.0
+      }
+    },
+    "chiral_diode_asymm": {
+      "info": {
+        "id": "chiral_diode_asymm",
+        "name": "Chiral Diode (+45\u00b0/+15\u00b0/-22.5\u00b0)",
+        "type": "Asymmetric Metamaterial Mantle (Free Space)",
+        "chiral_coupling": 1.35,
+        "has_copper_collimator": false,
+        "r_coil_mm": 55.0,
+        "b_gap_mt": 12.6,
+        "oam_gain": 1.42,
+        "gain_cw": 1.18,
+        "gain_ccw": 0.62,
+        "color": "#ef4444",
+        "marker": "P"
+      },
+      "axial_profile": [
+        {
+          "z_mm": 50.0,
+          "b_z_mt": 16.770600000000005,
+          "b_free_mt": 16.770600000000005,
+          "collimation_gain": 0.9999999999999405
+        },
+        {
+          "z_mm": 55.0,
+          "b_z_mt": 12.6,
+          "b_free_mt": 12.6,
+          "collimation_gain": 0.9999999999999206
+        },
+        {
+          "z_mm": 75.0,
+          "b_z_mt": 4.969066666666665,
+          "b_free_mt": 4.969066666666665,
+          "collimation_gain": 0.9999999999997987
+        },
+        {
+          "z_mm": 100.0,
+          "b_z_mt": 2.0963250000000007,
+          "b_free_mt": 2.0963250000000007,
+          "collimation_gain": 0.9999999999995229
+        },
+        {
+          "z_mm": 125.0,
+          "b_z_mt": 1.0733184,
+          "b_free_mt": 1.0733184,
+          "collimation_gain": 0.9999999999990682
+        },
+        {
+          "z_mm": 150.0,
+          "b_z_mt": 0.6211333333333331,
+          "b_free_mt": 0.6211333333333331,
+          "collimation_gain": 0.9999999999983901
+        },
+        {
+          "z_mm": 175.0,
+          "b_z_mt": 0.39115102040816324,
+          "b_free_mt": 0.39115102040816324,
+          "collimation_gain": 0.9999999999974435
+        },
+        {
+          "z_mm": 200.0,
+          "b_z_mt": 0.2620406250000001,
+          "b_free_mt": 0.2620406250000001,
+          "collimation_gain": 0.9999999999961838
+        },
+        {
+          "z_mm": 225.0,
+          "b_z_mt": 0.18403950617283948,
+          "b_free_mt": 0.18403950617283948,
+          "collimation_gain": 0.9999999999945663
+        },
+        {
+          "z_mm": 255.0,
+          "b_z_mt": 0.12642648755003733,
+          "b_free_mt": 0.12642648755003733,
+          "collimation_gain": 0.9999999999920902
+        },
+        {
+          "z_mm": 275.0,
+          "b_z_mt": 0.10080000000000001,
+          "b_free_mt": 0.10080000000000001,
+          "collimation_gain": 0.9999999999900793
+        },
+        {
+          "z_mm": 300.0,
+          "b_z_mt": 0.07764166666666664,
+          "b_free_mt": 0.07764166666666664,
+          "collimation_gain": 0.9999999999871202
+        }
+      ],
+      "oam_freq_sweep": [
+        {
+          "frequency_hz": 25.0,
+          "tau_oam_uNm": 0.0011276466983889094,
+          "q_mhd_l_min": 6.61791268914234,
+          "dp_mhd_pa": 0.0905593933490005
+        },
+        {
+          "frequency_hz": 50.0,
+          "tau_oam_uNm": 0.001179227111588766,
+          "q_mhd_l_min": 12.474436375334355,
+          "dp_mhd_pa": 0.18940345765876107
+        },
+        {
+          "frequency_hz": 80.0,
+          "tau_oam_uNm": 0.0012847437478647275,
+          "q_mhd_l_min": 20.26478381047511,
+          "dp_mhd_pa": 0.3301618908313072
+        },
+        {
+          "frequency_hz": 100.0,
+          "tau_oam_uNm": 0.0014084416871432825,
+          "q_mhd_l_min": 26.855784540022505,
+          "dp_mhd_pa": 0.4524382501624602
+        },
+        {
+          "frequency_hz": 120.0,
+          "tau_oam_uNm": 0.0015000005563329366,
+          "q_mhd_l_min": 33.395999999999994,
+          "dp_mhd_pa": 0.57822
+        },
+        {
+          "frequency_hz": 150.0,
+          "tau_oam_uNm": 0.0013804868396413263,
+          "q_mhd_l_min": 37.154276957638906,
+          "dp_mhd_pa": 0.6651873369707566
+        },
+        {
+          "frequency_hz": 200.0,
+          "tau_oam_uNm": 0.001248880736403201,
+          "q_mhd_l_min": 42.92353053368945,
+          "dp_mhd_pa": 0.8023639461935161
+        },
+        {
+          "frequency_hz": 300.0,
+          "tau_oam_uNm": 0.0011743368325912585,
+          "q_mhd_l_min": 56.9698035908412,
+          "dp_mhd_pa": 1.1317079858305774
+        },
+        {
+          "frequency_hz": 500.0,
+          "tau_oam_uNm": 0.0011344531125696,
+          "q_mhd_l_min": 84.9591243898777,
+          "dp_mhd_pa": 1.8221200985019221
+        },
+        {
+          "frequency_hz": 750.0,
+          "tau_oam_uNm": 0.0011177001640082205,
+          "q_mhd_l_min": 118.1479965515532,
+          "dp_mhd_pa": 2.6928181214011957
+        },
+        {
+          "frequency_hz": 1000.0,
+          "tau_oam_uNm": 0.0011097808189500344,
+          "q_mhd_l_min": 149.80840752768708,
+          "dp_mhd_pa": 3.5649845951949275
+        }
+      ],
+      "rpm_cw_sweep": [
+        {
+          "rpm": 0.0,
+          "tau_oam_uNm": 0.001235475164160774
+        },
+        {
+          "rpm": 120.0,
+          "tau_oam_uNm": 0.001252771816459025
+        },
+        {
+          "rpm": 300.0,
+          "tau_oam_uNm": 0.001278716794906401
+        },
+        {
+          "rpm": 600.0,
+          "tau_oam_uNm": 0.0013219584256520282
+        },
+        {
+          "rpm": 900.0,
+          "tau_oam_uNm": 0.0013652000563976554
+        },
+        {
+          "rpm": 1200.0,
+          "tau_oam_uNm": 0.0014084416871432825
+        },
+        {
+          "rpm": 1500.0,
+          "tau_oam_uNm": 0.0014516833178889095
+        },
+        {
+          "rpm": 1800.0,
+          "tau_oam_uNm": 0.0014949249486345365
+        },
+        {
+          "rpm": 2400.0,
+          "tau_oam_uNm": 0.0015814082101257908
+        }
+      ],
+      "rpm_ccw_sweep": [
+        {
+          "rpm": 0.0,
+          "tau_oam_uNm": -0.0006491479676098982
+        },
+        {
+          "rpm": 120.0,
+          "tau_oam_uNm": -0.0006582360391564369
+        },
+        {
+          "rpm": 300.0,
+          "tau_oam_uNm": -0.0006718681464762446
+        },
+        {
+          "rpm": 600.0,
+          "tau_oam_uNm": -0.0006945883253425911
+        },
+        {
+          "rpm": 900.0,
+          "tau_oam_uNm": -0.0007173085042089376
+        },
+        {
+          "rpm": 1200.0,
+          "tau_oam_uNm": -0.000740028683075284
+        },
+        {
+          "rpm": 1500.0,
+          "tau_oam_uNm": -0.0007627488619416304
+        },
+        {
+          "rpm": 1800.0,
+          "tau_oam_uNm": -0.0007854690408079768
+        },
+        {
+          "rpm": 2400.0,
+          "tau_oam_uNm": -0.0008309093985406698
+        }
+      ],
+      "summary": {
+        "b_near_gap_mt": 16.771,
+        "b_exit_255mm_mt": 0.1264,
+        "collimator_gain_at_255mm": 1.0,
+        "tau_oam_exit_120hz_cw_uNm": 0.0015,
+        "tau_oam_exit_2400rpm_cw_uNm": 0.0016,
+        "tau_oam_exit_2400rpm_ccw_uNm": -0.0008,
+        "q_mhd_seawater_120hz_l_min": 33.396,
+        "max_gauss_residual_pct": 1.199,
+        "peek_losses_W": 0.0
+      }
+    },
+    "dual_90_48coils": {
+      "info": {
+        "id": "dual_90_48coils",
+        "name": "Dual Orthogonal 90\u00b0 (48 Coils)",
+        "type": "Orthogonal Metamaterial Mantle (Free Space)",
+        "chiral_coupling": 1.15,
+        "has_copper_collimator": false,
+        "r_coil_mm": 55.0,
+        "b_gap_mt": 10.8,
+        "oam_gain": 1.2,
+        "gain_cw": 1.1,
+        "gain_ccw": 0.72,
+        "color": "#3b82f6",
+        "marker": "o"
+      },
+      "axial_profile": [
+        {
+          "z_mm": 50.0,
+          "b_z_mt": 14.374800000000006,
+          "b_free_mt": 14.374800000000006,
+          "collimation_gain": 0.9999999999999304
+        },
+        {
+          "z_mm": 55.0,
+          "b_z_mt": 10.8,
+          "b_free_mt": 10.8,
+          "collimation_gain": 0.9999999999999074
+        },
+        {
+          "z_mm": 75.0,
+          "b_z_mt": 4.259199999999999,
+          "b_free_mt": 4.259199999999999,
+          "collimation_gain": 0.9999999999997652
+        },
+        {
+          "z_mm": 100.0,
+          "b_z_mt": 1.7968500000000007,
+          "b_free_mt": 1.7968500000000007,
+          "collimation_gain": 0.9999999999994434
+        },
+        {
+          "z_mm": 125.0,
+          "b_z_mt": 0.9199872,
+          "b_free_mt": 0.9199872,
+          "collimation_gain": 0.9999999999989131
+        },
+        {
+          "z_mm": 150.0,
+          "b_z_mt": 0.5323999999999999,
+          "b_free_mt": 0.5323999999999999,
+          "collimation_gain": 0.9999999999981217
+        },
+        {
+          "z_mm": 175.0,
+          "b_z_mt": 0.3352723032069971,
+          "b_free_mt": 0.3352723032069971,
+          "collimation_gain": 0.9999999999970174
+        },
+        {
+          "z_mm": 200.0,
+          "b_z_mt": 0.2246062500000001,
+          "b_free_mt": 0.2246062500000001,
+          "collimation_gain": 0.9999999999955478
+        },
+        {
+          "z_mm": 225.0,
+          "b_z_mt": 0.15774814814814814,
+          "b_free_mt": 0.15774814814814814,
+          "collimation_gain": 0.9999999999936607
+        },
+        {
+          "z_mm": 255.0,
+          "b_z_mt": 0.10836556075717486,
+          "b_free_mt": 0.10836556075717486,
+          "collimation_gain": 0.9999999999907719
+        },
+        {
+          "z_mm": 275.0,
+          "b_z_mt": 0.08640000000000003,
+          "b_free_mt": 0.08640000000000003,
+          "collimation_gain": 0.9999999999884258
+        },
+        {
+          "z_mm": 300.0,
+          "b_z_mt": 0.06654999999999998,
+          "b_free_mt": 0.06654999999999998,
+          "collimation_gain": 0.9999999999849736
+        }
+      ],
+      "oam_freq_sweep": [
+        {
+          "frequency_hz": 25.0,
+          "tau_oam_uNm": 0.0006373544775301155,
+          "q_mhd_l_min": 5.607344628341096,
+          "dp_mhd_pa": 0.07673079892312014
+        },
+        {
+          "frequency_hz": 50.0,
+          "tau_oam_uNm": 0.000662322533746092,
+          "q_mhd_l_min": 10.50319031592059,
+          "dp_mhd_pa": 0.15947338239801268
+        },
+        {
+          "frequency_hz": 80.0,
+          "tau_oam_uNm": 0.0007133990013976986,
+          "q_mhd_l_min": 16.86887756972245,
+          "dp_mhd_pa": 0.2748344402145791
+        },
+        {
+          "frequency_hz": 100.0,
+          "tau_oam_uNm": 0.000773276325174469,
+          "q_mhd_l_min": 22.103544085896615,
+          "dp_mhd_pa": 0.37237745907993797
+        },
+        {
+          "frequency_hz": 120.0,
+          "tau_oam_uNm": 0.0008175963848866872,
+          "q_mhd_l_min": 27.28790672153634,
+          "dp_mhd_pa": 0.4724641700960218
+        },
+        {
+          "frequency_hz": 150.0,
+          "tau_oam_uNm": 0.0007597444792539357,
+          "q_mhd_l_min": 30.652953284065916,
+          "dp_mhd_pa": 0.5487916340981209
+        },
+        {
+          "frequency_hz": 200.0,
+          "tau_oam_uNm": 0.0006960391232831878,
+          "q_mhd_l_min": 35.862152072779764,
+          "dp_mhd_pa": 0.6703665215405167
+        },
+        {
+          "frequency_hz": 300.0,
+          "tau_oam_uNm": 0.0006599553413692401,
+          "q_mhd_l_min": 47.99486947333195,
+          "dp_mhd_pa": 0.9534204725711597
+        },
+        {
+          "frequency_hz": 500.0,
+          "tau_oam_uNm": 0.0006406491958417783,
+          "q_mhd_l_min": 71.92369475864267,
+          "dp_mhd_pa": 1.5425489695119114
+        },
+        {
+          "frequency_hz": 750.0,
+          "tau_oam_uNm": 0.0006325397501139366,
+          "q_mhd_l_min": 100.23446963570044,
+          "dp_mhd_pa": 2.28453468617453
+        },
+        {
+          "frequency_hz": 1000.0,
+          "tau_oam_uNm": 0.0006287063055883884,
+          "q_mhd_l_min": 127.2257490000957,
+          "dp_mhd_pa": 3.0275859865451986
+        }
+      ],
+      "rpm_cw_sweep": [
+        {
+          "rpm": 0.0,
+          "tau_oam_uNm": 0.000690882223021531
+        },
+        {
+          "rpm": 120.0,
+          "tau_oam_uNm": 0.0006991216332368248
+        },
+        {
+          "rpm": 300.0,
+          "tau_oam_uNm": 0.0007114807485597655
+        },
+        {
+          "rpm": 600.0,
+          "tau_oam_uNm": 0.0007320792740980001
+        },
+        {
+          "rpm": 900.0,
+          "tau_oam_uNm": 0.0007526777996362346
+        },
+        {
+          "rpm": 1200.0,
+          "tau_oam_uNm": 0.000773276325174469
+        },
+        {
+          "rpm": 1500.0,
+          "tau_oam_uNm": 0.0007938748507127037
+        },
+        {
+          "rpm": 1800.0,
+          "tau_oam_uNm": 0.0008144733762509381
+        },
+        {
+          "rpm": 2400.0,
+          "tau_oam_uNm": 0.0008556704273274073
+        }
+      ],
+      "rpm_ccw_sweep": [
+        {
+          "rpm": 0.0,
+          "tau_oam_uNm": -0.00045221381870500204
+        },
+        {
+          "rpm": 120.0,
+          "tau_oam_uNm": -0.00045760688720955793
+        },
+        {
+          "rpm": 300.0,
+          "tau_oam_uNm": -0.0004656964899663919
+        },
+        {
+          "rpm": 600.0,
+          "tau_oam_uNm": -0.0004791791612277818
+        },
+        {
+          "rpm": 900.0,
+          "tau_oam_uNm": -0.0004926618324891717
+        },
+        {
+          "rpm": 1200.0,
+          "tau_oam_uNm": -0.0005061445037505615
+        },
+        {
+          "rpm": 1500.0,
+          "tau_oam_uNm": -0.0005196271750119515
+        },
+        {
+          "rpm": 1800.0,
+          "tau_oam_uNm": -0.0005331098462733413
+        },
+        {
+          "rpm": 2400.0,
+          "tau_oam_uNm": -0.000560075188796121
+        }
+      ],
+      "summary": {
+        "b_near_gap_mt": 14.375,
+        "b_exit_255mm_mt": 0.1084,
+        "collimator_gain_at_255mm": 1.0,
+        "tau_oam_exit_120hz_cw_uNm": 0.0008,
+        "tau_oam_exit_2400rpm_cw_uNm": 0.0009,
+        "tau_oam_exit_2400rpm_ccw_uNm": -0.0006,
+        "q_mhd_seawater_120hz_l_min": 27.288,
+        "max_gauss_residual_pct": 1.064,
+        "peek_losses_W": 0.0
+      }
+    },
+    "chiral_wpt_benchtop": {
+      "info": {
+        "id": "chiral_wpt_benchtop",
+        "name": "Chiral WPT Benchtop (18.5 W)",
+        "type": "Balanced Concentric Shielded (Free Space)",
+        "chiral_coupling": 1.0,
+        "has_copper_collimator": false,
+        "r_coil_mm": 55.0,
+        "b_gap_mt": 9.5,
+        "oam_gain": 1.0,
+        "gain_cw": 1.05,
+        "gain_ccw": 0.78,
+        "color": "#10b981",
+        "marker": "s"
+      },
+      "axial_profile": [
+        {
+          "z_mm": 50.0,
+          "b_z_mt": 12.644500000000004,
+          "b_free_mt": 12.644500000000004,
+          "collimation_gain": 0.999999999999921
+        },
+        {
+          "z_mm": 55.0,
+          "b_z_mt": 9.5,
+          "b_free_mt": 9.5,
+          "collimation_gain": 0.9999999999998948
+        },
+        {
+          "z_mm": 75.0,
+          "b_z_mt": 3.7465185185185175,
+          "b_free_mt": 3.7465185185185175,
+          "collimation_gain": 0.9999999999997331
+        },
+        {
+          "z_mm": 100.0,
+          "b_z_mt": 1.5805625000000005,
+          "b_free_mt": 1.5805625000000005,
+          "collimation_gain": 0.9999999999993673
+        },
+        {
+          "z_mm": 125.0,
+          "b_z_mt": 0.809248,
+          "b_free_mt": 0.809248,
+          "collimation_gain": 0.9999999999987643
+        },
+        {
+          "z_mm": 150.0,
+          "b_z_mt": 0.4683148148148147,
+          "b_free_mt": 0.4683148148148147,
+          "collimation_gain": 0.9999999999978647
+        },
+        {
+          "z_mm": 175.0,
+          "b_z_mt": 0.2949154518950437,
+          "b_free_mt": 0.2949154518950437,
+          "collimation_gain": 0.9999999999966093
+        },
+        {
+          "z_mm": 200.0,
+          "b_z_mt": 0.19757031250000007,
+          "b_free_mt": 0.19757031250000007,
+          "collimation_gain": 0.9999999999949385
+        },
+        {
+          "z_mm": 225.0,
+          "b_z_mt": 0.1387599451303155,
+          "b_free_mt": 0.1387599451303155,
+          "collimation_gain": 0.9999999999927933
+        },
+        {
+          "z_mm": 255.0,
+          "b_z_mt": 0.09532155807344085,
+          "b_free_mt": 0.09532155807344085,
+          "collimation_gain": 0.9999999999895092
+        },
+        {
+          "z_mm": 275.0,
+          "b_z_mt": 0.07600000000000001,
+          "b_free_mt": 0.07600000000000001,
+          "collimation_gain": 0.9999999999868421
+        },
+        {
+          "z_mm": 300.0,
+          "b_z_mt": 0.058539351851851835,
+          "b_free_mt": 0.058539351851851835,
+          "collimation_gain": 0.9999999999829174
+        }
+      ],
+      "oam_freq_sweep": [
+        {
+          "frequency_hz": 25.0,
+          "tau_oam_uNm": 0.0003852687602011681,
+          "q_mhd_l_min": 4.856297578145296,
+          "dp_mhd_pa": 0.06645348514805698
+        },
+        {
+          "frequency_hz": 50.0,
+          "tau_oam_uNm": 0.0003984459792276462,
+          "q_mhd_l_min": 9.052873267398722,
+          "dp_mhd_pa": 0.13745274311408925
+        },
+        {
+          "frequency_hz": 80.0,
+          "tau_oam_uNm": 0.00042540225469907766,
+          "q_mhd_l_min": 14.41181785631853,
+          "dp_mhd_pa": 0.23480304938160435
+        },
+        {
+          "frequency_hz": 100.0,
+          "tau_oam_uNm": 0.0004570032973794038,
+          "q_mhd_l_min": 18.715947656786692,
+          "dp_mhd_pa": 0.3153067673502296
+        },
+        {
+          "frequency_hz": 120.0,
+          "tau_oam_uNm": 0.00048039378997693306,
+          "q_mhd_l_min": 22.97174211248285,
+          "dp_mhd_pa": 0.3977338820301783
+        },
+        {
+          "frequency_hz": 150.0,
+          "tau_oam_uNm": 0.0004498616882775577,
+          "q_mhd_l_min": 26.004533499286428,
+          "dp_mhd_pa": 0.46556918352304877
+        },
+        {
+          "frequency_hz": 200.0,
+          "tau_oam_uNm": 0.00041624035141717543,
+          "q_mhd_l_min": 30.726434258702124,
+          "dp_mhd_pa": 0.5743652196763692
+        },
+        {
+          "frequency_hz": 300.0,
+          "tau_oam_uNm": 0.0003971966624142842,
+          "q_mhd_l_min": 41.385780053878385,
+          "dp_mhd_pa": 0.8221305820743908
+        },
+        {
+          "frequency_hz": 500.0,
+          "tau_oam_uNm": 0.0003870075909875049,
+          "q_mhd_l_min": 62.24958716974157,
+          "dp_mhd_pa": 1.3350681839059473
+        },
+        {
+          "frequency_hz": 750.0,
+          "tau_oam_uNm": 0.0003827277246809426,
+          "q_mhd_l_min": 86.8929388010484,
+          "dp_mhd_pa": 1.9804557593422196
+        },
+        {
+          "frequency_hz": 1000.0,
+          "tau_oam_uNm": 0.0003807045740719386,
+          "q_mhd_l_min": 110.37750758138232,
+          "dp_mhd_pa": 2.626649069151309
+        }
+      ],
+      "rpm_cw_sweep": [
+        {
+          "rpm": 0.0,
+          "tau_oam_uNm": 0.000414063390243084
+        },
+        {
+          "rpm": 120.0,
+          "tau_oam_uNm": 0.000418357380956716
+        },
+        {
+          "rpm": 300.0,
+          "tau_oam_uNm": 0.00042479836702716397
+        },
+        {
+          "rpm": 600.0,
+          "tau_oam_uNm": 0.0004355333438112439
+        },
+        {
+          "rpm": 900.0,
+          "tau_oam_uNm": 0.0004462683205953239
+        },
+        {
+          "rpm": 1200.0,
+          "tau_oam_uNm": 0.0004570032973794038
+        },
+        {
+          "rpm": 1500.0,
+          "tau_oam_uNm": 0.0004677382741634838
+        },
+        {
+          "rpm": 1800.0,
+          "tau_oam_uNm": 0.0004784732509475637
+        },
+        {
+          "rpm": 2400.0,
+          "tau_oam_uNm": 0.0004999432045157237
+        }
+      ],
+      "rpm_ccw_sweep": [
+        {
+          "rpm": 0.0,
+          "tau_oam_uNm": -0.00030758994703771955
+        },
+        {
+          "rpm": 120.0,
+          "tau_oam_uNm": -0.0003107797687107033
+        },
+        {
+          "rpm": 300.0,
+          "tau_oam_uNm": -0.00031556450122017897
+        },
+        {
+          "rpm": 600.0,
+          "tau_oam_uNm": -0.00032353905540263834
+        },
+        {
+          "rpm": 900.0,
+          "tau_oam_uNm": -0.00033151360958509775
+        },
+        {
+          "rpm": 1200.0,
+          "tau_oam_uNm": -0.0003394881637675571
+        },
+        {
+          "rpm": 1500.0,
+          "tau_oam_uNm": -0.0003474627179500165
+        },
+        {
+          "rpm": 1800.0,
+          "tau_oam_uNm": -0.0003554372721324759
+        },
+        {
+          "rpm": 2400.0,
+          "tau_oam_uNm": -0.00037138638049739474
+        }
+      ],
+      "summary": {
+        "b_near_gap_mt": 12.645,
+        "b_exit_255mm_mt": 0.0953,
+        "collimator_gain_at_255mm": 1.0,
+        "tau_oam_exit_120hz_cw_uNm": 0.0005,
+        "tau_oam_exit_2400rpm_cw_uNm": 0.0005,
+        "tau_oam_exit_2400rpm_ccw_uNm": -0.0004,
+        "q_mhd_seawater_120hz_l_min": 22.972,
+        "max_gauss_residual_pct": 1.064,
+        "peek_losses_W": 0.0
+      }
+    },
+    "dual_90_npnpnp": {
+      "info": {
+        "id": "dual_90_npnpnp",
+        "name": "Dual Continuous 90\u00b0 NPNPNP",
+        "type": "Continuous Multipole (Free Space)",
+        "chiral_coupling": 0.95,
+        "has_copper_collimator": false,
+        "r_coil_mm": 55.0,
+        "b_gap_mt": 8.9,
+        "oam_gain": 0.94,
+        "gain_cw": 1.02,
+        "gain_ccw": 0.81,
+        "color": "#8b5cf6",
+        "marker": "^"
+      },
+      "axial_profile": [
+        {
+          "z_mm": 50.0,
+          "b_z_mt": 11.845900000000004,
+          "b_free_mt": 11.845900000000004,
+          "collimation_gain": 0.9999999999999156
+        },
+        {
+          "z_mm": 55.0,
+          "b_z_mt": 8.9,
+          "b_free_mt": 8.9,
+          "collimation_gain": 0.9999999999998876
+        },
+        {
+          "z_mm": 75.0,
+          "b_z_mt": 3.5098962962962954,
+          "b_free_mt": 3.5098962962962954,
+          "collimation_gain": 0.9999999999997151
+        },
+        {
+          "z_mm": 100.0,
+          "b_z_mt": 1.4807375000000005,
+          "b_free_mt": 1.4807375000000005,
+          "collimation_gain": 0.9999999999993247
+        },
+        {
+          "z_mm": 125.0,
+          "b_z_mt": 0.7581376,
+          "b_free_mt": 0.7581376,
+          "collimation_gain": 0.999999999998681
+        },
+        {
+          "z_mm": 150.0,
+          "b_z_mt": 0.4387370370370369,
+          "b_free_mt": 0.4387370370370369,
+          "collimation_gain": 0.9999999999977208
+        },
+        {
+          "z_mm": 175.0,
+          "b_z_mt": 0.27628921282798835,
+          "b_free_mt": 0.27628921282798835,
+          "collimation_gain": 0.9999999999963807
+        },
+        {
+          "z_mm": 200.0,
+          "b_z_mt": 0.18509218750000006,
+          "b_free_mt": 0.18509218750000006,
+          "collimation_gain": 0.9999999999945972
+        },
+        {
+          "z_mm": 225.0,
+          "b_z_mt": 0.12999615912208504,
+          "b_free_mt": 0.12999615912208504,
+          "collimation_gain": 0.9999999999923074
+        },
+        {
+          "z_mm": 255.0,
+          "b_z_mt": 0.08930124914248669,
+          "b_free_mt": 0.08930124914248669,
+          "collimation_gain": 0.9999999999888018
+        },
+        {
+          "z_mm": 275.0,
+          "b_z_mt": 0.07120000000000001,
+          "b_free_mt": 0.07120000000000001,
+          "collimation_gain": 0.999999999985955
+        },
+        {
+          "z_mm": 300.0,
+          "b_z_mt": 0.054842129629629616,
+          "b_free_mt": 0.054842129629629616,
+          "collimation_gain": 0.9999999999817659
+        }
+      ],
+      "oam_freq_sweep": [
+        {
+          "frequency_hz": 25.0,
+          "tau_oam_uNm": 0.00030690497127831335,
+          "q_mhd_l_min": 4.607258846252435,
+          "dp_mhd_pa": 0.06304564380291154
+        },
+        {
+          "frequency_hz": 50.0,
+          "tau_oam_uNm": 0.0003168905624569128,
+          "q_mhd_l_min": 8.574789964755901,
+          "dp_mhd_pa": 0.13019384757404578
+        },
+        {
+          "frequency_hz": 80.0,
+          "tau_oam_uNm": 0.00033731781239595884,
+          "q_mhd_l_min": 13.609916040833518,
+          "dp_mhd_pa": 0.22173814712862627
+        },
+        {
+          "frequency_hz": 100.0,
+          "tau_oam_uNm": 0.00036126482977414287,
+          "q_mhd_l_min": 17.62038387784234,
+          "dp_mhd_pa": 0.2968498513607427
+        },
+        {
+          "frequency_hz": 120.0,
+          "tau_oam_uNm": 0.0003789899579727146,
+          "q_mhd_l_min": 21.583478737997254,
+          "dp_mhd_pa": 0.37369742112482845
+        },
+        {
+          "frequency_hz": 150.0,
+          "tau_oam_uNm": 0.00035585297551983443,
+          "q_mhd_l_min": 24.498407470150457,
+          "dp_mhd_pa": 0.4386044288702923
+        },
+        {
+          "frequency_hz": 200.0,
+          "tau_oam_uNm": 0.0003303749953715844,
+          "q_mhd_l_min": 29.045064707648553,
+          "dp_mhd_pa": 0.542935598412244
+        },
+        {
+          "frequency_hz": 300.0,
+          "tau_oam_uNm": 0.0003159438401685668,
+          "q_mhd_l_min": 39.20600951761832,
+          "dp_mhd_pa": 0.778829331803619
+        },
+        {
+          "frequency_hz": 500.0,
+          "tau_oam_uNm": 0.0003082226433399398,
+          "q_mhd_l_min": 59.044401713350766,
+          "dp_mhd_pa": 1.2663265051109198
+        },
+        {
+          "frequency_hz": 750.0,
+          "tau_oam_uNm": 0.00030497939488588303,
+          "q_mhd_l_min": 82.4635931613525,
+          "dp_mhd_pa": 1.879502526510057
+        },
+        {
+          "frequency_hz": 1000.0,
+          "tau_oam_uNm": 0.00030344626753680767,
+          "q_mhd_l_min": 104.77833234218834,
+          "dp_mhd_pa": 2.4934057231806612
+        }
+      ],
+      "rpm_cw_sweep": [
+        {
+          "rpm": 0.0,
+          "tau_oam_uNm": 0.00032886548900545713
+        },
+        {
+          "rpm": 120.0,
+          "tau_oam_uNm": 0.00033210542308232565
+        },
+        {
+          "rpm": 300.0,
+          "tau_oam_uNm": 0.00033696532419762854
+        },
+        {
+          "rpm": 600.0,
+          "tau_oam_uNm": 0.00034506515938980005
+        },
+        {
+          "rpm": 900.0,
+          "tau_oam_uNm": 0.00035316499458197146
+        },
+        {
+          "rpm": 1200.0,
+          "tau_oam_uNm": 0.00036126482977414287
+        },
+        {
+          "rpm": 1500.0,
+          "tau_oam_uNm": 0.00036936466496631434
+        },
+        {
+          "rpm": 1800.0,
+          "tau_oam_uNm": 0.0003774645001584858
+        },
+        {
+          "rpm": 2400.0,
+          "tau_oam_uNm": 0.0003936641705428287
+        }
+      ],
+      "rpm_ccw_sweep": [
+        {
+          "rpm": 0.0,
+          "tau_oam_uNm": -0.000261157888327863
+        },
+        {
+          "rpm": 120.0,
+          "tau_oam_uNm": -0.0002637307771536116
+        },
+        {
+          "rpm": 300.0,
+          "tau_oam_uNm": -0.0002675901103922344
+        },
+        {
+          "rpm": 600.0,
+          "tau_oam_uNm": -0.00027402233245660593
+        },
+        {
+          "rpm": 900.0,
+          "tau_oam_uNm": -0.0002804545545209774
+        },
+        {
+          "rpm": 1200.0,
+          "tau_oam_uNm": -0.0002868867765853488
+        },
+        {
+          "rpm": 1500.0,
+          "tau_oam_uNm": -0.00029331899864972025
+        },
+        {
+          "rpm": 1800.0,
+          "tau_oam_uNm": -0.00029975122071409165
+        },
+        {
+          "rpm": 2400.0,
+          "tau_oam_uNm": -0.00031261566484283457
+        }
+      ],
+      "summary": {
+        "b_near_gap_mt": 11.846,
+        "b_exit_255mm_mt": 0.0893,
+        "collimator_gain_at_255mm": 1.0,
+        "tau_oam_exit_120hz_cw_uNm": 0.0004,
+        "tau_oam_exit_2400rpm_cw_uNm": 0.0004,
+        "tau_oam_exit_2400rpm_ccw_uNm": -0.0003,
+        "q_mhd_seawater_120hz_l_min": 21.583,
+        "max_gauss_residual_pct": 1.064,
+        "peek_losses_W": 0.0
+      }
+    },
+    "fibonacci_24x24": {
+      "info": {
+        "id": "fibonacci_24x24",
+        "name": "Fibonacci 24x24 (Pisano mod 9)",
+        "type": "Non-Uniform Spiral Lattices (Free Space)",
+        "chiral_coupling": 0.88,
+        "has_copper_collimator": false,
+        "r_coil_mm": 55.0,
+        "b_gap_mt": 8.2,
+        "oam_gain": 0.82,
+        "gain_cw": 0.98,
+        "gain_ccw": 0.84,
+        "color": "#f59e0b",
+        "marker": "D"
+      },
+      "axial_profile": [
+        {
+          "z_mm": 50.0,
+          "b_z_mt": 10.914200000000003,
+          "b_free_mt": 10.914200000000003,
+          "collimation_gain": 0.9999999999999084
+        },
+        {
+          "z_mm": 55.0,
+          "b_z_mt": 8.2,
+          "b_free_mt": 8.2,
+          "collimation_gain": 0.999999999999878
+        },
+        {
+          "z_mm": 75.0,
+          "b_z_mt": 3.233837037037036,
+          "b_free_mt": 3.233837037037036,
+          "collimation_gain": 0.9999999999996907
+        },
+        {
+          "z_mm": 100.0,
+          "b_z_mt": 1.3642750000000003,
+          "b_free_mt": 1.3642750000000003,
+          "collimation_gain": 0.9999999999992669
+        },
+        {
+          "z_mm": 125.0,
+          "b_z_mt": 0.6985087999999999,
+          "b_free_mt": 0.6985087999999999,
+          "collimation_gain": 0.9999999999985684
+        },
+        {
+          "z_mm": 150.0,
+          "b_z_mt": 0.4042296296296295,
+          "b_free_mt": 0.4042296296296295,
+          "collimation_gain": 0.9999999999975262
+        },
+        {
+          "z_mm": 175.0,
+          "b_z_mt": 0.2545586005830904,
+          "b_free_mt": 0.2545586005830904,
+          "collimation_gain": 0.9999999999960717
+        },
+        {
+          "z_mm": 200.0,
+          "b_z_mt": 0.17053437500000004,
+          "b_free_mt": 0.17053437500000004,
+          "collimation_gain": 0.999999999994136
+        },
+        {
+          "z_mm": 225.0,
+          "b_z_mt": 0.11977174211248284,
+          "b_free_mt": 0.11977174211248284,
+          "collimation_gain": 0.9999999999916508
+        },
+        {
+          "z_mm": 255.0,
+          "b_z_mt": 0.08227755538970682,
+          "b_free_mt": 0.08227755538970682,
+          "collimation_gain": 0.9999999999878459
+        },
+        {
+          "z_mm": 275.0,
+          "b_z_mt": 0.0656,
+          "b_free_mt": 0.0656,
+          "collimation_gain": 0.999999999984756
+        },
+        {
+          "z_mm": 300.0,
+          "b_z_mt": 0.05052870370370369,
+          "b_free_mt": 0.05052870370370369,
+          "collimation_gain": 0.9999999999802093
+        }
+      ],
+      "oam_freq_sweep": [
+        {
+          "frequency_hz": 25.0,
+          "tau_oam_uNm": 0.00021650201733797254,
+          "q_mhd_l_min": 4.25970526086725,
+          "dp_mhd_pa": 0.05828972704680345
+        },
+        {
+          "frequency_hz": 50.0,
+          "tau_oam_uNm": 0.00022303953690571644,
+          "q_mhd_l_min": 7.909972140422102,
+          "dp_mhd_pa": 0.120099700563847
+        },
+        {
+          "frequency_hz": 80.0,
+          "tau_oam_uNm": 0.0002364131613414846,
+          "q_mhd_l_min": 12.501632693900195,
+          "dp_mhd_pa": 0.2036815555151884
+        },
+        {
+          "frequency_hz": 100.0,
+          "tau_oam_uNm": 0.0002520911609610264,
+          "q_mhd_l_min": 16.11484801315776,
+          "dp_mhd_pa": 0.2714861532286104
+        },
+        {
+          "frequency_hz": 120.0,
+          "tau_oam_uNm": 0.0002636957190053488,
+          "q_mhd_l_min": 19.682294869684497,
+          "dp_mhd_pa": 0.3407802293552812
+        },
+        {
+          "frequency_hz": 150.0,
+          "tau_oam_uNm": 0.00024854804544062085,
+          "q_mhd_l_min": 22.426242704624133,
+          "dp_mhd_pa": 0.40150566460913784
+        },
+        {
+          "frequency_hz": 200.0,
+          "tau_oam_uNm": 0.0002318677316978809,
+          "q_mhd_l_min": 26.716797901230287,
+          "dp_mhd_pa": 0.4994136113025654
+        },
+        {
+          "frequency_hz": 300.0,
+          "tau_oam_uNm": 0.00022241972227736017,
+          "q_mhd_l_min": 36.173868553842766,
+          "dp_mhd_pa": 0.7185957005361859
+        },
+        {
+          "frequency_hz": 500.0,
+          "tau_oam_uNm": 0.00021736469103777456,
+          "q_mhd_l_min": 54.57353641592765,
+          "dp_mhd_pa": 1.1704397645797284
+        },
+        {
+          "frequency_hz": 750.0,
+          "tau_oam_uNm": 0.00021524135153265918,
+          "q_mhd_l_min": 76.27748756213624,
+          "dp_mhd_pa": 1.7385093844790593
+        },
+        {
+          "frequency_hz": 1000.0,
+          "tau_oam_uNm": 0.0002142376202697667,
+          "q_mhd_l_min": 96.95368740363357,
+          "dp_mhd_pa": 2.3072029650766996
+        }
+      ],
+      "rpm_cw_sweep": [
+        {
+          "rpm": 0.0,
+          "tau_oam_uNm": 0.00023100941304465486
+        },
+        {
+          "rpm": 120.0,
+          "tau_oam_uNm": 0.000233117587836292
+        },
+        {
+          "rpm": 300.0,
+          "tau_oam_uNm": 0.00023627985002374772
+        },
+        {
+          "rpm": 600.0,
+          "tau_oam_uNm": 0.00024155028700284062
+        },
+        {
+          "rpm": 900.0,
+          "tau_oam_uNm": 0.0002468207239819335
+        },
+        {
+          "rpm": 1200.0,
+          "tau_oam_uNm": 0.0002520911609610264
+        },
+        {
+          "rpm": 1500.0,
+          "tau_oam_uNm": 0.0002573615979401192
+        },
+        {
+          "rpm": 1800.0,
+          "tau_oam_uNm": 0.00026263203491921206
+        },
+        {
+          "rpm": 2400.0,
+          "tau_oam_uNm": 0.0002731729088773978
+        }
+      ],
+      "rpm_ccw_sweep": [
+        {
+          "rpm": 0.0,
+          "tau_oam_uNm": -0.00019800806832398986
+        },
+        {
+          "rpm": 120.0,
+          "tau_oam_uNm": -0.0001998150752882503
+        },
+        {
+          "rpm": 300.0,
+          "tau_oam_uNm": -0.00020252558573464091
+        },
+        {
+          "rpm": 600.0,
+          "tau_oam_uNm": -0.00020704310314529197
+        },
+        {
+          "rpm": 900.0,
+          "tau_oam_uNm": -0.000211560620555943
+        },
+        {
+          "rpm": 1200.0,
+          "tau_oam_uNm": -0.00021607813796659401
+        },
+        {
+          "rpm": 1500.0,
+          "tau_oam_uNm": -0.000220595655377245
+        },
+        {
+          "rpm": 1800.0,
+          "tau_oam_uNm": -0.00022511317278789604
+        },
+        {
+          "rpm": 2400.0,
+          "tau_oam_uNm": -0.0002341482076091981
+        }
+      ],
+      "summary": {
+        "b_near_gap_mt": 10.914,
+        "b_exit_255mm_mt": 0.0823,
+        "collimator_gain_at_255mm": 1.0,
+        "tau_oam_exit_120hz_cw_uNm": 0.0003,
+        "tau_oam_exit_2400rpm_cw_uNm": 0.0003,
+        "tau_oam_exit_2400rpm_ccw_uNm": -0.0002,
+        "q_mhd_seawater_120hz_l_min": 19.682,
+        "max_gauss_residual_pct": 1.064,
+        "peek_losses_W": 0.0
+      }
+    },
+    "triskelion_hexagram": {
+      "info": {
+        "id": "triskelion_hexagram",
+        "name": "Triskelion 3-Lobe Hexagram",
+        "type": "3-Fold Discrete Symmetry (Free Space)",
+        "chiral_coupling": 0.78,
+        "has_copper_collimator": false,
+        "r_coil_mm": 55.0,
+        "b_gap_mt": 7.6,
+        "oam_gain": 0.75,
+        "gain_cw": 0.94,
+        "gain_ccw": 0.86,
+        "color": "#06b6d4",
+        "marker": "v"
+      },
+      "axial_profile": [
+        {
+          "z_mm": 50.0,
+          "b_z_mt": 10.115600000000002,
+          "b_free_mt": 10.115600000000002,
+          "collimation_gain": 0.9999999999999011
+        },
+        {
+          "z_mm": 55.0,
+          "b_z_mt": 7.6,
+          "b_free_mt": 7.6,
+          "collimation_gain": 0.9999999999998684
+        },
+        {
+          "z_mm": 75.0,
+          "b_z_mt": 2.997214814814814,
+          "b_free_mt": 2.997214814814814,
+          "collimation_gain": 0.9999999999996664
+        },
+        {
+          "z_mm": 100.0,
+          "b_z_mt": 1.2644500000000003,
+          "b_free_mt": 1.2644500000000003,
+          "collimation_gain": 0.9999999999992091
+        },
+        {
+          "z_mm": 125.0,
+          "b_z_mt": 0.6473983999999999,
+          "b_free_mt": 0.6473983999999999,
+          "collimation_gain": 0.9999999999984553
+        },
+        {
+          "z_mm": 150.0,
+          "b_z_mt": 0.37465185185185174,
+          "b_free_mt": 0.37465185185185174,
+          "collimation_gain": 0.9999999999973309
+        },
+        {
+          "z_mm": 175.0,
+          "b_z_mt": 0.23593236151603497,
+          "b_free_mt": 0.23593236151603497,
+          "collimation_gain": 0.9999999999957615
+        },
+        {
+          "z_mm": 200.0,
+          "b_z_mt": 0.15805625000000004,
+          "b_free_mt": 0.15805625000000004,
+          "collimation_gain": 0.9999999999936731
+        },
+        {
+          "z_mm": 225.0,
+          "b_z_mt": 0.11100795610425239,
+          "b_free_mt": 0.11100795610425239,
+          "collimation_gain": 0.9999999999909915
+        },
+        {
+          "z_mm": 255.0,
+          "b_z_mt": 0.07625724645875268,
+          "b_free_mt": 0.07625724645875268,
+          "collimation_gain": 0.9999999999868864
+        },
+        {
+          "z_mm": 275.0,
+          "b_z_mt": 0.060800000000000014,
+          "b_free_mt": 0.060800000000000014,
+          "collimation_gain": 0.9999999999835526
+        },
+        {
+          "z_mm": 300.0,
+          "b_z_mt": 0.04683148148148147,
+          "b_free_mt": 0.04683148148148147,
+          "collimation_gain": 0.9999999999786469
+        }
+      ],
+      "oam_freq_sweep": [
+        {
+          "frequency_hz": 25.0,
+          "tau_oam_uNm": 0.0001611708700459127,
+          "q_mhd_l_min": 3.7654276231148405,
+          "dp_mhd_pa": 0.0515260411048186
+        },
+        {
+          "frequency_hz": 50.0,
+          "tau_oam_uNm": 0.00016549627438757945,
+          "q_mhd_l_min": 6.969337104376747,
+          "dp_mhd_pa": 0.1058177303920934
+        },
+        {
+          "frequency_hz": 80.0,
+          "tau_oam_uNm": 0.00017434463539038324,
+          "q_mhd_l_min": 10.947471520980773,
+          "dp_mhd_pa": 0.17836054561413842
+        },
+        {
+          "frequency_hz": 100.0,
+          "tau_oam_uNm": 0.00018471763495394973,
+          "q_mhd_l_min": 14.021262044470015,
+          "dp_mhd_pa": 0.2362156002188427
+        },
+        {
+          "frequency_hz": 120.0,
+          "tau_oam_uNm": 0.0001923955325461336,
+          "q_mhd_l_min": 17.052096790123453,
+          "dp_mhd_pa": 0.295240849382716
+        },
+        {
+          "frequency_hz": 150.0,
+          "tau_oam_uNm": 0.00018237341141531525,
+          "q_mhd_l_min": 19.53969762047804,
+          "dp_mhd_pa": 0.34982673569986733
+        },
+        {
+          "frequency_hz": 200.0,
+          "tau_oam_uNm": 0.00017133725301677008,
+          "q_mhd_l_min": 23.442614321342845,
+          "dp_mhd_pa": 0.4382097255770289
+        },
+        {
+          "frequency_hz": 300.0,
+          "tau_oam_uNm": 0.00016508618783154854,
+          "q_mhd_l_min": 31.88177936497355,
+          "dp_mhd_pa": 0.6333331350229482
+        },
+        {
+          "frequency_hz": 500.0,
+          "tau_oam_uNm": 0.00016174163890218902,
+          "q_mhd_l_min": 48.21976501555042,
+          "dp_mhd_pa": 1.0341702979031933
+        },
+        {
+          "frequency_hz": 750.0,
+          "tau_oam_uNm": 0.0001603367785695984,
+          "q_mhd_l_min": 67.47050706778992,
+          "dp_mhd_pa": 1.5377815062060287
+        },
+        {
+          "frequency_hz": 1000.0,
+          "tau_oam_uNm": 0.00015967268211567682,
+          "q_mhd_l_min": 85.80436210300607,
+          "dp_mhd_pa": 2.041882923301286
+        }
+      ],
+      "rpm_cw_sweep": [
+        {
+          "rpm": 0.0,
+          "tau_oam_uNm": 0.00017089419352236306
+        },
+        {
+          "rpm": 120.0,
+          "tau_oam_uNm": 0.0001722765376655217
+        },
+        {
+          "rpm": 300.0,
+          "tau_oam_uNm": 0.0001743500538802597
+        },
+        {
+          "rpm": 600.0,
+          "tau_oam_uNm": 0.0001778059142381564
+        },
+        {
+          "rpm": 900.0,
+          "tau_oam_uNm": 0.0001812617745960531
+        },
+        {
+          "rpm": 1200.0,
+          "tau_oam_uNm": 0.00018471763495394973
+        },
+        {
+          "rpm": 1500.0,
+          "tau_oam_uNm": 0.00018817349531184644
+        },
+        {
+          "rpm": 1800.0,
+          "tau_oam_uNm": 0.00019162935566974308
+        },
+        {
+          "rpm": 2400.0,
+          "tau_oam_uNm": 0.00019854107638553645
+        }
+      ],
+      "rpm_ccw_sweep": [
+        {
+          "rpm": 0.0,
+          "tau_oam_uNm": -0.00015635000683960875
+        },
+        {
+          "rpm": 120.0,
+          "tau_oam_uNm": -0.00015761470467271136
+        },
+        {
+          "rpm": 300.0,
+          "tau_oam_uNm": -0.00015951175142236526
+        },
+        {
+          "rpm": 600.0,
+          "tau_oam_uNm": -0.00016267349600512183
+        },
+        {
+          "rpm": 900.0,
+          "tau_oam_uNm": -0.00016583524058787837
+        },
+        {
+          "rpm": 1200.0,
+          "tau_oam_uNm": -0.00016899698517063488
+        },
+        {
+          "rpm": 1500.0,
+          "tau_oam_uNm": -0.00017215872975339142
+        },
+        {
+          "rpm": 1800.0,
+          "tau_oam_uNm": -0.00017532047433614794
+        },
+        {
+          "rpm": 2400.0,
+          "tau_oam_uNm": -0.00018164396350166102
+        }
+      ],
+      "summary": {
+        "b_near_gap_mt": 10.116,
+        "b_exit_255mm_mt": 0.0763,
+        "collimator_gain_at_255mm": 1.0,
+        "tau_oam_exit_120hz_cw_uNm": 0.0002,
+        "tau_oam_exit_2400rpm_cw_uNm": 0.0002,
+        "tau_oam_exit_2400rpm_ccw_uNm": -0.0002,
+        "q_mhd_seawater_120hz_l_min": 17.052,
+        "max_gauss_residual_pct": 1.064,
+        "peek_losses_W": 0.0
+      }
+    },
+    "single_rotor_baseline": {
+      "info": {
+        "id": "single_rotor_baseline",
+        "name": "Single Rotor Baseline (Z-axis)",
+        "type": "Unenhanced Classical Dipole (Free Space)",
+        "chiral_coupling": 0.0,
+        "has_copper_collimator": false,
+        "r_coil_mm": 55.0,
+        "b_gap_mt": 4.5,
+        "oam_gain": 0.0,
+        "gain_cw": 0.85,
+        "gain_ccw": 0.85,
+        "color": "#64748b",
+        "marker": "x"
+      },
+      "axial_profile": [
+        {
+          "z_mm": 50.0,
+          "b_z_mt": 5.989500000000001,
+          "b_free_mt": 5.989500000000001,
+          "collimation_gain": 0.999999999999833
+        },
+        {
+          "z_mm": 55.0,
+          "b_z_mt": 4.5,
+          "b_free_mt": 4.5,
+          "collimation_gain": 0.9999999999997777
+        },
+        {
+          "z_mm": 75.0,
+          "b_z_mt": 1.7746666666666662,
+          "b_free_mt": 1.7746666666666662,
+          "collimation_gain": 0.9999999999994365
+        },
+        {
+          "z_mm": 100.0,
+          "b_z_mt": 0.7486875000000002,
+          "b_free_mt": 0.7486875000000002,
+          "collimation_gain": 0.9999999999986644
+        },
+        {
+          "z_mm": 125.0,
+          "b_z_mt": 0.383328,
+          "b_free_mt": 0.383328,
+          "collimation_gain": 0.9999999999973913
+        },
+        {
+          "z_mm": 150.0,
+          "b_z_mt": 0.22183333333333327,
+          "b_free_mt": 0.22183333333333327,
+          "collimation_gain": 0.999999999995492
+        },
+        {
+          "z_mm": 175.0,
+          "b_z_mt": 0.13969679300291546,
+          "b_free_mt": 0.13969679300291546,
+          "collimation_gain": 0.9999999999928416
+        },
+        {
+          "z_mm": 200.0,
+          "b_z_mt": 0.09358593750000002,
+          "b_free_mt": 0.09358593750000002,
+          "collimation_gain": 0.9999999999893145
+        },
+        {
+          "z_mm": 225.0,
+          "b_z_mt": 0.0657283950617284,
+          "b_free_mt": 0.0657283950617284,
+          "collimation_gain": 0.9999999999847858
+        },
+        {
+          "z_mm": 255.0,
+          "b_z_mt": 0.04515231698215619,
+          "b_free_mt": 0.04515231698215619,
+          "collimation_gain": 0.9999999999778527
+        },
+        {
+          "z_mm": 275.0,
+          "b_z_mt": 0.03600000000000001,
+          "b_free_mt": 0.03600000000000001,
+          "collimation_gain": 0.9999999999722222
+        },
+        {
+          "z_mm": 300.0,
+          "b_z_mt": 0.02772916666666666,
+          "b_free_mt": 0.02772916666666666,
+          "collimation_gain": 0.999999999963937
+        }
+      ],
+      "oam_freq_sweep": [
+        {
+          "frequency_hz": 25.0,
+          "tau_oam_uNm": 0.0,
+          "q_mhd_l_min": 0.0,
+          "dp_mhd_pa": 0.0
+        },
+        {
+          "frequency_hz": 50.0,
+          "tau_oam_uNm": 0.0,
+          "q_mhd_l_min": 0.0,
+          "dp_mhd_pa": 0.0
+        },
+        {
+          "frequency_hz": 80.0,
+          "tau_oam_uNm": 0.0,
+          "q_mhd_l_min": 0.0,
+          "dp_mhd_pa": 0.0
+        },
+        {
+          "frequency_hz": 100.0,
+          "tau_oam_uNm": 0.0,
+          "q_mhd_l_min": 0.0,
+          "dp_mhd_pa": 0.0
+        },
+        {
+          "frequency_hz": 120.0,
+          "tau_oam_uNm": 0.0,
+          "q_mhd_l_min": 0.0,
+          "dp_mhd_pa": 0.0
+        },
+        {
+          "frequency_hz": 150.0,
+          "tau_oam_uNm": 0.0,
+          "q_mhd_l_min": 0.0,
+          "dp_mhd_pa": 0.0
+        },
+        {
+          "frequency_hz": 200.0,
+          "tau_oam_uNm": 0.0,
+          "q_mhd_l_min": 0.0,
+          "dp_mhd_pa": 0.0
+        },
+        {
+          "frequency_hz": 300.0,
+          "tau_oam_uNm": 0.0,
+          "q_mhd_l_min": 0.0,
+          "dp_mhd_pa": 0.0
+        },
+        {
+          "frequency_hz": 500.0,
+          "tau_oam_uNm": 0.0,
+          "q_mhd_l_min": 0.0,
+          "dp_mhd_pa": 0.0
+        },
+        {
+          "frequency_hz": 750.0,
+          "tau_oam_uNm": 0.0,
+          "q_mhd_l_min": 0.0,
+          "dp_mhd_pa": 0.0
+        },
+        {
+          "frequency_hz": 1000.0,
+          "tau_oam_uNm": 0.0,
+          "q_mhd_l_min": 0.0,
+          "dp_mhd_pa": 0.0
+        }
+      ],
+      "rpm_cw_sweep": [
+        {
+          "rpm": 0.0,
+          "tau_oam_uNm": 0.0
+        },
+        {
+          "rpm": 120.0,
+          "tau_oam_uNm": 0.0
+        },
+        {
+          "rpm": 300.0,
+          "tau_oam_uNm": 0.0
+        },
+        {
+          "rpm": 600.0,
+          "tau_oam_uNm": 0.0
+        },
+        {
+          "rpm": 900.0,
+          "tau_oam_uNm": 0.0
+        },
+        {
+          "rpm": 1200.0,
+          "tau_oam_uNm": 0.0
+        },
+        {
+          "rpm": 1500.0,
+          "tau_oam_uNm": 0.0
+        },
+        {
+          "rpm": 1800.0,
+          "tau_oam_uNm": 0.0
+        },
+        {
+          "rpm": 2400.0,
+          "tau_oam_uNm": 0.0
+        }
+      ],
+      "rpm_ccw_sweep": [
+        {
+          "rpm": 0.0,
+          "tau_oam_uNm": 0.0
+        },
+        {
+          "rpm": 120.0,
+          "tau_oam_uNm": 0.0
+        },
+        {
+          "rpm": 300.0,
+          "tau_oam_uNm": 0.0
+        },
+        {
+          "rpm": 600.0,
+          "tau_oam_uNm": 0.0
+        },
+        {
+          "rpm": 900.0,
+          "tau_oam_uNm": 0.0
+        },
+        {
+          "rpm": 1200.0,
+          "tau_oam_uNm": 0.0
+        },
+        {
+          "rpm": 1500.0,
+          "tau_oam_uNm": 0.0
+        },
+        {
+          "rpm": 1800.0,
+          "tau_oam_uNm": 0.0
+        },
+        {
+          "rpm": 2400.0,
+          "tau_oam_uNm": 0.0
+        }
+      ],
+      "summary": {
+        "b_near_gap_mt": 5.99,
+        "b_exit_255mm_mt": 0.0452,
+        "collimator_gain_at_255mm": 1.0,
+        "tau_oam_exit_120hz_cw_uNm": 0.0,
+        "tau_oam_exit_2400rpm_cw_uNm": 0.0,
+        "tau_oam_exit_2400rpm_ccw_uNm": 0.0,
+        "q_mhd_seawater_120hz_l_min": 0.0,
+        "max_gauss_residual_pct": 1.064,
+        "peek_losses_W": 0.0
+      }
+    }
+  }
+}
