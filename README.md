@@ -24,19 +24,18 @@ The computational pipeline and hardware designs target three core industrial dom
 In full alignment with classical electrodynamics, momentum conservation, and the Maxwell Stress Tensor formulation, all computed ponderomotive forces represent internal structural stresses and reaction torques balanced by stator mountings ($\sum \vec{F}_{\text{ext}} = 0$).
 
 ```
-                         ┌──────────────────────────────────────────┐
-                         │         OPEN CHIRAL FLUX SHAPER          │
-                         │    Macro-Chiral Metamaterial Framework   │
-                         └────────────────────┬─────────────────────┘
-                                              │
-         ┌────────────────────────────────────┼────────────────────────────────────┐
-         │                                    │                                    │
-         ▼                                    ▼                                    ▼
-┌───────────────────┐                ┌───────────────────┐                ┌───────────────────┐
-│   Dynamic WPT     │                │  6-DoF Magnetic   │                │ Targeted Contour  │
-│   Omnidirectional │                │    Actuation      │                │ Induction Heating │
-│  Zero Blind Spots │                │ Zero Cogging Core │                │ Zero Outer Losses │
-└───────────────────┘                └───────────────────┘                └───────────────────┘
+                 ┌─────────────────────────────┐
+                 │   OPEN CHIRAL FLUX SHAPER   │
+                 │  Macro-Chiral Metamaterial  │
+                 └──────────────┬──────────────┘
+                                │
+        ┌───────────────────────┼───────────────────────┐
+        ▼                       ▼                       ▼
+┌───────────────┐       ┌───────────────┐       ┌───────────────┐
+│  Dynamic WPT  │       │ 6-DoF Contact │       │Contour Heating│
+│ Omnidirection │       │  Actuation    │       │ 0W Outer Loss │
+│ 0 Blind Spots │       │ No Cogging    │       │ Layer 3 Shield│
+└───────────────┘       └───────────────┘       └───────────────┘
 ```
 
 ---
@@ -47,19 +46,20 @@ In full alignment with classical electrodynamics, momentum conservation, and the
 Conventional inductive resonant power transfer systems suffer from rapid efficiency drop-offs when transmitter and receiver coils experience angular or axial misalignment. Open Chiral Flux Shaper utilizes orthogonal and multi-sector polyphase excitation to synthesize a continuously rotating, isotropic induction corona across all three spatial dimensions:
 
 ```
-                  Z (Orthogonal Ring 1)
-                            ▲
-                            │       Rotating Poynting Lobe S(t)
-                         ┌──┴──┐    .-----.
-                    .----┤Core ├---'       '---.
-                   /     └──┬──┘                \   Receiver Coil
-     ◄─────────────┼────────┼────────────────────┼─────────────► Y (Equatorial Ring 2)
-      Mobile Drone \        │   PEEK Dielectric /   (Arbitrary Orientation)
-       Orientation  '----.  │  Micro-channels  /    [ High Q Link: 84.6% ]
-                          '-┴-----------------'
-                            │
-                            ▼
-                            X
+                      Z (Orthogonal Ring 1)
+                                ▲
+                                │
+                        ┌───────┴───────┐
+                 .──────┤   PEEK Core   ├──────.
+               /        │  Microchannel │        \
+              /         └───────┬───────┘         \
+      ◄──────┼──────────────────┼──────────────────┼──────► Y (Ring 2)
+       Mobile \                 │                 /  Receiver Coil
+       Drone   \     [ 360° Induction Corona ]   /   [Link: 84.6%]
+        Link    '────────────────────────────────'
+                                │
+                                ▼
+                                X
 ```
 
 - **Solid-State Field Steering:** Full 360-degree spherical coverage achieved purely through temporal phase sequencing ($\phi_k = \frac{v_k}{9} \cdot 2\pi$), removing moving parts, slip rings, and mechanical gimbals.
@@ -70,23 +70,22 @@ Conventional inductive resonant power transfer systems suffer from rapid efficie
 By independently modulating the current amplitude and phase offsets across orthogonal solenoid groups, the architecture produces both pure magnetic couples $\vec{\tau} = \int_V (\vec{r} \times (\vec{J} \times \vec{B})) dV$ and controlled localized magnetic pressure gradients $\nabla \left( \frac{B^2}{2\mu} \right)$:
 
 ```
-           [ Rotor Array 1 (|| Z) ]       [ Rotor Array 2 (|| X) ]
-                      │                               │
-                      ▼                               ▼
-             Phase Control: phi_Z            Phase Control: phi_X
-                      │                               │
-                      └───────────────┬───────────────┘
-                                      │
-                                      ▼
-                        ┌───────────────────────────┐
-                        │ Dynamic Maxwell Coupler   │
-                        │ Triple-Layer Metamaterial │
-                        └─────────────┬─────────────┘
-                                      │
-             ┌────────────────────────┼────────────────────────┐
-             ▼                        ▼                        ▼
-     Torque Vector Tau_z      Torque Vector Tau_x      Centering Force F_r
-     (Yaw Stabilization)      (Roll/Pitch Control)     (Active Levitation)
+        [ Rotor Array 1 (|| Z) ]     [ Rotor Array 2 (|| X) ]
+                    │                            │
+                    ▼                            ▼
+           Phase Drive: phi_Z           Phase Drive: phi_X
+                    │                            │
+                    └─────────────┬──────────────┘
+                                  ▼
+                    ┌───────────────────────────┐
+                    │ Triple-Layer Metamaterial │
+                    │   Dynamic Maxwell Core    │
+                    └─────────────┬─────────────┘
+                                  │
+          ┌───────────────────────┼───────────────────────┐
+          ▼                       ▼                       ▼
+     Torque Tau_z            Torque Tau_x            Force F_z
+     (Yaw Control)          (Pitch / Roll)         (Levitation)
 ```
 
 - **Zero-Cogging Topology:** Utilizing an amagnetic, electrically insulating PEEK rotor core ($\mu_r = 1.0, \sigma = 0\text{ S/m}$) completely eliminates parasitic magnetic detent torque, magnetic hysteresis drag, and internal eddy currents.
@@ -100,13 +99,13 @@ The metamaterial shell features a tri-layer structure designed to confine and di
 - **Layer 3 (-30° Counter-Chiral Outer Shell):** Perfect electromagnetic shielding layer exhibiting identically zero dissipation ($0.000\text{ W}$), preventing external stray thermal leakage.
 
 ```
-       Radius [mm]
-       50.0 ──┬────────────────────────────────────────── Layer 3: -30° (0.000 W, Shielded)
-              │  Conductivity barrier sigma_eff
-       48.5 ──┼────────────────────────────────────────── Layer 2: Orthogonal (0.066 W)
-              │  Transition zone
-       47.0 ──┴────────────────────────────────────────── Layer 1: +30° (1.784 W, Heating)
-              ▼ Internal Air Gap / Coils / PEEK Core
+  Radius [mm]
+   50.0 ──┬───────────────────────────── Layer 3: -30° (0.0 W, Shield)
+          │ Conductivity barrier
+   48.5 ──┼───────────────────────────── Layer 2: Ortho (0.07 W)
+          │ Transition zone
+   47.0 ──┴───────────────────────────── Layer 1: +30° (1.78 W, Heat)
+          ▼ Internal Air Gap / Coils / PEEK Core
 ```
 
 ---
@@ -116,22 +115,22 @@ The metamaterial shell features a tri-layer structure designed to confine and di
 To transition from high-power computational models to physical laboratory prototypes without thermal degradation, the operating parameters have been downscaled into an intrinsically safe continuous-wave (CW) regime:
 
 ```
-                            [ Heat Sources: 18.5 W Total ]
-                             Coils: 16.6 W | Mantle: 1.85 W
-                                           │
-                                           ▼
-                     ┌───────────────────────────────────────────┐
-                     │         PEEK Core Micro-Channels          │
-                     │          (12 Parallel Conduits)           │
-                     └─────────────────────┬─────────────────────┘
-                                           │
-                        Fluorinert FC-3283 │ Flow: 55.4 mL/min
-                        Dielectric Coolant │ Delta T: 10.0 °C
-                                           ▼
-                     ┌───────────────────────────────────────────┐
-                     │       External Compact Heat Exchanger     │
-                     │            (Ambient Rejection)            │
-                     └───────────────────────────────────────────┘
+                     [ Heat Sources: 18.5 W Total ]
+                     Coils: 16.6 W | Mantle: 1.85 W
+                                   │
+                                   ▼
+             ┌───────────────────────────────────────────┐
+             │         PEEK Core Micro-Channels          │
+             │          (12 Parallel Conduits)           │
+             └─────────────────────┬─────────────────────┘
+                                   │
+                Fluorinert FC-3283 │ Flow: 55.4 mL/min
+                Dielectric Coolant │ Delta T: 10.0 °C
+                                   ▼
+             ┌───────────────────────────────────────────┐
+             │       External Compact Heat Exchanger     │
+             │            (Ambient Rejection)            │
+             └───────────────────────────────────────────┘
 ```
 
 - **Calibrated Electrical Regime:** Satiated excitation current density of $J_0 = 5.0 \times 10^3\text{ A/m}^2$, corresponding to an effective current of $I_{\text{rms}} = 0.65\text{ A}$ across 48 multi-turn coils (120 turns of AWG 27 enameled copper, $R_{\text{coil}} = 0.82\ \Omega$).
@@ -145,23 +144,23 @@ To transition from high-power computational models to physical laboratory protot
 To ensure experimental rigor and eliminate false-positive force readings caused by environmental interference, physical prototypes must be tested under strict metrological controls:
 
 ```
-  ┌────────────────────────────────────────────────────────────────────────┐
-  │ High-Vacuum Chamber (p < 10⁻⁴ mbar)                                    │
-  │  ┌──────────────────────────────────────────────────────────────────┐  │
-  │  │ Active 3-Axis Helmholtz Cancellation (B_ambient < 0.1 µT)        │  │
-  │  │  ┌────────────────────────────────────────────────────────────┐  │  │
-  │  │  │ Double-Wall Mu-Metal Magnetic Shield (> 60 dB at 50/60 Hz) │  │  │
-  │  │  │  ┌──────────────────────────────────────────────────────┐  │  │  │
-  │  │  │  │ Quartz Torsion Fiber Balance                         │  │  │  │
-  │  │  │  │    │                                                 │  │  │  │
-  │  │  │  │    ├── Dual-Beam Optical Interferometer (Sub-nm)     │  │  │  │
-  │  │  │  │    │                                                 │  │  │  │
-  │  │  │  │   [ FLUX SHAPER ASSEMBLY ]                           │  │  │  │
-  │  │  │  │   (Non-magnetic liquid dielectric feedlines)         │  │  │  │
-  │  │  │  └──────────────────────────────────────────────────────┘  │  │  │
-  │  │  └────────────────────────────────────────────────────────────┘  │  │
-  │  └──────────────────────────────────────────────────────────────────┘  │
-  └────────────────────────────────────────────────────────────────────────┘
+  ┌────────────────────────────────────────────────────────────┐
+  │ High-Vacuum Chamber (p < 10⁻⁴ mbar)                        │
+  │  ┌──────────────────────────────────────────────────────┐  │
+  │  │ Active 3-Axis Helmholtz Shield (B_ext < 0.1 µT)      │  │
+  │  │  ┌────────────────────────────────────────────────┐  │  │
+  │  │  │ Double Mu-Metal Enclosure (> 60 dB Attenuation)│  │  │
+  │  │  │  ┌──────────────────────────────────────────┐  │  │  │
+  │  │  │  │ Quartz Torsion Fiber Balance             │  │  │  │
+  │  │  │  │    │                                     │  │  │  │
+  │  │  │  │    ├── Laser Interferometer (Sub-nm)     │  │  │  │
+  │  │  │  │    │                                     │  │  │  │
+  │  │  │  │   [ FLUX SHAPER BENCH RIG ]              │  │  │  │
+  │  │  │  │   (Fluorinert FC-3283 Feedlines)         │  │  │  │
+  │  │  │  └──────────────────────────────────────────┘  │  │  │
+  │  │  └────────────────────────────────────────────────┘  │  │
+  │  └──────────────────────────────────────────────────────┘  │
+  └────────────────────────────────────────────────────────────┘
 ```
 
 1. **High-Vacuum Environment ($p < 10^{-4}\text{ mbar}$):** Eliminates buoyant convective air currents, acoustic streaming, and radiometric Crookes/Knudsen thermal outgassing forces that mimic micro-Newton forces on sensitive balances.
@@ -280,13 +279,13 @@ The repository is fully reproducible using open-source tools:
 # 1. Environment Installation
 pip install -r requirements.txt
 
-# 2. Master Pipeline Verification Suite (Cross-checks all primary architectures)
+# 2. Master Verification Suite (Cross-checks primary architectures)
 python scripts/master_pipeline_verification.py --summary-only
 
-# 3. Kinematic Regimes Benchmark Execution (14 states, CW vs CCW, Figure 31 rendering)
+# 3. Kinematic Regimes Benchmark (14 states, CW vs CCW, Figure 31)
 python scripts/run_kinematic_regimes_simulation.py
 
-# 4. Calibrated Laboratory Benchtop Prototype (WPT & 6-DoF, Safe 18.5 W regime)
+# 4. Calibrated Laboratory Benchtop Prototype (Safe 18.5 W regime)
 python variants/gabbia_sferica_chiral_wpt_actuator/scripts/run_chiral_wpt_actuator_simulation.py
 
 # 5. Core Architectural Simulations:
