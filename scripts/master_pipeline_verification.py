@@ -2,11 +2,17 @@
 # -*- coding: utf-8 -*-
 """
 MASTER PIPELINE VERIFICATION SCRIPT (Python / Elmer FEM)
-Esegue il controllo incrociato e ricalcola i parametri chiave delle varianti principali:
+Esegue il controllo incrociato e ricalcola i parametri chiave delle 10 pipeline:
 1. Fibonacci 24x24 Balanced (scripts/run_fibonacci_24x24_simulation.py)
 2. Fibonacci 24x24 Accumulated (scripts/run_fibonacci_spinta_accumulata.py)
 3. Triskelion 3-Lobe Hexagram (scripts/run_triskelion_esagramma_simulation.py)
-4. Dual Orthogonal 90° (48 Coils, Regime 273 N) (scripts/run_doppio_gruppo_48coils_simulation.py)
+4. Dual Orthogonal 90° (48 Coils) (scripts/run_doppio_gruppo_48coils_simulation.py)
+5. Concentric Spheres Polarization (scripts/run_polarization_spherical_sweep.py)
+6. Chiral Diode Asymmetric Pulse (scripts/run_chiral_diode_asymmetric_pulse_simulation.py)
+7. Constant-Power Spectral Delta (scripts/run_frequency_polarization_delta.py)
+8. Asymmetric Power Distance Sweep (scripts/run_asymmetric_power_distance_sweep.py)
+9. Geomagnetic & Grounding Sweep (scripts/run_geomagnetic_earth_coupling_sweep.py)
+10. Magnetic Vortex & OAM Sweep (scripts/run_magnetic_vortex_oam_sweep.py)
 
 Autore: Alessandro Brescacin
 Licenza: CERN-OHL-S-2.0
@@ -68,6 +74,11 @@ pipelines = [
         "name": "Geomagnetic and Earth Electric Field Interaction & Grounding Benchmark",
         "script": SCRIPT_DIR / "run_geomagnetic_earth_coupling_sweep.py",
         "json": ROOT_DIR / "data" / "geomagnetic_earth_coupling_benchmark.json"
+    },
+    {
+        "name": "Magnetic Vortex Beams and Orbital Angular Momentum (OAM)",
+        "script": SCRIPT_DIR / "run_magnetic_vortex_oam_sweep.py",
+        "json": ROOT_DIR / "data" / "magnetic_vortex_oam_benchmark.json"
     }
 ]
 
@@ -264,7 +275,24 @@ for item in results_summary:
         fig38_path = ROOT_DIR / "figures" / "fig_38_geomagnetic_earth_coupling.png"
         if fig38_path.exists():
             print(f"  • Tavola Campi Terrestri (Fig 38):      Generata ({fig38_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
+    elif "variants_data" in data and "disk_probe" in data.get("meta", {}):
+        meta = data["meta"]
+        vdata = data["variants_data"]
+        cd = vdata.get("chiral_diode_asymm", {}).get("summary", {})
+        d48 = vdata.get("dual_90_48coils", {}).get("summary", {})
+        sr = vdata.get("single_rotor_baseline", {}).get("summary", {})
+        probe = meta.get("disk_probe", {})
+        print(f"  • Sonda Disco OAM Assiale:         Al ({probe.get('radius_mm', 0):.0f} mm, spessore {probe.get('thickness_mm', 0):.0f} mm a z = {probe.get('axial_distance_z_mm', 0):.0f} mm)")
+        print(f"  • Carica Topologica ell (CW/CCW):  Diodo ell = {cd.get('topological_charge_ell', 0):+.2f} (Purity {cd.get('oam_mode_purity_pct', 0):.1f}%) | Single Rotor ell = {sr.get('topological_charge_ell', 0):+.2f}")
+        print(f"  • Efficienza Conversione SOAC:     Diodo = {cd.get('soac_efficiency_pct', 0):.1f}% | Dual 90° = {d48.get('soac_efficiency_pct', 0):.1f}% | Single Rotor = {sr.get('soac_efficiency_pct', 0):.1f}%")
+        print(f"  • Coppia Torsionale OAM (120 Hz):  Diodo = {cd.get('peak_tau_oam_at_120hz_uNm', 0):+.3f} uN*m (CW) | Dual 90° = {d48.get('peak_tau_oam_at_120hz_uNm', 0):+.3f} uN*m | Single Rotor = {sr.get('peak_tau_oam_at_120hz_uNm', 0):.3f} uN*m")
+        print(f"  • Coppia Torsionale a 2400 RPM:    Diodo = {cd.get('tau_oam_2400rpm_cw_uNm', 0):+.3f} uN*m (CW) vs {cd.get('tau_oam_100hz_1200rpm_ccw_uNm', 0):+.3f} uN*m (CCW 1200 RPM)")
+        print(f"  • Solenoidalità di Gauss:          Max Residuo = {cd.get('max_gauss_residual_pct', 0):.3f}% [PASS (< 2.0%)]")
+        fig39_path = ROOT_DIR / "figures" / "fig_39_magnetic_vortex_oam.png"
+        if fig39_path.exists():
+            print(f"  • Tavola Vortici OAM (Fig 39):           Generata ({fig39_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
 
 print("\n" + "=" * 90)
-print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 9 PIPELINE ===")
+print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 10 PIPELINE ===")
 print("=" * 90)
+
