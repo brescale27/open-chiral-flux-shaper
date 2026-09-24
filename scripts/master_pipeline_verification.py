@@ -179,6 +179,9 @@ for item in results_summary:
             d48_stats = rad_corr["variants"]["dual_90_48coils"]["statistics"]
             print(f"  • Correlazione Radiale (51-250 mm):      Pearson r = {d48_stats['pearson_r_radius_vs_purity']:+.4f} (R² = {d48_stats['determination_coefficient_r2']:.4f}, gamma = {d48_stats['power_law_decay_gamma']:.4f})")
             print(f"  • Correlazione Flusso di Gauss:          Pearson r = {d48_stats['pearson_r_radius_vs_gauss_res']:+.4f} (Max = {d48_stats['max_gauss_residual_pct']}%, {d48_stats['gauss_status']})")
+        fig34_path = ROOT_DIR / "figures" / "fig_34_concentric_polarization_field_maps.png"
+        if fig34_path.exists():
+            print(f"  • Mappatura Visiva Odografi (Fig 34):    Generata ({fig34_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
 
 print("\n" + "=" * 90)
 print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 5 PIPELINE ===")

@@ -308,9 +308,16 @@ def run_full_polarization_campaign():
     OUT_JSON.write_text(json.dumps(results_database, indent=2), encoding="utf-8")
     print(f"\n  [OK] Dataset JSON completo salvato in: {OUT_JSON}")
 
-    # Generazione Figure Ufficiali Fig 32 e Fig 33
+    # Generazione Figure Ufficiali Fig 32, Fig 33 e Fig 34
     generate_polarization_diagnostic_figure(results_database)
     generate_radial_correlation_figure(radial_corr_benchmark)
+    try:
+        from generate_polarization_field_maps import generate_polarization_field_maps
+        generate_polarization_field_maps()
+    except Exception as e:
+        print(f"  [AVVISO] Generazione Fig 34 via modulo fallita ({e}), avvio subprocess...")
+        import subprocess
+        subprocess.run([sys.executable, str(Path(__file__).resolve().parent / "generate_polarization_field_maps.py")])
 
 
 def run_radial_correlation_benchmark():

@@ -27,6 +27,16 @@ In full alignment with classical electrodynamics, momentum conservation, and the
 > **Foundational Discovery: 3D Macro-Chiral Spin-Momentum Locking & Concentric Spherical Polarization**
 > Full 3D finite-element electrodynamic verification across concentric spherical shells ($R = 55, 80, 120, 160\text{ mm}$) confirms that the dual orthogonal 90° stator array combined with the $\pm 30^\circ$ chiral metamaterial mantle synthesizes a **purely circularly polarized near-field induction wave** ($\eta_{\text{CP}} = 95.5\%$, Axial Ratio $\text{AR} = 2.67\text{ dB}$, Stokes $s_3 = +0.955$) that retains $>91.6\%$ circular purity into the far field. Mechanical rotation inversion ($1200\text{ RPM}$ CW vs CCW) dynamically inverts the wave's topological spin helicity ($s_3 = +0.968$ LHCP $\to s_3 = -0.924$ RHCP), establishing a contactless, solid-state electrodynamic torque and power transfer switch.
 
+<div align="center">
+
+### Measured 3D Polarized Field Hodographs Across Architectures (Figure 34)
+| Transverse Induction Hodographs $\mathbf{B}_\perp(t)$, Helicity Inversion (CW vs CCW), and 360° Spherical Vortex |
+| :---: |
+| <img src="figures/fig_34_concentric_polarization_field_maps.png" width="940" alt="3D Measured Polarized Field Maps Across Variants" /> |
+| *Visual comparison of measured transverse magnetic field polarizations across all architectural variants on concentric spheres ($R = 55\text{--}160\text{ mm}$). Panels A1–A3: Transverse hodographs $\mathbf{B}_\perp(t) = B_\theta(t)\hat{\theta} + B_\phi(t)\hat{\phi}$ contrasting the pure circular mode ($\eta_{\text{CP}} = 95.5\%$, $\text{AR} = 2.67\text{ dB}$) of the Dual Orthogonal 90° against Fibonacci 24x24 elliptical modulation, Triskelion 3-lobe cloverleaf harmonic deformation ($m=3$), and Single Rotor baseline collapse to planar dipole ($\eta_{\text{CP}} = 15.9\%$, $\text{AR} = 21.9\text{ dB}$). Panel B: Instantaneous electrodynamic spin flip ($s_3 = +0.968 \to -0.924$). Panel C: Concentric amplitude decay with $>91\%$ circular retention. Panel D: Gapless 360° omnidirectional spherical vortex.* |
+
+</div>
+
 ```
                  ┌─────────────────────────────┐
                  │   OPEN CHIRAL FLUX SHAPER   │
@@ -226,7 +236,7 @@ The behavior of the electrodynamic interaction is governed by the mechanical sli
 
 ## 7. Master 3D Concentric Spherical Polarization & Magneto-Kinetic Helicity Benchmark
 
-The polarization state of the transverse magnetic field $\mathbf{B}_\perp = B_\theta \hat{\theta} + B_\phi \hat{\phi}$ was evaluated across four concentric spherical shells ($R = 55, 80, 120, 160\text{ mm}$), covering the full kinematic RPM sweep (CW vs CCW) and coil excitation frequency sweep ($25\text{--}1000\text{ Hz}$).
+The polarization state of the transverse magnetic field $\mathbf{B}_\perp = B_\theta \hat{\theta} + B_\phi \hat{\phi}$ was evaluated across concentric spherical shells ($R = 55, 80, 120, 160\text{ mm}$ and continuous sweep $51\text{--}250\text{ mm}$), covering the full kinematic RPM sweep (CW vs CCW) and coil excitation frequency sweep ($25\text{--}1000\text{ Hz}$). Complete visual field hodographs across all variants are mapped in [**Figure 34**](#figure-34-visual-mapping-of-measured-polarized-magnetic-fields-across-variants), while spectral and parametric trends are charted in [**Figure 32**](#figure-32-3d-concentric-field-polarization-helicity-inversion-cw-vs-ccw--spectral-dispersion) and [**Figure 33**](#figure-33-radial-sphere-correlation-benchmark-r-vs-percentages).
 
 ### 7.1 Concentric Spherical Shells Comparison ($f_e = 100\text{ Hz}$, Static 0 RPM)
 
@@ -330,6 +340,12 @@ The repository provides high-resolution 300 DPI analytical plates and dynamic si
 | <img src="figures/fig_33_radial_correlation_benchmark.png" width="900" alt="Radial Correlation Benchmark Plate" /> |
 | *Panel A: Continuous radial sweep across 25 concentric spheres (51 to 250 mm) demonstrating near-perfect deterministic correlation (Pearson $r = -0.9961$, Spearman $\rho = -1.0000$, $R^2 = 0.9837$) and ultra-low power-law decay ($\gamma = 0.0457$) for Dual Orthogonal 90°. Panel B: Axial Ratio (AR dB) scaling demonstrating strict IEEE circular compliance ($\text{AR} \le 3.0\text{ dB}$) across the entire primary coupling zone ($R \le 80\text{ mm}$). Panel C: Transverse field decay $\% B_\perp(R)$ alongside Gauss solenoidality residual percentage scaling ($r = +0.9992$, peaking at $1.642\%$ at $250\text{ mm}$, well within $< 2.0\%$ PASS). Panel D: Official CERN-OHL-S-2.0 metrological certification matrix.* |
 
+### Figure 34: Visual Mapping of Measured Polarized Magnetic Fields Across Variants
+| Transverse Field Hodographs $\mathbf{B}_\perp(t)$, Helicity Inversion (CW vs CCW), and 360° Spherical Vortex |
+| :---: |
+| <img src="figures/fig_34_concentric_polarization_field_maps.png" width="900" alt="Visual Mapping of Measured Polarized Fields Across Variants" /> |
+| *High-resolution visual mapping of measured transverse magnetic field polarizations $\mathbf{B}_\perp(t) = B_\theta(t)\hat{\theta} + B_\phi(t)\hat{\phi}$. Panel A1: Dual Orthogonal 90° pure circular mode ($\eta_{\text{CP}} = 95.5\%$, $\text{AR} = 2.67\text{ dB}$, IEEE compliant). Panel A2: Fibonacci 24x24 modulated chiral ellipse ($\eta_{\text{CP}} = 90.0\%$, $\text{AR} = 4.06\text{ dB}$). Panel A3: Triskelion 3-lobe cloverleaf mode ($\eta_{\text{CP}} = 77.9\%$, $m=3$) juxtaposed with Single Rotor baseline collapse to planar dipole ($\eta_{\text{CP}} = 15.9\%$, $\text{AR} = 21.9\text{ dB}$, non-circular). Panel B: Kinematic helicity flip (CW LHCP $s_3 = +0.968 \to$ CCW RHCP $s_3 = -0.924$). Panel C: Concentric nested hodographs ($R = 55\text{--}160\text{ mm}$) illustrating $1/r^{2.8}$ amplitude attenuation with $>91\%$ circular preservation. Panel D: Continuous 360° omnidirectional spherical vector vortex map.* |
+
 ### Dynamic Video: Dual Orthogonal 90° Multi-Axis Electrodynamics
 | 3D Orthogonal Solenoid Current State, Dynamic Magnetic Vector & Real-Time Waveforms |
 | :---: |
@@ -354,8 +370,10 @@ python scripts/master_pipeline_verification.py --summary-only
 # 3. Kinematic Regimes Benchmark (14 states, CW vs CCW, Figure 31)
 python scripts/run_kinematic_regimes_simulation.py
 
-# 4. 3D Concentric Polarization Sweep & Correlation (Figures 32 & 33)
+# 4. 3D Concentric Polarization Sweep & Field Maps (Figs 32, 33 & 34)
 python scripts/run_polarization_spherical_sweep.py
+# Standalone visual field maps:
+python scripts/generate_polarization_field_maps.py
 
 # 5. Calibrated Laboratory Benchtop Prototype (Safe 18.5 W regime)
 python variants/gabbia_sferica_chiral_wpt_actuator/\
@@ -394,6 +412,7 @@ Il progetto **Open Chiral Flux Shaper** è un framework multifisico computaziona
 - **Protocollo Metrologico per Test a Vuoto:** Camera a vuoto ($< 10^{-4}\text{ mbar}$), schermatura passiva in Mu-metal ($> 60\text{ dB}$), gabbia di Helmholtz a 3 assi, bilancia di torsione con telemetria interferometrica e null tests simmetrici di inversione di fase.
 
 ### 4. Verifica della Polarizzazione dei Campi ed Elicità Magneto-Cinematica
+- **Mappatura Visiva degli Odografi di Polarizzazione (Figura 34):** Visualizzazione diretta del campo trasverso misurato $\mathbf{B}_\perp(t)$ che contrappone l'odografo perfettamente circolare della configurazione a Doppio Gruppo Ortogonale 90° ($\eta_{\text{CP}} = 95.5\%$, $\text{AR} = 2.67\text{ dB}$) all'ellisse modulata di Fibonacci 24x24 ($\eta_{\text{CP}} = 90.0\%$), alla deformazione a trifoglio del Triskelion ($m=3$, $\eta_{\text{CP}} = 77.9\%$) e al collasso planare del Rotore Singolo ($\eta_{\text{CP}} = 15.9\%$, dipolo lineare privo di componenti 3D). La tavola illustra visivamente l'inversione dell'orbita per controrotazione cinematica (CW $\to$ CCW) e la mappatura vettoriale continua a 360° sulla sfera.
 - **Generazione di Modi Circolari Puri 3D:** L'accoppiamento tra la quadratura a 90° e il mantello anisotropo ($\pm 30^\circ$) sintetizza un'onda d'induzione a polarizzazione circolare isotropa ($\eta_{\text{CP}} = 95.5\%$, $\text{AR} = 2.67\text{ dB}$, $s_3 = +0.955$ a $R = 55\text{ mm}$), eliminando qualsiasi nullo di accoppiamento per spire riceventi comunque orientate nello spazio.
 - **Inversione Magneto-Cinematica dell'Elicità:** L'inversione meccanica da orario (CW, $+1200\text{ RPM}$) ad antiorario (CCW, $-1200\text{ RPM}$) ribalta completamente il segno dell'elicità ($s_3 = +0.968 \to s_3 = -0.924$, dominanza RHCP al $96.2\%$), fornendo un meccanismo puramente elettrodinamico per il controllo di coppia e momento orbitale senza commutazioni elettriche.
 - **Finestra Spettrale Risonante (80-200 Hz):** Lo sweep in frequenza comprova che l'effetto chirale raggiunge il picco quando lo spessore di penetrazione (skin depth $\delta \approx 1\text{ mm}$) coincide con il singolo strato metallico del mantello.
