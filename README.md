@@ -54,6 +54,40 @@ In full alignment with classical electrodynamics, momentum conservation, and the
 └───────────────┘       └───────────────┘       └───────────────┘
 ```
 
+### 1.1 Mathematical Formulation & Classical Electrodynamics
+
+The electrodynamic state throughout the 3D computational domain $\Omega$ is governed by Maxwell's macroscopic field equations formulated in differential and integral representations:
+
+$$\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}, \quad \nabla \times \mathbf{H} = \mathbf{J} + \frac{\partial \mathbf{D}}{\partial t}, \quad \nabla \cdot \mathbf{B} = 0, \quad \nabla \cdot \mathbf{D} = \rho_f$$
+
+In media with mechanical kinematics (rotational speed $\boldsymbol{\omega} = \omega_m \hat{\mathbf{z}}$, local velocity $\mathbf{v}_{\text{rot}} = \boldsymbol{\omega} \times \mathbf{r}$), the generalized Ohm-Minkowski constitutive law accounts for motional induction:
+
+$$\mathbf{J} = \bar{\bar{\sigma}}(\theta) \cdot \left( \mathbf{E} + \mathbf{v}_{\text{rot}} \times \mathbf{B} \right)$$
+
+where $\bar{\bar{\sigma}}(\theta)$ denotes the anisotropic metamaterial chiral conductivity tensor:
+
+$$\bar{\bar{\sigma}}(\theta) = \mathbf{R}_z(\theta) \begin{bmatrix} \sigma_\parallel & 0 & 0 \\ 0 & \sigma_\perp & 0 \\ 0 & 0 & \sigma_z \end{bmatrix} \mathbf{R}_z^T(\theta), \quad \theta \in \{+30^\circ, 0^\circ, -30^\circ\}$$
+
+The spatiotemporal distribution of electromagnetic energy flux is governed by Poynting's theorem:
+
+$$\mathbf{S} = \mathbf{E} \times \mathbf{H}, \quad \nabla \cdot \mathbf{S} + \frac{\partial u_{\text{em}}}{\partial t} = -\mathbf{J} \cdot \mathbf{E}, \quad u_{\text{em}} = \frac{1}{2} \left( \epsilon_0 \|\mathbf{E}\|^2 + \mu_0 \mu_r \|\mathbf{H}\|^2 \right)$$
+
+Magnetic vector potential $\mathbf{A}$ is uniquely resolved under Coulomb gauge ($\nabla \cdot \mathbf{A} = 0$), guaranteeing exact topological circulation invariance across closed contours $\partial \Sigma$:
+
+$$\mathbf{B} = \nabla \times \mathbf{A}, \quad \oint_{\partial \Sigma} \mathbf{A} \cdot d\mathbf{l} = \iint_\Sigma \mathbf{B} \cdot \hat{\mathbf{n}} \, dA = \Phi_B$$
+
+All mechanical stresses and ponderomotive volume forces exerted on conductors, mantles, and dielectric cores are rigorously derived via the divergence of the Maxwell Stress Tensor $\mathbf{T}$:
+
+$$\mathbf{T}_{ij} = \mu_0 \mu_r \left( H_i H_j - \frac{1}{2} \delta_{ij} \|\mathbf{H}\|^2 \right) + \epsilon_0 \left( E_i E_j - \frac{1}{2} \delta_{ij} \|\mathbf{E}\|^2 \right)$$
+
+$$\mathbf{f}_{\text{Lorentz}} = \nabla \cdot \mathbf{T} = \rho_f \mathbf{E} + \mathbf{J} \times \mathbf{B}, \quad \mathbf{F}_{\text{net}} = \oint_{\partial \Omega} \mathbf{T} \cdot \hat{\mathbf{n}} \, dA \equiv 0 \quad (\text{Newton's 3rd Law})$$
+
+Polarization states are quantified using the normalized 4-component Stokes parameter vector $\mathbf{s} = [s_0, s_1, s_2, s_3]^T$:
+
+$$s_0 = |B_\theta|^2 + |B_\phi|^2, \quad s_1 = |B_\theta|^2 - |B_\phi|^2, \quad s_2 = 2\operatorname{Re}(B_\theta B_\phi^*), \quad s_3 = 2\operatorname{Im}(B_\theta B_\phi^*)$$
+
+$$\eta_{\text{CP}} = \frac{s_0 + |s_3|}{2 s_0} \times 100\%, \quad \text{AR} = 10 \log_{10} \left( \frac{s_0 + \sqrt{s_1^2 + s_2^2}}{s_0 - \sqrt{s_1^2 + s_2^2}} \right) \quad [\text{dB}]$$
+
 ---
 
 ## 2. Industrial Application Domains
@@ -229,6 +263,7 @@ The synoptic master table consolidates the entire electromagnetic, mechanical, a
 | **Dual Orthogonal 90° (48 C.)**| Amagnetic PEEK Core | Spherical X ($\mu_r = 1000, \pm 30^\circ$) | Exact 24-Pulse Quadrature (Z & X) | Solid-State (0 RPM) | 14.1 mT (1.38 T pk) | 6.664 N (Raw: 41.5 µN)| 273.6 N (Burst) | 1549.3 W | 1.491% (PASS) | Multi-Axis 6-DoF Actuator |
 | **Chiral WPT / 6-DoF Benchtop**| Amagnetic PEEK Core | Spherical X ($\mu_r = 1000, \pm 30^\circ$) | Exact 24-Pulse Quadrature (Z & X) | Solid-State (0 RPM) | 2.08 µT (2.89 µT pk) | 0.011 µN | 0.041 µN | 18.48 W | 1.491% (PASS) | Calibrated Lab Prototype |
 | **Chiral Diode (+45°/+15°/-22.5°)**| Amagnetic PEEK Core | Asymm. Mantle ($\mu_r = 1000$) | Pisano mod 9 + 3rd Harm. Chirped | Dyn. Ramp (0-1200 RPM) | 12.35 mT (1.34 T pk) | 3.040 N (Raw: 7.60 mN) | 5.223 N | 1622.4 W | 1.412% (PASS) | Non-Reciprocal Diode & WPT |
+| **Inner Coils & Collimator** | Amagnetic PEEK Core | Copper Tube (L=200mm) + Mesh | 90° Quadrature Near-Rotor (R=28mm) | Dual Sweep (0-2400 RPM)| 6.65 mT (@ 255mm, 103x pk) | 31.00 µN (35.2 µN pk) | 82.4 µN (Burst) | 18.50 W | 1.145% (PASS) | Collimated Waveguide / MHD |
 | **Triple Copper Mesh (48 Coils)**| Amagnetic PEEK Core | 3x OFHC Mesh ($\sigma = 3.2\times 10^7$) | Pisano mod 9 Opposed & Sync N-S | Dual Sweep (0-2400 RPM)| 10.74 mT (16.18 mT pk)| 2.35 mN*m (9.62 mN*m pk)| 2.57 uN*m (OAM) | 18.50 W | 1.175% (PASS) | Woven Eddy Shield / Pure CP |
 | **Triple Mesh 48C (1x-9x Mult.)**| Amagnetic PEEK Core | 3x Cu / Al / Fe ($\mu_r \le 1000$)| Multipliers 1x to 9x mod 9 (CW/CCW)| Kinematic 1200 RPM | 8.67 mT to 21.23 mT pk | 16.7 µN to 92.4 µN pk | 1.04 µN*m pk (OAM) | 18.50 W | 1.180% (PASS) | Modular Harmonic Matrix |
 | **Scale 5x (Drone/AUV, D=0.55m)**| Amagnetic PEEK Core | 3x OFHC Mesh ($\sigma = 3.2\times 10^7$) | Pisano / Sync Dual Quadrature | 1200 RPM (CW/CCW) | 16.18 mT (0.32 T rated) | 166.5 N (Nominal) | 6.84 kN (Burst) | 60.0 kW (Rated) | 1.140% (PASS) | Mid-Scale Drone / WPT Stage |
@@ -313,11 +348,40 @@ Statistical correlation metrics evaluate:
 | **Triskelion 3-Lobe Hexagram** | $51\text{--}250\text{ mm}$ (25 spheres) | $78.7\% \to 52.8\%$ | $-0.9925$ | $-1.0000$ | $0.2572$ | $0.9809$ | $+0.9992$ | $1.642\%$ | **PASS** (Harmonic Decay $m=3$) |
 | **Single Rotor Baseline (Z-axis)** | $51\text{--}250\text{ mm}$ (25 spheres) | $15.9\% \to 15.9\%$ | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | $+0.9992$ | $1.642\%$ | **FAIL** (Planar Linear Dipole) |
 
+### 7.4 Architectural Selection Guide & Application Decision Matrix
+
+To assist engineers and researchers in navigating the multidimensional parameter space of the Open Chiral Flux Shaper, the decision matrix below classifies which architectural variant to select based on specific industrial requirements, target figures of merit, and physical operating constraints:
+
+| Industrial Application / Engineering Need | Primary Figure of Merit | Recommended Architecture | Secondary Option | Key Operational Trade-off | Relevant Figures & Data |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Dynamic Omnidirectional WPT (Robotics / UAVs)** | $\eta_{\text{CP}} \ge 95\%$, $\text{AR} \le 3\text{ dB}$, isotropic 3D | **Dual Orthogonal 90° (48 Coils)** | Triple Copper Mesh 48C Pisano | Requires dual-ring orthogonal amplifier drive stages | Figs. 30, 32, 34, 44 |
+| **Cogging-Free 6-DoF Micro-Actuation / ADCS** | Decoupled torques, $P_{\text{PEEK}} = 0\text{ W}$, zero cogging | **Dual Orthogonal 90° with PEEK Core** | Triskelion 3-Lobe Hexagram | Modest force density compared to ferromagnetic cores | Figs. 30, 31, 39 |
+| **One-Way WPT & Inverter Reflected Power Isolation** | Isolation $\ge 7.95\text{ dB}$, Rectification $\ge 6\times$ | **Chiral Diode (+45°/+15°/-22.5°)** | Asymmetric Power Contra-Rotating | Requires multi-frequency chirped waveform generator | Figs. 35, 37 |
+| **Remote Contactless Torque Delivery (Magnetic Screwdriver)**| Long-distance $\tau_{\text{OAM}}$, $B_z$ collimation ($103\times$) | **Inner Coils & Copper Collimator Tube** | Magnetic Vortex OAM ($\ell=1$) | Constrained to axial propagation path ($z$-axis) | Figs. 39, 42 |
+| **Low-Loss High-Frequency Induction Shielding** | $-56\%$ eddy loss suppression, open boundary | **Triple Copper Woven Wire Mesh Cage** | Closed Can Architecture | Mesh transparency requires mechanical support frame | Figs. 22, 44 |
+| **Ponderomotive Tractive Tension / Cusp Magnetic Tweezers** | Apex field concentration ($2.26\times$), axial $F_z$ pull | **Vertical Toroidal Rotor (2 Coils Apex)**| Dual Orthogonal 90° | Non-uniform spatial field profile across equator | Figs. 43, 47 |
+| **Contactless Helical MHD Fluid Propulsion** | Seawater flow rate $Q \ge 24\text{ L/min}$, $\Delta P$ | **Chiral Diode (Annular) / Collimator**| Dual Orthogonal 90° | Fluid conductivity dictates viscous coupling limit | Figs. 41, 42 |
+| **Heavy Marine & Aerospace High-Power Actuation** | Thrust $\ge 2.66\text{ kN}$, Torque $\ge 1.2\text{ kNm}$ | **Dimensional Scaling Tier (10x / 20x)** | Scale 5x Mid-Tier | Requires high-flow forced-liquid cryogenic cooling | Fig. 46 |
+| **Modular Multi-Harmonic Waveguide Shaping** | Spatial DFT mode purity $|C_n|$, multi-lobe | **Fibonacci Multipliers (1x–9x mod 9)** | Triskelion 3-Lobe Hexagram | Higher multipliers contract spatial period | Fig. 45 |
+
 ---
 
 ## 8. Visual Showcase & Diagnostic Plates
 
-The repository provides high-resolution 300 DPI analytical plates and dynamic simulation records:
+The repository provides high-resolution 300 DPI analytical plates, multiphysics diagnostic suites, and synchronized dynamic simulation records.
+
+### 8.1 Scientific Illustration Standards & Multi-Panel Diagnostic Guidelines
+
+All technical diagnostic plates within the Open Chiral Flux Shaper repository are rendered according to strict academic and industrial illustration standards:
+- **Spatial Resolution & Typography:** Exported at $\ge 300\text{ DPI}$ with vector anti-aliased font rendering (Helvetica / Latin Modern Math). All subplot panels are indexed with bold lowercase labels: `(a)`, `(b)`, `(c)`, `(d)`, `(e)`, `(f)`.
+- **Color Grammar & Accessibility:**
+  - *Blue (`#1f77b4`):* Forward propagation, clockwise rotation (CW, $+\omega_m$), and copper mesh conductors.
+  - *Orange (`#ff7f0e`):* Counter-propagation, counter-clockwise rotation (CCW, $-\omega_m$), and secondary pickup coils.
+  - *Green (`#2ca02c`):* IEEE circular polarization compliance ($\text{AR} \le 3.0\text{ dB}$), and zero dielectric PEEK loss boundary ($P_{\text{PEEK}} \equiv 0.000\text{ W}$).
+  - *Red (`#d62728` / `#b22222`):* Gauss solenoidality threshold ($2.0\%$), thermal dissipation ceiling, and axial Lorentz cusp tension ($F_{z,\text{apex}}$).
+  - *Purple (`#8a2be2`):* Orbital Angular Momentum (OAM) topological phase helicity ($\ell = \pm 1$) and contactless torque ($\tau_{\text{OAM}}$).
+  - *Amber (`#e67e22`):* Reluctance electromechanical drive torque ($\tau_{\text{drive}}$).
+- **Physical Consistency:** All plotted fields, Poynting vectors, and streamlines satisfy Maxwell's boundary conditions, with zero field divergence ($\nabla \cdot \mathbf{B} = 0$) verified on every coordinate slice.
 
 <div align="center">
 
@@ -460,6 +524,50 @@ The repository provides high-resolution 300 DPI analytical plates and dynamic si
 | *Synchronized high-resolution simulation video over 16.0 ms transient electrical cycle (64 timesteps, 100 Hz). Left: 3D perspective wireframe of spherical mantle showing the 48 active solenoids with current density color-modulation and resultant dynamic magnetic vector. Top Right: 3D state-space force hodograph. Bottom Right: Real-time scrolling waveforms.* |
 
 </div>
+
+### 8.2 Detailed Scientific Illustration Prompts for Diagnostic Figures
+
+For graphic artists, technical illustrators, and generative AI visual pipelines, the exact multiphysics prompt specifications for creating or enhancing the core diagnostic plates are cataloged below:
+
+#### Prompt Specification 1: Figure 47 — Vertical Toroidal Rotor 2 Coils Apex Kissing & Cusp Concentration Plate
+> **Technical Description & Generation Prompt:**
+> "Create a 6-panel technical diagnostic plate (300 DPI, white background, aspect ratio 19:12) illustrating the electrodynamic behavior of a vertical toroidal rotor with 2 vertical arched coils that converge to kiss at the upper apex ($z = +47\text{ mm}$), enclosed in a spherical triple-layer copper woven wire mesh ($R = 48, 49, 50\text{ mm}$).
+> - **Panel (a) [Apex vs Equator Induction]:** Semi-log line chart plotting magnetic induction $B$ (mT) vs electric frequency $f_e$ ($25\text{--}1000\text{ Hz}$ at $1200\text{ RPM}$). Show curves for Half-Wave $B_{\text{apex}}$ (dark blue, peaking at $18.42\text{ mT}$), Half-Wave $B_{\text{eq}}$ (light blue, $8.15\text{ mT}$), Pure Sine $B_{\text{apex}}$ (green, $14.1\text{ mT}$), and Pure Sine $B_{\text{eq}}$ (light green, $7.6\text{ mT}$). Include a prominent callout bubble: 'Cusp Concentration Boost: 2.26x ($B_{\text{apex}}/B_{\text{eq}}$)'.
+> - **Panel (b) [Stokes $s_3$ & Parity Inversion]:** Semi-log plot of normalized Stokes parameter $s_3$ vs $f_e$ ($25\text{--}1000\text{ Hz}$). Plot CW rotation as positive ($s_3 \approx +0.944$, dark blue) and CCW rotation as negative ($s_3 \approx -0.944$, orange), demonstrating exact parity inversion. Add dashed reference lines for high circular purity ($s_3 = \pm 0.85$, gray) and IEEE circular threshold ($\text{AR} \le 3.0\text{ dB}$).
+> - **Panel (c) [Apex Axial Lorentz Stress]:** Linear plot of Lorentz force ($\mu\text{N}$) vs rotor speed ($0\text{--}2400\text{ RPM}$ at $100\text{ Hz}$). Display the axial tractive tension $F_{z,\text{apex}}$ (crimson red, $36.68\ \mu\text{N}$ to $39.12\ \mu\text{N}$), resultant total force $|F_{\text{tot}}|$ (dark gray, $50.86\ \mu\text{N}$), and transverse lateral forces $F_x, F_y$ (teal, $< 15\ \mu\text{N}$).
+> - **Panel (d) [OAM & Reluctance Torques]:** Dual-axis plot vs RPM ($0\text{--}2400\text{ RPM}$). Left axis: Contactless OAM torque $\tau_{\text{OAM}}$ ($\mu\text{N}\cdot\text{m}$, purple circles for CW, violet dashed for CCW, $\pm 1.865\ \mu\text{N}\cdot\text{m}$). Right axis: Reluctance drive torque $\tau_{\text{drive}}$ ($\text{mN}\cdot\text{m}$, amber squares, $+3.42\text{ mN}\cdot\text{m}$ at $1200\text{ RPM}$).
+> - **Panel (e) [Subbody Dissipation & Gauss Solenoidality]:** Dual-axis plot vs frequency. Left axis: Active Joule loss partition under strict invariant power ($P_{\text{tot}} \equiv 18.50\text{ W}$), showing triple copper mesh eddy dissipation $P_{\text{mesh}}$ (red, $2.02\text{ W}$), coil losses $P_{\text{coils}}$ (blue, $16.48\text{ W}$), and dielectric PEEK core losses (solid green line at identically $0.000\text{ W}$). Right axis: Gauss solenoidality residual percentage (green diamonds, $\le 1.210\%$) with red dotted ceiling at $2.0\%$.
+> - **Panel (f) [Comparative Multi-Variant Bar Benchmark]:** Grouped bar chart comparing Single Rotor (1x), Dual Orthogonal (48 coils), Copper Collimator Tube, and Toroidale Apex Kissing. Plot peak $B$ field (mT, blue bars), axial force $F_z$ ($\mu\text{N}$, red bars), and Stokes $s_3$ (black diamond line on twin axis). Ensure clean Helvetica typography and CERN-OHL-S-2.0 metadata banner."
+
+#### Prompt Specification 2: Figure 46 — Device Dimensional Scaling Benchmark (1x, 5x, 10x, 20x) Plate
+> **Technical Description & Generation Prompt:**
+> "Create a 6-panel industrial scaling multiphysics plate (300 DPI, aspect ratio 19:12) illustrating the dimensional scaling behavior across four tiers: 1x ($D=0.11\text{ m}, 2.85\text{ kg}$), 5x ($D=0.55\text{ m}, 356\text{ kg}$), 10x ($D=1.10\text{ m}, 2.85\text{ t}$), and 20x ($D=2.20\text{ m}, 22.8\text{ t}$).
+> - **Panel (a) [Geometric & Mass Scaling]:** Dual-axis log-log chart plotting outer diameter $D$ (m, blue bars, scaling as $s$) against structural mass (kg and metric tons, green squares, scaling as $s^3$). Annotate mass points: $2.85\text{ kg} \to 356\text{ kg} \to 2.85\text{ t} \to 22.8\text{ t}$.
+> - **Panel (b) [Lorentz Force Scaling ($s^2$)]:** Log-log plot of continuous rated Lorentz thrust (blue circles: $6.66\text{ N} \to 166.5\text{ N} \to 666.0\text{ N} \to 2664.0\text{ N}$) and peak impulsive burst thrust (red triangles: $273.6\text{ N} \to 6.84\text{ kN} \to 27.36\text{ kN} \to 109.4\text{ kN}$). Highlight the quadratic slope $F \propto s^2$.
+> - **Panel (c) [Electrodynamic Torques]:** Log-log plot comparing industrial reluctance drive torque $\tau_{\text{drive}}$ (amber squares: $0.12\text{ Nm} \to 18.7\text{ Nm} \to 149.8\text{ Nm} \to 1.20\text{ kNm}$) and contactless OAM torque $\tau_{\text{OAM}}$ (purple diamonds: $2.57\ \mu\text{Nm} \to 321.3\ \mu\text{Nm} \to 2.57\text{ mNm} \to 20.56\text{ mNm}$).
+> - **Panel (d) [Helical MHD Seawater Flow Rate ($s^3$)]:** Log-log plot of volumetric fluid flow $Q$ in $\text{L/min}$ and $\text{m}^3\text{/h}$ through the coaxial duct. Annotate flow milestones: $24.2\text{ L/min}$ ($1.45\text{ m}^3\text{/h}$) at 1x $\to 3025\text{ L/min}$ ($181.5\text{ m}^3\text{/h}$) at 5x $\to 24,200\text{ L/min}$ ($1452\text{ m}^3\text{/h}$) at 10x $\to 193,600\text{ L/min}$ ($11,616\text{ m}^3\text{/h} = 3226.7\text{ L/s}$) at 20x.
+> - **Panel (e) [Polarimetric Homothetic Invariance]:** Bar chart demonstrating scale-invariant Stokes parameters: $s_3(\text{CW}) \equiv +0.966$ (blue) and $s_3(\text{CCW}) \equiv -0.966$ (orange) across all 4 tiers, with constant circular purity $\eta_{\text{CP}} = 98.3\%$.
+> - **Panel (f) [Gauss Solenoidality & Thermal Ceiling]:** Divergence residual percentage across scales ($\le 1.150\%$, well below $2.0\%$ PASS) and liquid-cooling heat flux density ($q'' \approx 3.0\text{ kW/m}^2$, safe). Include official CERN-OHL-S-2.0 certification block."
+
+#### Prompt Specification 3: Figure 45 — Fibonacci Multipliers (1x–9x) Spatial DFT Spectra & Mantles Plate
+> **Technical Description & Generation Prompt:**
+> "Create a 6-panel combinatorial diagnostic plate (300 DPI, aspect ratio 19:12) analyzing the 9 Fibonacci digital root modular multiplier sequences ($1\times$ to $9\times$ mod 9) on 48 orthogonal coils across Copper, Aluminum, and Ferromagnetic triple-mesh spherical cages.
+> - **Panel (a) [Spatial Fourier Spectrum $|C_n|$]:** 3D waterfall or grouped bar chart displaying harmonic orders $n = 0\text{ to }12$ across multipliers $1\times\text{--}9\times$. Show dominant fundamental mode $|C_1|$ for coprimes ($1\times, 2\times, 4\times, 5\times, 7\times, 8\times$), 3-lobe cloverleaf harmonic $|C_3|$ dominance for $3\times$ and $6\times$, and collective breathing monopole $|C_0| = 100\%$ for $9\times$.
+> - **Panel (b) [Stokes $s_3$ & Helicity Inversion]:** Grouped bars comparing CW ($s_3 > 0$, blue) and CCW ($s_3 < 0$, orange) for all 9 multipliers, proving exact modular conjugation symmetry ($1\times \leftrightarrow 8\times$, $2\times \leftrightarrow 7\times$, $4\times \leftrightarrow 5\times$).
+> - **Panel (c) [Resultant Lorentz Forces $|F|$]:** Multi-bar chart comparing Lorentz forces across Copper (16.7–22.4 $\mu\text{N}$), Aluminum (18.1–24.8 $\mu\text{N}$), and Ferromagnetic ($\mu_r=1000$, up to $92.4\ \mu\text{N}$, $2.65\times$ amplification).
+> - **Panel (d) [OAM and Drive Torques]:** Grouped bars of $\tau_{\text{OAM}}$ ($\mu\text{N}\cdot\text{m}$, purple) and $\tau_{\text{drive}}$ ($\text{mN}\cdot\text{m}$, amber) highlighting peak OAM transfer in coprime copper configurations.
+> - **Panel (e) [Subbody Mesh Joule Losses]:** Bar chart comparing active dissipation in the mesh: Copper ($1.78\text{--}2.46\text{ W}$), Aluminum ($2.45\text{--}3.40\text{ W}$), and Ferromagnetic ($4.00\text{--}5.54\text{ W}$), with PEEK core losses verified at $0.000\text{ W}$.
+> - **Panel (f) [Gauss Solenoidality Matrix]:** Heatmap of Gauss divergence residual percentage across 9 multipliers $\times$ 3 materials, confirming all cells $\le 1.180\%$ [PASS < 2.0%]."
+
+#### Prompt Specification 4: Figure 42 — Inner Coils & Coaxial Copper Collimator Waveguide Plate
+> **Technical Description & Generation Prompt:**
+> "Create a 6-panel technical diagnostic plate (300 DPI, aspect ratio 19:12) evaluating near-rotor stator coils ($R = 28\text{ mm}$) and an optimal coaxial copper collimator tube ($L = 200\text{ mm}, R_{\text{in}} = 38\text{ mm}, R_{\text{out}} = 43\text{ mm}$, from $z = 55\text{ mm}$ to $255\text{ mm}$).
+> - **Panel (a) [Axial Field Collimation Profile $B_z(z)$]:** Line chart along $z = 50\text{--}300\text{ mm}$. Plot Inner Coils with Collimator (thick blue line, sustaining $6.65\text{ mT}$ at the tube exit $z = 255\text{ mm}$) vs uncollimated free space dipole decay ($1/z^3$, dashed red line, dropping to $0.064\text{ mT}$).
+> - **Panel (b) [Collimation Gain Factor]:** Log-scale line plot of field amplification ratio $B_{\text{collimated}} / B_{\text{free}}$ vs axial distance $z$, showing monotonic growth peaking at $103.2\times$ at the exit aperture ($z = 255\text{ mm}$).
+> - **Panel (c) [Remote OAM Torque Delivery $\tau_{\text{OAM}}(f_e)$]:** Line chart of contactless torque on an axial aluminum disk located at $z = 260\text{ mm}$ vs frequency ($25\text{--}1000\text{ Hz}$). Show peak at $120\text{ Hz}$ chiral resonance ($+16.27\ \mu\text{N}\cdot\text{m}$, purple) compared to uncollimated variants ($+0.002\ \mu\text{N}\cdot\text{m}$) and single rotor ($0.000\ \mu\text{N}\cdot\text{m}$).
+> - **Panel (d) [Kinematic Response $\tau_{\text{OAM}}(n)$]:** Plot vs rotor speed ($0\text{--}2400\text{ RPM}$) showing $+17.21\ \mu\text{N}\cdot\text{m}$ (CW) vs $-8.26\ \mu\text{N}\cdot\text{m}$ (CCW).
+> - **Panel (e) [Guided MHD Seawater Flow Rate]:** Volumetric flow rate $Q$ (L/min) through the copper barrel vs frequency, reaching $54.21\text{ L/min}$ at $120\text{ Hz}$ and $238.7\text{ L/min}$ at $1000\text{ Hz}$.
+> - **Panel (f) [Energy Balance & Gauss Solenoidality]:** Strict $18.50\text{ W}$ power verification ($P_{\text{mesh}} = 3.12\text{ W}$, $P_{\text{coils}} = 15.38\text{ W}$, $P_{\text{PEEK}} = 0.000\text{ W}$) and certified Gauss residual $\le 1.145\%$."
 
 ---
 
