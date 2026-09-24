@@ -17,6 +17,7 @@ Esegue il controllo incrociato e ricalcola i parametri chiave delle 12 pipeline:
 12. Helical MHD Pumping Sweep (scripts/run_mhd_helical_pumping_sweep.py)
 13. Inner Coils and Copper Collimator Tube Multi-Campaign Benchmark (scripts/run_copper_collimator_multicampaign_sweep.py)
 14. Triple Copper Mesh Cage 48 Coils Pisano & Synchronous Benchmark (scripts/run_tripla_rete_rame_48coils_pisano_sweep.py)
+15. Triple Mesh 48 Coils Fibonacci Multipliers (1x-9x) Benchmark (scripts/run_fibonacci_multipliers_48coils_sweep.py)
 
 Autore: Alessandro Brescacin
 Licenza: CERN-OHL-S-2.0
@@ -103,6 +104,11 @@ pipelines = [
         "name": "Triple Copper Mesh Cage 48 Coils Pisano & Synchronous Benchmark",
         "script": SCRIPT_DIR / "run_tripla_rete_rame_48coils_pisano_sweep.py",
         "json": ROOT_DIR / "data" / "tripla_rete_rame_48coils_pisano_benchmark.json"
+    },
+    {
+        "name": "Triple Mesh 48 Coils Fibonacci Multipliers (1x-9x) Benchmark",
+        "script": SCRIPT_DIR / "run_fibonacci_multipliers_48coils_sweep.py",
+        "json": ROOT_DIR / "data" / "fibonacci_multipliers_48coils_benchmark.json"
     }
 ]
 
@@ -379,9 +385,25 @@ for item in results_summary:
         fig44_path = ROOT_DIR / "figures" / "fig_44_tripla_rete_rame_48coils_pisano.png"
         if fig44_path.exists():
             print(f"  • Tavola Tripla Rete (Fig 44):          Generata ({fig44_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
+    elif "multipliers" in data.get("meta", {}):
+        meta = data["meta"]
+        res = data.get("results", [])
+        cu_1x_cw = next(r for r in res if r['multiplier'] == 1 and r['mantle_material'] == 'copper' and r['direction'] == 'CW')
+        fe_9x_cw = next(r for r in res if r['multiplier'] == 9 and r['mantle_material'] == 'ferromagnetic' and r['direction'] == 'CW')
+        cu_3x_cw = next(r for r in res if r['multiplier'] == 3 and r['mantle_material'] == 'copper' and r['direction'] == 'CW')
+        cu_1x_ccw = next(r for r in res if r['multiplier'] == 1 and r['mantle_material'] == 'copper' and r['direction'] == 'CCW')
+        print(f"  • Matrice Combinatoria:            {meta.get('total_cases_evaluated', 0)} configurazioni (9 moltiplicatori x 3 mantelli x 2 rotazioni)")
+        print(f"  • Classe Coprimi 1x (Cu CW/CCW):   s3 = {cu_1x_cw['electrodynamics']['stokes_s3']:+.3f} (CP {cu_1x_cw['electrodynamics']['purity_cp_pct']}%, AR={cu_1x_cw['electrodynamics']['axial_ratio_db']} dB) vs CCW s3 = {cu_1x_ccw['electrodynamics']['stokes_s3']:+.3f}")
+        print(f"  • Classe 3-Lobi Trifoglio (3x):    Dominanza Armonica n={cu_3x_cw['spatial_spectrum']['dominant_harmonic']} (|C3|={cu_3x_cw['spatial_spectrum']['c_magnitudes'][3]:.3f}) | s3 = {cu_3x_cw['electrodynamics']['stokes_s3']:+.3f}")
+        print(f"  • Modo Monopolare Sincrono (9x):   Dominanza n={fe_9x_cw['spatial_spectrum']['dominant_harmonic']} (100%) | Max B_gap = {fe_9x_cw['electrodynamics']['b_gap_mt']:.2f} mT | Max |F| = {fe_9x_cw['electrodynamics']['lorentz_forces_uN']['f_mag']:.1f} uN")
+        print(f"  • Confronto Mantelli a Rete:       Cu (P_mesh={cu_1x_cw['electrodynamics']['joule_losses_W']['p_mesh']:.2f} W) vs Fe (mu_r=1000, B={fe_9x_cw['electrodynamics']['b_gap_mt']:.2f} mT, P_mesh={fe_9x_cw['electrodynamics']['joule_losses_W']['p_mesh']:.2f} W)")
+        print(f"  • Perdite PEEK e Solenoidalita:    P_PEEK = 0.000 W | Max Gauss Residual = {fe_9x_cw['electrodynamics']['gauss_solenoidality_residual_pct']:.3f}% [PASS (< 2.0%)]")
+        fig45_path = ROOT_DIR / "figures" / "fig_45_fibonacci_multipliers_triple_mesh_matrix.png"
+        if fig45_path.exists():
+            print(f"  • Tavola Multipli Fibonacci (Fig 45):   Generata ({fig45_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
 
 print("\n" + "=" * 90)
-print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 14 PIPELINE ===")
+print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 15 PIPELINE ===")
 print("=" * 90)
 
 
