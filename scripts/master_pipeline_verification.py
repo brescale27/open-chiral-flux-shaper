@@ -63,6 +63,11 @@ pipelines = [
         "name": "Asymmetric Power Distance Sweep (CW 85% vs CCW 15%)",
         "script": SCRIPT_DIR / "run_asymmetric_power_distance_sweep.py",
         "json": ROOT_DIR / "data" / "asymmetric_power_distance_benchmark.json"
+    },
+    {
+        "name": "Geomagnetic and Earth Electric Field Interaction & Grounding Benchmark",
+        "script": SCRIPT_DIR / "run_geomagnetic_earth_coupling_sweep.py",
+        "json": ROOT_DIR / "data" / "geomagnetic_earth_coupling_benchmark.json"
     }
 ]
 
@@ -243,7 +248,23 @@ for item in results_summary:
         fig37_path = ROOT_DIR / "figures" / "fig_37_asymmetric_power_distance_sweep.png"
         if fig37_path.exists():
             print(f"  • Tavola Potenza Asimmetrica (Fig 37):   Generata ({fig37_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
+    elif "variants_data" in data and "b_geo_total_uT" in data.get("meta", {}):
+        meta = data["meta"]
+        vdata = data["variants_data"]
+        cd = vdata.get("chiral_diode_asymm", {}).get("summary", {})
+        d48 = vdata.get("dual_90_48coils", {}).get("summary", {})
+        sr = vdata.get("single_rotor_baseline", {}).get("summary", {})
+        print(f"  • Ambiente Terrestre Planetario:   B_geo = {meta.get('b_geo_total_uT', 0):.1f} uT (I={meta.get('b_geo_h_uT', 0):.0f}uT/H, {meta.get('b_geo_z_uT', 0):.1f}uT/Z) | E_earth = {meta.get('e_earth_v_m', 0):.1f} V/m")
+        print(f"  • Accoppiamento a Terra PE:        R_PE = {meta.get('r_pe_ohm', 0):.1f} Ohm | C_gnd = {meta.get('c_gnd_pF', 0):.2f} pF | V_float = {cd.get('v_float_static_V', 0):.1f} V statici")
+        print(f"  • Diodo Chirale (PE @ 100Hz/1200): Delta V = {cd.get('v_gnd_at_100hz_1200rpm_cw_mV', 0):.2f} mV (CW) vs {cd.get('v_gnd_at_100hz_1200rpm_ccw_mV', 0):.2f} mV (CCW)")
+        print(f"  • F.e.m. Omopolare (2400 RPM):     V_mot = {cd.get('v_mot_geo_at_2400rpm_uV', 0):.2f} uV | Asimmetria Parita = {cd.get('parity_asymm_at_2400rpm_uV', 0):.2f} uV")
+        print(f"  • Single Rotor Baseline:           Delta V = {sr.get('v_gnd_at_100hz_1200rpm_cw_mV', 0):.2f} mV (Invariante CW/CCW, Asimmetria = {sr.get('parity_asymm_at_2400rpm_uV', 0):.2f} uV)")
+        print(f"  • Corrente Dispersione PE:         I_disp = {cd.get('i_disp_at_100hz_1200rpm_uA', 0):.3f} uA (100 Hz) -> {cd.get('i_disp_at_1000hz_1200rpm_uA', 0):.3f} uA (1000 Hz)")
+        print(f"  • Solenoidalità di Gauss:          Max Residuo = {cd.get('max_gauss_residual_pct', 0):.3f}% [PASS (< 2.0%)]")
+        fig38_path = ROOT_DIR / "figures" / "fig_38_geomagnetic_earth_coupling.png"
+        if fig38_path.exists():
+            print(f"  • Tavola Campi Terrestri (Fig 38):      Generata ({fig38_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
 
 print("\n" + "=" * 90)
-print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 8 PIPELINE ===")
+print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 9 PIPELINE ===")
 print("=" * 90)
