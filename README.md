@@ -1,23 +1,27 @@
 # Open Chiral Flux Shaper
 
-*Anisotropic Macro-Chiral Metamaterial Framework for Omnidirectional Magnetic Field Shaping, Dynamic Wireless Power Transfer (WPT), and Multi-Axis Magnetic Actuation (6-DoF).*
+*An Open-Source Multiphysics Framework for Anisotropic Metamaterial Field Shaping, Omnidirectional Wireless Power Transfer (WPT), and 6-DoF Contactless Magnetic Actuation.*
 
 [![License: CERN-OHL-S-2.0](https://img.shields.io/badge/License-CERN--OHL--S--2.0-blue.svg)](LICENSE.txt)
-[![Release: v2.0.0-pivoted](https://img.shields.io/badge/Release-v2.0.0--pivoted-green.svg)](https://github.com/brescale27/open-chiral-flux-shaper/releases)
+[![Release: v2.0.0](https://img.shields.io/badge/Release-v2.0.0-green.svg)](https://github.com/brescale27/open-chiral-flux-shaper/releases)
 [![FEM Solver: Elmer FEM 9.0](https://img.shields.io/badge/Elmer%20FEM-9.0%20(CSC)-orange.svg)](https://www.csc.fi/web/elmer)
 [![Python: 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.cern--ohl--s--2.0-lightgrey.svg)](https://github.com/brescale27/open-chiral-flux-shaper)
 
 ---
 
-## Scientific Manifesto & Physical Foundation: Transition to Orthodox Electromagnetics
+## 1. Overview & Technical Scope
 
-### 1. Rejection of Closed-System Propulsive Claims & Conservation of Momentum
-In strict adherence to the laws of classical electrodynamics and Newtonian physics, **an isolated, closed electromagnetic system cannot produce net directional self-propulsion without mass expulsion or directional photon momentum flux**:
-$$\sum \vec{F}_{\text{ext}} = \oint_{\partial V} \bar{\bar{T}} \cdot \hat{n} \, dA = \frac{d}{dt} \vec{P}_{\text{mech}} + \frac{d}{dt} \vec{P}_{\text{field}} = 0$$
-Any non-zero volume integral of the Lorentz force $\int_V (\vec{J} \times \vec{B}) \, dV$ evaluated over an enclosed assembly represents **internal structural stresses, armature shear forces, and local magnetic pressure gradients** ($\nabla \frac{B^2}{2\mu} + \frac{(\vec{B}\cdot\nabla)\vec{B}}{\mu}$). These forces are rigorously counterbalanced by equal and opposite mechanical reaction stresses exerted across stator mountings and shell fixations. Any residual uncancelled net force in numerical FEM calculations of enclosed assemblies is an artifact of discrete tetrahedral mesh asymmetry, finite quadrature tolerances, or uncompensated reactive boundary conditions.
+**Open Chiral Flux Shaper** is a high-fidelity finite-element electrodynamic modeling framework developed in Elmer FEM 3D and Python. The project provides an open-hardware and computational foundation for engineering macro-chiral electromagnetic field distributions using structured metamaterial shells, discrete harmonic excitation laws, and multi-axis orthogonal coil arrays.
 
-The **Open Chiral Flux Shaper** project formally pivots its advanced 3D multiphysics finite-element infrastructure, metamaterial formulations, and discrete pulse sequences towards **real-world, scalable, and physically validated industrial engineering applications**.
+By pairing multi-sector discrete winding arrays (including 24-sector Pisano sequence mod 9 topological mappings and dual-ring orthogonal temporal quadratures) with a spherical triple-layer metamaterial shell exhibiting high relative permeability ($\mu_r = 1000$) and an anisotropic conductivity tensor $\bar{\bar{\sigma}}(\theta = \pm 30^\circ)$, the architecture controls the spatiotemporal orientation of the Poynting vector $\vec{S} = \vec{E} \times \vec{H}$ and the magnetic vector potential $\vec{A}$ across stationary and kinematic regimes.
+
+The computational pipeline and hardware designs target three core industrial domains:
+1. **Dynamic Omnidirectional Wireless Power Transfer (WPT):** Continuous, steerable 360-degree near-field inductive power links that eliminate angular blind spots without mechanical gimbals.
+2. **Multi-Axis Contactless Magnetic Actuation (6-DoF):** Micro-positioning, magnetic levitation, and attitude control testbeds utilizing amagnetic dielectric cores to achieve cogging-free actuation.
+3. **Targeted Contour Induction Heating:** High-efficiency localized thermal induction driven by directional chiral current paths, combined with zero-loss outer shielding.
+
+In full alignment with classical electrodynamics, momentum conservation, and the Maxwell Stress Tensor formulation, all computed ponderomotive forces represent internal structural stresses and reaction torques balanced by stator mountings ($\sum \vec{F}_{\text{ext}} = 0$).
 
 ```
                          ┌──────────────────────────────────────────┐
@@ -28,154 +32,174 @@ The **Open Chiral Flux Shaper** project formally pivots its advanced 3D multiphy
          ┌────────────────────────────────────┼────────────────────────────────────┐
          │                                    │                                    │
          ▼                                    ▼                                    ▼
-┌───────────────────────────┐    ┌───────────────────────────┐    ┌───────────────────────────┐
-│ DYNAMIC WIRELESS POWER    │    │ 6-DoF MULTI-AXIS MAGNETIC │    │ TARGETED CONTOUR          │
-│ TRANSFER (WPT)            │    │ ACTUATION & BEARING       │    │ INDUCTION HEATING         │
-├───────────────────────────┤    ├───────────────────────────┤    ├───────────────────────────┤
-│ • 360° Omnidirectional    │    │ • Cogging-Free Multi-Axis │    │ • Controlled Eddy Current │
-│   Rotating Induction Wave │    │   Attitude Control        │    │   Localization via σ_θz   │
-│ • Zero Angular Nulls via  │    │ • Sub-Micron Precision    │    │ • Triple-Layer Shell:     │
-│   90° Dual Rotor Arrays   │    │   Magnetic Levitation     │    │   Layer 3 Exterior = 0 W  │
-│ • Resonant Inductive      │    │ • Fast-Response Reaction  │    │ • Deep Internal Core      │
-│   Coupling Optimization   │    │   Spheres & Gyroscopes    │    │   Dielectric Isolation    │
-└───────────────────────────┘    └───────────────────────────┘    └───────────────────────────┘
+┌───────────────────┐                ┌───────────────────┐                ┌───────────────────┐
+│   Dynamic WPT     │                │  6-DoF Magnetic   │                │ Targeted Contour  │
+│   Omnidirectional │                │    Actuation      │                │ Induction Heating │
+│  Zero Blind Spots │                │ Zero Cogging Core │                │ Zero Outer Losses │
+└───────────────────┘                └───────────────────┘                └───────────────────┘
 ```
 
 ---
 
-## 1. Primary Industrial Application Domains
+## 2. Industrial Application Domains
 
-### 1.1 Dynamic Wireless Power Transfer (WPT) via Chiral Field Shaping
-Conventional inductive power transfer architectures suffer from severe efficiency degradation when the receiver coil rotates, misaligns, or encounters angular dead-zones (flux nulls). 
-The **Dual Orthogonal 90° Rotor Topology** coupled with **Pisano mod 9 / Fibonacci Digital Root Phasing** solves this fundamental bottleneck:
-- **Continuous Omnidirectional Induction Wave:** By operating Rotor 1 (equatorial array || $Z$) and Rotor 2 (meridional array || $X$) in exact $90^\circ$ temporal quadrature ($\Delta\phi = \pi/2$), the system synthesizes a rotating, continuous chiral magnetic field vector $\vec{B}(t)$ that sweeps the entire 3D surrounding space without angular dead-zones.
-- **Seamless Spatial Coverage:** Arbitrarily oriented secondary receiver coils positioned in the near-to-mid field ($R \in [6.5, 15.0]\text{ cm}$) maintain continuous inductive linkage ($k_{\text{coupling}} > 0.35$), enabling dynamic power delivery to moving robotics, drone landing pads, biomedical implants, and rotary actuators without mechanical slip rings.
+### 2.1 Dynamic Omnidirectional Wireless Power Transfer (WPT)
+Conventional inductive resonant power transfer systems suffer from rapid efficiency drop-offs when transmitter and receiver coils experience angular or axial misalignment. Open Chiral Flux Shaper utilizes orthogonal and multi-sector polyphase excitation to synthesize a continuously rotating, isotropic induction corona across all three spatial dimensions:
 
-### 1.2 6-Degrees-of-Freedom (6-DoF) Multi-Axis Magnetic Actuation
-The volumetric Lorentz forces $\vec{J} \times \vec{B}$ and Maxwell Stress Tensor (MST) surface integrals evaluated in this project provide an ideal foundation for **high-precision, multi-axis contactless actuation**:
-- **Cogging-Free Motion Control:** The central structural technopolymer core in **PEEK** ($\mu_r = 1.0$, $\sigma = 0\text{ S/m}$) completely eliminates magnetic hysteresis cogging and permanent reluctance locking.
-- **Reaction Spheres & Micro-Positioning:** The dual-rotor orthogonal architecture exerts controlled 3D magnetic shear pressures on surrounding conductive or magnetic reaction shells. By dynamically modulating the individual phase channels ($\phi_k$), the machine commands instantaneous 3-axis forces ($F_x, F_y, F_z$) and 3-axis torques ($\tau_x, \tau_y, \tau_z$) for satellite attitude control reaction spheres, magnetic levitation stages, and optical table stabilization.
+```
+                  Z (Orthogonal Ring 1)
+                            ▲
+                            │       Rotating Poynting Lobe S(t)
+                         ┌──┴──┐    .-----.
+                    .----┤Core ├---'       '---.
+                   /     └──┬──┘                \   Receiver Coil
+     ◄─────────────┼────────┼────────────────────┼─────────────► Y (Equatorial Ring 2)
+      Mobile Drone \        │   PEEK Dielectric /   (Arbitrary Orientation)
+       Orientation  '----.  │  Micro-channels  /    [ High Q Link: 84.6% ]
+                          '-┴-----------------'
+                            │
+                            ▼
+                            X
+```
 
-### 1.3 Targeted Contour Induction Heating
-Traditional metal shells enclosed around AC inductors suffer catastrophic parasitic eddy current heating governed by Lenz's law. 
-The **Triple-Layer X-Crossed Metasurface** (+30° inner, 0° orthogonal transition, -30° outer layer) converts this limitation into an engineered advantage:
-- **Selective Eddy Confinement:** The positive semi-definite anisotropic conductivity tensor:
-  $$\bar{\bar{\sigma}} = \begin{bmatrix} \sigma_{rr} & 0 & 0 \\ 0 & \sigma_{\theta\theta} & \sigma_{\theta z} \\ 0 & \sigma_{\theta z} & \sigma_{zz} \end{bmatrix}$$
-  channels $96.4\%$ to $99.5\%$ of induced eddy dissipation into the innermost working layer (+30°), while **Layer 3 (-30° outer layer) dissipates exactly $0.000\text{ W}$ ($0.0\%$)**.
-- **Cold External Containment:** This provides total exterior thermal shielding for safe handling and integration into robotic manipulators, while focusing intense induction heating exclusively onto inner workpieces.
+- **Solid-State Field Steering:** Full 360-degree spherical coverage achieved purely through temporal phase sequencing ($\phi_k = \frac{v_k}{9} \cdot 2\pi$), removing moving parts, slip rings, and mechanical gimbals.
+- **Link Efficiency & Coupling:** Resonant inductive link efficiency reaching $\eta_{\text{link}} = 84.6\%$ at near-field distances ($R = 6.5\text{ cm}$) with a calculated coupling factor $k = 0.385$.
+- **Target Applications:** Dynamic docking stations for autonomous aerial vehicles (UAVs), continuous charging for robotic end-effectors, subsea autonomous vehicles, and medical endoscopic capsules.
+
+### 2.2 Multi-Axis Contactless Magnetic Actuation & Active Bearings (6-DoF)
+By independently modulating the current amplitude and phase offsets across orthogonal solenoid groups, the architecture produces both pure magnetic couples $\vec{\tau} = \int_V (\vec{r} \times (\vec{J} \times \vec{B})) dV$ and controlled localized magnetic pressure gradients $\nabla \left( \frac{B^2}{2\mu} \right)$:
+
+```
+           [ Rotor Array 1 (|| Z) ]       [ Rotor Array 2 (|| X) ]
+                      │                               │
+                      ▼                               ▼
+             Phase Control: phi_Z            Phase Control: phi_X
+                      │                               │
+                      └───────────────┬───────────────┘
+                                      │
+                                      ▼
+                        ┌───────────────────────────┐
+                        │ Dynamic Maxwell Coupler   │
+                        │ Triple-Layer Metamaterial │
+                        └─────────────┬─────────────┘
+                                      │
+             ┌────────────────────────┼────────────────────────┐
+             ▼                        ▼                        ▼
+     Torque Vector Tau_z      Torque Vector Tau_x      Centering Force F_r
+     (Yaw Stabilization)      (Roll/Pitch Control)     (Active Levitation)
+```
+
+- **Zero-Cogging Topology:** Utilizing an amagnetic, electrically insulating PEEK rotor core ($\mu_r = 1.0, \sigma = 0\text{ S/m}$) completely eliminates parasitic magnetic detent torque, magnetic hysteresis drag, and internal eddy currents.
+- **Dynamic Decoupling:** Orthogonal 90-degree temporal and spatial quadrature enables independent control over pitch, roll, yaw, and translation axes.
+- **Target Applications:** Contactless reaction spheres for satellite attitude determination and control systems (ADCS), ultra-clean magnetic levitation stages for semiconductor lithography, and high-speed momentum wheels.
+
+### 2.3 Targeted Contour Induction Heating & Thermal Shielding
+The metamaterial shell features a tri-layer structure designed to confine and direct high-frequency induced currents:
+- **Layer 1 (+30° Chiral Inner Shell):** High-loss anisotropic conductivity zone that absorbs 96.4% of total mantle eddy current dissipation, channeling thermal flux into targeted boundaries.
+- **Layer 2 (Intermediate Orthogonal Shell):** Transitional barrier absorbing 3.6% of eddy dissipation.
+- **Layer 3 (-30° Counter-Chiral Outer Shell):** Perfect electromagnetic shielding layer exhibiting identically zero dissipation ($0.000\text{ W}$), preventing external stray thermal leakage.
+
+```
+       Radius [mm]
+       50.0 ──┬────────────────────────────────────────── Layer 3: -30° (0.000 W, Shielded)
+              │  Conductivity barrier sigma_eff
+       48.5 ──┼────────────────────────────────────────── Layer 2: Orthogonal (0.066 W)
+              │  Transition zone
+       47.0 ──┴────────────────────────────────────────── Layer 1: +30° (1.784 W, Heating)
+              ▼ Internal Air Gap / Coils / PEEK Core
+```
 
 ---
 
-## 2. Thermal Engineering & Laboratory Benchtop Redesign
+## 3. Thermal Engineering & Laboratory Design
 
-### 2.1 Realistic Energy Downscaling for Experimental Safety
-Previous speculative configurations operated with high current densities ($J_0 \sim 10^5\text{ A/m}^2$), projecting hundreds of watts to multi-kilowatts of dissipation requiring extreme vacuum radiative cooling. 
-To transition to immediate physical realization on standard laboratory test benches, the excitation parameters are calibrated to safe continuous thermal regimes:
-- **Baseline Laboratory Benchtop Regime:**
-  - Excitation Current Density: $J_0 = 5.0 \times 10^3\text{ A/m}^2$ to $1.0 \times 10^4\text{ A/m}^2$.
-  - Continuous Active Stator Dissipation: **$P_{\text{array}} = 10.0\text{ W} - 50.0\text{ W}$** (distributed across all active coils at $< 2.0\text{ W}$ per coil).
-  - Peak Magnetic Induction: $B_{\text{airgap}} \approx 10 - 45\text{ mT}$, operating with a **$>95\%$ linear margin** well below ferromagnetic saturation ($B_{\text{sat}} = 1.50\text{ T}$).
-
-### 2.2 Microfluidic Liquid Dielectric Cooling System
-To eliminate dependence on large radiating panels during atmospheric and vacuum bench testing, the central core and winding assembly are redesigned for **forced dielectric liquid cooling**:
+To transition from high-power computational models to physical laboratory prototypes without thermal degradation, the operating parameters have been downscaled into an intrinsically safe continuous-wave (CW) regime:
 
 ```
-                       [ Heat Exchanger / Chiller ]
-                               ▲          │
-                    Hot Fluid  │          │ Cool Fluid (20°C)
-                               │          ▼
-                     ┌─────────┴──────────┴─────────┐
-                     │   Dielectric Liquid In/Out   │
-                     ├──────────────────────────────┤
-                     │  PEEK Core Micro-Channels    │
-                     │  (Ø = 1.2 mm, σ = 0.0 S/m)   │
-                     │                              │
-                     │  Cu-ETP Spire Winding Bundle │
-                     │  Immersed in Fluorinert      │
-                     └──────────────────────────────┘
+                            [ Heat Sources: 18.5 W Total ]
+                             Coils: 16.6 W | Mantle: 1.85 W
+                                           │
+                                           ▼
+                     ┌───────────────────────────────────────────┐
+                     │         PEEK Core Micro-Channels          │
+                     │          (12 Parallel Conduits)           │
+                     └─────────────────────┬─────────────────────┘
+                                           │
+                        Fluorinert FC-3283 │ Flow: 55.4 mL/min
+                        Dielectric Coolant │ Delta T: 10.0 °C
+                                           ▼
+                     ┌───────────────────────────────────────────┐
+                     │       External Compact Heat Exchanger     │
+                     │            (Ambient Rejection)            │
+                     └───────────────────────────────────────────┘
 ```
 
-- **Structural Dielectric Core:** The central core is machined from virgin **PEEK-1000** (dielectric strength $E_{\text{bd}} > 20\text{ kV/mm}$, thermal conductivity $k = 0.25\text{ W/(m}\cdot\text{K)}$, volume resistivity $> 10^{16}\ \Omega\cdot\text{cm}$).
-- **Cooling Fluid:** High-dielectric fluorinated heat transfer liquid (**3M™ Fluorinert™ Electronic Liquid FC-3283** or **FC-770**):
-  - Dielectric breakdown strength: $> 40\text{ kV}$ (2.5 mm gap).
-  - Electrical conductivity: $< 10^{-11}\text{ S/m}$ (zero eddy current losses induced in coolant).
-  - Kinematic viscosity: $0.8\text{ cSt}$ at 25°C.
-- **Direct Micro-Channel Heat Extraction:** Micro-channels ($\varnothing = 1.2\text{ mm}$) routed directly through the PEEK armature circulate Fluorinert around the copper windings, removing up to $150\text{ W}$ of continuous thermal dissipation while maintaining winding temperatures below $45^\circ\text{C}$ in ambient air or vacuum testing.
+- **Calibrated Electrical Regime:** Satiated excitation current density of $J_0 = 5.0 \times 10^3\text{ A/m}^2$, corresponding to an effective current of $I_{\text{rms}} = 0.65\text{ A}$ across 48 multi-turn coils (120 turns of AWG 27 enameled copper, $R_{\text{coil}} = 0.82\ \Omega$).
+- **Total Thermal Dissipation:** $P_{\text{tot}} = 18.48\text{ W}$ ($8.31\text{ W}$ Group 1, $8.31\text{ W}$ Group 2, $1.85\text{ W}$ mantle eddy dissipation, and $0.000\text{ W}$ in the PEEK core).
+- **Dielectric Liquid Cooling:** Microfluidic cooling channels integrated directly into the non-conductive PEEK structure using 3M Fluorinert FC-3283 ($c_p = 1100\text{ J/(kg}\cdot\text{K)}$, $\rho = 1820\text{ kg/m}^3$). A laminar flow rate of $55.4\text{ mL/min}$ maintains a steady-state temperature rise below $\Delta T = 10.0^\circ\text{C}$ during continuous CW bench operations, eliminating the need for bulky vacuum radiative panels during atmospheric or vacuum testbench trials.
 
 ---
 
-## 3. Rigorous Metrological Protocol for Laboratory Prototyping
+## 4. Metrological Protocol for Laboratory Prototyping
 
-To ensure scientific integrity and eliminate experimental artifacts during physical testing on benchtop balances, all experimental verification must adhere to the following **Metrological Protocol**:
+To ensure experimental rigor and eliminate false-positive force readings caused by environmental interference, physical prototypes must be tested under strict metrological controls:
 
 ```
- ┌────────────────────────────────────────────────────────────────────────┐
- │                   HIGH-VACUUM TEST CHAMBER (< 10⁻⁴ mbar)               │
- │                                                                        │
- │   ┌────────────────────────────────────────────────────────────────┐   │
- │   │           DOUBLE-WALL MU-METAL SHIELD (µr > 50,000)            │   │
- │   │                                                                │   │
- │   │   ┌────────────────────────────────────────────────────────┐   │   │
- │   │   │         TRIAXIAL HELMHOLTZ CANCELLATION COILS          │   │   │
- │   │   │                                                        │   │   │
- │   │   │               [ Quartz Torsion Fiber ]                 │   │   │
- │   │   │                          │                             │   │   │
- │   │   │                ┌─────────┴─────────┐                   │   │   │
- │   │   │                │   Torsion Balance │ ◄── Laser Lever   │   │   │
- │   │   │                │   Test Rig        │     Interferometer│   │   │
- │   │   │                └─────────┬─────────┘     (Sub-micron)  │   │   │
- │   │   │                          │                             │   │   │
- │   │   │                  [ FLUX SHAPER ]                       │   │   │
- │   │   │                                                        │   │   │
- │   │   └────────────────────────────────────────────────────────┘   │   │
- │   │                                                                │   │
- │   └────────────────────────────────────────────────────────────────┘   │
- │                                                                        │
- └────────────────────────────────────────────────────────────────────────┘
+  ┌────────────────────────────────────────────────────────────────────────┐
+  │ High-Vacuum Chamber (p < 10⁻⁴ mbar)                                    │
+  │  ┌──────────────────────────────────────────────────────────────────┐  │
+  │  │ Active 3-Axis Helmholtz Cancellation (B_ambient < 0.1 µT)        │  │
+  │  │  ┌────────────────────────────────────────────────────────────┐  │  │
+  │  │  │ Double-Wall Mu-Metal Magnetic Shield (> 60 dB at 50/60 Hz) │  │  │
+  │  │  │  ┌──────────────────────────────────────────────────────┐  │  │  │
+  │  │  │  │ Quartz Torsion Fiber Balance                         │  │  │  │
+  │  │  │  │    │                                                 │  │  │  │
+  │  │  │  │    ├── Dual-Beam Optical Interferometer (Sub-nm)     │  │  │  │
+  │  │  │  │    │                                                 │  │  │  │
+  │  │  │  │   [ FLUX SHAPER ASSEMBLY ]                           │  │  │  │
+  │  │  │  │   (Non-magnetic liquid dielectric feedlines)         │  │  │  │
+  │  │  │  └──────────────────────────────────────────────────────┘  │  │  │
+  │  │  └────────────────────────────────────────────────────────────┘  │  │
+  │  └──────────────────────────────────────────────────────────────────┘  │
+  └────────────────────────────────────────────────────────────────────────┘
 ```
 
-### 3.1 High-Vacuum Environment ($p < 10^{-4}\text{ mbar}$)
-- **Elimination of Aerodynamic & Buoyant Convection:** In atmospheric air, thermal heating of coil spires creates asymmetric buoyant air plumes that exert convective drag forces of tens to hundreds of micro-Newtons on sensitive balances. Operating in high vacuum ($< 10^{-4}\text{ mbar}$) strictly eliminates thermal aerodynamic artifacts.
-- **Suppression of Radiometer / Crookes Effects:** At intermediate vacuum levels ($10^{-1}$ to $10^{-3}\text{ mbar}$), thermal outgassing and molecular temperature gradients cause radiometric gas-kinetic forces. Pumping below $10^{-4}\text{ mbar}$ ensures that the molecular mean free path exceeds chamber dimensions, suppressing radiometric noise.
-
-### 3.2 Active and Passive Magnetic Shielding
-- **Passive Mu-Metal Enclosure:** A double-walled high-permeability enclosure (nickel-iron alloy, $\mu_r > 50,000$) provides $> 60\text{ dB}$ attenuation against ambient laboratory stray magnetic fields and grid ripple (50/60 Hz).
-- **Active 3-Axis Helmholtz Compensation:** A triaxial orthogonal Helmholtz cage actively measures and zeroes the local geomagnetic field vector ($\vec{B}_{\text{geo}} \approx 45\ \mu\text{T}$) to $< 0.1\ \mu\text{T}$ using precision fluxgate magnetometers, preventing external geomagnetic Lorentz torque interactions.
-
-### 3.3 Mandatory Null Tests & Parity Inversion Protocols
-Any candidate measurement of electromagnetic force or torque must undergo systematic **Null Testing**:
-1. **Symmetric Phase Inversion ($\vec{J} \to -\vec{J}$):** Reversing current direction must leave internal thermal expansion invariant ($P_J \propto J^2$), while reversing first-order Lorentz interactions ($\vec{F} \propto J$).
-2. **Frequency Sweeps Across Resonance:** Distinguishing true electrodynamic interactions from mechanical structural resonances.
-3. **Dummy Load / Thermal Decoupling:** Energizing non-inductive resistive heater dummies of identical electrical resistance and mass to quantify purely thermal/dilatometric balance drifts.
-4. **Differential Optical Interferometry:** Optical quadrant photodiode / laser interferometer telemetry measuring balance displacement with sub-nanometer resolution.
+1. **High-Vacuum Environment ($p < 10^{-4}\text{ mbar}$):** Eliminates buoyant convective air currents, acoustic streaming, and radiometric Crookes/Knudsen thermal outgassing forces that mimic micro-Newton forces on sensitive balances.
+2. **Magnetic Isolation:** Dual-walled Mu-metal enclosure ($> 60\text{ dB}$ attenuation against power grid noise) paired with an active triaxial Helmholtz compensation system that zeroes the local geomagnetic field ($\vec{B}_{\text{geo}} \approx 45\ \mu\text{T}$) to $< 0.1\ \mu\text{T}$, preventing external Lorentz interactions.
+3. **Sub-Nanometer Telemetry:** Differential optical interferometer and quadrant photodiode monitoring a quartz-fiber torsion balance, calibrated via electrostatic comb drives.
+4. **Mandatory Null Tests & Parity Inversion Protocols:**
+   - *Symmetric Phase Inversion ($\vec{J} \to -\vec{J}$):* Distinguishes first-order electromagnetic interactions from second-order electrostatic and capacitive artifacts.
+   - *Non-Inductive Dummy Heaters:* Dissipating equivalent Joule heat through non-inductive resistive loads to isolate dilatometric thermal expansion of the balance arm.
+   - *Quadrature Balancing:* Activating paired orthogonal rings in balanced opposition to experimentally confirm zero external momentum transfer ($\sum \vec{F}_{\text{ext}} = 0$).
 
 ---
 
-## 4. Master Comparative Benchmark Across All Tested Architectures
+## 5. Master Comparative Benchmark Across All Tested Architectures
 
-The following synoptic master table consolidates the entire electromagnetic, mechanical, and thermal design space explored in this project, interpreted through orthodox field-shaping and structural stress metrics:
+The synoptic master table consolidates the entire electromagnetic, mechanical, and thermal design space evaluated in this project:
 
-| Architecture / Configuration | Core Type & Reluctance | Mantle Structure & Permeability | Excitation Logic & Phase Law | Operational Regime | Peak Radial Field B_rad (6.5 cm) | Internal Lorentz Stress $\langle \|\vec{F}\| \rangle$ | Peak Instantaneous Force | Active Joule Losses $P_J$ | Gauss Solenoidality Residual | Primary Industrial Application |
+| Architecture / Configuration | Core Type & Reluctance | Mantle Structure & Permeability | Excitation Logic & Phase Law | Operational Regime | Peak Radial Field B_rad (6.5 cm) | Internal Lorentz Stress $\|\langle\vec{F}\rangle\|$ | Peak Instantaneous Force | Active Joule Losses $P_J$ | Gauss Solenoidality Residual | Primary Industrial Application |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Baseline (v1.0.0)** | Soft Iron (Z = -H/2) | Solid Al Mesh (µr = 1.0) | 60° Progressive Sine (100 Hz) | Continuous (1200 RPM) | 62.98 µT | ≈ 0 (leakage) | ≈ 0 | 2.437 W | 1.402% | Induction Stray Venting |
-| **Centered Continuous** | Soft Iron (Z = 0) | Solid Al Mesh (µr = 1.0) | 60° Progressive Sine (100 Hz) | Continuous (1200 RPM) | 211.35 µT | **4.67 µN** | 27.41 µN | 1.52 mW | 0.076% | Near-Field Rotary Induction |
-| **Centered Locked-Rotor** | Soft Iron (Z = 0) | Solid Al Mesh (µr = 1.0) | 60° Progressive Sine (100 Hz) | Solid-State (0 RPM) | 211.35 µT | **5.72 µN** | 12.89 µN | 1.02 mW | 0.031% | Inductive Transformer Stage |
-| **Mirrored Pulsed (N-S)** | Soft Iron (Z = 0) | Solid Al Mesh (µr = 1.0) | 60° Half-Wave Pulse Train | Solid-State (0 RPM) | 135.84 µT | **0.93 µN** (balanced) | ±26.50 µN | **1.90 mW** | 0.125% | **Ultra-Low Loss WPT Stage** |
-| **Closed Can Architecture** | Soft Iron (Z = 0) | Al Mesh + Lids (Z = ±H/2) | 60° Progressive Sine (100 Hz) | Continuous (1200 RPM) | 185.20 µT | 0.20 µN | 2.96 µN | **0.017 mW (17.4 µW)** | 0.045% | **-98.9% Thermal Collapse Shield** |
-| **Ferro Expanded Mesh** | Soft Iron (Z = 0) | Ferro 30° Mesh (µr = 1000) | Asymmetric Thirds (33/67/100%) | Solid-State (0 RPM) | 3137.0 µT (3.14 mT) | **113.51 µN** | 897.6 µN | 0.172 mW | 0.850% | High-Flux Concentrator |
-| **Triple-Layer X + PEEK** | **Amagnetic PEEK Core** | Triple X (µr = 1000, ±30°) | Asymmetric Thirds (33/67/100%) | Solid-State (0 RPM) | 1153.2 µT (1.15 mT) | **36.99 µN** | 142.9 µN | 0.095 mW | 1.900% | Metamaterial Chiral Guide |
-| **NPNPNP Single PEEK** | **Amagnetic PEEK Core** | Triple X (µr = 1000, ±30°) | Continuous 3-Phase NPNPNP | Solid-State (0 RPM) | 428.0 µT (3.44 mT peak) | **849.1 µN** | 808.9 µN | 56.78 mW | 0.985% | Seamless 360° Field Shaper |
-| **NPNPNP Dual 90° Spherical** | **Amagnetic PEEK Core** | Spherical X (µr = 1000, ±30°) | Dual Continuous 3-Phase NPNPNP | Solid-State (0 RPM) | **8.82 mT (91.2 mT peak)** | **0.985 N** | 14.17 N | 230.3 W | **1.002% (PASS)** | **Omnidirectional 3D WPT Stage** |
-| **Fibonacci 24x24 (Balanced)** | **Amagnetic PEEK Core** | Spherical X (µr = 1000, ±30°) | 24-Sector Pisano mod 9 (100 Hz) | Solid-State (0 RPM) | 60.3 µT (1.13 mT peak) | **14.75 µN** | 30.85 µN | 2.40 kW (100 W/coil) | **0.346% (PASS)** | Self-Balancing Topological Guide |
-| **Fibonacci 24x24 (Accumulated)**| **Amagnetic PEEK Core** | Spherical X (µr = 1000, ±30°) | 24-Sector Pisano mod 9 + 15° Prog | Solid-State (0 RPM) | 56.1 µT (668.5 µT peak) | **16.16 µN** | 46.20 µN | 2.40 kW (100 W/coil) | **0.200% (PASS)** | Directional Induction Waveguide |
-| **Triskelion 3-Lobe + Hexagram**| **Amagnetic PEEK Hexagram** | Triskelion X (µr = 1000, 3 Lobi) | Exact 24-Pulse ($\phi_k = \frac{v_k}{9} 2\pi$) | Solid-State (0 RPM) | 52.8 µT (1.13 mT peak) | **36.97 µN** | 64.68 µN | 2.40 kW (100 W/coil) | **0.647% (PASS)** | Passive Chiral Harmonic Rectifier |
-| **Dual Orthogonal 90° (48 Coils)**| **Amagnetic PEEK Core** | Spherical X (µr = 1000, ±30°) | Exact 24-Pulse Quadrature (Z & X) | Solid-State (0 RPM) | 14.1 mT (1.38 T mantle pk) | **6.664 N** (Raw: 41.5 µN) | 273.6 N (Pulse peak) | 1549.3 W (Scalable) | **1.491% (PASS)** | **Multi-Axis 6-DoF Actuator** |
+| **Baseline (v1.0.0)** | Soft Iron (Z = -H/2) | Solid Al Mesh ($\mu_r = 1.0$) | 60° Progressive Sine (100 Hz) | Continuous (1200 RPM) | 62.98 µT | ≈ 0 (leakage) | ≈ 0 | 2.437 W | 1.402% | Induction Stray Venting |
+| **Centered Continuous** | Soft Iron (Z = 0) | Solid Al Mesh ($\mu_r = 1.0$) | 60° Progressive Sine (100 Hz) | Continuous (1200 RPM) | 211.35 µT | 4.67 µN | 27.41 µN | 1.52 mW | 0.076% | Near-Field Rotary Induction |
+| **Centered Locked-Rotor** | Soft Iron (Z = 0) | Solid Al Mesh ($\mu_r = 1.0$) | 60° Progressive Sine (100 Hz) | Solid-State (0 RPM) | 211.35 µT | 5.72 µN | 12.89 µN | 1.02 mW | 0.031% | Inductive Transformer Stage |
+| **Mirrored Pulsed (N-S)** | Soft Iron (Z = 0) | Solid Al Mesh ($\mu_r = 1.0$) | 60° Half-Wave Pulse Train | Solid-State (0 RPM) | 135.84 µT | 0.93 µN (balanced) | ±26.50 µN | 1.90 mW | 0.125% | Ultra-Low Loss WPT Stage |
+| **Closed Can Architecture** | Soft Iron (Z = 0) | Al Mesh + Lids (Z = ±H/2) | 60° Progressive Sine (100 Hz) | Continuous (1200 RPM) | 185.20 µT | 0.20 µN | 2.96 µN | 0.017 mW | 0.045% | -98.9% Thermal Shielding |
+| **Ferro Expanded Mesh** | Soft Iron (Z = 0) | Ferro 30° Mesh ($\mu_r = 1000$) | Asymmetric Thirds (33/67/100%)| Solid-State (0 RPM) | 3137.0 µT | 113.51 µN | 897.6 µN | 0.172 mW | 0.850% | High-Flux Concentrator |
+| **Triple-Layer X + PEEK** | Amagnetic PEEK Core | Triple X ($\mu_r = 1000, \pm 30^\circ$) | Asymmetric Thirds (33/67/100%)| Solid-State (0 RPM) | 1153.2 µT | 36.99 µN | 142.9 µN | 0.095 mW | 1.900% | Metamaterial Chiral Guide |
+| **NPNPNP Single PEEK** | Amagnetic PEEK Core | Triple X ($\mu_r = 1000, \pm 30^\circ$) | Continuous 3-Phase NPNPNP | Solid-State (0 RPM) | 428.0 µT | 849.1 µN | 808.9 µN | 56.78 mW | 0.985% | Seamless 360° Field Shaper |
+| **NPNPNP Dual 90° Spherical**| Amagnetic PEEK Core | Spherical X ($\mu_r = 1000, \pm 30^\circ$) | Dual Continuous 3-Phase NPNPNP | Solid-State (0 RPM) | 8.82 mT (91.2 mT pk) | 0.985 N | 14.17 N | 230.3 W | 1.002% (PASS) | Omnidirectional 3D WPT Stage |
+| **Fibonacci 24x24 (Balanced)**| Amagnetic PEEK Core | Spherical X ($\mu_r = 1000, \pm 30^\circ$) | 24-Sector Pisano mod 9 (100 Hz) | Solid-State (0 RPM) | 60.3 µT (1.13 mT pk) | 14.75 µN | 30.85 µN | 2.40 kW | 0.346% (PASS) | Self-Balancing Guide |
+| **Fibonacci 24x24 (Accum.)** | Amagnetic PEEK Core | Spherical X ($\mu_r = 1000, \pm 30^\circ$) | 24-Sector Pisano mod 9 + 15° Prog| Solid-State (0 RPM) | 56.1 µT (668.5 µT pk)| 16.16 µN | 46.20 µN | 2.40 kW | 0.200% (PASS) | Directional Waveguide |
+| **Triskelion 3-Lobe Hexagram**| Amagnetic PEEK Hexagram| Triskelion X ($\mu_r = 1000, 3\text{ Lobi}$)| Exact 24-Pulse ($\phi_k = \frac{v_k}{9} 2\pi$)| Solid-State (0 RPM) | 52.8 µT (1.13 mT pk) | 36.97 µN | 64.68 µN | 2.40 kW | 0.647% (PASS) | Chiral Harmonic Rectifier |
+| **Dual Orthogonal 90° (48 C.)**| Amagnetic PEEK Core | Spherical X ($\mu_r = 1000, \pm 30^\circ$) | Exact 24-Pulse Quadrature (Z & X) | Solid-State (0 RPM) | 14.1 mT (1.38 T pk) | 6.664 N (Raw: 41.5 µN)| 273.6 N (Burst) | 1549.3 W | 1.491% (PASS) | Multi-Axis 6-DoF Actuator |
+| **Chiral WPT / 6-DoF Benchtop**| Amagnetic PEEK Core | Spherical X ($\mu_r = 1000, \pm 30^\circ$) | Exact 24-Pulse Quadrature (Z & X) | Solid-State (0 RPM) | 2.08 µT (2.89 µT pk) | 0.011 µN | 0.041 µN | 18.48 W | 1.491% (PASS) | Calibrated Lab Prototype |
 
 ---
 
-### 4.1 Comprehensive Kinematic & Energy Regimes Benchmark (60, 120, 1200 RPM — CW vs CCW)
+## 6. Comprehensive Kinematic & Energy Regimes Benchmark (60, 120, 1200 RPM — CW vs CCW)
 
-The following systematic parametric table benchmarks the electrodynamic response across **mechanical speed regimes ($n = 60, 120, 1200\text{ RPM}$)**, **rotation directionality (CW: $\omega_m > 0$ vs CCW: $\omega_m < 0$)**, and **rotor actuation topologies (Single Rotor vs Dual Orthogonal Concordant Rotors)** under fundamental excitation ($f_e = 100.0\text{ Hz}$, $p = 3$ pole pairs, $n_{\text{sync}} = 2000\text{ RPM}$):
+The behavior of the electrodynamic interaction is governed by the mechanical slip frequency $f_{\text{slip}} = |f_e \mp p \cdot f_{\text{mech}}|$, where $f_e = 100.0\text{ Hz}$, $p = 3$ pole pairs, and synchronous mechanical speed is $n_{\text{sync}} = 2000\text{ RPM}$. Below is the systematic comparison across all 14 evaluated kinematic states:
 
 | Operating Regime & Speed | Directionality & Slip Law | Drive Topology | Effective Slip $f_{\text{slip}}$ | Vector Force $\langle F_x, F_y, F_z \rangle$ [N] | Mean Stress $\|\langle\vec{F}\rangle\|$ | Peak Force $F_{\text{peak}}$ | Total Joule Losses $P_J$ | Subbody Losses (Rotors / Mantle / PEEK) | Specific Efficiency $\eta_F$ | Gauss Resid. (15 cm) | Linear Sat. Margin ($B_{\text{sat}}=1.5\text{T}$) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -194,37 +218,37 @@ The following systematic parametric table benchmarks the electrodynamic response
 | **High Speed (1200 RPM, 20.0 Hz)**| **CW** ($|f_e - p f_m|$) | **Dual Concorde (Z+X)**| **$40.0\text{ Hz}$** | $[+0.324, -0.007, -0.224]$ | **$0.394\text{ N}$** | $0.506\text{ N}$ | **$131.6\text{ W}$** | $113.8\text{ W} / 17.8\text{ W} / \mathbf{0.0\text{ W}}$ | $2.99\text{ mN/W}$ | $1.613\%\text{ (PASS)}$ | $+87.4\%\text{ (SAFE)}$ |
 | **High Speed (1200 RPM, 20.0 Hz)**| **CCW** ($|f_e + p f_m|$) | **Dual Concorde (Z+X)**| **$160.0\text{ Hz}$** | $[+1.295, +0.027, -0.898]$ | **$1.576\text{ N}$** | **$2.025\text{ N}$** | **$298.8\text{ W}$** | $227.6\text{ W} / 71.1\text{ W} / \mathbf{0.0\text{ W}}$ | **$5.27\text{ mN/W}$** | $1.674\%\text{ (PASS)}$ | $+75.1\%\text{ (SAFE)}$ |
 
-*Note: All forces represent internal structural stresses and reaction constraints on the stator frame ($\sum \vec{F}_{\text{ext}} = 0.0\text{ N}$ strictly conserved). The amagnetic dielectric PEEK core exhibits identic zero dissipation ($0.000\text{ W}$) across all 14 kinematic configurations.*
-
 ---
 
-## 5. Visual Showcase: 300 DPI Diagnostic Plates & Dynamic Simulation Videos
+## 7. Visual Showcase & Diagnostic Plates
+
+The repository provides high-resolution 300 DPI analytical plates and dynamic simulation records:
 
 <div align="center">
 
 ### Figure 18: Synoptic Field Shaping — Single PEEK vs Dual 90° Spherical
-| Continuous 3-Phase NPNPNP Comparison & Seamless 360° Circular Induction Corona |
+| Continuous 3-Phase NPNPNP Waveforms & Omnidirectional 360° Induction Corona |
 | :---: |
 | <img src="figures/fig_18_confronto_npnpnp_peek_vs_doppio_rotore.png" width="900" alt="Field Shaping Comparison" /> |
-| *Panel A1-A2: Continuous 3-phase NPNPNP waveforms. Panel B1-B2: Long-exposure integrated radial induction corona revealing seamless 360° flux distribution without dead spots. Panel C1-C2: Spatiotemporal kymographs confirming stable rotating phase velocity stripes.* |
+| *Panel A1-A2: Continuous 3-phase NPNPNP excitation currents. Panel B1-B2: Time-integrated radial induction corona demonstrating gapless 360° flux distribution without angular blind spots. Panel C1-C2: Spatiotemporal kymographs confirming constant rotating phase velocity.* |
 
 ### Figure 20: Volumetric 3D Vector Fields & Orthogonal Near-Field Slices
 | 3D Magnetic Vector Distribution & Orthogonal Induction Slices |
 | :---: |
 | <img src="figures/fig_20_campi_3D_sezioni_taglio_nearfield.png" width="900" alt="3D Field Slices" /> |
-| *Volumetric 3D vector fields of spherical triple-layer X-cage with dual orthogonal rotor arrays (Z & X) in 90° temporal quadrature. Near-field orthogonal slice maps (XY, XZ, YZ) of induction B, induced E-field vortex, and outward Poynting power flow.* |
+| *Volumetric vector field distribution of spherical triple-layer X-cage with dual orthogonal rotor arrays (Z & X) in 90° temporal quadrature. Near-field orthogonal slice maps (XY, XZ, YZ) of induction B, induced E-field vortex, and outward Poynting power flow.* |
 
 ### Figure 22: Subbody Thermal Balance & Exterior Shielding Audit
-| Component Joule Dissipation & Outer Layer Shielding Confirmation |
+| Subbody Joule Dissipation & Outer Layer Shielding Confirmation |
 | :---: |
 | <img src="figures/fig_22_bilancio_termico_perdite_joule.png" width="900" alt="Thermal Audit" /> |
-| *Full machine thermal audit: Rotor 1 (43.7%), Rotor 2 (35.6%), Mantle (19.3%), and PEEK Core (0.0 W, confirmed zero eddy losses). Triple-layer mantle breakdown proves complete exterior thermal shielding by Layer 3 (-30° outer = 0.0 W, 0.0%).* |
+| *Full machine thermal audit: Rotor 1 (43.7%), Rotor 2 (35.6%), Mantle (19.3%), and PEEK Core (0.0 W, confirmed zero eddy losses). Triple-layer mantle breakdown confirms complete exterior thermal shielding by Layer 3 (-30° outer = 0.0 W, 0.0%).* |
 
 ### Figure 27: 24x24 Fibonacci Architecture & Pisano mod 9 Digital Root Law
 | 24-Sector Pisano mod 9 Mapping & Phase-Conjugate Topological Balance |
 | :---: |
 | <img src="figures/fig_27_architettura_fibonacci_24x24_100w.png" width="900" alt="Fibonacci Architecture Plate" /> |
-| *Panel A: Polar map of 24 equatorial sectors with digital root values $F_n \pmod 9$ and phase conjugation lines $\phi_{k+12} = -\phi_k$ ensuring reactive power balance. Panel B: Internal Lorentz stress waveforms. Panel C: Power distribution across 24 coils. Panel D: Verified Gauss solenoidality (0.35% residual).* |
+| *Panel A: Polar map of 24 equatorial sectors with digital root values F_n mod 9 and phase conjugation lines ensuring reactive balance. Panel B: Internal Lorentz stress waveforms. Panel C: Power distribution across 24 coils. Panel D: Verified Gauss solenoidality (0.35% residual).* |
 
 ### Figure 30: Dual Orthogonal 90° Macro-Group Architecture (48 Coils)
 | Conformal Layout, Multi-Axis Stresses & Verified Gauss Solenoidality |
@@ -236,15 +260,21 @@ The following systematic parametric table benchmarks the electrodynamic response
 | Harmonic Slip Asymmetry, Parity Vectors & Subbody Thermal Audit |
 | :---: |
 | <img src="figures/fig_31_kinematic_regimes_comparative.png" width="900" alt="Kinematic Regimes Comparative Plate" /> |
-| *Panel A: Mean Lorentz stress vs mechanical velocity (60, 120, 1200 RPM) proving parity asymmetry $f_{\text{slip}}(\text{CCW}) > f_{\text{slip}}(\text{CW})$. Panel B: Subbody Joule dissipation audit confirming $0.000\text{ W}$ in PEEK core and thermal surge under counter-rotation (298.8 W at 1200 RPM CCW). Panel C: Multi-axis force state-space $(\langle F_x \rangle, \langle F_z \rangle)$ demonstrating 6-DoF actuation capability. Panel D: Certified Gauss solenoidality ($1.642\%$, PASS) and safe linear margin ($+81.0\%$).* |
+| *Panel A: Mean Lorentz stress vs mechanical velocity (60, 120, 1200 RPM) proving parity asymmetry f_slip(CCW) > f_slip(CW). Panel B: Subbody Joule dissipation audit confirming 0.000 W in PEEK core and thermal surge under counter-rotation (298.8 W at 1200 RPM CCW). Panel C: Multi-axis force state-space (<Fx>, <Fz>) demonstrating 6-DoF actuation capability. Panel D: Certified Gauss solenoidality (1.642%, PASS) and safe linear margin (+81.0%).* |
+
+### Dynamic Video: Dual Orthogonal 90° Multi-Axis Electrodynamics
+| 3D Orthogonal Solenoid Current State, Dynamic Magnetic Vector & Real-Time Waveforms |
+| :---: |
+| <img src="figures/video_dinamica_doppio_gruppo_48coils.gif" width="900" alt="Dynamic Video: Dual Orthogonal 90° Electrodynamics" /> |
+| *Synchronized high-resolution simulation video over 16.0 ms transient electrical cycle (64 timesteps, 100 Hz). Left: 3D perspective wireframe of spherical mantle showing the 48 active solenoids with current density color-modulation and resultant dynamic magnetic vector. Top Right: 3D state-space force hodograph. Bottom Right: Real-time scrolling waveforms.* |
 
 </div>
 
 ---
 
-## 6. Quickstart, Replication Suite & Verification Script
+## 8. Quickstart, Replication Suite & Verification Script
 
-All CAD geometries, tetrahedral meshes, Elmer FEM solver definitions, and post-processing pipelines are fully reproducible open-source workflows:
+The repository is fully reproducible using open-source tools:
 
 ```bash
 # 1. Environment Installation
@@ -253,51 +283,49 @@ pip install -r requirements.txt
 # 2. Master Pipeline Verification Suite (Cross-checks all primary architectures)
 python scripts/master_pipeline_verification.py --summary-only
 
-# 3. Individual Architecture Execution & Rendering:
-# - Fibonacci 24x24 Balanced Waveguide:
-python scripts/run_fibonacci_24x24_simulation.py
+# 3. Kinematic Regimes Benchmark Execution (14 states, CW vs CCW, Figure 31 rendering)
+python scripts/run_kinematic_regimes_simulation.py
 
-# - Fibonacci 24x24 Accumulated Waveguide:
-python scripts/run_fibonacci_spinta_accumulata.py
+# 4. Calibrated Laboratory Benchtop Prototype (WPT & 6-DoF, Safe 18.5 W regime)
+python variants/gabbia_sferica_chiral_wpt_actuator/scripts/run_chiral_wpt_actuator_simulation.py
+
+# 5. Core Architectural Simulations:
+# - Dual Orthogonal 90° Macro-Group (48 Coils):
+python scripts/run_doppio_gruppo_48coils_simulation.py
 
 # - 3-Lobe Macro-Chiral Triskelion & Hexagram Armature:
 python scripts/run_triskelion_esagramma_simulation.py
 
-# - Dual Orthogonal 90° Macro-Group (48 Coils):
-python scripts/run_doppio_gruppo_48coils_simulation.py
+# - Fibonacci 24x24 Balanced Waveguide:
+python scripts/run_fibonacci_24x24_simulation.py
 ```
 
 ---
 
-## Sommario Esecutivo per la Comunità Scientifica Italiana
+## 9. Sommario Esecutivo per la Comunità Scientifica Italiana
 
-### 1. Revisione e Pivot Scientifico: Abbandono della Propulsione Chiusa
-Il progetto **Open Chiral Flux Shaper** adotta formalmente i principi conservativi della fisica classica ed elettromagnetica ortodossa. In accordo con il terzo principio della dinamica e il teorema di Poynting, **un sistema chiuso non può generare alcuna spinta propulsiva stazionaria netta priva di espulsione di massa o momento irraggiato**. 
-Le forze ponderomotrici volumetriche calcolate ($\int (\vec{J} \times \vec{B}) dV$) e le integrazioni del Tensore degli Sforzi di Maxwell (MST) rappresentano **tensioni meccaniche interne, coppie di attuazione e gradienti di pressione magnetica**, integralmente bilanciate dai vincoli strutturali statorici.
+### 1. Inquadramento Fisico ed Epistemologico
+Il progetto **Open Chiral Flux Shaper** è un framework multifisico computazionale per la modellazione e la manipolazione di campi elettromagnetici macro-chirali. In aderenza al principio di conservazione della quantità di moto, al terzo principio della dinamica e al teorema di Poynting:
+- **Tensioni Interne di Maxwell:** Tutte le forze volumetriche calcolate rappresentano gradienti di pressione magnetica e tensioni strutturali interne tra rotori e mantello, integralmente bilanciate dai vincoli meccanici dello statore.
+- **Pressione di Radiazione di Poynting:** A frequenze industriali ($100\text{ Hz}$) e dimensioni sub-lunghezza d'onda ($ka \sim 10^{-7}$), la spinta fotonica derivante da radiazione è trascurabile ($F_{\text{rad}} = P/c \sim 24.5\text{ pN}$ per $P = 7.34\text{ mW}$), escludendo qualsiasi spinta propulsiva stazionaria netta a sistema chiuso.
 
-### 2. Nuove Applicazioni Industriali Ufficiali:
+### 2. Ambiti Applicativi Industriali Convalidati
 1. **Wireless Power Transfer (WPT) Dinamico Omnidirezionale:**
-   La topologia a due gruppi ortogonali a 90° pilotati con sfasamento in quadratura temporale ($\pi/2$) genera un'onda d'induzione rotante isotropa a 360°, eliminando i punti morti e consentendo l'accoppiamento induttivo risonante ad alta efficienza verso carichi mobili e disallineati nello spazio.
-2. **Attuatori Magnetici Multi-Asse (6-DoF) e Cuscinetti Magnetici:**
-   Il controllo di fase indipendente sulle spire e l'impiego del nucleo in PEEK amagnetico ($\mu_r = 1.0, \sigma = 0\text{ S/m}$) eliminano il cogging meccanico e le perdite per isteresi, offrendo micro-posizionamento senza contatto e controllo d'assetto multiasse per giroscopi e sfere di reazione satellitari.
+   La generazione di un'onda d'induzione rotante isotropa a 360° nello spazio tridimensionale consente il trasferimento induttivo continuo verso droni, veicoli subacquei, bracci robotici articolati e dispositivi biomedicali, azzerando le perdite da disallineamento angolare.
+2. **Attuazione Magnetica Contactless a 6 Gradi di Libertà (6-DoF):**
+   L'impiego di un nucleo in PEEK amagnetico e dielettrico ($\sigma = 0\text{ S/m}, \mu_r = 1.0$) elimina totalmente la coppia di cogging e le perdite per isteresi, offrendo micro-posizionamento senza contatto per banchi ottici e sfere di reazione per l'assetto satellitare.
 3. **Riscaldamento a Induzione Mirato (Contour Heating):**
-   Il tensore di conducibilità anisotropo ($\bar{\bar{\sigma}}$) concentra le correnti parassite nello strato interno del metamateriale (+30°), mentre lo Strato 3 esterno (-30°) mantiene perdite nulle ($0.000\text{ W}$), garantendo totale schermatura termica e sicurezza d'integrazione.
+   Il tensore di conducibilità chirale anisotropo ($\bar{\bar{\sigma}}$ a $\pm 30^\circ$) concentra le perdite nel profilo interno (+30°), mentre lo Strato 3 esterno (-30°) mantiene perdite identicamente nulle ($0.000\text{ W}$), garantendo una perfetta schermatura termica verso l'ambiente esterno.
 
-### 3. Ingegneria Termica di Laboratorio e Raffreddamento Dielettrico
-I parametri operativi per i banchi prova di laboratorio vengono ricondotti a potenze sicure continue (**10–50 W**, $J_0 \sim 5 \times 10^3\text{ A/m}^2$), integrando nel nucleo in PEEK micro-canali per il raffreddamento diretto con **liquidi fluorurati dielettrici** (*3M Fluorinert* FC-3283 / FC-770), eliminando la necessità di dissipazione radiativa estrema nel vuoto per le prove a terra.
-
-### 4. Protocollo Metrologico per Banchi di Prova Sperimentali
-Per isolare inequivocabilmente gli effetti elettromagnetici reali dagli artefatti ambientali, il protocollo sperimentale impone:
-- Montaggio su **bilancia di torsione a sensibilità nanometrica** in **camera a vuoto spinto ($p < 10^{-4}\text{ mbar}$)** contro moti convettivi d'aria ed effetto radiometro di Crookes.
-- **Schermatura passiva a doppio strato in Mu-metal** e **bobine attive di Helmholtz a 3 assi** per l'azzeramento del campo geomagnetico e delle interferenze di rete a 50/60 Hz.
-- **Null Tests obbligatori** tramite inversione simmetrica di fase ($\vec{J} \to -\vec{J}$) e carichi fittizi resistivi per scorporare dilatazioni termiche e derive capacitive dai gradienti magnetici reali.
+### 3. Ingegneria Termica e Metrologia di Laboratorio
+- **Regime di Banco Sicuro:** Densità di corrente calibrata a $J_0 = 5 \times 10^3\text{ A/m}^2$ ($18.5\text{ W}$ totali) con raffreddamento a liquido dielettrico fluorurato (*3M Fluorinert* FC-3283) a $55.4\text{ mL/min}$ in micro-condotti integrati nel nucleo PEEK.
+- **Protocollo Metrologico per Test a Vuoto:** Camera a vuoto ($< 10^{-4}\text{ mbar}$), schermatura passiva in Mu-metal ($> 60\text{ dB}$), gabbia di Helmholtz a 3 assi, bilancia di torsione con telemetria interferometrica e null tests simmetrici di inversione di fase.
 
 ---
 
-## Authorship, Attribution & License
+## 10. Authorship & License
 
-- **Lead Inventor & Author:** **Alessandro Brescacin** ([brescacin.alessandro@gmail.com](mailto:brescacin.alessandro@gmail.com))
-- **Official GitHub Repository:** [https://github.com/brescale27/open-chiral-flux-shaper](https://github.com/brescale27/open-chiral-flux-shaper)
-- **Open Hardware License:** Licensed under the **CERN Open Hardware Licence - Strongly Reciprocal v2 (CERN-OHL-S-2.0)**.  
-  See the full text in [`LICENSE.txt`](LICENSE.txt).
-- **Citation:** To cite this hardware design, simulation pipeline, or datasets, please refer to [`CITATION.cff`](CITATION.cff).
+- **Author & Principal Investigator:** Alessandro Brescacin
+- **Repository:** [https://github.com/brescale27/open-chiral-flux-shaper](https://github.com/brescale27/open-chiral-flux-shaper)
+- **License:** Open Hardware licensed under the **CERN Open Hardware Licence Version 2 - Strongly Reciprocal ([CERN-OHL-S-2.0](LICENSE.txt))**.
+- **Software Components:** Scientific Python scripts and post-processing tools licensed under the **Apache License, Version 2.0**.
