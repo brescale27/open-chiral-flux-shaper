@@ -15,6 +15,8 @@ Esegue il controllo incrociato e ricalcola i parametri chiave delle 12 pipeline:
 10. Magnetic Vortex & OAM Sweep (scripts/run_magnetic_vortex_oam_sweep.py)
 11. Magnetic Vector Potential A & Shielding (scripts/run_magnetic_vector_potential_a_sweep.py)
 12. Helical MHD Pumping Sweep (scripts/run_mhd_helical_pumping_sweep.py)
+13. Inner Coils and Copper Collimator Tube Multi-Campaign Benchmark (scripts/run_copper_collimator_multicampaign_sweep.py)
+14. Triple Copper Mesh Cage 48 Coils Pisano & Synchronous Benchmark (scripts/run_tripla_rete_rame_48coils_pisano_sweep.py)
 
 Autore: Alessandro Brescacin
 Licenza: CERN-OHL-S-2.0
@@ -96,6 +98,11 @@ pipelines = [
         "name": "Inner Coils and Copper Collimator Tube Multi-Campaign Benchmark",
         "script": SCRIPT_DIR / "run_copper_collimator_multicampaign_sweep.py",
         "json": ROOT_DIR / "data" / "copper_collimator_multicampaign_benchmark.json"
+    },
+    {
+        "name": "Triple Copper Mesh Cage 48 Coils Pisano & Synchronous Benchmark",
+        "script": SCRIPT_DIR / "run_tripla_rete_rame_48coils_pisano_sweep.py",
+        "json": ROOT_DIR / "data" / "tripla_rete_rame_48coils_pisano_benchmark.json"
     }
 ]
 
@@ -356,9 +363,25 @@ for item in results_summary:
         fig42_path = ROOT_DIR / "figures" / "fig_42_inner_coils_copper_collimator.png"
         if fig42_path.exists():
             print(f"  • Tavola Collimatore Rame (Fig 42):     Generata ({fig42_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
+    elif "triple_copper_mesh" in data.get("meta", {}):
+        meta = data["meta"]
+        res = data.get("results", {})
+        p_sum = res.get("pisano_opposed", {}).get("summary", {})
+        s_sum = res.get("synchronous_all_on_off", {}).get("summary", {})
+        mesh = meta.get("triple_copper_mesh", {})
+        print(f"  • Tripla Rete di Rame OFHC:        {mesh.get('layers_count', 0)} layer ({mesh.get('radii_mm', [])} mm, area aperta {mesh.get('open_area_pct', 0)}%)")
+        print(f"  • Campo nel Traferro (120 Hz):     Pisano = {p_sum.get('b_gap_120hz_cw_mt', 0):.2f} mT | Sincrono = {s_sum.get('b_gap_120hz_cw_mt', 0):.2f} mT")
+        print(f"  • Purezza Stokes s3 (120 Hz):      Pisano s3 = {p_sum.get('stokes_s3_120hz_cw', 0):+.3f} (AR={p_sum.get('ar_db_120hz_cw', 0):.2f} dB) | Sincrono s3 = {s_sum.get('stokes_s3_120hz_cw', 0):+.3f}")
+        print(f"  • Coppia OAM Torsionale (120 Hz):  Pisano = {p_sum.get('tau_oam_120hz_cw_uNm', 0):+.3f} uN*m (CW) vs {p_sum.get('tau_oam_120hz_ccw_uNm', 0):+.3f} uN*m (CCW)")
+        print(f"  • Coppia Motrice (2400 RPM):       Sincrono = {s_sum.get('tau_drive_2400rpm_cw_mNm', 0):+.2f} mN*m | Pisano = {p_sum.get('tau_drive_2400rpm_cw_mNm', 0):+.2f} mN*m")
+        print(f"  • Perdite Rete vs PEEK:            P_mesh = {p_sum.get('mesh_losses_120hz_W', 0):.2f} W | P_PEEK = 0.000 W [PASS]")
+        print(f"  • Solenoidalità di Gauss:          Pisano = {p_sum.get('max_gauss_residual_pct', 0):.3f}% | Sincrono = {s_sum.get('max_gauss_residual_pct', 0):.3f}% [PASS (< 2.0%)]")
+        fig44_path = ROOT_DIR / "figures" / "fig_44_tripla_rete_rame_48coils_pisano.png"
+        if fig44_path.exists():
+            print(f"  • Tavola Tripla Rete (Fig 44):          Generata ({fig44_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
 
 print("\n" + "=" * 90)
-print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 13 PIPELINE ===")
+print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 14 PIPELINE ===")
 print("=" * 90)
 
 

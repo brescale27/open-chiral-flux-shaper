@@ -1,0 +1,45 @@
+{
+  "variant_id": "tripla_rete_rame_48coils_pisano",
+  "name": "Gabbia Sferica a Tripla Rete di Rame (48 Bobine 90°, Alimentazione Pisana & Sincronizzata)",
+  "type": "Triple Woven Copper Mesh Spherical Shell with Dual 90° Stator and Dual-Regime Feeding",
+  "author": "Alessandro Brescacin",
+  "license": "CERN-OHL-S-2.0",
+  "dimensions": {
+    "rotor_radius_mm": 20.0,
+    "coils_radius_mm": 55.0,
+    "triple_copper_mesh": {
+      "material": "OFHC Copper Woven Wire Mesh",
+      "bulk_conductivity_s_m": 5.8e7,
+      "effective_conductivity_s_m": 3.2e7,
+      "layers_count": 3,
+      "layer_1_radius_mm": 48.0,
+      "layer_1_orientation_deg": +30.0,
+      "layer_2_radius_mm": 49.0,
+      "layer_2_orientation_deg": 0.0,
+      "layer_3_radius_mm": 50.0,
+      "layer_3_orientation_deg": -30.0,
+      "wire_diameter_mm": 0.4,
+      "mesh_aperture_mm": 1.2,
+      "open_area_pct": 56.25
+    }
+  },
+  "electrodynamics": {
+    "nominal_power_w": 18.5,
+    "coils_count": 48,
+    "spatial_geometry": "Dual Orthogonal 90° (24 Z-axis + 24 X-axis)",
+    "regimes": {
+      "regime_a": {
+        "name": "Alimentazione Pisana a Poli Contrapposti",
+        "description": "Modulazione di ampiezza secondo la successione di Pisano mod 9 con inversione diametrale N-S (k e k+12 in opposizione)",
+        "pisano_period": 24,
+        "opposed_poles": true
+      },
+      "regime_b": {
+        "name": "Alimentazione Sincronizzata Tutte-ON / Tutte-OFF Sinusoidale",
+        "description": "Modulazione sincrona collettiva in fase con poli adiacenti strettamente alternati Nord-Sud",
+        "breathing_mode": true,
+        "alternating_ns": true
+      }
+    }
+  }
+}
