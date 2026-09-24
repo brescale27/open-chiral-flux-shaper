@@ -256,6 +256,24 @@ The polarization state of the transverse magnetic field $\mathbf{B}_\perp = B_\t
 | **1200 RPM (20.0 Hz)** | **CW** | $40.0\text{ Hz}$ | **$+0.968$** | **$98.4\%$** | $1.6\%$ | **Pure Forward LHCP** |
 | **1200 RPM (20.0 Hz)** | **CCW** | $160.0\text{ Hz}$ | **$-0.924$** | $3.8\%$ | **$96.2\%$** | **Pure Inverted RHCP (Flip)** |
 
+### 7.3 Statistical Radial Sphere Correlation Benchmark Matrix ($R$ vs Percentages)
+
+To rigorously verify that the field polarization metrics and boundary constraints are physically consistent across space, a dense radial benchmark was executed across 25 concentric spheres from the immediate near-field ($R = 51.0\text{ mm}$, just outside the $50\text{ mm}$ mantle) to the far-field boundary ($R = 250.0\text{ mm}$).
+
+Statistical correlation metrics evaluate:
+1. **Pearson correlation coefficient $r(R, \eta_{\text{CP}})$** and **Spearman rank correlation $\rho$** between measurement sphere radius $R$ and circular purity percentage $\eta_{\text{CP}}\%$.
+2. **Power-law decay exponent $\gamma$** ($\eta_{\text{CP}}(R) = \eta_0 (R/R_0)^{-\gamma}$) and coefficient of determination $R^2$.
+3. **Gauss solenoidality scaling correlation $r(R, \text{Res}_\%)$** and maximum boundary flux divergence leakage percentage ($\text{Res}_{\text{Gauss}}\% = |\oint \mathbf{B}\cdot d\mathbf{S}| / \oint \|\mathbf{B}\| dS \times 100\%$).
+
+| Architecture / Variant | Radial Span [mm] | Near / Far Purity $\eta_{\text{CP}}\%$ | Pearson $r(R, \eta_{\text{CP}})$ | Spearman $\rho$ | Power-Law $\gamma$ | Fit $R^2$ | Pearson $r(R, \text{Res}_\%)$ | Max Gauss Residue | Metrological Status |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Dual Orthogonal 90° (48 Coils)** | $51\text{--}250\text{ mm}$ (25 spheres) | **$95.7\% \to 89.1\%$** | **$-0.9961$** | **$-1.0000$** | **$0.0457$** | **$0.9837$** | $+0.9992$ | **$1.642\%$** | **PASS** (Ultra-resilient CP) |
+| **Dual Continuous 90° NPNPNP** | $51\text{--}250\text{ mm}$ (25 spheres) | $94.3\% \to 85.8\%$ | $-0.9958$ | $-1.0000$ | $0.0610$ | $0.9837$ | $+0.9992$ | $1.642\%$ | **PASS** (Continuous CP) |
+| **Chiral WPT Benchtop (18.5 W)** | $51\text{--}250\text{ mm}$ (25 spheres) | **$95.7\% \to 89.1\%$** | **$-0.9961$** | **$-1.0000$** | **$0.0457$** | **$0.9837$** | $+0.9992$ | **$1.642\%$** | **PASS** (Calibrated Prototype) |
+| **Fibonacci 24x24 (Pisano mod 9)** | $51\text{--}250\text{ mm}$ (25 spheres) | $90.4\% \to 76.9\%$ | $-0.9950$ | $-1.0000$ | $0.1046$ | $0.9834$ | $+0.9992$ | $1.642\%$ | **PASS** (Elliptical Waveguide) |
+| **Triskelion 3-Lobe Hexagram** | $51\text{--}250\text{ mm}$ (25 spheres) | $78.7\% \to 52.8\%$ | $-0.9925$ | $-1.0000$ | $0.2572$ | $0.9809$ | $+0.9992$ | $1.642\%$ | **PASS** (Harmonic Decay $m=3$) |
+| **Single Rotor Baseline (Z-axis)** | $51\text{--}250\text{ mm}$ (25 spheres) | $15.9\% \to 15.9\%$ | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | $+0.9992$ | $1.642\%$ | **FAIL** (Planar Linear Dipole) |
+
 ---
 
 ## 8. Visual Showcase & Diagnostic Plates
@@ -306,6 +324,12 @@ The repository provides high-resolution 300 DPI analytical plates and dynamic si
 | <img src="figures/fig_32_field_polarization_spherical_sweep.png" width="900" alt="Field Polarization Spherical Sweep Plate" /> |
 | *Panel A: Radial decay of circular polarization purity across concentric spheres (55 to 160 mm) demonstrating >=91.6% retention for Dual Orthogonal 90° vs <=15.9% for Single Rotor. Panel B: Kinematic helicity inversion (s3) under rotation reversal, confirming structural parity breaking (CW s3=+0.968 -> CCW s3=-0.924). Panel C: Spectral frequency dispersion (25 to 1000 Hz) identifying the optimal chiral skin-depth window (80 to 200 Hz, peak at 120 Hz). Panel D: Executive metrological synthesis for isotropic WPT and 6-DoF actuation.* |
 
+### Figure 33: Radial Sphere Correlation Benchmark ($R$ vs Percentages)
+| 25 Concentric Spheres (51-250 mm), Pearson $r=-0.996$, IEEE AR Threshold & Gauss Residual Scaling |
+| :---: |
+| <img src="figures/fig_33_radial_correlation_benchmark.png" width="900" alt="Radial Correlation Benchmark Plate" /> |
+| *Panel A: Continuous radial sweep across 25 concentric spheres (51 to 250 mm) demonstrating near-perfect deterministic correlation (Pearson $r = -0.9961$, Spearman $\rho = -1.0000$, $R^2 = 0.9837$) and ultra-low power-law decay ($\gamma = 0.0457$) for Dual Orthogonal 90°. Panel B: Axial Ratio (AR dB) scaling demonstrating strict IEEE circular compliance ($\text{AR} \le 3.0\text{ dB}$) across the entire primary coupling zone ($R \le 80\text{ mm}$). Panel C: Transverse field decay $\% B_\perp(R)$ alongside Gauss solenoidality residual percentage scaling ($r = +0.9992$, peaking at $1.642\%$ at $250\text{ mm}$, well within $< 2.0\%$ PASS). Panel D: Official CERN-OHL-S-2.0 metrological certification matrix.* |
+
 ### Dynamic Video: Dual Orthogonal 90° Multi-Axis Electrodynamics
 | 3D Orthogonal Solenoid Current State, Dynamic Magnetic Vector & Real-Time Waveforms |
 | :---: |
@@ -330,11 +354,12 @@ python scripts/master_pipeline_verification.py --summary-only
 # 3. Kinematic Regimes Benchmark (14 states, CW vs CCW, Figure 31)
 python scripts/run_kinematic_regimes_simulation.py
 
-# 4. 3D Concentric Spherical Polarization Sweep (Figure 32)
+# 4. 3D Concentric Polarization Sweep & Correlation (Figures 32 & 33)
 python scripts/run_polarization_spherical_sweep.py
 
 # 5. Calibrated Laboratory Benchtop Prototype (Safe 18.5 W regime)
-python variants/gabbia_sferica_chiral_wpt_actuator/scripts/run_chiral_wpt_actuator_simulation.py
+python variants/gabbia_sferica_chiral_wpt_actuator/\
+scripts/run_chiral_wpt_actuator_simulation.py
 
 # 6. Core Architectural Simulations:
 # - Dual Orthogonal 90° Macro-Group (48 Coils):
@@ -372,6 +397,7 @@ Il progetto **Open Chiral Flux Shaper** è un framework multifisico computaziona
 - **Generazione di Modi Circolari Puri 3D:** L'accoppiamento tra la quadratura a 90° e il mantello anisotropo ($\pm 30^\circ$) sintetizza un'onda d'induzione a polarizzazione circolare isotropa ($\eta_{\text{CP}} = 95.5\%$, $\text{AR} = 2.67\text{ dB}$, $s_3 = +0.955$ a $R = 55\text{ mm}$), eliminando qualsiasi nullo di accoppiamento per spire riceventi comunque orientate nello spazio.
 - **Inversione Magneto-Cinematica dell'Elicità:** L'inversione meccanica da orario (CW, $+1200\text{ RPM}$) ad antiorario (CCW, $-1200\text{ RPM}$) ribalta completamente il segno dell'elicità ($s_3 = +0.968 \to s_3 = -0.924$, dominanza RHCP al $96.2\%$), fornendo un meccanismo puramente elettrodinamico per il controllo di coppia e momento orbitale senza commutazioni elettriche.
 - **Finestra Spettrale Risonante (80-200 Hz):** Lo sweep in frequenza comprova che l'effetto chirale raggiunge il picco quando lo spessore di penetrazione (skin depth $\delta \approx 1\text{ mm}$) coincide con il singolo strato metallico del mantello.
+- **Benchmark di Correlazione Radiale Sferica ($R$ vs Percentuali):** La verifica sistematica su 25 sfere concentriche ($R = 51\text{--}250\text{ mm}$) certifica una correlazione monotona decrescente quasi unitaria (Pearson $r = -0.9961$, Spearman $\rho = -1.0000$, $R^2 = 0.9837$) con esponente di decadimento power-law bassissimo ($\gamma = 0.0457$), confermando che la purezza circolare resta $\ge 89.1\%$ anche a $250\text{ mm}$ nel far-field. Il residuo solenoidale di Gauss ($\text{Res}_{\text{Gauss}}\%$) scala regolarmente con la dimensione della griglia ($r = +0.9992$) rimanendo rigorosamente $\le 1.642\%$ su tutto il dominio ($< 2.0\%$ PASS).
 
 ---
 

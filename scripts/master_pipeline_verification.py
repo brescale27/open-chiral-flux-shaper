@@ -174,6 +174,11 @@ for item in results_summary:
         print(f"  • Conservazione Far-Field (160 mm):      {d48_far['purity_cp_pct']}% (AR = {d48_far['ar_db']} dB, s3 = {d48_far['mean_s3']:+.3f})")
         print(f"  • Inversione Elicità (1200 RPM CW/CCW):  CW s3 = {cw1200['mean_s3']:+.3f} (LHCP {cw1200['lhcp_pct']}%) vs CCW s3 = {ccw1200['mean_s3']:+.3f} (RHCP {ccw1200['rhcp_pct']}%)")
         print(f"  • Finestra Risonanza Spettrale:          80 - 200 Hz (Picco Chiral Skin-Depth a 120 Hz)")
+        rad_corr = data["campaign_data"].get("radial_correlation_benchmark", {})
+        if rad_corr:
+            d48_stats = rad_corr["variants"]["dual_90_48coils"]["statistics"]
+            print(f"  • Correlazione Radiale (51-250 mm):      Pearson r = {d48_stats['pearson_r_radius_vs_purity']:+.4f} (R² = {d48_stats['determination_coefficient_r2']:.4f}, gamma = {d48_stats['power_law_decay_gamma']:.4f})")
+            print(f"  • Correlazione Flusso di Gauss:          Pearson r = {d48_stats['pearson_r_radius_vs_gauss_res']:+.4f} (Max = {d48_stats['max_gauss_residual_pct']}%, {d48_stats['gauss_status']})")
 
 print("\n" + "=" * 90)
 print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 5 PIPELINE ===")
