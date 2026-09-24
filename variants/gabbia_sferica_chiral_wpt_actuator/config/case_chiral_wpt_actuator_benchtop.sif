@@ -1,0 +1,248 @@
+! Elmer FEM Configuration: Open Chiral Flux Shaper (Benchtop Laboratory Prototype)
+! Framework: Chiral Field Shaping, Wireless Power Transfer (WPT) & Multi-Axis Magnetic Actuation
+! Topology: Dual Orthogonal 90° Arrays (48 Active Solenoids)
+! Operational Regime: Benchtop Thermal Safety (J0 = 5.0e3 A/m^2, Power ~15-25 W)
+! Cooling: Forced Liquid Dielectric Micro-Channels (PEEK Core + 3M Fluorinert FC-3283)
+
+$ function group1_z_wpt_current(tx) {\
+  x = tx(0); y = tx(1); z = tx(2); t = tx(3);\
+  th = atan2(y, x);\
+  if (th < 0.0) { th = th + 6.283185307179586; } else { th = th; };\
+  d_th = 0.2617993877991494;\
+  k = floor((th + 0.1308996938995747) / d_th);\
+  if (k >= 24) { k = 0; } else { k = k; };\
+  p = zeros(24, 1);\
+  p(0)  = 6.283185; p(1)  = 0.698132; p(2)  = 0.698132; p(3)  = 1.396263;\
+  p(4)  = 2.094395; p(5)  = 3.490659; p(6)  = 5.585054; p(7)  = 2.792527;\
+  p(8)  = 2.094395; p(9)  = 4.886922; p(10) = 0.698132; p(11) = 5.585054;\
+  p(12) = 6.283185; p(13) = 5.585054; p(14) = 5.585054; p(15) = 4.886922;\
+  p(16) = 4.188790; p(17) = 2.792527; p(18) = 0.698132; p(19) = 3.490659;\
+  p(20) = 4.188790; p(21) = 1.396263; p(22) = 5.585054; p(23) = 0.698132;\
+  phi = p(k);\
+  w = 628.3185307179586;\
+  j0 = 5.0e+03;\
+  res = j0 * sin(w * t + phi);\
+  _group1_z_wpt_current = res;\
+}
+
+$ function group2_x_wpt_current(tx) {\
+  x = tx(0); y = tx(1); z = tx(2); t = tx(3);\
+  psi = atan2(z, y);\
+  if (psi < 0.0) { psi = psi + 6.283185307179586; } else { psi = psi; };\
+  d_psi = 0.2617993877991494;\
+  k = floor((psi + 0.1308996938995747) / d_psi);\
+  if (k >= 24) { k = 0; } else { k = k; };\
+  p = zeros(24, 1);\
+  p(0)  = 6.283185; p(1)  = 0.698132; p(2)  = 0.698132; p(3)  = 1.396263;\
+  p(4)  = 2.094395; p(5)  = 3.490659; p(6)  = 5.585054; p(7)  = 2.792527;\
+  p(8)  = 2.094395; p(9)  = 4.886922; p(10) = 0.698132; p(11) = 5.585054;\
+  p(12) = 6.283185; p(13) = 5.585054; p(14) = 5.585054; p(15) = 4.886922;\
+  p(16) = 4.188790; p(17) = 2.792527; p(18) = 0.698132; p(19) = 3.490659;\
+  p(20) = 4.188790; p(21) = 1.396263; p(22) = 5.585054; p(23) = 0.698132;\
+  phi = p(k);\
+  w = 628.3185307179586;\
+  j0 = 5.0e+03;\
+  res = j0 * cos(w * t + phi);\
+  _group2_x_wpt_current = res;\
+}
+
+$ function sigma_spherical_X_layers(tx) {\
+  x = tx(0); y = tx(1); z = tx(2);\
+  r = sqrt(x*x + y*y + z*z);\
+  if (r < 1.0e-5) { r = 1.0e-5; } else { r = r; };\
+  rho = sqrt(x*x + y*y);\
+  if (rho < 1.0e-5) { rho = 1.0e-5; } else { rho = rho; };\
+  xi = (r - 0.047) / 0.003;\
+  if (xi < 0.0) { xi = 0.0; } else { if (xi > 1.0) { xi = 1.0; } else { xi = xi; }; };\
+  s_base = 3.031089e6;\
+  if (xi <= 0.3333333333333333) {\
+    s_tp = s_base;\
+  } else {\
+    if (xi <= 0.6666666666666666) {\
+      s_tp = 0.0;\
+    } else {\
+      s_tp = -s_base;\
+    };\
+  };\
+  s0 = 1.75e6;\
+  s_phi = 1.22e7;\
+  ds = s_phi - s0;\
+  px = -y / rho; py = x / rho;\
+  tx_c = (z / r) * (x / rho);\
+  ty_c = (z / r) * (y / rho);\
+  tz_c = -rho / r;\
+  a = zeros(3,3);\
+  a(0,0) = s0 + ds * px*px + 2.0 * s_tp * tx_c * px;\
+  a(1,1) = s0 + ds * py*py + 2.0 * s_tp * ty_c * py;\
+  a(2,2) = s0;\
+  c12 = ds * px*py + s_tp * (tx_c * py + px * ty_c);\
+  a(0,1) = c12; a(1,0) = c12;\
+  c13 = s_tp * px * tz_c;\
+  a(0,2) = c13; a(2,0) = c13;\
+  c23 = s_tp * py * tz_c;\
+  a(1,2) = c23; a(2,1) = c23;\
+  _sigma_spherical_X_layers = a;\
+}
+
+Header
+  CHECK KEYWORDS Warn
+  Mesh DB "mesh" "macchina_doppio_gruppo_48"
+  Include Path ""
+  Results Directory "results"
+End
+
+Simulation
+  Max Output Level = 3
+  Coordinate System = Cartesian 3D
+  Coordinate Mapping(3) = 1 2 3
+  Simulation Type = Transient
+  Steady State Max Iterations = 1
+  Output Intervals(1) = 1
+  Timestep Intervals(1) = 40
+  Timestep Sizes(1) = 0.00025
+End
+
+Constants
+  Permittivity of Vacuum = 8.8542e-12
+  Permeability of Vacuum = 1.2566370614e-6
+End
+
+Equation 1
+  Name = "Coupled Electromagnetics"
+  Active Solvers(3) = 1 2 3
+End
+
+Solver 1
+  Equation = "MGDynamics"
+  Variable = "AV"
+  Procedure = "MagnetoDynamics" "WhitneyAVSolver"
+  Fix Input Current Density = Logical False
+  Use Piola Transform = Logical False
+  Linear System Solver = "Direct"
+  Linear System Direct Method = Umfpack
+End
+
+Solver 2
+  Equation = "MGDynamicsCalc"
+  Procedure = "MagnetoDynamics" "MagnetoDynamicsCalcFields"
+  Potential Variable = String "AV"
+  Calculate Elemental Fields = Logical True
+  Calculate Nodal Fields = Logical True
+  Calculate Magnetic Flux Density = Logical True
+  Calculate Magnetic Vector Potential = Logical True
+  Calculate Current Density = Logical True
+  Calculate Electric Field = Logical True
+  Calculate Joule Heating = Logical True
+  Calculate JxB = Logical True
+  Linear System Solver = "Direct"
+  Linear System Direct Method = Umfpack
+End
+
+Solver 3
+  Exec Solver = After Timestep
+  Procedure = "ResultOutputSolve" "ResultOutputSolver"
+  Output File Name = "chiral_wpt_actuator_out"
+  Output Format = "vtu"
+  Vtu Format = Logical True
+  Save Geometry Ids = Logical True
+  Discontinuous Bodies = Logical True
+End
+
+! Material 1: Mantello Sferico Metamateriale a Triplo Strato X Ferromagnetico
+Material 1
+  Name = "FerromagneticSphericalCrossLayerMantle"
+  Relative Permeability = 1000.0
+  Electric Conductivity(3,3) = Variable Coordinate 1, Coordinate 2, Coordinate 3
+    Real MATC "sigma_spherical_X_layers(tx)"
+End
+
+! Material 2: Bobine Rame Cu-ETP (Gruppo 1 e Gruppo 2)
+Material 2
+  Name = "CopperCoils"
+  Relative Permeability = 1.0
+  Electric Conductivity = 5.8e7
+End
+
+! Material 3: Nucleo Centrale in PEEK con Micro-Canali Fluidici
+Material 3
+  Name = "PEEKCoreDielectricCooled"
+  Relative Permeability = 1.0
+  Electric Conductivity = 0.0
+End
+
+! Material 4: Cavita Aria / Fluido Dielettrico (3M Fluorinert)
+Material 4
+  Name = "AirAndDielectricCoolant"
+  Relative Permeability = 1.0
+  Electric Conductivity = 0.0
+End
+
+! Body Force 1: Gruppo 1 (Equatoriale Z=0, R_c1 = 37 mm, asse Z)
+Body Force 1
+  Current Density 3 = Variable Coordinate 1, Coordinate 2, Coordinate 3, time
+    Real MATC "group1_z_wpt_current(tx)"
+End
+
+! Body Force 2: Gruppo 2 (Meridiano X=0, R_c2 = 31 mm, asse X)
+Body Force 2
+  Current Density 1 = Variable Coordinate 1, Coordinate 2, Coordinate 3, time
+    Real MATC "group2_x_wpt_current(tx)"
+End
+
+! Body 1: Mantello Sferico
+Body 1
+  Target Bodies(1) = 1
+  Name = "MantelloSferico"
+  Equation = 1
+  Material = 1
+End
+
+! Body 2: Coils Gruppo 1 (Z)
+Body 2
+  Target Bodies(1) = 2
+  Name = "CoilsGruppo1_Z"
+  Equation = 1
+  Material = 2
+  Body Force = 1
+End
+
+! Body 3: Coils Gruppo 2 (X)
+Body 3
+  Target Bodies(1) = 3
+  Name = "CoilsGruppo2_X"
+  Equation = 1
+  Material = 2
+  Body Force = 2
+End
+
+! Body 4: Rotore PEEK Core
+Body 4
+  Target Bodies(1) = 4
+  Name = "RotorePEEKCore"
+  Equation = 1
+  Material = 3
+End
+
+! Body 5: Cavita Aria Interna / Coolant
+Body 5
+  Target Bodies(1) = 5
+  Name = "CavitaAriaInterna"
+  Equation = 1
+  Material = 4
+End
+
+! Body 6: Aria Esterna
+Body 6
+  Target Bodies(1) = 6
+  Name = "AriaEsterna"
+  Equation = 1
+  Material = 4
+End
+
+! Boundary Condition 1: Far-Field all'Infinito
+Boundary Condition 1
+  Target Boundaries(1) = 1
+  Name = "FarField"
+  AV {e} = Real 0.0
+  AV = Real 0.0
+End

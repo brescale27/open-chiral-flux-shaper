@@ -1,0 +1,575 @@
+{
+  "project": "Open Chiral Flux Shaper",
+  "study": "Kinematic Regimes & Electrodynamic Parity Assessment",
+  "author": "Alessandro Brescacin",
+  "license": "CERN-OHL-S-2.0",
+  "nominal_parameters": {
+    "f_electrical_hz": 100.0,
+    "pole_pairs": 3,
+    "synchronous_speed_rpm": 2000.0,
+    "mantle_material": "Ferromagnetic Triple-Layer X (mu_r = 1000, +/- 30 deg)",
+    "core_material": "Amagnetic PEEK Core (sigma = 0 S/m)"
+  },
+  "cases": [
+    {
+      "topology": "Single Rotor",
+      "rpm": 0.0,
+      "f_mech_hz": 0.0,
+      "direction": "CW",
+      "dir_label": "Static (0 RPM)",
+      "dir_sign": 0,
+      "f_slip_hz": 100.0,
+      "forces_N": {
+        "mean_fx_N": 0.0,
+        "mean_fy_N": -0.014339,
+        "mean_fz_N": -0.289107,
+        "mean_fmag_N": 0.289462,
+        "peak_f_N": 0.371959
+      },
+      "losses_W": {
+        "total_W": 111.539,
+        "mantle_total_W": 21.562,
+        "mantle_layer1_plus30_W": 20.785,
+        "mantle_layer2_ortho_W": 0.776,
+        "mantle_layer3_minus30_W": 0.0,
+        "rotors_total_W": 89.977,
+        "peek_core_W": 0.0
+      },
+      "efficiency": {
+        "mN_per_W": 2.5952
+      },
+      "gauss_residuals_pct": {
+        "near_field_65mm": 0.052,
+        "mid_field_100mm": 1.004,
+        "far_field_150mm": 1.644,
+        "status": "PASS"
+      },
+      "magnetic_saturation": {
+        "b_peak_mantle_T": 0.1883,
+        "b_sat_limit_T": 1.5,
+        "margin_pct": 87.44,
+        "status": "LINEAR (SAFE)"
+      }
+    },
+    {
+      "topology": "Dual Rotor Concorde",
+      "rpm": 0.0,
+      "f_mech_hz": 0.0,
+      "direction": "CW",
+      "dir_label": "Static (0 RPM)",
+      "dir_sign": 0,
+      "f_slip_hz": 100.0,
+      "forces_N": {
+        "mean_fx_N": 0.809005,
+        "mean_fy_N": -0.016869,
+        "mean_fz_N": -0.561155,
+        "mean_fmag_N": 0.984718,
+        "peak_f_N": 1.265362
+      },
+      "losses_W": {
+        "total_W": 224.411,
+        "mantle_total_W": 44.457,
+        "mantle_layer1_plus30_W": 42.857,
+        "mantle_layer2_ortho_W": 1.6,
+        "mantle_layer3_minus30_W": 0.0,
+        "rotors_total_W": 179.954,
+        "peek_core_W": 0.0
+      },
+      "efficiency": {
+        "mN_per_W": 4.388
+      },
+      "gauss_residuals_pct": {
+        "near_field_65mm": 0.052,
+        "mid_field_100mm": 1.004,
+        "far_field_150mm": 1.644,
+        "status": "PASS"
+      },
+      "magnetic_saturation": {
+        "b_peak_mantle_T": 0.2897,
+        "b_sat_limit_T": 1.5,
+        "margin_pct": 80.68,
+        "status": "LINEAR (SAFE)"
+      }
+    },
+    {
+      "topology": "Single Rotor",
+      "rpm": 60.0,
+      "f_mech_hz": 1.0,
+      "direction": "CW",
+      "dir_label": "Clockwise (CW)",
+      "dir_sign": 1,
+      "f_slip_hz": 97.0,
+      "forces_N": {
+        "mean_fx_N": 0.0,
+        "mean_fy_N": -0.013909,
+        "mean_fz_N": -0.280434,
+        "mean_fmag_N": 0.280778,
+        "peak_f_N": 0.3608
+      },
+      "losses_W": {
+        "total_W": 109.532,
+        "mantle_total_W": 20.915,
+        "mantle_layer1_plus30_W": 20.162,
+        "mantle_layer2_ortho_W": 0.753,
+        "mantle_layer3_minus30_W": 0.0,
+        "rotors_total_W": 88.617,
+        "peek_core_W": 0.0
+      },
+      "efficiency": {
+        "mN_per_W": 2.5634
+      },
+      "gauss_residuals_pct": {
+        "near_field_65mm": 0.052,
+        "mid_field_100mm": 1.002,
+        "far_field_150mm": 1.642,
+        "status": "PASS"
+      },
+      "magnetic_saturation": {
+        "b_peak_mantle_T": 0.1849,
+        "b_sat_limit_T": 1.5,
+        "margin_pct": 87.67,
+        "status": "LINEAR (SAFE)"
+      }
+    },
+    {
+      "topology": "Single Rotor",
+      "rpm": 60.0,
+      "f_mech_hz": 1.0,
+      "direction": "CCW",
+      "dir_label": "Counter-Clockwise (CCW)",
+      "dir_sign": -1,
+      "f_slip_hz": 103.0,
+      "forces_N": {
+        "mean_fx_N": 0.0,
+        "mean_fy_N": 0.014769,
+        "mean_fz_N": -0.29778,
+        "mean_fmag_N": 0.298146,
+        "peak_f_N": 0.383118
+      },
+      "losses_W": {
+        "total_W": 113.525,
+        "mantle_total_W": 22.209,
+        "mantle_layer1_plus30_W": 21.409,
+        "mantle_layer2_ortho_W": 0.799,
+        "mantle_layer3_minus30_W": 0.0,
+        "rotors_total_W": 91.317,
+        "peek_core_W": 0.0
+      },
+      "efficiency": {
+        "mN_per_W": 2.6263
+      },
+      "gauss_residuals_pct": {
+        "near_field_65mm": 0.052,
+        "mid_field_100mm": 1.005,
+        "far_field_150mm": 1.645,
+        "status": "PASS"
+      },
+      "magnetic_saturation": {
+        "b_peak_mantle_T": 0.1917,
+        "b_sat_limit_T": 1.5,
+        "margin_pct": 87.22,
+        "status": "LINEAR (SAFE)"
+      }
+    },
+    {
+      "topology": "Single Rotor",
+      "rpm": 120.0,
+      "f_mech_hz": 2.0,
+      "direction": "CW",
+      "dir_label": "Clockwise (CW)",
+      "dir_sign": 1,
+      "f_slip_hz": 94.0,
+      "forces_N": {
+        "mean_fx_N": 0.0,
+        "mean_fy_N": -0.013478,
+        "mean_fz_N": -0.27176,
+        "mean_fmag_N": 0.272094,
+        "peak_f_N": 0.349641
+      },
+      "losses_W": {
+        "total_W": 107.504,
+        "mantle_total_W": 20.268,
+        "mantle_layer1_plus30_W": 19.538,
+        "mantle_layer2_ortho_W": 0.73,
+        "mantle_layer3_minus30_W": 0.0,
+        "rotors_total_W": 87.236,
+        "peek_core_W": 0.0
+      },
+      "efficiency": {
+        "mN_per_W": 2.531
+      },
+      "gauss_residuals_pct": {
+        "near_field_65mm": 0.052,
+        "mid_field_100mm": 1.0,
+        "far_field_150mm": 1.64,
+        "status": "PASS"
+      },
+      "magnetic_saturation": {
+        "b_peak_mantle_T": 0.1815,
+        "b_sat_limit_T": 1.5,
+        "margin_pct": 87.9,
+        "status": "LINEAR (SAFE)"
+      }
+    },
+    {
+      "topology": "Single Rotor",
+      "rpm": 120.0,
+      "f_mech_hz": 2.0,
+      "direction": "CCW",
+      "dir_label": "Counter-Clockwise (CCW)",
+      "dir_sign": -1,
+      "f_slip_hz": 106.0,
+      "forces_N": {
+        "mean_fx_N": 0.0,
+        "mean_fy_N": 0.015199,
+        "mean_fz_N": -0.306453,
+        "mean_fmag_N": 0.30683,
+        "peak_f_N": 0.394276
+      },
+      "losses_W": {
+        "total_W": 115.492,
+        "mantle_total_W": 22.855,
+        "mantle_layer1_plus30_W": 22.033,
+        "mantle_layer2_ortho_W": 0.823,
+        "mantle_layer3_minus30_W": 0.0,
+        "rotors_total_W": 92.637,
+        "peek_core_W": 0.0
+      },
+      "efficiency": {
+        "mN_per_W": 2.6567
+      },
+      "gauss_residuals_pct": {
+        "near_field_65mm": 0.052,
+        "mid_field_100mm": 1.007,
+        "far_field_150mm": 1.647,
+        "status": "PASS"
+      },
+      "magnetic_saturation": {
+        "b_peak_mantle_T": 0.195,
+        "b_sat_limit_T": 1.5,
+        "margin_pct": 87.0,
+        "status": "LINEAR (SAFE)"
+      }
+    },
+    {
+      "topology": "Single Rotor",
+      "rpm": 1200.0,
+      "f_mech_hz": 20.0,
+      "direction": "CW",
+      "dir_label": "Clockwise (CW)",
+      "dir_sign": 1,
+      "f_slip_hz": 40.0,
+      "forces_N": {
+        "mean_fx_N": 0.0,
+        "mean_fy_N": -0.005735,
+        "mean_fz_N": -0.115643,
+        "mean_fmag_N": 0.115785,
+        "peak_f_N": 0.148784
+      },
+      "losses_W": {
+        "total_W": 65.531,
+        "mantle_total_W": 8.625,
+        "mantle_layer1_plus30_W": 8.314,
+        "mantle_layer2_ortho_W": 0.31,
+        "mantle_layer3_minus30_W": 0.0,
+        "rotors_total_W": 56.906,
+        "peek_core_W": 0.0
+      },
+      "efficiency": {
+        "mN_per_W": 1.7669
+      },
+      "gauss_residuals_pct": {
+        "near_field_65mm": 0.05,
+        "mid_field_100mm": 0.973,
+        "far_field_150mm": 1.613,
+        "status": "PASS"
+      },
+      "magnetic_saturation": {
+        "b_peak_mantle_T": 0.1087,
+        "b_sat_limit_T": 1.5,
+        "margin_pct": 92.75,
+        "status": "LINEAR (SAFE)"
+      }
+    },
+    {
+      "topology": "Single Rotor",
+      "rpm": 1200.0,
+      "f_mech_hz": 20.0,
+      "direction": "CCW",
+      "dir_label": "Counter-Clockwise (CCW)",
+      "dir_sign": -1,
+      "f_slip_hz": 160.0,
+      "forces_N": {
+        "mean_fx_N": 0.0,
+        "mean_fy_N": 0.022942,
+        "mean_fz_N": -0.462571,
+        "mean_fmag_N": 0.46314,
+        "peak_f_N": 0.595134
+      },
+      "losses_W": {
+        "total_W": 148.311,
+        "mantle_total_W": 34.499,
+        "mantle_layer1_plus30_W": 33.257,
+        "mantle_layer2_ortho_W": 1.242,
+        "mantle_layer3_minus30_W": 0.0,
+        "rotors_total_W": 113.813,
+        "peek_core_W": 0.0
+      },
+      "efficiency": {
+        "mN_per_W": 3.1228
+      },
+      "gauss_residuals_pct": {
+        "near_field_65mm": 0.055,
+        "mid_field_100mm": 1.035,
+        "far_field_150mm": 1.674,
+        "status": "PASS"
+      },
+      "magnetic_saturation": {
+        "b_peak_mantle_T": 0.2497,
+        "b_sat_limit_T": 1.5,
+        "margin_pct": 83.35,
+        "status": "LINEAR (SAFE)"
+      }
+    },
+    {
+      "topology": "Dual Rotor Concorde",
+      "rpm": 60.0,
+      "f_mech_hz": 1.0,
+      "direction": "CW",
+      "dir_label": "Clockwise (CW)",
+      "dir_sign": 1,
+      "f_slip_hz": 97.0,
+      "forces_N": {
+        "mean_fx_N": 0.784735,
+        "mean_fy_N": -0.016363,
+        "mean_fz_N": -0.54432,
+        "mean_fmag_N": 0.955176,
+        "peak_f_N": 1.227401
+      },
+      "losses_W": {
+        "total_W": 220.357,
+        "mantle_total_W": 43.123,
+        "mantle_layer1_plus30_W": 41.571,
+        "mantle_layer2_ortho_W": 1.552,
+        "mantle_layer3_minus30_W": 0.0,
+        "rotors_total_W": 177.234,
+        "peek_core_W": 0.0
+      },
+      "efficiency": {
+        "mN_per_W": 4.3347
+      },
+      "gauss_residuals_pct": {
+        "near_field_65mm": 0.052,
+        "mid_field_100mm": 1.002,
+        "far_field_150mm": 1.642,
+        "status": "PASS"
+      },
+      "magnetic_saturation": {
+        "b_peak_mantle_T": 0.2845,
+        "b_sat_limit_T": 1.5,
+        "margin_pct": 81.03,
+        "status": "LINEAR (SAFE)"
+      }
+    },
+    {
+      "topology": "Dual Rotor Concorde",
+      "rpm": 60.0,
+      "f_mech_hz": 1.0,
+      "direction": "CCW",
+      "dir_label": "Counter-Clockwise (CCW)",
+      "dir_sign": -1,
+      "f_slip_hz": 103.0,
+      "forces_N": {
+        "mean_fx_N": 0.833275,
+        "mean_fy_N": 0.017375,
+        "mean_fz_N": -0.577989,
+        "mean_fmag_N": 1.014259,
+        "peak_f_N": 1.303323
+      },
+      "losses_W": {
+        "total_W": 228.424,
+        "mantle_total_W": 45.791,
+        "mantle_layer1_plus30_W": 44.142,
+        "mantle_layer2_ortho_W": 1.648,
+        "mantle_layer3_minus30_W": 0.0,
+        "rotors_total_W": 182.633,
+        "peek_core_W": 0.0
+      },
+      "efficiency": {
+        "mN_per_W": 4.4403
+      },
+      "gauss_residuals_pct": {
+        "near_field_65mm": 0.052,
+        "mid_field_100mm": 1.005,
+        "far_field_150mm": 1.645,
+        "status": "PASS"
+      },
+      "magnetic_saturation": {
+        "b_peak_mantle_T": 0.2949,
+        "b_sat_limit_T": 1.5,
+        "margin_pct": 80.34,
+        "status": "LINEAR (SAFE)"
+      }
+    },
+    {
+      "topology": "Dual Rotor Concorde",
+      "rpm": 120.0,
+      "f_mech_hz": 2.0,
+      "direction": "CW",
+      "dir_label": "Clockwise (CW)",
+      "dir_sign": 1,
+      "f_slip_hz": 94.0,
+      "forces_N": {
+        "mean_fx_N": 0.760465,
+        "mean_fy_N": -0.015857,
+        "mean_fz_N": -0.527485,
+        "mean_fmag_N": 0.925634,
+        "peak_f_N": 1.18944
+      },
+      "losses_W": {
+        "total_W": 216.261,
+        "mantle_total_W": 41.79,
+        "mantle_layer1_plus30_W": 40.285,
+        "mantle_layer2_ortho_W": 1.504,
+        "mantle_layer3_minus30_W": 0.0,
+        "rotors_total_W": 174.472,
+        "peek_core_W": 0.0
+      },
+      "efficiency": {
+        "mN_per_W": 4.2802
+      },
+      "gauss_residuals_pct": {
+        "near_field_65mm": 0.052,
+        "mid_field_100mm": 1.0,
+        "far_field_150mm": 1.64,
+        "status": "PASS"
+      },
+      "magnetic_saturation": {
+        "b_peak_mantle_T": 0.2792,
+        "b_sat_limit_T": 1.5,
+        "margin_pct": 81.39,
+        "status": "LINEAR (SAFE)"
+      }
+    },
+    {
+      "topology": "Dual Rotor Concorde",
+      "rpm": 120.0,
+      "f_mech_hz": 2.0,
+      "direction": "CCW",
+      "dir_label": "Counter-Clockwise (CCW)",
+      "dir_sign": -1,
+      "f_slip_hz": 106.0,
+      "forces_N": {
+        "mean_fx_N": 0.857545,
+        "mean_fy_N": 0.017881,
+        "mean_fz_N": -0.594824,
+        "mean_fmag_N": 1.043801,
+        "peak_f_N": 1.341284
+      },
+      "losses_W": {
+        "total_W": 232.398,
+        "mantle_total_W": 47.125,
+        "mantle_layer1_plus30_W": 45.428,
+        "mantle_layer2_ortho_W": 1.696,
+        "mantle_layer3_minus30_W": 0.0,
+        "rotors_total_W": 185.274,
+        "peek_core_W": 0.0
+      },
+      "efficiency": {
+        "mN_per_W": 4.4914
+      },
+      "gauss_residuals_pct": {
+        "near_field_65mm": 0.052,
+        "mid_field_100mm": 1.007,
+        "far_field_150mm": 1.647,
+        "status": "PASS"
+      },
+      "magnetic_saturation": {
+        "b_peak_mantle_T": 0.3001,
+        "b_sat_limit_T": 1.5,
+        "margin_pct": 80.0,
+        "status": "LINEAR (SAFE)"
+      }
+    },
+    {
+      "topology": "Dual Rotor Concorde",
+      "rpm": 1200.0,
+      "f_mech_hz": 20.0,
+      "direction": "CW",
+      "dir_label": "Clockwise (CW)",
+      "dir_sign": 1,
+      "f_slip_hz": 40.0,
+      "forces_N": {
+        "mean_fx_N": 0.323602,
+        "mean_fy_N": -0.006748,
+        "mean_fz_N": -0.224462,
+        "mean_fmag_N": 0.393887,
+        "peak_f_N": 0.506145
+      },
+      "losses_W": {
+        "total_W": 131.596,
+        "mantle_total_W": 17.783,
+        "mantle_layer1_plus30_W": 17.143,
+        "mantle_layer2_ortho_W": 0.64,
+        "mantle_layer3_minus30_W": 0.0,
+        "rotors_total_W": 113.813,
+        "peek_core_W": 0.0
+      },
+      "efficiency": {
+        "mN_per_W": 2.9932
+      },
+      "gauss_residuals_pct": {
+        "near_field_65mm": 0.05,
+        "mid_field_100mm": 0.973,
+        "far_field_150mm": 1.613,
+        "status": "PASS"
+      },
+      "magnetic_saturation": {
+        "b_peak_mantle_T": 0.1672,
+        "b_sat_limit_T": 1.5,
+        "margin_pct": 88.85,
+        "status": "LINEAR (SAFE)"
+      }
+    },
+    {
+      "topology": "Dual Rotor Concorde",
+      "rpm": 1200.0,
+      "f_mech_hz": 20.0,
+      "direction": "CCW",
+      "dir_label": "Counter-Clockwise (CCW)",
+      "dir_sign": -1,
+      "f_slip_hz": 160.0,
+      "forces_N": {
+        "mean_fx_N": 1.294408,
+        "mean_fy_N": 0.026991,
+        "mean_fz_N": -0.897847,
+        "mean_fmag_N": 1.575548,
+        "peak_f_N": 2.024579
+      },
+      "losses_W": {
+        "total_W": 298.757,
+        "mantle_total_W": 71.131,
+        "mantle_layer1_plus30_W": 68.571,
+        "mantle_layer2_ortho_W": 2.561,
+        "mantle_layer3_minus30_W": 0.0,
+        "rotors_total_W": 227.625,
+        "peek_core_W": 0.0
+      },
+      "efficiency": {
+        "mN_per_W": 5.2737
+      },
+      "gauss_residuals_pct": {
+        "near_field_65mm": 0.055,
+        "mid_field_100mm": 1.035,
+        "far_field_150mm": 1.674,
+        "status": "PASS"
+      },
+      "magnetic_saturation": {
+        "b_peak_mantle_T": 0.3841,
+        "b_sat_limit_T": 1.5,
+        "margin_pct": 74.39,
+        "status": "LINEAR (SAFE)"
+      }
+    }
+  ]
+}
