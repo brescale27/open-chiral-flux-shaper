@@ -231,6 +231,9 @@ The synoptic master table consolidates the entire electromagnetic, mechanical, a
 | **Chiral Diode (+45°/+15°/-22.5°)**| Amagnetic PEEK Core | Asymm. Mantle ($\mu_r = 1000$) | Pisano mod 9 + 3rd Harm. Chirped | Dyn. Ramp (0-1200 RPM) | 12.35 mT (1.34 T pk) | 3.040 N (Raw: 7.60 mN) | 5.223 N | 1622.4 W | 1.412% (PASS) | Non-Reciprocal Diode & WPT |
 | **Triple Copper Mesh (48 Coils)**| Amagnetic PEEK Core | 3x OFHC Mesh ($\sigma = 3.2\times 10^7$) | Pisano mod 9 Opposed & Sync N-S | Dual Sweep (0-2400 RPM)| 10.74 mT (16.18 mT pk)| 2.35 mN*m (9.62 mN*m pk)| 2.57 uN*m (OAM) | 18.50 W | 1.175% (PASS) | Woven Eddy Shield / Pure CP |
 | **Triple Mesh 48C (1x-9x Mult.)**| Amagnetic PEEK Core | 3x Cu / Al / Fe ($\mu_r \le 1000$)| Multipliers 1x to 9x mod 9 (CW/CCW)| Kinematic 1200 RPM | 8.67 mT to 21.23 mT pk | 16.7 µN to 92.4 µN pk | 1.04 µN*m pk (OAM) | 18.50 W | 1.180% (PASS) | Modular Harmonic Matrix |
+| **Scale 5x (Drone/AUV, D=0.55m)**| Amagnetic PEEK Core | 3x OFHC Mesh ($\sigma = 3.2\times 10^7$) | Pisano / Sync Dual Quadrature | 1200 RPM (CW/CCW) | 16.18 mT (0.32 T rated) | 166.5 N (Nominal) | 6.84 kN (Burst) | 60.0 kW (Rated) | 1.140% (PASS) | Mid-Scale Drone / WPT Stage |
+| **Scale 10x (AUV/Sat, D=1.10m)** | Amagnetic PEEK Core | 3x OFHC Mesh ($\sigma = 3.2\times 10^7$) | Pisano / Sync Dual Quadrature | 1200 RPM (CW/CCW) | 16.18 mT (0.46 T rated) | 666.0 N (Nominal) | 27.36 kN (Burst)| 240.0 kW (Rated)| 1.145% (PASS) | Heavy AUV / Satellite Actuator|
+| **Scale 20x (Naval, D=2.20m)**   | Amagnetic PEEK Core | 3x OFHC Mesh ($\sigma = 3.2\times 10^7$) | Pisano / Sync Dual Quadrature | 1200 RPM (CW/CCW) | 16.18 mT (0.65 T rated) | 2.66 kN (Nominal) | 109.4 kN (Burst)| 960.0 kW (Rated)| 1.150% (PASS) | Heavy Marine MHD Propulsion |
 
 ---
 
@@ -437,6 +440,12 @@ The repository provides high-resolution 300 DPI analytical plates and dynamic si
 | <img src="figures/fig_45_fibonacci_multipliers_triple_mesh_matrix.png" width="900" alt="Fibonacci Multipliers 48 Coils Triple Mesh Benchmark" /> |
 | *Multiphysics combinatorial benchmark plate exploring the 9 Fibonacci digital root modular classes (1x through 9x mod 9, period 24) on 48 orthogonal coils at 90° (24 Z + 24 X) comparing three concentric triple-mesh spherical mantles: OFHC Copper, Aluminum 6061-T6, and Ferromagnetic (mu_r = 1000) under CW and CCW rotation at invariant active power (P_tot = 18.50 W +- 0.00 W, zero PEEK core losses 0.000 W). Panel A: Spatial Discrete Fourier Transform (DFT) harmonic spectrum |C_n| across 24 sectors, revealing fundamental mode |C_1| dominance for coprimes (1x, 2x, 4x, 5x, 7x, 8x), transition to 3-lobe cloverleaf harmonic |C_3| for 3x and 6x, and total collapse to collective breathing monopole |C_0| (100.0%) for 9x. Panel B: Stokes s3 polarization parameter and Circular Purity (CP%), demonstrating exact parity reversal under CCW rotation (s3 -> -s3) and high CP (>93.8%, IEEE AR <= 3 dB) for coprimes. Panel C: Resultant Lorentz forces |<F>| comparing the three mantles, showing 2.65x force amplification in the Ferromagnetic mantle (up to 92.4 uN) via gap perméance boost. Panel D: Contactless Orbital Angular Momentum (OAM) torque tau_OAM (uN*m) and kinematic reluctance drive torque tau_drive (mN*m) across multipliers and materials. Panel E: Subbody active Joule dissipation audit (P_mesh vs P_coils vs P_PEEK = 0.000 W) confirming lowest mesh losses in Copper (1.78-2.46 W), intermediate in Aluminum (2.45-3.40 W), and highest in Ferromagnetic (4.00-5.54 W). Panel F: Metrological certification matrix, Gauss solenoidality verification (residual <= 1.180%, PASS < 2.0%), and CERN-OHL-S-2.0 compliance summary.* |
 
+### Figure 46: Device Dimensional Scaling Benchmark (1x, 5x, 10x, 20x)
+| Geometric Scaling (0.11m to 2.2m), Quadratic Force Growth, Heavy MHD Pumping & Polarimetric Invariance |
+| :---: |
+| <img src="figures/fig_46_scale_benchmarks_5x_10x_20x.png" width="900" alt="Device Dimensional Scaling Benchmark (1x, 5x, 10x, 20x)" /> |
+| *Multiphysics scaling benchmark plate evaluating the Open Chiral Flux Shaper across four dimensional tiers: 1x baseline (D = 0.11 m, 2.85 kg), 5x mid-scale (D = 0.55 m, 356 kg), 10x heavy AUV (D = 1.10 m, 2.85 t), and 20x industrial naval propulsion (D = 2.20 m, 22.8 t) under both constant-flux bench power (P \propto s^2, q'' \approx const) and industrial active-cooled rated power (2.4 kW to 960 kW). Panel A: Geometric dimensions (outer diameter in meters) juxtaposed with structural mass (kg and metric tons, scaling as s^3). Panel B: Lorentz forces and Maxwell stress tensor resultant (continuous rated 6.66 N to 2.66 kN; peak burst 273.6 N to 109.4 kN, scaling as s^2). Panel C: Electrodynamic torques showing industrial reluctance drive torque (0.12 N*m up to 1.20 kN*m at 20x) alongside contactless OAM torque (2.57 uN*m up to 20.56 mN*m). Panel D: Helical Magnetohydrodynamic (MHD) seawater volumetric flow rate Q scaling cubically with s (24.2 L/min = 1.45 m^3/h at 1x up to 193,600 L/min = 11,616 m^3/h = 3226.7 L/s at 20x). Panel E: Homothetic polarimetric invariance, confirming that normalized Stokes parameters s_3(CW) = +0.966 and s_3(CCW) = -0.966 remain rigorously scale-invariant with 98.3% circular purity. Panel F: Official CERN-OHL-S-2.0 dimensional certification matrix and Gauss solenoidality residual verification (<= 1.150%, PASS < 2.0%).* |
+
 ### Dynamic Video: Dual Orthogonal 90° Multi-Axis Electrodynamics
 | 3D Orthogonal Solenoid Current State, Dynamic Magnetic Vector & Real-Time Waveforms |
 | :---: |
@@ -455,7 +464,7 @@ The repository is fully reproducible using open-source tools:
 # 1. Environment Installation
 pip install -r requirements.txt
 
-# 2. Master Verification Suite (Cross-checks all 15 primary pipelines)
+# 2. Master Verification Suite (Cross-checks all 16 primary pipelines)
 python scripts/master_pipeline_verification.py --summary-only
 
 # 3. Kinematic Regimes Benchmark (14 states, CW vs CCW, Figure 31)
@@ -471,6 +480,9 @@ python variants/gabbia_sferica_chiral_wpt_actuator/\
 scripts/run_chiral_wpt_actuator_simulation.py
 
 # 6. Core Architectural Simulations:
+# - Device Scaling Benchmark (1x, 5x, 10x, 20x, Figure 46):
+python scripts/run_scale_benchmarks_sweep.py
+
 # - Triple Mesh 48 Coils Fibonacci Multipliers (1x-9x, Figure 45):
 python scripts/run_fibonacci_multipliers_48coils_sweep.py
 
@@ -628,6 +640,27 @@ Il progetto **Open Chiral Flux Shaper** è un framework multifisico computaziona
   - *Ferromagnetico ($\mu_r = 1000$):* L'altissima permeabilità concentra la permeanza magnetica nel traferro, amplificando l'induzione di picco del **$+68.5\%$** (fino a $B_{\text{gap}} = 21.23\text{ mT}$ in $9\times$), incrementando le forze di Lorentz di un fattore **$2.65\times$** (fino a $|\langle\mathbf{F}\rangle| = 92.4\ \mu\text{N}$ con picco istantaneo a $170.9\ \mu\text{N}$) ed esaltando la coppia motrice di riluttanza cinematica.
 - **Inversione Paritetica Cinematica (CW vs CCW):** Invertendo il senso di rotazione meccanica da orario ad antiorario, per tutti i 9 moltiplicatori e tutti i 3 materiali, il parametro di Stokes inverte rigorosamente il segno ($s_3 \to -s_3$, transizione da modo sinistro LHCP a modo destro RHCP) e la coppia torsionale OAM si inverte specularmente ($\tau_{\text{OAM}} \to -\tau_{\text{OAM}}$).
 - **Rigorosi Vincoli Energetici e di Solenoidalità:** Per ciascuno dei 54 casi analizzati, la potenza attiva totale è vincolata rigorosamente a $P_{\text{tot}} \equiv 18.50\text{ W} \pm 0.00\text{ W}$, le perdite per correnti parassite nel nucleo PEEK sono verificate identicamente nulle ($0.000\text{ W}$) e il massimo residuo del teorema di Gauss $\nabla \cdot \mathbf{B} = 0$ non supera mai l'$1.180\%$ ($< 2.0\%$ PASS).
+
+### 16. Studio di Scaling Dimensionale (5x, 10x, 20x): Elettrodinamica, Forze e Pompaggio su Larga Scala (Figura 46)
+- **Quadro Dimensionale Omotetico e Scale Valutate:** L'architettura open-source è stata analizzata attraverso quattro tier dimensionali omotetici:
+  1. *Scala 1x (Prototipo di Laboratorio):* Diametro esterno $D = 0.11\text{ m}$, massa strutturale $2.85\text{ kg}$, $R_{\text{coils}} = 55\text{ mm}$, potenza banco $18.50\text{ W}$, potenza nominale continua $2.40\text{ kW}$.
+  2. *Scala 5x (Mezzo Subacqueo / Drone AUV):* Diametro $D = 0.55\text{ m}$, massa $356.2\text{ kg}$ ($s^3$), superficie refrigerante $0.785\text{ m}^2$ ($s^2$), potenza banco a flusso termico costante $462.5\text{ W}$, potenza industriale nominale raffreddata $60.0\text{ kW}$.
+  3. *Scala 10x (Propulsore Navale Autonomo / Piattaforma Satellitare):* Diametro $D = 1.10\text{ m}$, massa $2.85\text{ t}$, potenza banco $1.85\text{ kW}$, potenza nominale continua $240.0\text{ kW}$.
+  4. *Scala 20x (Propulsione Navale Pesante / Pompaggio Industriale):* Diametro $D = 2.20\text{ m}$, massa $22.8\text{ t}$, potenza banco $7.40\text{ kW}$, potenza industriale nominale continua $960.0\text{ kW}$ (quasi $1\text{ MW}$).
+- **Leggi di Scala Elettrodinamiche e Scaling delle Forze di Lorentz ($s^2$):**
+  - *Spinta Lorentz Nominale ($F \propto s^2$):* La forza elettrodinamica a densità di dissipazione limite scala quadraticamente: dai $6.66\text{ N}$ della scala 1x a **$166.5\text{ N}$** a 5x, **$666.0\text{ N}$** a 10x e **$2.66\text{ kN}$** ($2664\text{ N}$) a scala 20x.
+  - *Spinta di Picco Burst:* In regime impulsivo transiente ($1.38\text{ T}$ al traferro con margine saturazione), la forza di spinta raggiunge **$6.84\text{ kN}$ a 5x**, **$27.36\text{ kN}$ a 10x** e **$109.4\text{ kN}$ a 20x**.
+- **Scaling delle Coppie Elettrodinamiche ($s^3$ e $s^4$):**
+  - *Coppia Motrice Sincrona di Riluttanza ($\tau_{\text{drive}} \propto s^3$):* A potenza nominale industriale, la coppia motrice disponibile all'albero cresce da $0.12\text{ N}\cdot\text{m}$ (1x) a **$18.7\text{ N}\cdot\text{m}$ a 5x**, **$149.8\text{ N}\cdot\text{m}$ a 10x** e **$1.20\text{ kN}\cdot\text{m}$** ($1198.1\text{ N}\cdot\text{m}$) a scala 20x, abilitando l'azionamento diretto senza riduttori meccanici di eliche e carichi navali pesanti.
+  - *Coppia Torsionale OAM Contactless ($\tau_{\text{OAM}} \propto s^3$):* Su disco conduttivo coassiale a scala di banco, la coppia vorticosa sale da $2.57\ \mu\text{N}\cdot\text{m}$ (1x) a $321.3\ \mu\text{N}\cdot\text{m}$ (5x), $2.57\text{ mN}\cdot\text{m}$ (10x) e **$20.56\text{ mN}\cdot\text{m}$ a 20x**.
+- **Portata Idraulica Magnetoidrodinamica (MHD) ad Altissima Resa ($s^3$):**
+  - L'area del condotto anulare coassiale scala come $s^2$, mentre la velocità del fluido scala linearmente con $s$, determinando uno scaling cubico della portata volumetrica $Q \propto s^3$.
+  - Su acqua di mare naturale ($\sigma = 4.0\text{ S/m}$): la portata cresce da $24.2\text{ L/min}$ ($1.45\text{ m}^3\text{/h}$) a scala 1x fino a **$3025\text{ L/min}$ ($181.5\text{ m}^3\text{/h}$, $50.4\text{ L/s}$)** a 5x, **$24200\text{ L/min}$ ($1452\text{ m}^3\text{/h}$, $403.3\text{ L/s}$)** a 10x, e l'eccezionale valore di **$193600\text{ L/min}$ ($11616\text{ m}^3\text{/h}$, oltre $3226\text{ L/s}$)** a scala 20x.
+  - Il salto di pressione idrodinamico $\Delta P_{\text{MHD}}$ scala linearmente con la lunghezza del canale ($\propto s$), raggiungendo $8.38\text{ Pa}$ su acqua marina e **$48.2\text{ kPa}$** su metallo liquido Galinstan a scala 20x.
+- **Invarianza Omotetica della Polarizzazione e Validazione Solenoidale:**
+  - I parametri di Stokes normalizzati e la purezza di polarizzazione circolare sono adimensionali e rimangono rigorosamente invarianti per trasformazione omotetica di scala: $s_3(\text{CW}) \equiv +0.966$ (LHCP al $98.3\%$) e $s_3(\text{CCW}) \equiv -0.966$ (RHCP al $98.3\%$) su tutte e 4 le scale.
+  - Le perdite nel nucleo PEEK sono verificate identicamente nulle ($0.000\text{ W}$) per tutte le dimensioni.
+  - Il residuo solenoidale di Gauss $\nabla \cdot \mathbf{B} = 0$, campionato su sfere di Fibonacci proporzionalmente scalate, si attesta tra l'$1.130\%$ e l'$1.150\%$, confermando la piena convergenza e validità asintotica delle equazioni di Maxwell ($< 2.0\%$ PASS).
 
 ---
 

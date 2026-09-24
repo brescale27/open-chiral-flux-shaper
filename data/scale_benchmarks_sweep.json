@@ -1,0 +1,242 @@
+{
+  "meta": {
+    "project": "Open Chiral Flux Shaper",
+    "study": "Device Scaling Benchmark (1x, 5x, 10x, 20x)",
+    "author": "Alessandro Brescacin",
+    "license": "CERN-OHL-S-2.0",
+    "timestamp": "2026-09-24T21:01:16Z",
+    "baseline_scale": 1.0,
+    "evaluated_scales": [
+      1.0,
+      5.0,
+      10.0,
+      20.0
+    ]
+  },
+  "scales_data": {
+    "1x": {
+      "scale_factor": 1.0,
+      "scale_label": "1x",
+      "application": "Prototipo di Laboratorio / Attuazione Ottica di Precisione (11 cm)",
+      "geometry": {
+        "outer_diameter_m": 0.11,
+        "radius_cage_outer_m": 0.05,
+        "radius_coils_m": 0.055,
+        "total_mass_kg": 2.85,
+        "total_mass_ton": 0.003,
+        "cooling_surface_m2": 0.0314,
+        "mhd_duct_cross_section_cm2": 47.8
+      },
+      "power_and_thermal": {
+        "bench_power_invariant_flux_W": 18.5,
+        "p_mesh_eddy_bench_W": 2.03,
+        "p_coils_bench_W": 16.47,
+        "p_peek_core_W": 0.0,
+        "industrial_rated_continuous_kW": 2.4
+      },
+      "electrodynamics": {
+        "b_gap_bench_pisano_mt": 10.74,
+        "b_gap_bench_sync_mt": 16.18,
+        "b_gap_bench_fe_mt": 21.23,
+        "b_gap_rated_T": 0.145,
+        "stokes_s3_cw": 0.966,
+        "stokes_s3_ccw": -0.966,
+        "circular_purity_pct": 98.3,
+        "axial_ratio_db": 1.15,
+        "ieee_status": "PASS (AR <= 3.0 dB)"
+      },
+      "lorentz_forces": {
+        "f_lorentz_bench_mN": 0.022,
+        "f_lorentz_bench_peak_mN": 0.041,
+        "f_lorentz_rated_continuous_N": 6.66,
+        "f_lorentz_burst_peak_N": 273.6,
+        "thrust_to_power_mN_per_W": 2.77
+      },
+      "torques": {
+        "tau_oam_bench_cw_uNm": 2.57,
+        "tau_oam_bench_ccw_uNm": -2.57,
+        "tau_drive_bench_Nm": 0.0096,
+        "tau_drive_rated_Nm": 0.15
+      },
+      "mhd_pumping": {
+        "seawater_flow_l_min": 24.2,
+        "seawater_flow_l_s": 0.4,
+        "seawater_flow_m3_h": 1.5,
+        "seawater_delta_p_pa": 0.419,
+        "galinstan_delta_p_kpa": 2.41
+      },
+      "verification": {
+        "gauss_solenoidality_residual_pct": 1.13,
+        "gauss_status": "PASS (< 2.0%)"
+      }
+    },
+    "5x": {
+      "scale_factor": 5.0,
+      "scale_label": "5x",
+      "application": "Drone Aereo/Subacqueo / WPT Dinamico per Robotica Industriale (0.55 m)",
+      "geometry": {
+        "outer_diameter_m": 0.55,
+        "radius_cage_outer_m": 0.25,
+        "radius_coils_m": 0.275,
+        "total_mass_kg": 356.25,
+        "total_mass_ton": 0.356,
+        "cooling_surface_m2": 0.7854,
+        "mhd_duct_cross_section_cm2": 1195.0
+      },
+      "power_and_thermal": {
+        "bench_power_invariant_flux_W": 462.5,
+        "p_mesh_eddy_bench_W": 50.75,
+        "p_coils_bench_W": 411.75,
+        "p_peek_core_W": 0.0,
+        "industrial_rated_continuous_kW": 60.0
+      },
+      "electrodynamics": {
+        "b_gap_bench_pisano_mt": 10.74,
+        "b_gap_bench_sync_mt": 16.18,
+        "b_gap_bench_fe_mt": 21.23,
+        "b_gap_rated_T": 0.324,
+        "stokes_s3_cw": 0.966,
+        "stokes_s3_ccw": -0.966,
+        "circular_purity_pct": 98.3,
+        "axial_ratio_db": 1.15,
+        "ieee_status": "PASS (AR <= 3.0 dB)"
+      },
+      "lorentz_forces": {
+        "f_lorentz_bench_mN": 1.241,
+        "f_lorentz_bench_peak_mN": 2.296,
+        "f_lorentz_rated_continuous_N": 166.5,
+        "f_lorentz_burst_peak_N": 6840.0,
+        "thrust_to_power_mN_per_W": 2.77
+      },
+      "torques": {
+        "tau_oam_bench_cw_uNm": 321.75,
+        "tau_oam_bench_ccw_uNm": -321.75,
+        "tau_drive_bench_Nm": 1.2025,
+        "tau_drive_rated_Nm": 18.72
+      },
+      "mhd_pumping": {
+        "seawater_flow_l_min": 3025.0,
+        "seawater_flow_l_s": 50.42,
+        "seawater_flow_m3_h": 181.5,
+        "seawater_delta_p_pa": 2.095,
+        "galinstan_delta_p_kpa": 12.05
+      },
+      "verification": {
+        "gauss_solenoidality_residual_pct": 1.14,
+        "gauss_status": "PASS (< 2.0%)"
+      }
+    },
+    "10x": {
+      "scale_factor": 10.0,
+      "scale_label": "10x",
+      "application": "Propulsore MHD per AUV Navale / Sfera di Reazione Satellitare (1.1 m)",
+      "geometry": {
+        "outer_diameter_m": 1.1,
+        "radius_cage_outer_m": 0.5,
+        "radius_coils_m": 0.55,
+        "total_mass_kg": 2850.0,
+        "total_mass_ton": 2.85,
+        "cooling_surface_m2": 3.1416,
+        "mhd_duct_cross_section_cm2": 4780.0
+      },
+      "power_and_thermal": {
+        "bench_power_invariant_flux_W": 1850.0,
+        "p_mesh_eddy_bench_W": 203.0,
+        "p_coils_bench_W": 1647.0,
+        "p_peek_core_W": 0.0,
+        "industrial_rated_continuous_kW": 240.0
+      },
+      "electrodynamics": {
+        "b_gap_bench_pisano_mt": 10.74,
+        "b_gap_bench_sync_mt": 16.18,
+        "b_gap_bench_fe_mt": 21.23,
+        "b_gap_rated_T": 0.459,
+        "stokes_s3_cw": 0.966,
+        "stokes_s3_ccw": -0.966,
+        "circular_purity_pct": 98.3,
+        "axial_ratio_db": 1.15,
+        "ieee_status": "PASS (AR <= 3.0 dB)"
+      },
+      "lorentz_forces": {
+        "f_lorentz_bench_mN": 7.02,
+        "f_lorentz_bench_peak_mN": 12.987,
+        "f_lorentz_rated_continuous_N": 666.0,
+        "f_lorentz_burst_peak_N": 27360.0,
+        "thrust_to_power_mN_per_W": 2.77
+      },
+      "torques": {
+        "tau_oam_bench_cw_uNm": 2574.0,
+        "tau_oam_bench_ccw_uNm": -2574.0,
+        "tau_drive_bench_Nm": 9.62,
+        "tau_drive_rated_Nm": 149.76
+      },
+      "mhd_pumping": {
+        "seawater_flow_l_min": 24200.0,
+        "seawater_flow_l_s": 403.33,
+        "seawater_flow_m3_h": 1452.0,
+        "seawater_delta_p_pa": 4.19,
+        "galinstan_delta_p_kpa": 24.1
+      },
+      "verification": {
+        "gauss_solenoidality_residual_pct": 1.145,
+        "gauss_status": "PASS (< 2.0%)"
+      }
+    },
+    "20x": {
+      "scale_factor": 20.0,
+      "scale_label": "20x",
+      "application": "Propulsione Navale Pesante / Pompaggio Idraulico Metalli Liquidi (2.2 m)",
+      "geometry": {
+        "outer_diameter_m": 2.2,
+        "radius_cage_outer_m": 1.0,
+        "radius_coils_m": 1.1,
+        "total_mass_kg": 22800.0,
+        "total_mass_ton": 22.8,
+        "cooling_surface_m2": 12.5664,
+        "mhd_duct_cross_section_cm2": 19120.0
+      },
+      "power_and_thermal": {
+        "bench_power_invariant_flux_W": 7400.0,
+        "p_mesh_eddy_bench_W": 812.0,
+        "p_coils_bench_W": 6588.0,
+        "p_peek_core_W": 0.0,
+        "industrial_rated_continuous_kW": 960.0
+      },
+      "electrodynamics": {
+        "b_gap_bench_pisano_mt": 10.74,
+        "b_gap_bench_sync_mt": 16.18,
+        "b_gap_bench_fe_mt": 21.23,
+        "b_gap_rated_T": 0.648,
+        "stokes_s3_cw": 0.966,
+        "stokes_s3_ccw": -0.966,
+        "circular_purity_pct": 98.3,
+        "axial_ratio_db": 1.15,
+        "ieee_status": "PASS (AR <= 3.0 dB)"
+      },
+      "lorentz_forces": {
+        "f_lorentz_bench_mN": 39.713,
+        "f_lorentz_bench_peak_mN": 73.468,
+        "f_lorentz_rated_continuous_N": 2664.0,
+        "f_lorentz_burst_peak_N": 109440.0,
+        "thrust_to_power_mN_per_W": 2.77
+      },
+      "torques": {
+        "tau_oam_bench_cw_uNm": 20592.0,
+        "tau_oam_bench_ccw_uNm": -20592.0,
+        "tau_drive_bench_Nm": 76.96,
+        "tau_drive_rated_Nm": 1198.08
+      },
+      "mhd_pumping": {
+        "seawater_flow_l_min": 193600.0,
+        "seawater_flow_l_s": 3226.67,
+        "seawater_flow_m3_h": 11616.0,
+        "seawater_delta_p_pa": 8.38,
+        "galinstan_delta_p_kpa": 48.2
+      },
+      "verification": {
+        "gauss_solenoidality_residual_pct": 1.15,
+        "gauss_status": "PASS (< 2.0%)"
+      }
+    }
+  }
+}

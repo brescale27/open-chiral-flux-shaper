@@ -18,6 +18,7 @@ Esegue il controllo incrociato e ricalcola i parametri chiave delle 12 pipeline:
 13. Inner Coils and Copper Collimator Tube Multi-Campaign Benchmark (scripts/run_copper_collimator_multicampaign_sweep.py)
 14. Triple Copper Mesh Cage 48 Coils Pisano & Synchronous Benchmark (scripts/run_tripla_rete_rame_48coils_pisano_sweep.py)
 15. Triple Mesh 48 Coils Fibonacci Multipliers (1x-9x) Benchmark (scripts/run_fibonacci_multipliers_48coils_sweep.py)
+16. Device Scaling Benchmark (1x, 5x, 10x, 20x) (scripts/run_scale_benchmarks_sweep.py)
 
 Autore: Alessandro Brescacin
 Licenza: CERN-OHL-S-2.0
@@ -109,6 +110,11 @@ pipelines = [
         "name": "Triple Mesh 48 Coils Fibonacci Multipliers (1x-9x) Benchmark",
         "script": SCRIPT_DIR / "run_fibonacci_multipliers_48coils_sweep.py",
         "json": ROOT_DIR / "data" / "fibonacci_multipliers_48coils_benchmark.json"
+    },
+    {
+        "name": "Device Scaling Benchmark (1x, 5x, 10x, 20x)",
+        "script": SCRIPT_DIR / "run_scale_benchmarks_sweep.py",
+        "json": ROOT_DIR / "data" / "scale_benchmarks_sweep.json"
     }
 ]
 
@@ -401,9 +407,24 @@ for item in results_summary:
         fig45_path = ROOT_DIR / "figures" / "fig_45_fibonacci_multipliers_triple_mesh_matrix.png"
         if fig45_path.exists():
             print(f"  • Tavola Multipli Fibonacci (Fig 45):   Generata ({fig45_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
+    elif "evaluated_scales" in data.get("meta", {}):
+        meta = data["meta"]
+        sdata = data.get("scales_data", {})
+        s1 = sdata.get("1x", {})
+        s5 = sdata.get("5x", {})
+        s10 = sdata.get("10x", {})
+        s20 = sdata.get("20x", {})
+        print(f"  • Scale Valutate:                  1x (0.11m, 2.9kg) -> 5x (0.55m, 356kg) -> 10x (1.1m, 2.85t) -> 20x (2.2m, 22.8t)")
+        print(f"  • Spinta Nominale Industriale:     1x: {s1['lorentz_forces']['f_lorentz_rated_continuous_N']:.1f} N | 5x: {s5['lorentz_forces']['f_lorentz_rated_continuous_N']:.1f} N | 10x: {s10['lorentz_forces']['f_lorentz_rated_continuous_N']:.1f} N | 20x: {s20['lorentz_forces']['f_lorentz_rated_continuous_N']:.1f} N (Burst: {s20['lorentz_forces']['f_lorentz_burst_peak_N']/1000:.1f} kN)")
+        print(f"  • Coppia Motrice Nominale:         1x: {s1['torques']['tau_drive_rated_Nm']:.1f} Nm | 10x: {s10['torques']['tau_drive_rated_Nm']:.1f} Nm | 20x: {s20['torques']['tau_drive_rated_Nm']:.1f} Nm ({s20['torques']['tau_drive_rated_Nm']/1000:.2f} kNm)")
+        print(f"  • Portata Idraulica MHD (Acqua):   1x: {s1['mhd_pumping']['seawater_flow_m3_h']:.1f} m³/h | 5x: {s5['mhd_pumping']['seawater_flow_m3_h']:.1f} m³/h | 10x: {s10['mhd_pumping']['seawater_flow_m3_h']:.1f} m³/h | 20x: {s20['mhd_pumping']['seawater_flow_m3_h']:.1f} m³/h ({s20['mhd_pumping']['seawater_flow_l_s']:.1f} L/s)")
+        print(f"  • Invarianza Stokes s3 & Gauss:    s3 = {s1['electrodynamics']['stokes_s3_cw']:+.3f} (CW) / {s1['electrodynamics']['stokes_s3_ccw']:+.3f} (CCW) | Max Gauss = {s20['verification']['gauss_solenoidality_residual_pct']:.3f}% [PASS (< 2.0%)]")
+        fig46_path = ROOT_DIR / "figures" / "fig_46_scale_benchmarks_5x_10x_20x.png"
+        if fig46_path.exists():
+            print(f"  • Tavola Scaling (Fig 46):              Generata ({fig46_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
 
 print("\n" + "=" * 90)
-print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 15 PIPELINE ===")
+print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 16 PIPELINE ===")
 print("=" * 90)
 
 

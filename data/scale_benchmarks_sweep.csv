@@ -1,0 +1,5 @@
+scale_factor,scale_label,diameter_m,total_mass_kg,bench_power_W,rated_power_kW,b_gap_pisano_mt,b_gap_sync_mt,b_gap_rated_T,stokes_s3_cw,circular_purity_pct,f_lorentz_bench_mN,f_lorentz_rated_N,f_lorentz_burst_N,tau_oam_bench_uNm,tau_drive_rated_Nm,mhd_flow_seawater_m3_h,mhd_pressure_pa,gauss_residual_pct
+1.0,1x,0.11,2.85,18.5,2.4,10.74,16.18,0.145,0.966,98.3,0.022,6.66,273.6,2.57,0.15,1.5,0.419,1.13
+5.0,5x,0.55,356.25,462.5,60.0,10.74,16.18,0.324,0.966,98.3,1.241,166.5,6840.0,321.75,18.72,181.5,2.095,1.14
+10.0,10x,1.1,2850.0,1850.0,240.0,10.74,16.18,0.459,0.966,98.3,7.02,666.0,27360.0,2574.0,149.76,1452.0,4.19,1.145
+20.0,20x,2.2,22800.0,7400.0,960.0,10.74,16.18,0.648,0.966,98.3,39.713,2664.0,109440.0,20592.0,1198.08,11616.0,8.38,1.15
