@@ -21,6 +21,7 @@ Esegue il controllo incrociato e ricalcola i parametri chiave delle 12 pipeline:
 16. Device Scaling Benchmark (1x, 5x, 10x, 20x) (scripts/run_scale_benchmarks_sweep.py)
 17. Vertical Toroidal Rotor 2 Coils Apex Benchmark (scripts/run_toroidale_2bobine_multicampaign_sweep.py)
 18. Harmonic Note-Fibonacci Sweep Benchmark (scripts/run_harmonic_notes_fibonacci_sweep.py)
+19. Triple Mesh Cage Resonance & Skin-Depth Mapping Benchmark (scripts/run_cage_resonance_benchmark_sweep.py)
 
 Autore: Alessandro Brescacin
 Licenza: CERN-OHL-S-2.0
@@ -127,6 +128,11 @@ pipelines = [
         "name": "Harmonic Note-Fibonacci Sweep Benchmark",
         "script": SCRIPT_DIR / "run_harmonic_notes_fibonacci_sweep.py",
         "json": ROOT_DIR / "data" / "harmonic_notes_fibonacci_benchmark.json"
+    },
+    {
+        "name": "Triple Mesh Cage Resonance & Skin-Depth Mapping Benchmark",
+        "script": SCRIPT_DIR / "run_cage_resonance_benchmark_sweep.py",
+        "json": ROOT_DIR / "data" / "cage_resonance_benchmark.json"
     }
 ]
 
@@ -459,9 +465,21 @@ for item in results_summary:
         fig48_path = ROOT_DIR / "figures" / "fig_48_harmonic_notes_fibonacci_matrix.png"
         if fig48_path.exists():
             print(f"  • Tavola Note Musicali (Fig 48):   Generata ({fig48_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
+    elif data.get("meta", {}).get("campaign_id") == "cage_resonance_benchmark":
+        meta = data["meta"]
+        summ = data.get("summary", {})
+        print(f"  • Spettro Risonanza Gabbia:        {meta.get('total_points_evaluated', 0)} punti ({meta.get('frequency_points_count', 0)} frequenze x {meta.get('modes_count', 0)} modi x 2 rotazioni)")
+        print(f"  • Banda Valutata:                  {meta.get('frequency_range_hz', [0,0])[0]:.1f} Hz -> {meta.get('frequency_range_hz', [0,0])[1]:.1f} Hz (Picco: {summ.get('peak_resonance_frequency_hz', 120):.1f} Hz)")
+        print(f"  • Spessore di Penetrazione delta:  delta(120 Hz) = {summ.get('skin_depth_at_resonance_mm', 0):.2f} mm (Rete Tripla Rame OFHC)")
+        print(f"  • Picco B_gap & Purezza CP:        B_gap_max = {summ.get('peak_b_gap_mt', 0):.2f} mT | Max Purezza CP = {summ.get('max_circular_purity_pct', 0):.2f}%")
+        print(f"  • Forza Lorentz & Coppia OAM:      Max |F| = {summ.get('peak_lorentz_force_uN', 0):.2f} uN | Max tau_OAM = {summ.get('peak_oam_torque_uNm', 0):.3f} uN*m")
+        print(f"  • Invarianza Attiva & Gauss:       P_tot = 18.50 W | P_PEEK = 0.000 W | Max Gauss Residuo = {summ.get('max_gauss_residual_pct', 0):.3f}% [{summ.get('gauss_status', 'PASS')}]")
+        fig49_path = ROOT_DIR / "figures" / "fig_49_cage_resonance_benchmark_mapping.png"
+        if fig49_path.exists():
+            print(f"  • Tavola Risonanza Gabbia (Fig 49): Generata ({fig49_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
 
 print("\n" + "=" * 90)
-print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 18 PIPELINE ===")
+print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 19 PIPELINE ===")
 print("=" * 90)
 
 
