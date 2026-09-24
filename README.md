@@ -375,6 +375,12 @@ The repository provides high-resolution 300 DPI analytical plates and dynamic si
 | <img src="figures/fig_35_chiral_diode_asymmetric_pulse.png" width="900" alt="Chiral Diode & Asymmetric Gradient Pulse Architecture" /> |
 | *High-resolution multiphysics diagnostic plate for the Chiral Diode & Asymmetric Gradient Pulse variant. Panel A1: Geometric cross-section of the asymmetric gradient mantle showing Layer 1 (+45° high-dissipation conversion), Layer 2 (+15° adiabatic impedance match), Layer 3 (-22.5° anti-reflection shield with 0.000 W leakage), and central amagnetic PEEK core. Panel A2: Non-linear 3rd-harmonic chirped pulse waveform $I_k(t)$ suppressing phase ripple and elliptical distortion. Panel B1: Non-reciprocal power transmission establishing 7.95 dB forward-to-backward isolation ($T_{\text{fwd}} = 92.4\%$ vs $T_{\text{bwd}} = 14.8\%$, rectification factor $6.24\times$). Panel B2: Ultra-pure circular polarization hodograph ($\text{AR} = 0.15\text{ dB}$, $\eta_{\text{CP}} = 99.98\%$, Stokes $s_3 = +0.9998$) meeting IEEE criteria with zero angular variation. Panel C1: Dynamic kinematic acceleration ramp ($0 \to 1200\text{ RPM}$, $\alpha = 125.66\text{ rad/s}^2$) traversing the skin-depth resonance peak ($120\text{ Hz}$) with gyroscopic torque transient $\tau_z = 0.30\text{ Nm}$. Panel C2: Subbody thermal dissipation audit (coils: 1450.2 W, mantle: 172.2 W, PEEK core: 0.000 W, outer Layer 3: 0.000 W) and verified Gauss solenoidality residual (1.412%, PASS).* |
 
+### Figure 36: Constant-Power Spectral Response & Induced Potential Delta (CW vs CCW)
+| 25-1000 Hz Sweep, Rigorous $P_J \equiv 18.50\text{ W}$, Sine vs 60° Half-Wave Pulse Train, and $\Delta V$ Amplification |
+| :---: |
+| <img src="figures/fig_36_frequency_polarization_delta.png" width="900" alt="Constant-Power Spectral Response & Induced Potential Delta" /> |
+| *Multiphysics diagnostic plate for constant-power spectral response and induced potential delta ($\Delta V$). Panel A: Induced voltage delta $\Delta V(f_e)$ across a calibrated secondary pickup loop ($N = 100, R = 80\text{ mm}$), demonstrating clear resonance amplification peaking at $500\text{ Hz}$ ($\Delta V = 0.268\text{ V}$ for commutated half-waves vs $0.139\text{ V}$ for pure sine, a $1.93\times$ pulse boost). Panel B: Transverse induction amplitudes $B_{\perp, \text{CW}}$ vs $B_{\perp, \text{CCW}}$, showing maximum parity-breaking contrast $\Delta B_\perp = 1.40\text{ mT}$ at the chiral skin-depth resonance ($120\text{ Hz}$). Panel C: Energy constraint verification showing invariant power dissipation ($P_{\text{in}} \equiv 18.50\text{ W} \pm 0.00\text{ W}$) across all frequencies, zero PEEK core losses ($0.000\text{ W}$), and adapting coil current $I_{\text{rms}}(f)$. Panel D: Time-domain waveforms comparing continuous sinusoidal induction against 60° half-wave pulse train commutation spikes ($dB/dt$). Panel E: Induction boost factor $\Delta V_{\text{pulsed}} / \Delta V_{\text{sine}}$ ($1.80\text{--}2.08\times$) and contrast ratio $V_{\text{CW}} / V_{\text{CCW}}$. Panel F: Gauss solenoidality validation ($\text{Res}_{\text{Gauss}} \le 1.120\%$, PASS) and CERN-OHL-S-2.0 certification summary.* |
+
 ### Dynamic Video: Dual Orthogonal 90° Multi-Axis Electrodynamics
 | 3D Orthogonal Solenoid Current State, Dynamic Magnetic Vector & Real-Time Waveforms |
 | :---: |
@@ -393,7 +399,7 @@ The repository is fully reproducible using open-source tools:
 # 1. Environment Installation
 pip install -r requirements.txt
 
-# 2. Master Verification Suite (Cross-checks all 6 primary pipelines)
+# 2. Master Verification Suite (Cross-checks all 7 primary pipelines)
 python scripts/master_pipeline_verification.py --summary-only
 
 # 3. Kinematic Regimes Benchmark (14 states, CW vs CCW, Figure 31)
@@ -409,6 +415,9 @@ python variants/gabbia_sferica_chiral_wpt_actuator/\
 scripts/run_chiral_wpt_actuator_simulation.py
 
 # 6. Core Architectural Simulations:
+# - Constant-Power Spectral Response Sweep (CW vs CCW, Figure 36):
+python scripts/run_frequency_polarization_delta.py
+
 # - Chiral Diode & Asymmetric Pulse (48 Coils, Figure 35):
 python scripts/run_chiral_diode_asymmetric_pulse_simulation.py
 
@@ -457,6 +466,12 @@ Il progetto **Open Chiral Flux Shaper** è un framework multifisico computaziona
 - **Purezza Circolare Record ($\text{AR} = 0.15\text{ dB}$):** La distorsione armonica compensata azzera l'eccentricità dell'odografo trasverso, raggiungendo una purezza circolare quasi ideale $\eta_{\text{CP}} = 99.98\%$ ($s_3 = +0.9998$), di gran lunga superiore al vincolo normativo IEEE ($\le 3.0\text{ dB}$).
 - **Azzeramento Dissipazioni Esterne e nel Nucleo:** Le perdite correnti parassite (eddy) sono rigorosamente nulle nel nucleo in PEEK ($0.000\text{ W}$) e nello strato esterno Layer 3 a $-22.5^\circ$ ($0.000\text{ W}$), garantendo una schermatura elettromagnetica perfetta.
 - **Transitorio Cinematico Dinamico e Risonanza di Skin-Depth:** L'accelerazione lineare ($0 \to 1200\text{ RPM}$ in $1.0\text{ s}$, $\alpha = 125.66\text{ rad/s}^2$) attraversa in sicurezza il picco di risonanza magneto-meccanico a $120\text{ Hz}$ con una coppia giroscopica controllata ($\tau_z = 0.30\text{ Nm}$) e residuo solenoidale di Gauss pari a $1.412\%$ ($< 2.0\%$ PASS).
+
+### 6. Risposta Spettrale a Potenza Costante e Delta di Potenziale (CW vs CCW, Figura 36)
+- **Vincolo Rigoroso di Potenza Attiva ($P_J \equiv 18.50\text{ W}$):** A ogni step in frequenza (25–1000 Hz), l'ampiezza di corrente $I_{\text{rms}}(f)$ viene normalizzata per bilanciare l'aumento della resistenza AC da effetto pelle e le perdite per correnti parassite sul mantello ($P_{\text{coils}} + P_{\text{mantle}} \equiv 18.50\text{ W} \pm 0.00\text{ W}$), garantendo perdite rigorosamente nulle nel nucleo in PEEK ($0.000\text{ W}$).
+- **Picco di Contrasto Paritetico ($\Delta B_\perp$ a $120\text{ Hz}$):** L'asimmetria di campo trasverso $\Delta B_\perp = |B_{\perp,\text{CW}} - B_{\perp,\text{CCW}}|$ raggiunge il suo massimo ($1.40\text{ mT}$) esattamente in corrispondenza della risonanza di skin-depth del mantello chirale ($120\text{ Hz}$), confermando l'interazione chirale selettiva dell'elicità.
+- **Amplificazione del Delta di Potenziale ($\Delta V$) alle Semionde Pulsate:** La commutazione a semionde (*60° Half-Wave Pulse Train*) genera armoniche d'ordine superiore ($2\omega, 4\omega, \dots$) con transienti $dB/dt$ più ripidi, producendo un incremento del delta di potenziale indotto $\Delta V$ di circa **$1.93\times$** rispetto all'eccitazione sinusoidale pura ($\Delta V = 0.268\text{ V}$ vs $0.139\text{ V}$ su bobina secondaria a $R = 80\text{ mm}$ a $500\text{ Hz}$).
+- **Certificazione di Solenoidalità:** Il residuo di Gauss scala regolarmente con la frequenza ma resta compreso tra $0.317\%$ e $1.120\%$, ampiamente al di sotto della soglia limite di accettabilità ($< 2.0\%$ PASS).
 
 ---
 

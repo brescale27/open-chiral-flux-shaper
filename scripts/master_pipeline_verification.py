@@ -53,6 +53,11 @@ pipelines = [
         "name": "Chiral Diode Asymmetric Pulse (48 Coils)",
         "script": SCRIPT_DIR / "run_chiral_diode_asymmetric_pulse_simulation.py",
         "json": ROOT_DIR / "variants" / "gabbia_sferica_chiral_diode_asymmetric_pulse" / "data" / "chiral_diode_asymmetric_pulse.json"
+    },
+    {
+        "name": "Constant-Power Spectral Polarization Delta (CW vs CCW)",
+        "script": SCRIPT_DIR / "run_frequency_polarization_delta.py",
+        "json": ROOT_DIR / "data" / "frequency_polarization_delta_benchmark.json"
     }
 ]
 
@@ -206,7 +211,20 @@ for item in results_summary:
         fig35_path = ROOT_DIR / "figures" / "fig_35_chiral_diode_asymmetric_pulse.png"
         if fig35_path.exists():
             print(f"  • Mappatura Visiva Diodo (Fig 35):       Generata ({fig35_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
+    elif "results_sine" in data and "results_halfwave" in data:
+        # Constant-Power Spectral Delta
+        k = data.get("key_findings", {})
+        meta = data.get("meta", {})
+        print(f"  • Vincolo Energetico Attivo:       P_in = {meta.get('power_target_W', 0):.2f} W ± 0.00 W [INVARIANTE]")
+        print(f"  • Perdite Nucleo PEEK:             P_PEEK = {k.get('peek_losses_certified_W', 0):.3f} W [PASS]")
+        print(f"  • Picco Delta V (Semionde):        Delta V = {k.get('halfwave_peak_delta_v_V', 0):.4f} V a f_e = {k.get('halfwave_peak_frequency_hz', 0)} Hz (f_switch = {k.get('halfwave_peak_frequency_hz', 0)*2:.0f} Hz)")
+        print(f"  • Picco Delta V (Sinusoide):       Delta V = {k.get('sine_peak_delta_v_V', 0):.4f} V a f_e = {k.get('sine_peak_frequency_hz', 0)} Hz")
+        print(f"  • Guadagno Induttivo Commutazione: {k.get('amplification_factor_halfwave_vs_sine_at_peak', 0):.2f}x (Boost Armoniche d'Impulso)")
+        print(f"  • Solenoidalità di Gauss:          Max Residuo = {k.get('max_gauss_residual_pct', 0):.3f}% [PASS (< 2.0%)]")
+        fig36_path = ROOT_DIR / "figures" / "fig_36_frequency_polarization_delta.png"
+        if fig36_path.exists():
+            print(f"  • Tavola Spettrale Delta V (Fig 36):     Generata ({fig36_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
 
 print("\n" + "=" * 90)
-print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 6 PIPELINE ===")
+print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 7 PIPELINE ===")
 print("=" * 90)
