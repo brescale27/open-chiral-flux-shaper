@@ -381,6 +381,12 @@ The repository provides high-resolution 300 DPI analytical plates and dynamic si
 | <img src="figures/fig_36_frequency_polarization_delta.png" width="900" alt="Constant-Power Spectral Response & Induced Potential Delta" /> |
 | *Multiphysics diagnostic plate for constant-power spectral response and induced potential delta ($\Delta V$). Panel A: Induced voltage delta $\Delta V(f_e)$ across a calibrated secondary pickup loop ($N = 100, R = 80\text{ mm}$), demonstrating clear resonance amplification peaking at $500\text{ Hz}$ ($\Delta V = 0.268\text{ V}$ for commutated half-waves vs $0.139\text{ V}$ for pure sine, a $1.93\times$ pulse boost). Panel B: Transverse induction amplitudes $B_{\perp, \text{CW}}$ vs $B_{\perp, \text{CCW}}$, showing maximum parity-breaking contrast $\Delta B_\perp = 1.40\text{ mT}$ at the chiral skin-depth resonance ($120\text{ Hz}$). Panel C: Energy constraint verification showing invariant power dissipation ($P_{\text{in}} \equiv 18.50\text{ W} \pm 0.00\text{ W}$) across all frequencies, zero PEEK core losses ($0.000\text{ W}$), and adapting coil current $I_{\text{rms}}(f)$. Panel D: Time-domain waveforms comparing continuous sinusoidal induction against 60° half-wave pulse train commutation spikes ($dB/dt$). Panel E: Induction boost factor $\Delta V_{\text{pulsed}} / \Delta V_{\text{sine}}$ ($1.80\text{--}2.08\times$) and contrast ratio $V_{\text{CW}} / V_{\text{CCW}}$. Panel F: Gauss solenoidality validation ($\text{Res}_{\text{Gauss}} \le 1.120\%$, PASS) and CERN-OHL-S-2.0 certification summary.* |
 
+### Figure 37: Asymmetric Power Distance Sweep (CW 85% vs CCW 15% Across All 7 Variants)
+| Dual-Source Contra-Rotating Distance Sweep: Field Contrast, Polarization Purity, and Induction Across 7 Variants |
+| :---: |
+| <img src="figures/fig_37_asymmetric_power_distance_sweep.png" width="900" alt="Asymmetric Power Distance Sweep Across All 7 Variants" /> |
+| *Multiphysics benchmark plate for dual-source contra-rotating field superposition with asymmetric power distribution ($P_{\text{CW}} = 85\% = 15.725\text{ W}$ vs $P_{\text{CCW}} = 15\% = 2.775\text{ W}$, total input strictly constrained to $P_{\text{tot}} \equiv 18.50\text{ W}$ at $f_e = 100\text{ Hz}$) evaluated across separation distances $d = 55\text{--}300\text{ mm}$ for all 7 repository variants. Panel A: Transverse magnetic field contrast $\Delta B_\perp(d) = B_{\perp,\text{CW}} - B_{\perp,\text{CCW}}$, highlighting Chiral Diode supremacy ($10.14\text{ mT}$ at $55\text{ mm}$ to $0.06\text{ mT}$ at $300\text{ mm}$) and Dual Orthogonal 90° ($7.02\text{ mT}$ down to $0.04\text{ mT}$) over the unenhanced Single Rotor ($2.12\text{ mT}$ down to $0.01\text{ mT}$). Panel B: Normalized Stokes parameter $s_3(d)$, revealing near-total LHCP circular purity for Chiral Diode ($s_3 = +0.907$, $95.35\%$ LHCP) and Dual Orthogonal 90° ($s_3 = +0.833$, $91.63\%$ LHCP), whereas Single Rotor collapses to trivial power-ratio baseline $s_3 = (0.85-0.15)/(0.85+0.15) = +0.700$ ($85.00\%$ LHCP). Panel C: Induced voltage delta $\Delta V(d)$ across a calibrated secondary pickup loop ($N = 100, R_{\text{loop}} = 40\text{ mm}$), reaching $566.22\text{ mV}$ in near-field ($55\text{ mm}$) and $6.32\text{ mV}$ at $300\text{ mm}$ for Chiral Diode. Panel D: Polarization Axial Ratio $\text{AR}(d)$, proving Chiral Diode maintains quasi-circular polarization ($\text{AR} = 3.93\text{ dB}$, closest to the $3.0\text{ dB}$ IEEE circular threshold), contrasting with Single Rotor elliptical distortion ($\text{AR} = 7.78\text{ dB}$). Panel E: Inter-rotor axial interaction force $F_z(d)$, decaying strictly as $1/d^4$ in compliance with Maxwell's stress tensor. Panel F: Gauss solenoidality law residual ($\le 1.615\%$ across all distances, PASS $< 2.0\%$) and zero PEEK core losses ($0.000\text{ W}$ across all 7 variants).* |
+
 ### Dynamic Video: Dual Orthogonal 90° Multi-Axis Electrodynamics
 | 3D Orthogonal Solenoid Current State, Dynamic Magnetic Vector & Real-Time Waveforms |
 | :---: |
@@ -399,7 +405,7 @@ The repository is fully reproducible using open-source tools:
 # 1. Environment Installation
 pip install -r requirements.txt
 
-# 2. Master Verification Suite (Cross-checks all 7 primary pipelines)
+# 2. Master Verification Suite (Cross-checks all 8 primary pipelines)
 python scripts/master_pipeline_verification.py --summary-only
 
 # 3. Kinematic Regimes Benchmark (14 states, CW vs CCW, Figure 31)
@@ -415,6 +421,9 @@ python variants/gabbia_sferica_chiral_wpt_actuator/\
 scripts/run_chiral_wpt_actuator_simulation.py
 
 # 6. Core Architectural Simulations:
+# - Asymmetric Power Distance Sweep (CW 85% vs CCW 15%, Figure 37):
+python scripts/run_asymmetric_power_distance_sweep.py
+
 # - Constant-Power Spectral Response Sweep (CW vs CCW, Figure 36):
 python scripts/run_frequency_polarization_delta.py
 
@@ -472,6 +481,14 @@ Il progetto **Open Chiral Flux Shaper** è un framework multifisico computaziona
 - **Picco di Contrasto Paritetico ($\Delta B_\perp$ a $120\text{ Hz}$):** L'asimmetria di campo trasverso $\Delta B_\perp = |B_{\perp,\text{CW}} - B_{\perp,\text{CCW}}|$ raggiunge il suo massimo ($1.40\text{ mT}$) esattamente in corrispondenza della risonanza di skin-depth del mantello chirale ($120\text{ Hz}$), confermando l'interazione chirale selettiva dell'elicità.
 - **Amplificazione del Delta di Potenziale ($\Delta V$) alle Semionde Pulsate:** La commutazione a semionde (*60° Half-Wave Pulse Train*) genera armoniche d'ordine superiore ($2\omega, 4\omega, \dots$) con transienti $dB/dt$ più ripidi, producendo un incremento del delta di potenziale indotto $\Delta V$ di circa **$1.93\times$** rispetto all'eccitazione sinusoidale pura ($\Delta V = 0.268\text{ V}$ vs $0.139\text{ V}$ su bobina secondaria a $R = 80\text{ mm}$ a $500\text{ Hz}$).
 - **Certificazione di Solenoidalità:** Il residuo di Gauss scala regolarmente con la frequenza ma resta compreso tra $0.317\%$ e $1.120\%$, ampiamente al di sotto della soglia limite di accettabilità ($< 2.0\%$ PASS).
+
+### 7. Sovrapposizione di Campi a Potenza Asimmetrica e Sweep in Distanza (CW 85% vs CCW 15%, Figura 37)
+- **Assetto Elettrodinamico a Sorgente Duale Sbilanciata:** Simulazione sistematica dell'interazione controrotante a frequenza identica ($f_e = 100\text{ Hz}$) con ripartizione asimmetrica della potenza ($P_{\text{CW}} = 85\% = 15.725\text{ W}$ ad alta potenza, $P_{\text{CCW}} = 15\% = 2.775\text{ W}$ a bassa potenza, $P_{\text{tot}} \equiv 18.50\text{ W}$ rigidamente vincolata) su 10 distanze di separazione assiale ($d = 55\text{--}300\text{ mm}$) per tutte le 7 varianti del repository.
+- **Supremazia del Diodo Chirale (+45°/+15°/-22.5°):** Grazie all'effetto metasuperficie non-reciproco, il Diodo Chirale massimizza il contrasto e il delta di potenziale indotto ($\Delta V = 566.22\text{ mV}$ nel near-field a $55\text{ mm}$ e $6.32\text{ mV}$ a $300\text{ mm}$), preservando una purezza circolare LHCP elevatissima ($s_3 = +0.907$, purezza $95.35\%$, Axial Ratio $\text{AR} = 3.93\text{ dB}$, prossimo al limite $3.0\text{ dB}$ IEEE).
+- **Prestazioni del Doppio Gruppo Ortogonale 90° (48 Bobine):** Raggiunge $\Delta V = 439.01\text{ mV}$ a $55\text{ mm}$ ($3.80\text{ mV}$ a $300\text{ mm}$) con purezza LHCP al $91.63\%$ ($s_3 = +0.833$, $\text{AR} = 5.42\text{ dB}$), attestandosi come la migliore configurazione macro-chirale a simmetria rotazionale.
+- **Degrado e Collasso del Rotore Singolo Baseline:** In assenza del mantello chirale metastrutturato ($\eta_{\text{CW}} = \eta_{\text{CCW}} = 1.0$), il parametro di Stokes non beneficia di alcun guadagno chirale e si appiattisce sul valore banale imposto dal partitore di potenza $s_3 = (0.85-0.15)/(0.85+0.15) = +0.700$, con forte eccentricità ellittica ($\text{AR} = 7.78\text{ dB}$) e un delta indotto $\Delta V$ crollato a $141.29\text{ mV}$ a $55\text{ mm}$ e appena $0.87\text{ mV}$ a $300\text{ mm}$.
+- **Decadimento della Forza Assiale d'Interazione $F_z(d)$:** La forza elettrodinamica tra i due sistemi decresce strettamente con la legge di potenza dipolare $1/d^4$, in perfetta conformità con il tensore degli sforzi di Maxwell e la teoria classica.
+- **Verifica Solenoidale e Assenza di Perdite Parassite:** Il residuo del teorema di Gauss $\nabla \cdot \mathbf{B} = 0$ non supera mai l'$1.615\%$ ($< 2.0\%$ PASS) su tutto il dominio 3D e le perdite nel nucleo PEEK restano identicamente nulle ($0.000\text{ W}$) per tutte le 7 varianti.
 
 ---
 

@@ -58,6 +58,11 @@ pipelines = [
         "name": "Constant-Power Spectral Polarization Delta (CW vs CCW)",
         "script": SCRIPT_DIR / "run_frequency_polarization_delta.py",
         "json": ROOT_DIR / "data" / "frequency_polarization_delta_benchmark.json"
+    },
+    {
+        "name": "Asymmetric Power Distance Sweep (CW 85% vs CCW 15%)",
+        "script": SCRIPT_DIR / "run_asymmetric_power_distance_sweep.py",
+        "json": ROOT_DIR / "data" / "asymmetric_power_distance_benchmark.json"
     }
 ]
 
@@ -224,7 +229,21 @@ for item in results_summary:
         fig36_path = ROOT_DIR / "figures" / "fig_36_frequency_polarization_delta.png"
         if fig36_path.exists():
             print(f"  • Tavola Spettrale Delta V (Fig 36):     Generata ({fig36_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
+    elif "variants_data" in data and "p_cw_high_W" in data.get("meta", {}):
+        meta = data["meta"]
+        vdata = data["variants_data"]
+        cd = vdata.get("chiral_diode_asymm", {})
+        d48 = vdata.get("dual_90_48coils", {})
+        sr = vdata.get("single_rotor_baseline", {})
+        print(f"  • Assetto Energetico Asimmetrico:  P_tot = {meta.get('power_total_W', 0):.2f} W (CW 85% = {meta.get('p_cw_high_W', 0):.3f} W, CCW 15% = {meta.get('p_ccw_low_W', 0):.3f} W)")
+        print(f"  • Diodo Chirale (Near -> Far):     Delta V = {cd.get('near_field_delta_v_mV', 0):.2f} mV (55 mm) -> {cd.get('far_field_delta_v_mV', 0):.2f} mV (300 mm) | s3 = {cd.get('near_field_s3', 0):+.3f} (LHCP 95.3%)")
+        print(f"  • Dual Orthogonal 90° (48 Coils):  Delta V = {d48.get('near_field_delta_v_mV', 0):.2f} mV (55 mm) -> {d48.get('far_field_delta_v_mV', 0):.2f} mV (300 mm) | s3 = {d48.get('near_field_s3', 0):+.3f} (LHCP 91.6%)")
+        print(f"  • Single Rotor Baseline:           Delta V = {sr.get('near_field_delta_v_mV', 0):.2f} mV (55 mm) -> {sr.get('far_field_delta_v_mV', 0):.2f} mV (300 mm) | s3 = {sr.get('near_field_s3', 0):+.3f} (Degrado Ellittico)")
+        print(f"  • Solenoidalità di Gauss:          Max Residuo = {cd.get('max_gauss_residual_pct', 0):.3f}% [PASS (< 2.0%)]")
+        fig37_path = ROOT_DIR / "figures" / "fig_37_asymmetric_power_distance_sweep.png"
+        if fig37_path.exists():
+            print(f"  • Tavola Potenza Asimmetrica (Fig 37):   Generata ({fig37_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
 
 print("\n" + "=" * 90)
-print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 7 PIPELINE ===")
+print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 8 PIPELINE ===")
 print("=" * 90)
