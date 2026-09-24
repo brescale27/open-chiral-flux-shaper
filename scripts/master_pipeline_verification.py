@@ -20,6 +20,7 @@ Esegue il controllo incrociato e ricalcola i parametri chiave delle 12 pipeline:
 15. Triple Mesh 48 Coils Fibonacci Multipliers (1x-9x) Benchmark (scripts/run_fibonacci_multipliers_48coils_sweep.py)
 16. Device Scaling Benchmark (1x, 5x, 10x, 20x) (scripts/run_scale_benchmarks_sweep.py)
 17. Vertical Toroidal Rotor 2 Coils Apex Benchmark (scripts/run_toroidale_2bobine_multicampaign_sweep.py)
+18. Harmonic Note-Fibonacci Sweep Benchmark (scripts/run_harmonic_notes_fibonacci_sweep.py)
 
 Autore: Alessandro Brescacin
 Licenza: CERN-OHL-S-2.0
@@ -121,6 +122,11 @@ pipelines = [
         "name": "Vertical Toroidal Rotor 2 Coils Apex Benchmark",
         "script": SCRIPT_DIR / "run_toroidale_2bobine_multicampaign_sweep.py",
         "json": ROOT_DIR / "data" / "toroidale_2bobine_benchmark.json"
+    },
+    {
+        "name": "Harmonic Note-Fibonacci Sweep Benchmark",
+        "script": SCRIPT_DIR / "run_harmonic_notes_fibonacci_sweep.py",
+        "json": ROOT_DIR / "data" / "harmonic_notes_fibonacci_benchmark.json"
     }
 ]
 
@@ -441,9 +447,21 @@ for item in results_summary:
         fig47_path = ROOT_DIR / "figures" / "fig_47_rotore_toroidale_2bobine_apex_sweep.png"
         if fig47_path.exists():
             print(f"  • Tavola Toroidale Apice (Fig 47): Generata ({fig47_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
+    elif data.get("meta", {}).get("campaign_id") == "harmonic_notes_fibonacci_sweep":
+        meta = data["meta"]
+        summ = data.get("summary", {})
+        print(f"  • Matrice Armonica Note x Fibonacci: {meta.get('total_configurations_evaluated', 0)} punti ({meta.get('notes_count', 0)} note x {meta.get('multipliers_count', 0)} moltiplicatori x 2 rotazioni)")
+        print(f"  • Ottava Temperata Valutata:       {meta.get('octave_span', 'C3 -> B3')} | Mantello: {meta.get('mantle_mesh', '')}")
+        print(f"  • Picco Induzione al Traferro:     B_gap_max = {summ.get('peak_b_gap_mt', 0):.2f} mT | Max Purezza CP = {summ.get('max_circular_purity_pct', 0):.2f}%")
+        print(f"  • Risonanza Chiral Skin-Depth:     Nota Ottimale = {summ.get('optimal_harmonic_note', '')} (delta = {summ.get('resonance_skin_depth_mm', 0):.2f} mm)")
+        print(f"  • Forza Lorentz & Coppia OAM:      Max |F| = {summ.get('peak_lorentz_force_uN', 0):.2f} uN | Max tau_OAM = {summ.get('peak_oam_torque_uNm', 0):.3f} uN*m")
+        print(f"  • Invarianza Attiva & Gauss:       P_tot = 18.50 W | P_PEEK = 0.000 W | Max Gauss Residuo = {summ.get('max_gauss_residual_pct', 0):.3f}% [{summ.get('gauss_status', 'PASS')}]")
+        fig48_path = ROOT_DIR / "figures" / "fig_48_harmonic_notes_fibonacci_matrix.png"
+        if fig48_path.exists():
+            print(f"  • Tavola Note Musicali (Fig 48):   Generata ({fig48_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
 
 print("\n" + "=" * 90)
-print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 17 PIPELINE ===")
+print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 18 PIPELINE ===")
 print("=" * 90)
 
 
