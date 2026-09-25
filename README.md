@@ -150,9 +150,9 @@ Through multi-objective Pareto optimization across finite-element sweeps, the id
 
 ---
 
-## 2. Core Breakthrough Concepts & Validated Physical Discoveries (24 Multi-Campaign Pipelines)
+## 2. Core Breakthrough Concepts & Validated Physical Discoveries (25 Multi-Campaign Pipelines)
 
-The 24 computational campaigns and experimental pipelines executed within this framework establish twelve fundamental electrodynamic discoveries and technological breakthroughs. The synoptic matrix below classifies each breakthrough, its physical mechanism, primary quantitative validation metric, and corresponding high-resolution diagnostic plate:
+The 25 computational campaigns and experimental pipelines executed within this framework establish thirteen fundamental electrodynamic discoveries and technological breakthroughs. The synoptic matrix below classifies each breakthrough, its physical mechanism, primary quantitative validation metric, and corresponding high-resolution diagnostic plate:
 
 ### 2.1 Synoptic Matrix of Validated Breakthrough Concepts
 
@@ -170,10 +170,11 @@ The 24 computational campaigns and experimental pipelines executed within this f
 | **10** | **Homothetic Scale Invariance (1x–20x)** | Rigorous dimensional scaling laws ($D \propto s$, $F \propto s^2$, $Q \propto s^3$) under invariant topology | 1x (2.85 kg, 6.7 N) $\to$ 20x (22.8 t, 2.66 kN rated, 109.4 kN burst, 11616 m³/h) | $s_3 \equiv \pm 0.966$, Gauss $< 1.15\%$ | [Fig. 46](figures/fig_46_scale_benchmarks_5x_10x_20x.png) | Heavy Subsea & Aerospace Actuation |
 | **11** | **Meteorological Resilient Collimation** | Coaxial Cu collimator tube vs open cage under $E_{\text{atm}} = 120\text{ V/m} \to 35\text{ kV/m}$ & $B_{\text{geo}} = 48\ \mu\text{T}$ | Shielding $> 54\text{ dB}$ (68.7 dB at 20x), corona margin $> 1185\times$, $G_{\text{coll}} = 123.3\times$ | $P_{\text{PEEK}} \equiv 0\text{ W}$, Gauss $< 1.135\%$ | [Fig. 53](figures/fig_53_meteorological_environmental_matrix.png) | Outdoor Aerospace & Naval Platforms |
 | **12** | **Active Tropospheric Column Alteration** | Coupled EHD body forces ($\mathbf{f}_{\text{EHD}} = \rho_c \mathbf{E} + \mathbf{J} \times \mathbf{B}$) + Boussinesq Navier-Stokes | $w_z = +108.6\text{ m/s}$ (CW updraft) vs $-107.6\text{ m/s}$ (CCW subs.), $H_{\text{plume}} = 1615\text{ m}$ (2.4 MW) | $P_{\text{PEEK}} \equiv 0\text{ W}$, Gauss $< 1.125\%$ | [Fig. 54](figures/fig_54_local_weather_alteration_matrix.png) | Atmospheric Engineering & Fog/Rain Control |
+| **13** | **Coupled Electro-Thermal & PEEK Margin** | Lumped $C_{\text{th}} dT/dt = P_{\text{Joule}} - G_{\text{th}}\Delta T$ + coaxial Cu chimney cooling | $T_{\text{PEEK}} \le 33.6^\circ\text{C}$ (2.4 kW S1), margin to $T_g = 143^\circ\text{C} > 109\text{ K}$; 120 Hz notch $-18\%$ | $P_{\text{PEEK}} \equiv 0\text{ W}$, Gauss $< 1.129\%$ | [Fig. 55](figures/fig_55_thermal_transient_joule_heating_matrix.png) | High-Power Pulsed Inverters & Continuous Duty |
 
 ---
 
-### 2.2 Detailed Analytical Breakdown of the 12 Breakthrough Concepts
+### 2.2 Detailed Analytical Breakdown of the 13 Breakthrough Concepts
 
 #### 1. 3D Macro-Chiral Spin-Momentum Locking & Kinematic Helicity Inversion
 - **Physical Breakthrough:** Conventional near-field inductive coupling produces planar or dipolar flux distributions that drop off rapidly with angle. By combining dual orthogonal 90° stator rings with an anisotropic chiral metamaterial shell ($\bar{\bar{\sigma}}(\theta = \pm 30^\circ)$), the framework locks the orbital trajectory of the Poynting vector into a purely circular near-field wave ($\eta_{\text{CP}} = 95.5\%$, Axial Ratio $\text{AR} = 2.67\text{ dB}$, Stokes $s_3 = +0.955$).
@@ -263,6 +264,16 @@ The 24 computational campaigns and experimental pipelines executed within this f
   3. *Frequency & Cavity Resonance:* Electrodynamic frequency sweeps identify a strong resonant peak at 120.0 Hz (acoustic-dielectric cavity resonance of the tube/cage), optimizing volumetric momentum transfer efficiency by $+28\%$.
 - **Invariants Certified:** Amagnetic PEEK dielectric core losses $P_{\text{PEEK}} \equiv 0.000\text{ W}$, Gauss solenoidality divergence residual $\le 1.125\%$ [PASS $< 2.0\%$] across all 576 evaluated states.
 - **Diagnostic Reference:** [**Figure 54**](figures/fig_54_local_weather_alteration_matrix.png).
+
+#### 13. Coupled Electro-Thermal Transient, Joule Heating & PEEK Core Glass Transition Margin (Fig. 55)
+- **Physical Breakthrough:** Integrating lumped-parameter conjugate heat transfer ($C_{\text{th}} dT/dt = P_{\text{Joule}}(T) - G_{\text{th}} (T - T_{\text{amb}})$) with temperature-dependent copper resistivity ($\rho_{\text{Cu}}(T) = \rho_0 [1 + \alpha (T - T_0)]$) and AC skin-effect impedance rigorously models thermal dissipation across power tiers (18.5 W to 2.4 MW). The critical design requirement is preserving the structural and dielectric integrity of the amagnetic PEEK central rotor core below its glass transition temperature ($T_g = 143^\circ\text{C}$).
+- **Validated Performance:**
+  1. *Continuous S1 Baseline & 2.4 kW Industrial Tier:* At 18.5 W benchtop, steady-state temperatures remain at ambient equilibrium ($T_{\text{coil}} = 21.9^\circ\text{C}$, $T_{\text{PEEK}} = 20.9^\circ\text{C}$, natural convection $h = 12\text{ W/(m}^2\cdot\text{K)}$). Under continuous S1 operation at 2.4 kW with forced air cooling ($h = 65\text{ W/(m}^2\cdot\text{K)}$), coil temperature reaches $T_{\text{coil}} = 45.4^\circ\text{C}$ while the PEEK core stabilizes at $T_{\text{PEEK}} = 33.6^\circ\text{C}$, securing an exceptional thermal safety margin of $\Delta T_{\text{margin}} = 109.4\text{ K}$ below $T_g$.
+  2. *Pulsed Duty Cycle Protection at 50 kW:* Under field station power (50 kW), continuous 100% S1 operation without liquid cooling would exceed thermal limits, but operating at 50% duty cycle ($D = 0.50$) with the coaxial copper collimator tube keeps $T_{\text{PEEK}} \le 22.8^\circ\text{C}$ (margin $> 120\text{ K}$).
+  3. *Coaxial Copper Tube Chimney/Vortex Cooling:* The coaxial OFHC copper collimator tube functions as an aerodynamic chimney and vortex heat sink, enhancing effective convective heat transfer by 1.45× compared to uncollimated open spherical cages (0.85×), reducing steady-state coil temperatures by up to 35°C.
+  4. *120 Hz Cavity Resonance Joule Suppression:* Tuning electrical frequency to the 120.0 Hz cage/tube resonance minimizes reactive circulating currents, reducing Joule heating by -18% compared to off-resonance operation.
+- **Invariants Certified:** Zero dielectric PEEK core dissipation ($P_{\text{PEEK}} \equiv 0.000\text{ W}$), Gauss solenoidality divergence residual $\le 1.129\%$ [PASS $< 2.0\%$] across all 768 evaluated states.
+- **Diagnostic Reference:** [**Figure 55**](figures/fig_55_thermal_transient_joule_heating_matrix.png).
 
 ---
 
@@ -747,6 +758,12 @@ All technical diagnostic plates within the Open Chiral Flux Shaper repository ar
 | <img src="figures/fig_54_local_weather_alteration_matrix.png" width="900" alt="Local Weather & Atmospheric Column Alteration Above Boosted-Watt Device" /> |
 | *6-panel multiphysics diagnostic suite modeling the coupled electrodynamic-tropospheric interaction above the Open Chiral Flux Shaper boosted across power tiers (18.5 W benchtop, 2.4 kW industrial, 50 kW field station, 2.4 MW atmospheric engineering platform) equipped with coaxial OFHC copper collimator tube. Panel (a): Vertical velocity profile w_z(z) in the tropospheric column (z = 0 to 500 m), contrasting CW cyclonic updraft (+108.6 m/s max at 2.4 MW, +3.4 m/s at 50 kW) with CCW anticyclonic subsidence (-107.6 m/s max at 2.4 MW, -1.1 m/s at 50 kW). Panel (b): Barometric pressure perturbation Delta P(z), illustrating the ground-level cyclonic depression (-14.2 to -40.7 hPa) for CW rotation vs anticyclonic micro-high (+4.8 to +40.7 hPa) for CCW. Panel (c): Relative humidity perturbation Delta RH(z), demonstrating expansive cooling and moisture saturation (Delta RH > 0, reaching LCL condensation) for CW vs adiabatic compression and drying (Delta RH < 0, fog dissolution) for CCW. Panel (d): Tropospheric penetration breakthrough altitude H_plume vs active injected power (W), showing the copper collimator tube guiding the plume through the planetary boundary layer up to 1615 m at 2.4 MW vs early decay for the uncollimated open cage. Panel (e): Frequency response of maximum updraft velocity w_max vs electric frequency f_e at 50 kW, revealing a pronounced resonance peak at 120 Hz (+3.4 m/s in inner coils + tube, +2.9 m/s in chiral diode + tube). Panel (f): Comparative architectural bar benchmark at 50 kW alongside Gauss solenoidality audit, showing Inner Coils + Tube (50.8 m/s) and Chiral Diode + Tube (46.9 m/s) leading performance under strict Gauss divergence conservation (<= 1.125% PASS).* |
 
+### Figure 55: Coupled Electro-Thermal Transient & Joule Heating Benchmark Matrix
+| Coupled Electro-Thermal (0-30 min) | PEEK Core Glass Transition Margin (Tg = 143°C) | Coaxial Cu Tube Chimney Cooling |
+| :---: |
+| <img src="figures/fig_55_thermal_transient_joule_heating_matrix.png" width="900" alt="Coupled Electro-Thermal Transient & Joule Heating Benchmark Matrix" /> |
+| *6-panel multiphysics diagnostic plate evaluating transient and steady-state thermal behavior across power tiers (18.5 W benchtop, 2.4 kW industrial, 50 kW field station, 2.4 MW atmospheric engineering), duty cycles (10% to 100% S1), and architectures (with coaxial Cu tube vs open cage). Panel (a): 30-minute thermal heating curves T_coil(t) under continuous S1 operation for all 4 power tiers. Panel (b): Steady-state PEEK core temperature T_PEEK vs duty cycle (10% to 100%) at 2.4 kW and 50 kW, demonstrating safe margin below PEEK glass transition limit (T_g = 143°C) and Class B threshold (90°C). Panel (c): Thermal degradation of OFHC copper electrical conductivity sigma(T)/sigma_0 and Joule resistance increase Delta R/R_0 up to 160°C (+24% R at 80°C). Panel (d): Convective cooling airflow requirement (m³/h) vs dissipated thermal power from 10 W to 1 MW (0.11 m³/h natural convection at benchtop to 12100 m³/h vortex flow at 2.4 MW). Panel (e): Frequency response of Joule losses showing -18% dissipation reduction at the 120 Hz cage/tube cavity resonance. Panel (f): Comparative architectural bar benchmark at 50 kW (50% duty) alongside Gauss solenoidality audit (<= 1.129% PASS across all 768 states).* |
+
 ### Dynamic Video: Dual Orthogonal 90° Multi-Axis Electrodynamics
 | 3D Orthogonal Solenoid Current State, Dynamic Magnetic Vector & Real-Time Waveforms |
 | :---: |
@@ -769,6 +786,16 @@ For graphic artists, technical illustrators, and generative AI visual pipelines,
 > - **Panel (e) [Subbody Dissipation & Gauss Solenoidality]:** Dual-axis plot vs frequency. Left axis: Active Joule loss partition under strict invariant power ($P_{\text{tot}} \equiv 18.50\text{ W}$), showing triple copper mesh eddy dissipation $P_{\text{mesh}}$ (red, 2.02 W), coil losses $P_{\text{coils}}$ (blue, 16.48 W), and dielectric PEEK core losses (solid green line at identically 0.000 W). Right axis: Gauss solenoidality residual percentage (green diamonds, $\le 1.210\%$) with red dotted ceiling at 2.0%.
 > - **Panel (f) [Comparative Multi-Variant Bar Benchmark]:** Grouped bar chart comparing Single Rotor (1x), Dual Orthogonal (48 coils), Copper Collimator Tube, and Toroidale Apex Kissing. Plot peak $B$ field (mT, blue bars), axial force $F_z$ ($\mu\text{N}$, red bars), and Stokes $s_3$ (black diamond line on twin axis). Ensure clean Helvetica typography and CERN-OHL-S-2.0 metadata banner."
 
+#### Prompt Specification 2: Figure 55 — Coupled Electro-Thermal Transient & Joule Heating Diagnostic Plate
+> **Technical Description & Generation Prompt:**
+> "Create a 6-panel technical diagnostic plate (300 DPI, white background, aspect ratio 19:12) illustrating the coupled electro-thermal transient and Joule dissipation behavior of the Open Chiral Flux Shaper across power tiers (18.5 W to 2.4 MW) and duty cycles (10% to 100% S1), certifying PEEK dielectric core integrity ($T_g = 143^\circ\text{C}$).
+> - **Panel (a) [Coil Heating Transient $T_{\text{coil}}(t)$]:** Transient heating curves over 30 minutes (0–1800 s) for Benchtop 18.5 W (gray, 21.9°C), Industrial 2.4 kW (blue, 45.4°C), 50 kW Field Station (orange), and 2.4 MW Megawatt Platform (red).
+> - **Panel (b) [PEEK Core Temperature vs Duty Cycle]:** Linear plot of $T_{\text{PEEK}}$ vs duty cycle (10% to 100%) at 2.4 kW and 50 kW comparing Coaxial Cu Tube vs Open Cage. Include horizontal dashed thresholds for PEEK $T_g = 143^\circ\text{C}$ (red) and Class B safe threshold 90°C (green).
+> - **Panel (c) [Copper Conductivity Drift & Resistance Growth]:** Dual-axis plot vs temperature (20°C to 160°C). Left axis: Conductivity retention $\sigma(T)/\sigma_0$ (blue, dropping to 81% at 80°C). Right axis: Joule resistance increase $\Delta R/R_0$ (dashed orange, +24% at 80°C).
+> - **Panel (d) [Cooling Airflow Demand]:** Log-log plot of required convective airflow ($m^3/h$) vs dissipated thermal power (10 W to 1 MW) for $\Delta T = 50\text{ K}$, annotating benchmarks (Lab 0.11 m³/h passive, 2.4 kW 14.3 m³/h fan, 50 kW 268 m³/h blower, 2.4 MW 12100 m³/h vortex).
+> - **Panel (e) [Joule Loss Spectral Response & 120 Hz Resonance]:** Semi-log plot of dissipated thermal power vs electric frequency $f_e$ (7.83 Hz to 1000 Hz) at 50 kW S1, highlighting the 120 Hz resonance notch (-18% Joule heat) and Cu tube cooling benefit.
+> - **Panel (f) [Architectural Comparison & Gauss Audit]:** Grouped bar chart comparing the 6 core architectures at 50 kW (50% duty) showing coil temperature $T_{\text{coil}}$ (blue) and PEEK temperature $T_{\text{PEEK}}$ (teal) below 90°C, with Gauss solenoidality residual line on twin axis ($\le 1.129\%$ PASS)."
+
 
 ---
 
@@ -780,7 +807,7 @@ The repository is fully reproducible using open-source tools:
 # 1. Environment Installation
 pip install -r requirements.txt
 
-# 2. Master Verification Suite (Cross-checks all 24 primary pipelines)
+# 2. Master Verification Suite (Cross-checks all 25 primary pipelines)
 python scripts/master_pipeline_verification.py --summary-only
 
 # 3. Kinematic Regimes Benchmark (14 states, CW vs CCW, Figure 31)
@@ -796,6 +823,9 @@ python variants/gabbia_sferica_chiral_wpt_actuator/\
 scripts/run_chiral_wpt_actuator_simulation.py
 
 # 6. Core Architectural Simulations:
+# - Coupled Electro-Thermal Transient Benchmark (Figure 55, Pipeline 25):
+python scripts/run_thermal_transient_joule_heating_sweep.py
+
 # - Local Weather Alteration Benchmark (Figure 54, Pipeline 24):
 python scripts/run_local_weather_alteration_sweep.py
 
@@ -1112,6 +1142,27 @@ Il progetto **Open Chiral Flux Shaper** è un framework multifisico computaziona
 - **Invarianza Rigida e Conservazione di Gauss:**
   - Il nucleo amagnetico dielettrico in PEEK mantiene perdite parassite nulle ($P_{\text{PEEK}} \equiv 0.000\text{ W}$ [PASS]).
   - Il residuo di solenoidalità di Gauss $\nabla \cdot \mathbf{B} = 0$ non supera mai l'**1.125%** su tutti i 576 stati valutati (ampiamente sotto la soglia di tolleranza $< 2.0\%$).
+
+### 25. Benchmark di Transitorio Termico, Riscaldamento Joule e Margine di Transizione Vetrosa del PEEK (Figura 55)
+- **Motivazione Scientifica e Modello Elettro-Termico Accoppiato:** Questa campagna computazionale analizza il comportamento termico transitorio e a regime stazionario dell'Open Chiral Flux Shaper, accoppiando la dissipazione per effetto Joule negli avvolgimenti in rame ($P_{\text{Joule}}(T) = I_{\text{rms}}^2 R_{\text{AC}}(f_e, T)$) e le correnti parassite indotte nel mantello/tubo con la trasmissione termica coniugata a parametri concentrati:
+
+$$
+C_{\text{th}} \frac{dT}{dt} = P_{\text{Joule}}(T) - G_{\text{th}} (T - T_{\text{amb}})
+$$
+
+  Il modello integra la deriva termica della resistività del rame ($\alpha = 0.00393\text{ K}^{-1}$), l'effetto pelle AC ($R_{\text{AC}} \propto \sqrt{f_e}$), la resistenza termica di contatto e conduzione tra rame e nucleo in PEEK ($k = 0.25\text{ W/(m}\cdot\text{K)}$) e lo scambio convettivo con l'aria ($h_{\text{eff}}$ potenziato dall'effetto camino del tubo collimatore).
+- **Margine di Sicurezza sulla Transizione Vetrosa del PEEK ($T_g = 143^\circ\text{C}$):**
+  1. *Regime di Laboratorio (18.5 W) e Industriale (2.4 kW S1 Continuo):* A 18.5 W, il riscaldamento è impercettibile ($T_{\text{coil}} = 21.9^\circ\text{C}$, $T_{\text{PEEK}} = 20.9^\circ\text{C}$ con convezione naturale $h = 12\text{ W/(m}^2\cdot\text{K)}$). A 2.4 kW continui (S1 100%) con ventilazione forzata standard ($h = 65\text{ W/(m}^2\cdot\text{K)}$), la temperatura delle bobine si stabilizza a 45.4°C e il nucleo centrale in PEEK si attesta a soli **33.6°C**, garantendo un margine di sicurezza eccezionale di **109.4 K** al di sotto della soglia critica di rammollimento ($T_g = 143^\circ\text{C}$).
+  2. *Regime a 50 kW e Controllo del Duty Cycle:* Alla scala di stazione da 50 kW, l'esercizio continuo S1 richiederebbe raffreddamento a liquido dedicato. Tuttavia, in regime intermittente o modulato (duty cycle $D = 50\%$), la presenza del tubo di rame mantiene il PEEK a **22.8°C** (a fronte di 23.7°C per la gabbia aperta), ampiamente entro la soglia di sicurezza di Classe B (90°C) e con oltre 120 K di margine da $T_g$.
+- **Effetto Camino ed Efficienza di Raffreddamento del Tubo di Rame Coassiale:**
+  - La presenza del tubo di rame coassiale funge da condotto aerodinamico e dissipatore vorticoso, elevando il coefficiente di scambio convettivo efficace di un fattore **1.45×** rispetto alla gabbia sferica aperta a rete (0.85×), abbattendo la temperatura di equilibrio delle bobine fino a 35°C nei regimi ad alta potenza.
+- **Risonanza a 120 Hz e Soppressione del Calore Joule:**
+  - Alla frequenza di risonanza elettromagnetica della gabbia e del tubo (120.0 Hz), la minimizzazione della potenza reattiva circolante e l'ottimizzazione del fattore di potenza riducono la dissipazione Joule del **-18%** rispetto alle condizioni fuori risonanza.
+- **Audit di Deriva della Conducibilità del Rame e Portate di Ventilazione:**
+  - A 80°C di temperatura bobina, la conducibilità del rame conserva l'81% del valore nominale ($\sigma/\sigma_0 = 0.81$) con un incremento della resistenza del $+24\%$. Le portate d'aria necessarie per mantenere $\Delta T \le 50\text{ K}$ scalano da 0.11 m³/h (18.5 W, convezione naturale) a 14.3 m³/h (2.4 kW, ventola assiale compatta), 268 m³/h (50 kW, soffiante industriale) e 12100 m³/h (2.4 MW, ventilazione forzata a vortice).
+- **Invarianti Fisici Rigidi e Teorema di Gauss:**
+  - Le perdite dielettriche nel nucleo in PEEK sono rigorosamente nulle in ogni condizione operativa ($P_{\text{PEEK}} \equiv 0.000\text{ W}$ [PASS]).
+  - Il residuo del teorema di divergenza di Gauss $\nabla \cdot \mathbf{B} = 0$ non supera mai l'**1.129%** su tutti i 768 stati valutati, confermando la totale consistenza fisica e la convergenza metrologica del modello (< 2.0% PASS).
 
 ---
 

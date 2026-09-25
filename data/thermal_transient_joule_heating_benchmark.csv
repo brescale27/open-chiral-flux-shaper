@@ -1,0 +1,769 @@
+power_id,power_name,p_active_w,scale,duty_id,duty_pct,config_id,config_name,has_copper_tube,frequency_hz,t_coil_ss_c,t_peek_ss_c,margin_to_tg_c,peek_status,sigma_retention_pct,p_joule_heat_w,cooling_airflow_m3_h,p_peek_invariance_w,gauss_residual_pct
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,25.0,20.18,20.09,122.91,SAFE (< 143°C),99.93,0.19,0.01,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,50.0,20.18,20.09,122.91,SAFE (< 143°C),99.93,0.19,0.01,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,60.0,20.18,20.09,122.91,SAFE (< 143°C),99.93,0.19,0.01,0.0,1.116
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,100.0,20.18,20.09,122.91,SAFE (< 143°C),99.93,0.19,0.01,0.0,1.105
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,120.0,20.14,20.07,122.93,SAFE (< 143°C),99.94,0.15,0.01,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,150.0,20.19,20.09,122.91,SAFE (< 143°C),99.93,0.2,0.01,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,500.0,20.25,20.12,122.88,SAFE (< 143°C),99.9,0.26,0.01,0.0,1.114
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,1000.0,20.3,20.15,122.85,SAFE (< 143°C),99.88,0.31,0.01,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,25.0,20.21,20.1,122.9,SAFE (< 143°C),99.92,0.22,0.01,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,50.0,20.21,20.1,122.9,SAFE (< 143°C),99.92,0.22,0.01,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,60.0,20.21,20.1,122.9,SAFE (< 143°C),99.92,0.22,0.01,0.0,1.116
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,100.0,20.21,20.1,122.9,SAFE (< 143°C),99.92,0.22,0.01,0.0,1.105
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,120.0,20.17,20.08,122.92,SAFE (< 143°C),99.93,0.17,0.01,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,150.0,20.22,20.11,122.89,SAFE (< 143°C),99.91,0.23,0.01,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,500.0,20.29,20.14,122.86,SAFE (< 143°C),99.89,0.3,0.01,0.0,1.114
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,1000.0,20.35,20.17,122.83,SAFE (< 143°C),99.86,0.36,0.02,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,25.0,20.19,20.09,122.91,SAFE (< 143°C),99.92,0.2,0.01,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,50.0,20.19,20.09,122.91,SAFE (< 143°C),99.92,0.2,0.01,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,60.0,20.2,20.09,122.91,SAFE (< 143°C),99.92,0.2,0.01,0.0,1.116
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,100.0,20.19,20.09,122.91,SAFE (< 143°C),99.92,0.2,0.01,0.0,1.105
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,120.0,20.15,20.07,122.93,SAFE (< 143°C),99.94,0.16,0.01,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,150.0,20.2,20.1,122.9,SAFE (< 143°C),99.92,0.21,0.01,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,500.0,20.26,20.13,122.87,SAFE (< 143°C),99.9,0.27,0.01,0.0,1.114
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,1000.0,20.32,20.15,122.85,SAFE (< 143°C),99.87,0.33,0.01,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,25.0,20.22,20.1,122.9,SAFE (< 143°C),99.91,0.23,0.01,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,50.0,20.22,20.11,122.89,SAFE (< 143°C),99.91,0.23,0.01,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,60.0,20.22,20.11,122.89,SAFE (< 143°C),99.91,0.23,0.01,0.0,1.116
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,100.0,20.22,20.11,122.89,SAFE (< 143°C),99.91,0.23,0.01,0.0,1.105
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,120.0,20.17,20.08,122.92,SAFE (< 143°C),99.93,0.18,0.01,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,150.0,20.23,20.11,122.89,SAFE (< 143°C),99.91,0.24,0.01,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,500.0,20.3,20.14,122.86,SAFE (< 143°C),99.88,0.31,0.01,0.0,1.114
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,1000.0,20.36,20.17,122.83,SAFE (< 143°C),99.86,0.38,0.02,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,25.0,20.2,20.1,122.9,SAFE (< 143°C),99.92,0.21,0.01,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,50.0,20.21,20.1,122.9,SAFE (< 143°C),99.92,0.21,0.01,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,60.0,20.21,20.1,122.9,SAFE (< 143°C),99.92,0.21,0.01,0.0,1.116
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,100.0,20.2,20.1,122.9,SAFE (< 143°C),99.92,0.21,0.01,0.0,1.105
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,120.0,20.16,20.08,122.92,SAFE (< 143°C),99.94,0.17,0.01,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,150.0,20.21,20.1,122.9,SAFE (< 143°C),99.92,0.22,0.01,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,500.0,20.28,20.13,122.87,SAFE (< 143°C),99.89,0.29,0.01,0.0,1.114
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,1000.0,20.34,20.16,122.84,SAFE (< 143°C),99.87,0.35,0.01,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,25.0,20.44,20.21,122.79,SAFE (< 143°C),99.83,0.36,0.02,0.0,1.129
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,50.0,20.44,20.21,122.79,SAFE (< 143°C),99.83,0.36,0.02,0.0,1.126
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,60.0,20.45,20.21,122.79,SAFE (< 143°C),99.83,0.36,0.02,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,100.0,20.44,20.21,122.79,SAFE (< 143°C),99.83,0.36,0.02,0.0,1.11
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,120.0,20.35,20.17,122.83,SAFE (< 143°C),99.86,0.28,0.01,0.0,1.117
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,150.0,20.46,20.22,122.78,SAFE (< 143°C),99.82,0.37,0.02,0.0,1.129
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,500.0,20.6,20.29,122.71,SAFE (< 143°C),99.76,0.49,0.02,0.0,1.119
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,1000.0,20.73,20.35,122.65,SAFE (< 143°C),99.71,0.59,0.03,0.0,1.117
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,25.0,20.45,20.22,122.78,SAFE (< 143°C),99.82,0.47,0.02,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,50.0,20.46,20.22,122.78,SAFE (< 143°C),99.82,0.48,0.02,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,60.0,20.46,20.22,122.78,SAFE (< 143°C),99.82,0.48,0.02,0.0,1.116
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,100.0,20.46,20.22,122.78,SAFE (< 143°C),99.82,0.48,0.02,0.0,1.105
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,120.0,20.36,20.17,122.83,SAFE (< 143°C),99.86,0.38,0.02,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,150.0,20.48,20.23,122.77,SAFE (< 143°C),99.81,0.5,0.02,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,500.0,20.62,20.3,122.7,SAFE (< 143°C),99.76,0.65,0.03,0.0,1.114
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,1000.0,20.76,20.36,122.64,SAFE (< 143°C),99.7,0.79,0.03,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,25.0,20.52,20.25,122.75,SAFE (< 143°C),99.79,0.55,0.02,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,50.0,20.53,20.25,122.75,SAFE (< 143°C),99.79,0.55,0.02,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,60.0,20.53,20.26,122.74,SAFE (< 143°C),99.79,0.55,0.02,0.0,1.116
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,100.0,20.53,20.25,122.75,SAFE (< 143°C),99.79,0.55,0.02,0.0,1.105
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,120.0,20.42,20.2,122.8,SAFE (< 143°C),99.84,0.43,0.02,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,150.0,20.55,20.26,122.74,SAFE (< 143°C),99.78,0.57,0.02,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,500.0,20.72,20.34,122.66,SAFE (< 143°C),99.72,0.75,0.03,0.0,1.114
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,1000.0,20.87,20.42,122.58,SAFE (< 143°C),99.66,0.91,0.04,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,25.0,20.48,20.23,122.77,SAFE (< 143°C),99.81,0.5,0.02,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,50.0,20.49,20.23,122.77,SAFE (< 143°C),99.81,0.51,0.02,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,60.0,20.49,20.23,122.77,SAFE (< 143°C),99.81,0.51,0.02,0.0,1.116
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,100.0,20.49,20.23,122.77,SAFE (< 143°C),99.81,0.51,0.02,0.0,1.105
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,120.0,20.38,20.18,122.82,SAFE (< 143°C),99.85,0.4,0.02,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,150.0,20.51,20.24,122.76,SAFE (< 143°C),99.8,0.53,0.02,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,500.0,20.66,20.32,122.68,SAFE (< 143°C),99.74,0.69,0.03,0.0,1.114
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,1000.0,20.8,20.38,122.62,SAFE (< 143°C),99.69,0.83,0.04,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,25.0,20.55,20.26,122.74,SAFE (< 143°C),99.79,0.57,0.02,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,50.0,20.55,20.27,122.73,SAFE (< 143°C),99.78,0.58,0.02,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,60.0,20.55,20.27,122.73,SAFE (< 143°C),99.78,0.58,0.02,0.0,1.116
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,100.0,20.55,20.26,122.74,SAFE (< 143°C),99.78,0.57,0.02,0.0,1.105
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,120.0,20.43,20.21,122.79,SAFE (< 143°C),99.83,0.45,0.02,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,150.0,20.57,20.27,122.73,SAFE (< 143°C),99.78,0.6,0.03,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,500.0,20.75,20.36,122.64,SAFE (< 143°C),99.71,0.78,0.03,0.0,1.114
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,1000.0,20.91,20.44,122.56,SAFE (< 143°C),99.64,0.95,0.04,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,25.0,20.51,20.24,122.76,SAFE (< 143°C),99.8,0.53,0.02,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,50.0,20.51,20.25,122.75,SAFE (< 143°C),99.8,0.54,0.02,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,60.0,20.52,20.25,122.75,SAFE (< 143°C),99.8,0.54,0.02,0.0,1.116
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,100.0,20.51,20.25,122.75,SAFE (< 143°C),99.8,0.53,0.02,0.0,1.105
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,120.0,20.4,20.19,122.81,SAFE (< 143°C),99.84,0.42,0.02,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,150.0,20.53,20.26,122.74,SAFE (< 143°C),99.79,0.56,0.02,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,500.0,20.7,20.33,122.67,SAFE (< 143°C),99.73,0.73,0.03,0.0,1.114
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,1000.0,20.85,20.41,122.59,SAFE (< 143°C),99.67,0.88,0.04,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,25.0,21.1,20.52,122.48,SAFE (< 143°C),99.57,0.89,0.04,0.0,1.129
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,50.0,21.11,20.53,122.47,SAFE (< 143°C),99.56,0.9,0.04,0.0,1.126
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,60.0,21.12,20.53,122.47,SAFE (< 143°C),99.56,0.91,0.04,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,100.0,21.11,20.53,122.47,SAFE (< 143°C),99.57,0.9,0.04,0.0,1.11
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,120.0,20.87,20.42,122.58,SAFE (< 143°C),99.66,0.71,0.03,0.0,1.117
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,150.0,21.15,20.55,122.45,SAFE (< 143°C),99.55,0.94,0.04,0.0,1.129
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,500.0,21.51,20.72,122.28,SAFE (< 143°C),99.41,1.23,0.05,0.0,1.119
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,1000.0,21.83,20.87,122.13,SAFE (< 143°C),99.28,1.49,0.06,0.0,1.117
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,25.0,20.91,20.44,122.56,SAFE (< 143°C),99.64,0.95,0.04,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,50.0,20.92,20.44,122.56,SAFE (< 143°C),99.64,0.96,0.04,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,60.0,20.92,20.44,122.56,SAFE (< 143°C),99.64,0.96,0.04,0.0,1.116
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,100.0,20.92,20.44,122.56,SAFE (< 143°C),99.64,0.96,0.04,0.0,1.105
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,120.0,20.72,20.35,122.65,SAFE (< 143°C),99.72,0.75,0.03,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,150.0,20.96,20.46,122.54,SAFE (< 143°C),99.63,1.0,0.04,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,500.0,21.25,20.6,122.4,SAFE (< 143°C),99.51,1.3,0.06,0.0,1.114
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,1000.0,21.52,20.73,122.27,SAFE (< 143°C),99.41,1.58,0.07,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,25.0,21.05,20.5,122.5,SAFE (< 143°C),99.59,1.09,0.05,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,50.0,21.06,20.51,122.49,SAFE (< 143°C),99.58,1.11,0.05,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,60.0,21.07,20.51,122.49,SAFE (< 143°C),99.58,1.11,0.05,0.0,1.116
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,100.0,21.06,20.51,122.49,SAFE (< 143°C),99.59,1.1,0.05,0.0,1.105
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,120.0,20.83,20.4,122.6,SAFE (< 143°C),99.67,0.87,0.04,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,150.0,21.1,20.53,122.47,SAFE (< 143°C),99.57,1.15,0.05,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,500.0,21.44,20.69,122.31,SAFE (< 143°C),99.44,1.5,0.06,0.0,1.114
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,1000.0,21.75,20.84,122.16,SAFE (< 143°C),99.32,1.82,0.08,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,25.0,20.96,20.46,122.54,SAFE (< 143°C),99.62,1.0,0.04,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,50.0,20.98,20.47,122.53,SAFE (< 143°C),99.62,1.02,0.04,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,60.0,20.98,20.47,122.53,SAFE (< 143°C),99.62,1.02,0.04,0.0,1.116
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,100.0,20.97,20.47,122.53,SAFE (< 143°C),99.62,1.01,0.04,0.0,1.105
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,120.0,20.77,20.37,122.63,SAFE (< 143°C),99.7,0.8,0.03,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,150.0,21.01,20.49,122.51,SAFE (< 143°C),99.6,1.05,0.04,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,500.0,21.32,20.63,122.37,SAFE (< 143°C),99.48,1.38,0.06,0.0,1.114
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,1000.0,21.61,20.77,122.23,SAFE (< 143°C),99.37,1.67,0.07,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,25.0,21.09,20.52,122.48,SAFE (< 143°C),99.57,1.14,0.05,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,50.0,21.11,20.53,122.47,SAFE (< 143°C),99.57,1.15,0.05,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,60.0,21.11,20.53,122.47,SAFE (< 143°C),99.57,1.16,0.05,0.0,1.116
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,100.0,21.1,20.53,122.47,SAFE (< 143°C),99.57,1.15,0.05,0.0,1.105
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,120.0,20.87,20.42,122.58,SAFE (< 143°C),99.66,0.9,0.04,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,150.0,21.15,20.55,122.45,SAFE (< 143°C),99.55,1.2,0.05,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,500.0,21.5,20.72,122.28,SAFE (< 143°C),99.41,1.56,0.07,0.0,1.114
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,1000.0,21.82,20.87,122.13,SAFE (< 143°C),99.29,1.9,0.08,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,25.0,21.02,20.49,122.51,SAFE (< 143°C),99.6,1.06,0.04,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,50.0,21.03,20.49,122.51,SAFE (< 143°C),99.6,1.07,0.05,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,60.0,21.03,20.5,122.5,SAFE (< 143°C),99.6,1.08,0.05,0.0,1.116
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,100.0,21.03,20.49,122.51,SAFE (< 143°C),99.6,1.07,0.05,0.0,1.105
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,120.0,20.81,20.39,122.61,SAFE (< 143°C),99.68,0.84,0.04,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,150.0,21.07,20.51,122.49,SAFE (< 143°C),99.58,1.11,0.05,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,500.0,21.4,20.67,122.33,SAFE (< 143°C),99.45,1.46,0.06,0.0,1.114
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,1000.0,21.7,20.81,122.19,SAFE (< 143°C),99.34,1.77,0.07,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,25.0,22.21,21.05,121.95,SAFE (< 143°C),99.14,1.79,0.08,0.0,1.129
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,50.0,22.24,21.07,121.93,SAFE (< 143°C),99.13,1.82,0.08,0.0,1.126
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,60.0,22.24,21.07,121.93,SAFE (< 143°C),99.13,1.82,0.08,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,100.0,22.23,21.06,121.94,SAFE (< 143°C),99.13,1.81,0.08,0.0,1.11
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,120.0,21.75,20.84,122.16,SAFE (< 143°C),99.32,1.42,0.06,0.0,1.117
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,150.0,22.32,21.11,121.89,SAFE (< 143°C),99.1,1.88,0.08,0.0,1.129
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,500.0,23.03,21.45,121.55,SAFE (< 143°C),98.82,2.47,0.1,0.0,1.119
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,1000.0,23.69,21.76,121.24,SAFE (< 143°C),98.57,3.0,0.13,0.0,1.117
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,25.0,21.82,20.87,122.13,SAFE (< 143°C),99.29,1.9,0.08,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,50.0,21.85,20.89,122.11,SAFE (< 143°C),99.28,1.93,0.08,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,60.0,21.85,20.89,122.11,SAFE (< 143°C),99.28,1.93,0.08,0.0,1.116
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,100.0,21.84,20.88,122.12,SAFE (< 143°C),99.28,1.92,0.08,0.0,1.105
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,120.0,21.45,20.69,122.31,SAFE (< 143°C),99.43,1.51,0.06,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,150.0,21.92,20.92,122.08,SAFE (< 143°C),99.25,2.0,0.08,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,500.0,22.51,21.2,121.8,SAFE (< 143°C),99.02,2.62,0.11,0.0,1.114
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,1000.0,23.05,21.46,121.54,SAFE (< 143°C),98.82,3.18,0.13,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,25.0,22.11,21.01,121.99,SAFE (< 143°C),99.18,2.19,0.09,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,50.0,22.13,21.02,121.98,SAFE (< 143°C),99.17,2.23,0.09,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,60.0,22.14,21.03,121.97,SAFE (< 143°C),99.17,2.23,0.09,0.0,1.116
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,100.0,22.13,21.02,121.98,SAFE (< 143°C),99.17,2.22,0.09,0.0,1.105
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,120.0,21.67,20.8,122.2,SAFE (< 143°C),99.35,1.74,0.07,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,150.0,22.21,21.06,121.94,SAFE (< 143°C),99.14,2.31,0.1,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,500.0,22.9,21.39,121.61,SAFE (< 143°C),98.87,3.02,0.13,0.0,1.114
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,1000.0,23.52,21.69,121.31,SAFE (< 143°C),98.63,3.67,0.15,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,25.0,21.93,20.93,122.07,SAFE (< 143°C),99.25,2.01,0.08,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,50.0,21.96,20.94,122.06,SAFE (< 143°C),99.24,2.04,0.09,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,60.0,21.96,20.94,122.06,SAFE (< 143°C),99.23,2.05,0.09,0.0,1.116
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,100.0,21.95,20.94,122.06,SAFE (< 143°C),99.24,2.03,0.09,0.0,1.105
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,120.0,21.53,20.74,122.26,SAFE (< 143°C),99.4,1.6,0.07,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,150.0,22.03,20.97,122.03,SAFE (< 143°C),99.21,2.12,0.09,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,500.0,22.66,21.27,121.73,SAFE (< 143°C),98.97,2.77,0.12,0.0,1.114
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,1000.0,23.23,21.55,121.45,SAFE (< 143°C),98.75,3.37,0.14,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,25.0,22.19,21.05,121.95,SAFE (< 143°C),99.15,2.29,0.1,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,50.0,22.22,21.07,121.93,SAFE (< 143°C),99.13,2.32,0.1,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,60.0,22.23,21.07,121.93,SAFE (< 143°C),99.13,2.32,0.1,0.0,1.116
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,100.0,22.21,21.06,121.94,SAFE (< 143°C),99.14,2.31,0.1,0.0,1.105
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,120.0,21.74,20.83,122.17,SAFE (< 143°C),99.32,1.81,0.08,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,150.0,22.3,21.1,121.9,SAFE (< 143°C),99.1,2.4,0.1,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,500.0,23.02,21.45,121.55,SAFE (< 143°C),98.83,3.15,0.13,0.0,1.114
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,1000.0,23.67,21.76,121.24,SAFE (< 143°C),98.58,3.83,0.16,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,25.0,22.04,20.98,122.02,SAFE (< 143°C),99.2,2.13,0.09,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,50.0,22.07,20.99,122.01,SAFE (< 143°C),99.19,2.16,0.09,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,60.0,22.07,20.99,122.01,SAFE (< 143°C),99.19,2.16,0.09,0.0,1.116
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,100.0,22.06,20.99,122.01,SAFE (< 143°C),99.2,2.15,0.09,0.0,1.105
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,120.0,21.62,20.78,122.22,SAFE (< 143°C),99.37,1.69,0.07,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,150.0,22.15,21.03,121.97,SAFE (< 143°C),99.16,2.24,0.09,0.0,1.124
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,500.0,22.81,21.35,121.65,SAFE (< 143°C),98.91,2.93,0.12,0.0,1.114
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,1000.0,23.41,21.64,121.36,SAFE (< 143°C),98.68,3.56,0.15,0.0,1.112
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,25.0,24.44,22.12,120.88,SAFE (< 143°C),98.28,3.62,0.15,0.0,1.129
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,50.0,24.5,22.14,120.86,SAFE (< 143°C),98.26,3.67,0.15,0.0,1.126
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,60.0,24.51,22.15,120.85,SAFE (< 143°C),98.26,3.68,0.15,0.0,1.121
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,100.0,24.48,22.13,120.87,SAFE (< 143°C),98.27,3.65,0.15,0.0,1.11
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,120.0,23.52,21.68,121.32,SAFE (< 143°C),98.63,2.87,0.12,0.0,1.117
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,150.0,24.67,22.22,120.78,SAFE (< 143°C),98.2,3.8,0.16,0.0,1.129
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,500.0,26.13,22.91,120.09,SAFE (< 143°C),97.65,4.99,0.21,0.0,1.119
+bench_18w,Benchtop Lab (18.5 W),18.5,1.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,1000.0,27.47,23.55,119.45,SAFE (< 143°C),97.15,6.09,0.25,0.0,1.117
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,25.0,24.17,21.53,121.47,SAFE (< 143°C),98.39,24.9,1.04,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,50.0,24.23,21.55,121.45,SAFE (< 143°C),98.37,25.24,1.05,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,60.0,24.24,21.56,121.44,SAFE (< 143°C),98.36,25.3,1.06,0.0,1.116
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,100.0,24.21,21.55,121.45,SAFE (< 143°C),98.37,25.13,1.05,0.0,1.105
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,120.0,23.3,21.21,121.79,SAFE (< 143°C),98.72,19.73,0.83,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,150.0,24.38,21.61,121.39,SAFE (< 143°C),98.31,26.18,1.09,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,500.0,25.76,22.12,120.88,SAFE (< 143°C),97.79,34.38,1.43,0.0,1.114
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,1000.0,27.02,22.58,120.42,SAFE (< 143°C),97.32,41.91,1.73,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,25.0,24.82,21.77,121.23,SAFE (< 143°C),98.14,28.78,1.2,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,50.0,24.89,21.8,121.2,SAFE (< 143°C),98.12,29.18,1.22,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,60.0,24.9,21.8,121.2,SAFE (< 143°C),98.11,29.25,1.22,0.0,1.116
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,100.0,24.86,21.79,121.21,SAFE (< 143°C),98.12,29.04,1.21,0.0,1.105
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,120.0,23.82,21.4,121.6,SAFE (< 143°C),98.52,22.79,0.95,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,150.0,25.07,21.86,121.14,SAFE (< 143°C),98.05,30.26,1.26,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,500.0,26.66,22.45,120.55,SAFE (< 143°C),97.45,39.77,1.65,0.0,1.114
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,1000.0,28.13,22.99,120.01,SAFE (< 143°C),96.91,48.52,2.0,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,25.0,24.42,21.62,121.38,SAFE (< 143°C),98.29,26.39,1.1,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,50.0,24.48,21.65,121.35,SAFE (< 143°C),98.27,26.75,1.12,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,60.0,24.49,21.65,121.35,SAFE (< 143°C),98.27,26.82,1.12,0.0,1.116
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,100.0,24.46,21.64,121.36,SAFE (< 143°C),98.28,26.63,1.11,0.0,1.105
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,120.0,23.5,21.29,121.71,SAFE (< 143°C),98.64,20.91,0.88,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,150.0,24.65,21.71,121.29,SAFE (< 143°C),98.21,27.75,1.16,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,500.0,26.1,22.24,120.76,SAFE (< 143°C),97.66,36.45,1.51,0.0,1.114
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,1000.0,27.44,22.73,120.27,SAFE (< 143°C),97.16,44.45,1.83,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,25.0,25.02,21.84,121.16,SAFE (< 143°C),98.07,29.97,1.25,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,50.0,25.09,21.87,121.13,SAFE (< 143°C),98.04,30.39,1.27,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,60.0,25.1,21.87,121.13,SAFE (< 143°C),98.03,30.46,1.27,0.0,1.116
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,100.0,25.07,21.86,121.14,SAFE (< 143°C),98.05,30.25,1.26,0.0,1.105
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,120.0,23.98,21.46,121.54,SAFE (< 143°C),98.46,23.74,0.99,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,150.0,25.28,21.94,121.06,SAFE (< 143°C),97.97,31.52,1.31,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,500.0,26.94,22.55,120.45,SAFE (< 143°C),97.35,41.44,1.71,0.0,1.114
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,1000.0,28.47,23.11,119.89,SAFE (< 143°C),96.78,50.57,2.08,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,25.0,24.67,21.72,121.28,SAFE (< 143°C),98.2,27.88,1.16,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,50.0,24.73,21.74,121.26,SAFE (< 143°C),98.17,28.27,1.18,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,60.0,24.74,21.74,121.26,SAFE (< 143°C),98.17,28.33,1.18,0.0,1.116
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,100.0,24.71,21.73,121.27,SAFE (< 143°C),98.18,28.14,1.17,0.0,1.105
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,120.0,23.7,21.36,121.64,SAFE (< 143°C),98.57,22.08,0.92,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,150.0,24.91,21.8,121.2,SAFE (< 143°C),98.11,29.32,1.22,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,500.0,26.45,22.37,120.63,SAFE (< 143°C),97.53,38.52,1.6,0.0,1.114
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,1000.0,27.87,22.89,120.11,SAFE (< 143°C),97.0,46.99,1.94,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,25.0,33.17,26.2,116.8,SAFE (< 143°C),95.08,48.49,1.96,0.0,1.129
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,50.0,33.36,26.29,116.71,SAFE (< 143°C),95.01,49.19,1.98,0.0,1.126
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,60.0,33.39,26.31,116.69,SAFE (< 143°C),95.0,49.31,1.99,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,100.0,33.3,26.26,116.74,SAFE (< 143°C),95.03,48.96,1.98,0.0,1.11
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,120.0,30.36,24.89,118.11,SAFE (< 143°C),96.09,38.16,1.56,0.0,1.117
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,150.0,33.87,26.53,116.47,SAFE (< 143°C),94.83,51.08,2.06,0.0,1.129
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,500.0,38.42,28.67,114.33,SAFE (< 143°C),93.25,67.86,2.69,0.0,1.119
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,1000.0,42.7,30.67,112.33,SAFE (< 143°C),91.81,83.62,3.26,0.0,1.117
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,25.0,30.69,23.93,119.07,SAFE (< 143°C),95.97,63.81,2.6,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,50.0,30.84,23.98,119.02,SAFE (< 143°C),95.91,64.72,2.64,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,60.0,30.86,23.99,119.01,SAFE (< 143°C),95.91,64.87,2.64,0.0,1.116
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,100.0,30.79,23.96,119.04,SAFE (< 143°C),95.93,64.42,2.62,0.0,1.105
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,120.0,28.42,23.1,119.9,SAFE (< 143°C),96.8,50.3,2.07,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,150.0,31.25,24.13,118.87,SAFE (< 143°C),95.77,67.18,2.73,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,500.0,34.9,25.47,117.53,SAFE (< 143°C),94.47,88.96,3.57,0.0,1.114
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,1000.0,38.3,26.72,116.28,SAFE (< 143°C),93.29,109.29,4.33,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,25.0,32.4,24.55,118.45,SAFE (< 143°C),95.35,74.04,3.0,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,50.0,32.58,24.62,118.38,SAFE (< 143°C),95.29,75.1,3.04,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,60.0,32.61,24.63,118.37,SAFE (< 143°C),95.28,75.29,3.05,0.0,1.116
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,100.0,32.52,24.6,118.4,SAFE (< 143°C),95.31,74.75,3.03,0.0,1.105
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,120.0,29.76,23.59,119.41,SAFE (< 143°C),96.31,58.29,2.38,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,150.0,33.06,24.8,118.2,SAFE (< 143°C),95.12,77.98,3.15,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,500.0,37.33,26.36,116.64,SAFE (< 143°C),93.62,103.49,4.11,0.0,1.114
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,1000.0,41.33,27.83,115.17,SAFE (< 143°C),92.26,127.41,4.99,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,25.0,31.34,24.17,118.83,SAFE (< 143°C),95.73,67.73,2.75,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,50.0,31.5,24.23,118.77,SAFE (< 143°C),95.67,68.7,2.79,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,60.0,31.53,24.24,118.76,SAFE (< 143°C),95.66,68.86,2.8,0.0,1.116
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,100.0,31.45,24.21,118.79,SAFE (< 143°C),95.69,68.38,2.78,0.0,1.105
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,120.0,28.94,23.28,119.72,SAFE (< 143°C),96.61,53.37,2.19,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,150.0,31.94,24.39,118.61,SAFE (< 143°C),95.52,71.32,2.89,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,500.0,35.83,25.81,117.19,SAFE (< 143°C),94.14,94.52,3.78,0.0,1.114
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,1000.0,39.46,27.15,115.85,SAFE (< 143°C),92.9,116.21,4.58,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,25.0,32.93,24.75,118.25,SAFE (< 143°C),95.16,77.22,3.12,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,50.0,33.12,24.82,118.18,SAFE (< 143°C),95.1,78.33,3.16,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,60.0,33.15,24.83,118.17,SAFE (< 143°C),95.09,78.52,3.17,0.0,1.116
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,100.0,33.06,24.8,118.2,SAFE (< 143°C),95.12,77.96,3.15,0.0,1.105
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,120.0,30.18,23.74,119.26,SAFE (< 143°C),96.15,60.77,2.48,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,150.0,33.62,25.0,118.0,SAFE (< 143°C),94.92,81.34,3.28,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,500.0,38.09,26.64,116.36,SAFE (< 143°C),93.36,108.01,4.28,0.0,1.114
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,1000.0,42.28,28.18,114.82,SAFE (< 143°C),91.95,133.06,5.2,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,25.0,32.0,24.41,118.59,SAFE (< 143°C),95.5,71.67,2.91,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,50.0,32.17,24.47,118.53,SAFE (< 143°C),95.43,72.69,2.95,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,60.0,32.2,24.48,118.52,SAFE (< 143°C),95.42,72.87,2.95,0.0,1.116
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,100.0,32.12,24.45,118.55,SAFE (< 143°C),95.45,72.36,2.93,0.0,1.105
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,120.0,29.45,23.47,119.53,SAFE (< 143°C),96.42,56.44,2.31,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,150.0,32.64,24.64,118.36,SAFE (< 143°C),95.27,75.48,3.05,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,500.0,36.76,26.16,116.84,SAFE (< 143°C),93.82,100.11,3.99,0.0,1.114
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,1000.0,40.63,27.57,115.43,SAFE (< 143°C),92.5,123.19,4.84,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,25.0,55.64,36.72,106.28,SAFE (< 143°C),87.71,131.42,4.9,0.0,1.129
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,50.0,56.2,36.98,106.02,SAFE (< 143°C),87.55,133.47,4.96,0.0,1.126
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,60.0,56.29,37.03,105.97,SAFE (< 143°C),87.52,133.82,4.97,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,100.0,56.02,36.9,106.1,SAFE (< 143°C),87.6,132.79,4.94,0.0,1.11
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,120.0,47.57,32.95,110.05,SAFE (< 143°C),90.23,101.58,3.89,0.0,1.117
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,150.0,57.71,37.69,105.31,SAFE (< 143°C),87.09,139.05,5.14,0.0,1.129
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,500.0,71.55,44.12,98.88,SAFE (< 143°C),83.15,190.24,6.72,0.0,1.119
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,1000.0,85.3,50.47,92.53,SAFE (< 143°C),79.58,241.17,8.15,0.0,1.117
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,25.0,42.31,28.19,114.81,SAFE (< 143°C),91.94,133.21,5.2,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,50.0,42.64,28.31,114.69,SAFE (< 143°C),91.83,135.19,5.27,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,60.0,42.69,28.33,114.67,SAFE (< 143°C),91.81,135.53,5.28,0.0,1.116
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,100.0,42.53,28.27,114.73,SAFE (< 143°C),91.87,134.54,5.25,0.0,1.105
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,120.0,37.42,26.4,116.6,SAFE (< 143°C),93.59,104.05,4.14,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,150.0,43.54,28.64,114.36,SAFE (< 143°C),91.53,140.58,5.46,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,500.0,51.64,31.61,111.39,SAFE (< 143°C),88.94,188.98,7.14,0.0,1.114
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,1000.0,59.43,34.47,108.53,SAFE (< 143°C),86.58,235.52,8.66,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,25.0,46.07,29.57,113.43,SAFE (< 143°C),90.71,155.67,6.0,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,50.0,46.46,29.71,113.29,SAFE (< 143°C),90.58,158.02,6.08,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,60.0,46.53,29.74,113.26,SAFE (< 143°C),90.56,158.42,6.09,0.0,1.116
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,100.0,46.33,29.67,113.33,SAFE (< 143°C),90.62,157.24,6.05,0.0,1.105
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,120.0,40.3,27.45,115.55,SAFE (< 143°C),92.61,121.24,4.77,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,150.0,47.53,30.11,112.89,SAFE (< 143°C),90.24,164.4,6.3,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,500.0,57.19,33.64,109.36,SAFE (< 143°C),87.25,222.1,8.23,0.0,1.114
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,1000.0,66.56,37.08,105.92,SAFE (< 143°C),84.53,278.13,9.98,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,25.0,43.74,28.72,114.28,SAFE (< 143°C),91.47,141.78,5.51,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,50.0,44.09,28.85,114.15,SAFE (< 143°C),91.35,143.9,5.58,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,60.0,44.16,28.87,114.13,SAFE (< 143°C),91.33,144.26,5.6,0.0,1.116
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,100.0,43.98,28.8,114.2,SAFE (< 143°C),91.39,143.2,5.56,0.0,1.105
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,120.0,38.52,26.8,116.2,SAFE (< 143°C),93.21,110.62,4.38,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,150.0,45.06,29.2,113.8,SAFE (< 143°C),91.03,149.66,5.79,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,500.0,53.75,32.39,110.61,SAFE (< 143°C),88.29,201.57,7.56,0.0,1.114
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,1000.0,62.13,35.46,107.54,SAFE (< 143°C),85.79,251.66,9.17,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,25.0,47.24,30.0,113.0,SAFE (< 143°C),90.33,162.71,6.24,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,50.0,47.66,30.15,112.85,SAFE (< 143°C),90.2,165.17,6.33,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,60.0,47.73,30.18,112.82,SAFE (< 143°C),90.17,165.59,6.34,0.0,1.116
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,100.0,47.52,30.1,112.9,SAFE (< 143°C),90.24,164.35,6.3,0.0,1.105
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,120.0,41.2,27.78,115.22,SAFE (< 143°C),92.31,126.6,4.96,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,150.0,48.78,30.56,112.44,SAFE (< 143°C),89.84,171.87,6.56,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,500.0,58.94,34.29,108.71,SAFE (< 143°C),86.73,232.55,8.57,0.0,1.114
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,1000.0,68.83,37.91,105.09,SAFE (< 143°C),83.9,291.66,10.39,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,25.0,45.19,29.25,113.75,SAFE (< 143°C),90.99,150.43,5.81,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,50.0,45.57,29.39,113.61,SAFE (< 143°C),90.87,152.69,5.89,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,60.0,45.63,29.41,113.59,SAFE (< 143°C),90.85,153.08,5.91,0.0,1.116
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,100.0,45.44,29.34,113.66,SAFE (< 143°C),90.91,151.95,5.87,0.0,1.105
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,120.0,39.63,27.21,115.79,SAFE (< 143°C),92.84,117.24,4.62,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,150.0,46.6,29.76,113.24,SAFE (< 143°C),90.54,158.84,6.11,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,500.0,55.89,33.17,109.83,SAFE (< 143°C),87.64,214.34,7.98,0.0,1.114
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,1000.0,64.89,36.46,106.54,SAFE (< 143°C),85.0,268.11,9.68,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,25.0,102.59,58.41,84.59,SAFE (< 143°C),75.5,305.37,9.79,0.0,1.129
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,50.0,104.08,59.09,83.91,SAFE (< 143°C),75.16,310.9,9.92,0.0,1.126
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,60.0,104.33,59.21,83.79,SAFE (< 143°C),75.11,311.86,9.95,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,100.0,103.58,58.87,84.13,SAFE (< 143°C),75.27,309.07,9.88,0.0,1.11
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,120.0,81.67,48.8,94.2,SAFE (< 143°C),80.49,227.74,7.78,0.0,1.117
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,150.0,108.17,60.97,82.03,SAFE (< 143°C),74.27,326.14,10.29,0.0,1.129
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,500.0,148.32,79.16,63.84,SAFE (< 143°C),66.48,475.93,13.44,0.0,1.119
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,1000.0,193.5,99.29,43.71,SAFE (< 143°C),59.46,645.57,16.3,0.0,1.117
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,25.0,68.89,37.93,105.07,SAFE (< 143°C),83.88,292.01,10.4,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,50.0,69.68,38.22,104.78,SAFE (< 143°C),83.66,296.77,10.54,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,60.0,69.82,38.27,104.73,SAFE (< 143°C),83.63,297.6,10.57,0.0,1.116
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,100.0,69.42,38.12,104.88,SAFE (< 143°C),83.74,295.2,10.5,0.0,1.105
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,120.0,57.4,33.72,109.28,SAFE (< 143°C),87.18,223.4,8.27,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,150.0,71.87,39.02,103.98,SAFE (< 143°C),83.07,309.8,10.93,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,500.0,92.24,46.46,96.54,SAFE (< 143°C),77.89,431.59,14.28,0.0,1.114
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,1000.0,113.27,54.12,88.88,SAFE (< 143°C),73.18,557.33,17.32,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,25.0,78.07,41.28,101.72,SAFE (< 143°C),81.42,346.86,11.99,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,50.0,79.04,41.64,101.36,SAFE (< 143°C),81.17,352.69,12.16,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,60.0,79.21,41.7,101.3,SAFE (< 143°C),81.12,353.7,12.19,0.0,1.116
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,100.0,78.72,41.52,101.48,SAFE (< 143°C),81.25,350.76,12.1,0.0,1.105
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,120.0,64.11,36.18,106.82,SAFE (< 143°C),85.22,263.48,9.54,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,150.0,81.72,42.62,100.38,SAFE (< 143°C),80.48,368.67,12.6,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,500.0,107.06,51.86,91.14,SAFE (< 143°C),74.51,520.16,16.46,0.0,1.114
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,1000.0,133.89,61.62,81.38,SAFE (< 143°C),69.08,680.67,19.97,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,25.0,72.35,39.2,103.8,SAFE (< 143°C),82.94,312.72,11.01,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,50.0,73.22,39.51,103.49,SAFE (< 143°C),82.7,317.88,11.16,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,60.0,73.37,39.57,103.43,SAFE (< 143°C),82.66,318.77,11.19,0.0,1.116
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,100.0,72.93,39.41,103.59,SAFE (< 143°C),82.78,316.18,11.11,0.0,1.105
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,120.0,59.95,34.66,108.34,SAFE (< 143°C),86.43,238.6,8.76,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,150.0,75.58,40.38,102.62,SAFE (< 143°C),82.07,332.01,11.57,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,500.0,97.79,48.48,94.52,SAFE (< 143°C),76.59,464.73,15.11,0.0,1.114
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,1000.0,120.93,56.91,86.09,SAFE (< 143°C),71.6,603.1,18.34,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,25.0,81.0,42.36,100.64,SAFE (< 143°C),80.66,364.41,12.48,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,50.0,82.04,42.73,100.27,SAFE (< 143°C),80.4,370.59,12.65,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,60.0,82.22,42.8,100.2,SAFE (< 143°C),80.35,371.66,12.68,0.0,1.116
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,100.0,81.7,42.61,100.39,SAFE (< 143°C),80.49,368.55,12.6,0.0,1.105
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,120.0,66.24,36.96,106.04,SAFE (< 143°C),84.62,276.19,9.93,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,150.0,84.88,43.77,99.23,SAFE (< 143°C),79.68,387.55,13.11,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,500.0,111.89,53.62,89.38,SAFE (< 143°C),73.47,549.05,17.13,0.0,1.114
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,1000.0,140.74,64.1,78.9,SAFE (< 143°C),67.82,721.62,20.78,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,25.0,75.9,40.49,102.51,SAFE (< 143°C),81.99,333.91,11.63,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,50.0,76.83,40.83,102.17,SAFE (< 143°C),81.74,339.48,11.78,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,60.0,76.99,40.89,102.11,SAFE (< 143°C),81.7,340.45,11.81,0.0,1.116
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,100.0,76.52,40.72,102.28,SAFE (< 143°C),81.82,337.64,11.73,0.0,1.105
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,120.0,62.54,35.6,107.4,SAFE (< 143°C),85.68,254.07,9.24,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,150.0,79.39,41.77,101.23,SAFE (< 143°C),81.08,354.75,12.21,0.0,1.124
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,500.0,103.52,50.57,92.43,SAFE (< 143°C),75.29,499.01,15.95,0.0,1.114
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,1000.0,128.92,59.81,83.19,SAFE (< 143°C),70.02,650.93,19.36,0.0,1.112
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,25.0,259.25,127.95,15.05,SAFE (< 143°C),51.54,894.62,19.58,0.0,1.129
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,50.0,265.43,130.61,12.39,SAFE (< 143°C),50.9,918.18,19.85,0.0,1.126
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,60.0,266.52,131.07,11.93,SAFE (< 143°C),50.79,922.3,19.89,0.0,1.121
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,100.0,263.38,129.73,13.27,SAFE (< 143°C),51.11,910.35,19.76,0.0,1.11
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,120.0,181.04,93.77,49.23,SAFE (< 143°C),61.24,598.65,15.57,0.0,1.117
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,150.0,282.94,138.1,4.9,SAFE (< 143°C),49.18,984.99,20.57,0.0,1.129
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,500.0,497.9,226.46,-83.46,OVERHEAT,34.74,1821.14,26.87,0.0,1.119
+rated_2kw,Industrial Stator (2.4 kW),2400.0,1.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,1000.0,871.58,367.83,-224.83,OVERHEAT,23.01,3336.9,32.6,0.0,1.117
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,25.0,21.79,20.08,122.92,SAFE (< 143°C),99.3,513.91,21.67,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,50.0,21.82,20.08,122.92,SAFE (< 143°C),99.29,520.97,21.97,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,60.0,21.82,20.08,122.92,SAFE (< 143°C),99.29,522.19,22.02,0.0,1.116
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,100.0,21.81,20.08,122.92,SAFE (< 143°C),99.29,518.64,21.87,0.0,1.105
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,120.0,21.42,20.06,122.94,SAFE (< 143°C),99.44,408.03,17.23,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,150.0,21.88,20.08,122.92,SAFE (< 143°C),99.26,540.11,22.77,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,500.0,22.47,20.11,122.89,SAFE (< 143°C),99.04,707.1,29.74,0.0,1.114
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,1000.0,23.0,20.13,122.87,SAFE (< 143°C),98.84,859.66,36.08,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,25.0,22.07,20.09,122.91,SAFE (< 143°C),99.19,593.14,24.99,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,50.0,22.1,20.09,122.91,SAFE (< 143°C),99.18,601.3,25.33,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,60.0,22.1,20.09,122.91,SAFE (< 143°C),99.18,602.71,25.39,0.0,1.116
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,100.0,22.09,20.09,122.91,SAFE (< 143°C),99.19,598.61,25.21,0.0,1.105
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,120.0,21.64,20.07,122.93,SAFE (< 143°C),99.36,470.84,19.87,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,150.0,22.17,20.1,122.9,SAFE (< 143°C),99.15,623.42,26.25,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,500.0,22.85,20.13,122.87,SAFE (< 143°C),98.89,816.46,34.29,0.0,1.114
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,1000.0,23.46,20.15,122.85,SAFE (< 143°C),98.66,992.93,41.6,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,25.0,21.9,20.08,122.92,SAFE (< 143°C),99.26,544.36,22.95,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,50.0,21.93,20.09,122.91,SAFE (< 143°C),99.25,551.84,23.26,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,60.0,21.93,20.09,122.91,SAFE (< 143°C),99.25,553.14,23.31,0.0,1.116
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,100.0,21.92,20.08,122.92,SAFE (< 143°C),99.25,549.38,23.16,0.0,1.105
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,120.0,21.51,20.07,122.93,SAFE (< 143°C),99.41,432.18,18.25,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,150.0,22.0,20.09,122.91,SAFE (< 143°C),99.22,572.13,24.11,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,500.0,22.61,20.12,122.88,SAFE (< 143°C),98.98,749.12,31.49,0.0,1.114
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,1000.0,23.18,20.14,122.86,SAFE (< 143°C),98.77,910.86,38.2,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,25.0,22.15,20.1,122.9,SAFE (< 143°C),99.16,617.56,26.01,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,50.0,22.18,20.1,122.9,SAFE (< 143°C),99.15,626.06,26.36,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,60.0,22.19,20.1,122.9,SAFE (< 143°C),99.15,627.52,26.42,0.0,1.116
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,100.0,22.17,20.1,122.9,SAFE (< 143°C),99.15,623.26,26.24,0.0,1.105
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,120.0,21.71,20.08,122.92,SAFE (< 143°C),99.33,490.19,20.68,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,150.0,22.26,20.1,122.9,SAFE (< 143°C),99.12,649.1,27.32,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,500.0,22.97,20.13,122.87,SAFE (< 143°C),98.85,850.17,35.69,0.0,1.114
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,1000.0,23.61,20.16,122.84,SAFE (< 143°C),98.6,1034.03,43.3,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,25.0,22.01,20.09,122.91,SAFE (< 143°C),99.22,574.84,24.22,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,50.0,22.03,20.09,122.91,SAFE (< 143°C),99.21,582.75,24.55,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,60.0,22.04,20.09,122.91,SAFE (< 143°C),99.21,584.11,24.61,0.0,1.116
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,100.0,22.02,20.09,122.91,SAFE (< 143°C),99.21,580.14,24.44,0.0,1.105
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,120.0,21.59,20.07,122.93,SAFE (< 143°C),99.38,456.34,19.26,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,150.0,22.11,20.09,122.91,SAFE (< 143°C),99.18,604.18,25.45,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,500.0,22.76,20.12,122.88,SAFE (< 143°C),98.93,791.19,33.24,0.0,1.114
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,1000.0,23.36,20.15,122.85,SAFE (< 143°C),98.7,962.13,40.33,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,25.0,25.75,20.32,122.68,SAFE (< 143°C),97.79,982.3,40.79,0.0,1.129
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,50.0,25.83,20.32,122.68,SAFE (< 143°C),97.76,996.01,41.35,0.0,1.126
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,60.0,25.85,20.32,122.68,SAFE (< 143°C),97.75,998.38,41.45,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,100.0,25.81,20.32,122.68,SAFE (< 143°C),97.77,991.49,41.17,0.0,1.11
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,120.0,24.55,20.25,122.75,SAFE (< 143°C),98.24,777.46,32.44,0.0,1.117
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,150.0,26.05,20.33,122.67,SAFE (< 143°C),97.68,1033.21,42.86,0.0,1.129
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,500.0,27.96,20.44,122.56,SAFE (< 143°C),96.97,1359.47,55.98,0.0,1.119
+field_50kw,Field Station (50 kW),50000.0,5.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,1000.0,29.72,20.53,122.47,SAFE (< 143°C),96.32,1660.44,67.92,0.0,1.117
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,25.0,24.53,20.2,122.8,SAFE (< 143°C),98.25,1298.49,54.18,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,50.0,24.59,20.2,122.8,SAFE (< 143°C),98.23,1316.52,54.92,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,60.0,24.6,20.2,122.8,SAFE (< 143°C),98.22,1319.64,55.05,0.0,1.116
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,100.0,24.57,20.2,122.8,SAFE (< 143°C),98.24,1310.58,54.67,0.0,1.105
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,120.0,23.59,20.16,122.84,SAFE (< 143°C),98.61,1028.72,43.08,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,150.0,24.76,20.21,122.79,SAFE (< 143°C),98.16,1365.45,56.92,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,500.0,26.26,20.28,122.72,SAFE (< 143°C),97.6,1793.84,74.35,0.0,1.114
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,1000.0,27.63,20.34,122.66,SAFE (< 143°C),97.09,2187.83,90.21,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,25.0,25.24,20.23,122.77,SAFE (< 143°C),97.98,1501.17,62.46,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,50.0,25.31,20.23,122.77,SAFE (< 143°C),97.96,1522.08,63.32,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,60.0,25.32,20.24,122.76,SAFE (< 143°C),97.95,1525.68,63.46,0.0,1.116
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,100.0,25.29,20.23,122.77,SAFE (< 143°C),97.97,1515.18,63.04,0.0,1.105
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,120.0,24.15,20.18,122.82,SAFE (< 143°C),98.4,1188.61,49.67,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,150.0,25.51,20.24,122.76,SAFE (< 143°C),97.88,1578.8,65.63,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,500.0,27.24,20.32,122.68,SAFE (< 143°C),97.23,2075.99,85.72,0.0,1.114
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,1000.0,28.84,20.39,122.61,SAFE (< 143°C),96.64,2534.06,104.0,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,25.0,24.8,20.21,122.79,SAFE (< 143°C),98.15,1376.31,57.37,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,50.0,24.87,20.22,122.78,SAFE (< 143°C),98.12,1395.45,58.15,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,60.0,24.88,20.22,122.78,SAFE (< 143°C),98.12,1398.75,58.28,0.0,1.116
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,100.0,24.85,20.21,122.79,SAFE (< 143°C),98.13,1389.14,57.89,0.0,1.105
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,120.0,23.8,20.17,122.83,SAFE (< 143°C),98.53,1090.13,45.61,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,150.0,25.05,20.22,122.78,SAFE (< 143°C),98.05,1447.36,60.27,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,500.0,26.64,20.29,122.71,SAFE (< 143°C),97.46,1902.11,78.72,0.0,1.114
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,1000.0,28.09,20.36,122.64,SAFE (< 143°C),96.92,2320.62,95.51,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,25.0,25.45,20.24,122.76,SAFE (< 143°C),97.9,1563.75,65.01,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,50.0,25.53,20.24,122.76,SAFE (< 143°C),97.87,1585.55,65.9,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,60.0,25.54,20.24,122.76,SAFE (< 143°C),97.87,1589.31,66.05,0.0,1.116
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,100.0,25.51,20.24,122.76,SAFE (< 143°C),97.88,1578.37,65.61,0.0,1.105
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,120.0,24.32,20.19,122.81,SAFE (< 143°C),98.33,1237.95,51.69,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,150.0,25.74,20.25,122.75,SAFE (< 143°C),97.8,1644.69,68.31,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,500.0,27.55,20.33,122.67,SAFE (< 143°C),97.12,2163.24,89.22,0.0,1.114
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,1000.0,29.21,20.41,122.59,SAFE (< 143°C),96.51,2641.24,108.25,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,25.0,25.07,20.22,122.78,SAFE (< 143°C),98.05,1454.3,60.55,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,50.0,25.14,20.23,122.77,SAFE (< 143°C),98.02,1474.54,61.38,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,60.0,25.16,20.23,122.77,SAFE (< 143°C),98.01,1478.03,61.52,0.0,1.116
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,100.0,25.12,20.23,122.77,SAFE (< 143°C),98.03,1467.87,61.11,0.0,1.105
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,120.0,24.02,20.18,122.82,SAFE (< 143°C),98.45,1151.65,48.15,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,150.0,25.34,20.24,122.76,SAFE (< 143°C),97.95,1529.46,63.62,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,500.0,27.01,20.31,122.69,SAFE (< 143°C),97.32,2010.69,83.1,0.0,1.114
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,1000.0,28.56,20.38,122.62,SAFE (< 143°C),96.75,2453.88,100.82,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,25.0,34.87,20.82,122.18,SAFE (< 143°C),94.48,2541.85,101.98,0.0,1.129
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,50.0,35.09,20.83,122.17,SAFE (< 143°C),94.4,2578.58,103.37,0.0,1.126
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,60.0,35.13,20.83,122.17,SAFE (< 143°C),94.39,2584.92,103.61,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,100.0,35.02,20.82,122.18,SAFE (< 143°C),94.43,2566.46,102.92,0.0,1.11
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,120.0,31.69,20.64,122.36,SAFE (< 143°C),95.61,1997.2,81.09,0.0,1.117
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,150.0,35.67,20.86,122.14,SAFE (< 143°C),94.2,2678.43,107.15,0.0,1.129
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,500.0,40.86,21.14,121.86,SAFE (< 143°C),92.42,3565.7,139.95,0.0,1.119
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,1000.0,45.74,21.4,121.6,SAFE (< 143°C),90.81,4402.82,169.8,0.0,1.117
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,25.0,29.22,20.41,122.59,SAFE (< 143°C),96.5,2644.04,108.36,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,50.0,29.35,20.41,122.59,SAFE (< 143°C),96.45,2681.44,109.84,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,60.0,29.38,20.41,122.59,SAFE (< 143°C),96.45,2687.9,110.09,0.0,1.116
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,100.0,29.31,20.41,122.59,SAFE (< 143°C),96.47,2669.11,109.35,0.0,1.105
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,120.0,27.28,20.32,122.68,SAFE (< 143°C),97.22,2086.86,86.16,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,150.0,29.71,20.43,122.57,SAFE (< 143°C),96.33,2782.99,113.84,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,500.0,32.83,20.57,122.43,SAFE (< 143°C),95.2,3678.12,148.7,0.0,1.114
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,1000.0,35.73,20.69,122.31,SAFE (< 143°C),94.18,4510.95,180.41,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,25.0,30.69,20.47,122.53,SAFE (< 143°C),95.97,3065.42,124.93,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,50.0,30.84,20.48,122.52,SAFE (< 143°C),95.91,3109.02,126.63,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,60.0,30.87,20.48,122.52,SAFE (< 143°C),95.9,3116.55,126.93,0.0,1.116
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,100.0,30.79,20.48,122.52,SAFE (< 143°C),95.93,3094.65,126.07,0.0,1.105
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,120.0,28.43,20.37,122.63,SAFE (< 143°C),96.79,2416.6,99.34,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,150.0,31.26,20.5,122.5,SAFE (< 143°C),95.76,3227.45,131.25,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,500.0,34.91,20.66,122.34,SAFE (< 143°C),94.47,4273.61,171.44,0.0,1.114
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,1000.0,38.31,20.81,122.19,SAFE (< 143°C),93.29,5250.51,208.0,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,25.0,29.79,20.43,122.57,SAFE (< 143°C),96.3,2805.56,114.73,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,50.0,29.93,20.44,122.56,SAFE (< 143°C),96.25,2845.32,116.3,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,60.0,29.95,20.44,122.56,SAFE (< 143°C),96.24,2852.19,116.57,0.0,1.116
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,100.0,29.88,20.44,122.56,SAFE (< 143°C),96.26,2832.21,115.78,0.0,1.105
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,120.0,27.72,20.34,122.66,SAFE (< 143°C),97.06,2213.35,91.23,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,150.0,30.3,20.45,122.55,SAFE (< 143°C),96.11,2953.32,120.54,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,500.0,33.63,20.6,122.4,SAFE (< 143°C),94.92,3906.06,157.45,0.0,1.114
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,1000.0,36.72,20.74,122.26,SAFE (< 143°C),93.83,4793.74,191.02,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,25.0,31.15,20.49,122.51,SAFE (< 143°C),95.8,3196.02,130.03,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,50.0,31.31,20.5,122.5,SAFE (< 143°C),95.75,3241.56,131.8,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,60.0,31.33,20.5,122.5,SAFE (< 143°C),95.74,3249.42,132.11,0.0,1.116
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,100.0,31.25,20.5,122.5,SAFE (< 143°C),95.76,3226.55,131.22,0.0,1.105
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,120.0,28.79,20.39,122.61,SAFE (< 143°C),96.66,2518.65,103.39,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,150.0,31.74,20.52,122.48,SAFE (< 143°C),95.59,3365.26,136.61,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,500.0,35.55,20.69,122.31,SAFE (< 143°C),94.24,4458.7,178.44,0.0,1.114
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,1000.0,39.12,20.84,122.16,SAFE (< 143°C),93.01,5480.92,216.49,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,25.0,30.35,20.46,122.54,SAFE (< 143°C),96.09,2967.76,121.1,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,50.0,30.5,20.46,122.54,SAFE (< 143°C),96.04,3009.92,122.76,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,60.0,30.52,20.46,122.54,SAFE (< 143°C),96.03,3017.2,123.04,0.0,1.116
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,100.0,30.45,20.46,122.54,SAFE (< 143°C),96.05,2996.02,122.21,0.0,1.105
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,120.0,28.16,20.36,122.64,SAFE (< 143°C),96.89,2340.25,96.29,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,150.0,30.9,20.48,122.52,SAFE (< 143°C),95.89,3124.42,127.24,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,500.0,34.42,20.64,122.36,SAFE (< 143°C),94.64,4135.37,166.19,0.0,1.114
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,1000.0,37.71,20.78,122.22,SAFE (< 143°C),93.49,5078.59,201.63,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,25.0,51.54,21.72,121.28,SAFE (< 143°C),88.97,5398.36,203.97,0.0,1.129
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,50.0,52.03,21.74,121.26,SAFE (< 143°C),88.82,5481.24,206.75,0.0,1.126
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,60.0,52.11,21.75,121.25,SAFE (< 143°C),88.79,5495.57,207.23,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,100.0,51.87,21.73,121.27,SAFE (< 143°C),88.87,5453.89,205.83,0.0,1.11
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,120.0,44.48,21.34,121.66,SAFE (< 143°C),91.22,4186.33,162.18,0.0,1.117
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,150.0,53.34,21.81,121.19,SAFE (< 143°C),88.41,5707.31,214.29,0.0,1.129
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,500.0,65.31,22.45,120.55,SAFE (< 143°C),84.88,7764.98,279.91,0.0,1.119
+field_50kw,Field Station (50 kW),50000.0,5.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,1000.0,77.06,23.06,119.94,SAFE (< 143°C),81.68,9790.07,339.6,0.0,1.117
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,25.0,39.14,20.84,122.16,SAFE (< 143°C),93.0,5486.96,216.71,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,50.0,39.42,20.86,122.14,SAFE (< 143°C),92.91,5567.52,219.67,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,60.0,39.47,20.86,122.14,SAFE (< 143°C),92.89,5581.44,220.18,0.0,1.116
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,100.0,39.33,20.85,122.15,SAFE (< 143°C),92.94,5540.95,218.7,0.0,1.105
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,120.0,34.99,20.66,122.34,SAFE (< 143°C),94.44,4296.64,172.32,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,150.0,40.18,20.89,122.11,SAFE (< 143°C),92.65,5786.73,227.68,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,500.0,47.02,21.19,121.81,SAFE (< 143°C),90.4,7746.79,297.4,0.0,1.114
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,1000.0,53.54,21.47,121.53,SAFE (< 143°C),88.35,9616.46,360.82,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,25.0,42.32,20.98,122.02,SAFE (< 143°C),91.93,6399.75,249.86,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,50.0,42.65,21.0,122.0,SAFE (< 143°C),91.82,6494.83,253.27,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,60.0,42.71,21.0,122.0,SAFE (< 143°C),91.81,6511.26,253.86,0.0,1.116
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,100.0,42.54,20.99,122.01,SAFE (< 143°C),91.86,6463.47,252.14,0.0,1.105
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,120.0,37.44,20.77,122.23,SAFE (< 143°C),93.59,4998.8,198.67,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,150.0,43.56,21.04,121.96,SAFE (< 143°C),91.53,6753.69,262.51,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,500.0,51.67,21.39,121.61,SAFE (< 143°C),88.93,9079.02,342.89,0.0,1.114
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,1000.0,59.46,21.73,121.27,SAFE (< 143°C),86.57,11315.27,416.0,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,25.0,40.35,20.9,122.1,SAFE (< 143°C),92.59,5835.54,229.46,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,50.0,40.66,20.91,122.09,SAFE (< 143°C),92.49,5921.61,232.59,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,60.0,40.71,20.91,122.09,SAFE (< 143°C),92.47,5936.48,233.13,0.0,1.116
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,100.0,40.56,20.91,122.09,SAFE (< 143°C),92.53,5893.22,231.56,0.0,1.105
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,120.0,35.92,20.7,122.3,SAFE (< 143°C),94.11,4565.2,182.45,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,150.0,41.47,20.95,122.05,SAFE (< 143°C),92.22,6155.85,241.08,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,500.0,48.79,21.27,121.73,SAFE (< 143°C),89.84,8254.04,314.9,0.0,1.114
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,1000.0,55.79,21.57,121.43,SAFE (< 143°C),87.67,10261.68,382.04,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,25.0,43.32,21.03,121.97,SAFE (< 143°C),91.61,6684.9,260.06,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,50.0,43.66,21.04,121.96,SAFE (< 143°C),91.49,6784.58,263.6,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,60.0,43.72,21.04,121.96,SAFE (< 143°C),91.47,6801.81,264.22,0.0,1.116
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,100.0,43.55,21.04,121.96,SAFE (< 143°C),91.53,6751.7,262.44,0.0,1.105
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,120.0,38.2,20.8,122.2,SAFE (< 143°C),93.33,5217.43,206.78,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,150.0,44.61,21.08,121.92,SAFE (< 143°C),91.18,7056.01,273.22,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,500.0,53.13,21.45,121.55,SAFE (< 143°C),88.48,9497.83,356.88,0.0,1.114
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,1000.0,61.34,21.81,121.19,SAFE (< 143°C),86.02,11852.12,432.98,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,25.0,41.58,20.95,122.05,SAFE (< 143°C),92.18,6187.23,242.21,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,50.0,41.9,20.96,122.04,SAFE (< 143°C),92.07,6278.9,245.51,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,60.0,41.96,20.97,122.03,SAFE (< 143°C),92.06,6294.74,246.08,0.0,1.116
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,100.0,41.8,20.96,122.04,SAFE (< 143°C),92.11,6248.66,244.42,0.0,1.105
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,120.0,36.87,20.74,122.26,SAFE (< 143°C),93.78,4835.63,192.59,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,150.0,42.77,21.0,122.0,SAFE (< 143°C),91.79,6528.44,254.47,0.0,1.124
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,500.0,50.58,21.34,121.66,SAFE (< 143°C),89.27,8767.7,332.39,0.0,1.114
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,1000.0,58.08,21.67,121.33,SAFE (< 143°C),86.98,10917.07,403.27,0.0,1.112
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,25.0,91.64,23.81,119.19,SAFE (< 143°C),78.03,12310.47,407.93,0.0,1.129
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,50.0,92.89,23.88,119.12,SAFE (< 143°C),77.73,12526.03,413.5,0.0,1.126
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,60.0,93.1,23.89,119.11,SAFE (< 143°C),77.68,12563.39,414.46,0.0,1.121
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,100.0,92.48,23.86,119.14,SAFE (< 143°C),77.83,12454.81,411.66,0.0,1.11
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,120.0,73.98,22.9,120.1,SAFE (< 143°C),82.5,9258.31,324.36,0.0,1.117
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,150.0,96.31,24.05,118.95,SAFE (< 143°C),76.93,13118.55,428.58,0.0,1.129
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,500.0,129.13,25.7,117.3,SAFE (< 143°C),69.98,18836.16,559.81,0.0,1.119
+field_50kw,Field Station (50 kW),50000.0,5.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,1000.0,164.67,27.43,115.57,SAFE (< 143°C),63.75,25086.64,679.19,0.0,1.117
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,25.0,21.28,20.0,123.0,SAFE (< 143°C),99.5,24618.64,1040.23,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,50.0,21.3,20.0,123.0,SAFE (< 143°C),99.49,24956.2,1054.42,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,60.0,21.31,20.0,123.0,SAFE (< 143°C),99.49,25014.47,1056.87,0.0,1.116
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,100.0,21.3,20.0,123.0,SAFE (< 143°C),99.49,24844.94,1049.74,0.0,1.105
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,120.0,21.02,20.0,123.0,SAFE (< 143°C),99.6,19554.8,827.12,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,150.0,21.35,20.0,123.0,SAFE (< 143°C),99.47,25871.41,1092.88,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,500.0,21.77,20.01,122.99,SAFE (< 143°C),99.31,33848.33,1427.53,0.0,1.114
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,inner_cu_tube,Inner Coils + Cu Tube,True,1000.0,22.15,20.01,122.99,SAFE (< 143°C),99.16,41127.13,1731.94,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,25.0,21.48,20.0,123.0,SAFE (< 143°C),99.42,28405.77,1199.32,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,50.0,21.5,20.0,123.0,SAFE (< 143°C),99.41,28795.58,1215.68,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,60.0,21.51,20.0,123.0,SAFE (< 143°C),99.41,28862.85,1218.51,0.0,1.116
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,100.0,21.5,20.0,123.0,SAFE (< 143°C),99.42,28667.1,1210.29,0.0,1.105
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,120.0,21.18,20.0,123.0,SAFE (< 143°C),99.54,22559.37,953.62,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,150.0,21.56,20.0,123.0,SAFE (< 143°C),99.39,29852.44,1260.03,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,500.0,22.04,20.01,122.99,SAFE (< 143°C),99.21,39066.61,1645.85,0.0,1.114
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,chiral_diode_tube,Chiral Diode + Tube,True,1000.0,22.48,20.01,122.99,SAFE (< 143°C),99.04,47478.41,1996.82,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,25.0,21.36,20.0,123.0,SAFE (< 143°C),99.47,26074.53,1101.42,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,50.0,21.38,20.0,123.0,SAFE (< 143°C),99.46,26432.17,1116.44,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,60.0,21.38,20.0,123.0,SAFE (< 143°C),99.46,26493.9,1119.04,0.0,1.116
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,100.0,21.37,20.0,123.0,SAFE (< 143°C),99.46,26314.3,1111.49,0.0,1.105
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,120.0,21.08,20.0,123.0,SAFE (< 143°C),99.58,20709.97,875.77,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,150.0,21.43,20.0,123.0,SAFE (< 143°C),99.44,27401.81,1157.17,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,500.0,21.87,20.01,122.99,SAFE (< 143°C),99.27,35854.05,1511.5,0.0,1.114
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,toroid_24c_tube,Toroidal 24C + Tube,True,1000.0,22.27,20.01,122.99,SAFE (< 143°C),99.11,43567.99,1833.82,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,25.0,21.54,20.0,123.0,SAFE (< 143°C),99.4,29572.22,1248.27,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,50.0,21.56,20.0,123.0,SAFE (< 143°C),99.39,29978.13,1265.3,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,60.0,21.57,20.0,123.0,SAFE (< 143°C),99.39,30048.19,1268.24,0.0,1.116
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,100.0,21.56,20.0,123.0,SAFE (< 143°C),99.39,29844.34,1259.69,0.0,1.105
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,120.0,21.23,20.0,123.0,SAFE (< 143°C),99.52,23484.59,992.54,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,150.0,21.62,20.0,123.0,SAFE (< 143°C),99.37,31078.67,1311.46,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,500.0,22.12,20.01,122.99,SAFE (< 143°C),99.17,40674.46,1713.03,0.0,1.114
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,toroid_apex_tube,Toroidal Apex + Tube,True,1000.0,22.58,20.01,122.99,SAFE (< 143°C),99.0,49435.95,2078.32,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,25.0,21.44,20.0,123.0,SAFE (< 143°C),99.44,27531.3,1162.61,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,50.0,21.46,20.0,123.0,SAFE (< 143°C),99.43,27909.03,1178.47,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,60.0,21.46,20.0,123.0,SAFE (< 143°C),99.43,27974.23,1181.2,0.0,1.116
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,100.0,21.45,20.0,123.0,SAFE (< 143°C),99.43,27784.53,1173.24,0.0,1.105
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,120.0,21.14,20.0,123.0,SAFE (< 143°C),99.55,21865.68,924.42,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,150.0,21.51,20.0,123.0,SAFE (< 143°C),99.41,28933.17,1221.46,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,500.0,21.98,20.01,122.99,SAFE (< 143°C),99.23,37861.4,1595.47,0.0,1.114
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,dual_90_tube,Dual 90° 48C + Tube,True,1000.0,22.4,20.01,122.99,SAFE (< 143°C),99.07,46011.27,1935.69,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,25.0,24.15,20.02,122.98,SAFE (< 143°C),98.39,46861.02,1958.07,0.0,1.129
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,50.0,24.21,20.02,122.98,SAFE (< 143°C),98.37,47510.88,1984.79,0.0,1.126
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,60.0,24.22,20.02,122.98,SAFE (< 143°C),98.37,47623.06,1989.4,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,100.0,24.19,20.02,122.98,SAFE (< 143°C),98.38,47296.67,1975.98,0.0,1.11
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,120.0,23.29,20.01,122.99,SAFE (< 143°C),98.72,37136.42,1556.92,0.0,1.117
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,150.0,24.37,20.02,122.98,SAFE (< 143°C),98.31,49273.77,2057.19,0.0,1.129
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,500.0,25.74,20.02,122.98,SAFE (< 143°C),97.8,64701.61,2687.11,0.0,1.119
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,burst_10,10.0,open_cage_no_tube,Open Cage (No Tube),False,1000.0,26.99,20.03,122.97,SAFE (< 143°C),97.33,78877.77,3260.12,0.0,1.117
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,25.0,23.24,20.01,122.99,SAFE (< 143°C),98.74,62016.25,2600.57,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,50.0,23.28,20.01,122.99,SAFE (< 143°C),98.73,62873.19,2636.05,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,60.0,23.29,20.01,122.99,SAFE (< 143°C),98.72,63021.11,2642.17,0.0,1.116
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,100.0,23.27,20.01,122.99,SAFE (< 143°C),98.73,62590.72,2624.35,0.0,1.105
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,120.0,22.57,20.01,122.99,SAFE (< 143°C),99.0,49182.85,2067.79,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,150.0,23.4,20.01,122.99,SAFE (< 143°C),98.68,65197.4,2732.21,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,500.0,24.46,20.01,122.99,SAFE (< 143°C),98.28,85511.18,3568.82,0.0,1.114
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,inner_cu_tube,Inner Coils + Cu Tube,True,1000.0,25.43,20.02,122.98,SAFE (< 143°C),97.91,104135.27,4329.84,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,25.0,23.74,20.01,122.99,SAFE (< 143°C),98.55,71640.43,2998.3,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,50.0,23.79,20.01,122.99,SAFE (< 143°C),98.53,72632.31,3039.2,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,60.0,23.8,20.01,122.99,SAFE (< 143°C),98.53,72803.53,3046.26,0.0,1.116
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,100.0,23.77,20.01,122.99,SAFE (< 143°C),98.54,72305.37,3025.72,0.0,1.105
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,120.0,22.96,20.01,122.99,SAFE (< 143°C),98.85,56792.54,2384.04,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,150.0,23.93,20.01,122.99,SAFE (< 143°C),98.48,75322.79,3150.07,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,500.0,25.16,20.02,122.98,SAFE (< 143°C),98.01,98854.5,4114.64,0.0,1.114
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,chiral_diode_tube,Chiral Diode + Tube,True,1000.0,26.29,20.02,122.98,SAFE (< 143°C),97.59,120455.27,4992.05,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,25.0,23.43,20.01,122.99,SAFE (< 143°C),98.67,65713.42,2753.54,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,50.0,23.48,20.01,122.99,SAFE (< 143°C),98.65,66622.14,2791.11,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,60.0,23.48,20.01,122.99,SAFE (< 143°C),98.65,66779.0,2797.59,0.0,1.116
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,100.0,23.46,20.01,122.99,SAFE (< 143°C),98.66,66322.61,2778.73,0.0,1.105
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,120.0,22.72,20.01,122.99,SAFE (< 143°C),98.94,52106.87,2189.43,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,150.0,23.61,20.01,122.99,SAFE (< 143°C),98.6,69086.88,2892.92,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,500.0,24.73,20.01,122.99,SAFE (< 143°C),98.18,90634.75,3778.75,0.0,1.114
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,toroid_24c_tube,Toroidal 24C + Tube,True,1000.0,25.76,20.02,122.98,SAFE (< 143°C),97.79,110399.56,4584.54,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,25.0,23.89,20.01,122.99,SAFE (< 143°C),98.49,74609.27,3120.68,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,50.0,23.95,20.01,122.99,SAFE (< 143°C),98.47,75642.89,3163.25,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,60.0,23.96,20.01,122.99,SAFE (< 143°C),98.47,75821.31,3170.6,0.0,1.116
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,100.0,23.93,20.01,122.99,SAFE (< 143°C),98.48,75302.18,3149.22,0.0,1.105
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,120.0,23.09,20.01,122.99,SAFE (< 143°C),98.8,59138.72,2481.35,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,150.0,24.09,20.01,122.99,SAFE (< 143°C),98.42,78446.65,3278.65,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,500.0,25.37,20.02,122.98,SAFE (< 143°C),97.93,102974.58,4282.58,0.0,1.114
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,toroid_apex_tube,Toroidal Apex + Tube,True,1000.0,26.55,20.02,122.98,SAFE (< 143°C),97.49,125498.35,5195.81,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,25.0,23.62,20.01,122.99,SAFE (< 143°C),98.6,69416.14,2906.52,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,50.0,23.67,20.01,122.99,SAFE (< 143°C),98.58,70376.79,2946.17,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,60.0,23.68,20.01,122.99,SAFE (< 143°C),98.57,70542.61,2953.01,0.0,1.116
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,100.0,23.66,20.01,122.99,SAFE (< 143°C),98.58,70060.13,2933.1,0.0,1.105
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,120.0,22.87,20.01,122.99,SAFE (< 143°C),98.88,55034.37,2311.06,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,150.0,23.81,20.01,122.99,SAFE (< 143°C),98.53,72982.48,3053.64,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,500.0,25.0,20.01,122.99,SAFE (< 143°C),98.07,95768.9,3988.68,0.0,1.114
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,dual_90_tube,Dual 90° 48C + Tube,True,1000.0,26.09,20.02,122.98,SAFE (< 143°C),97.66,116679.63,4839.24,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,25.0,30.64,20.04,122.96,SAFE (< 143°C),95.99,120091.79,4895.19,0.0,1.129
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,50.0,30.79,20.04,122.96,SAFE (< 143°C),95.93,121799.55,4961.97,0.0,1.126
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,60.0,30.82,20.04,122.96,SAFE (< 143°C),95.92,122094.47,4973.49,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,100.0,30.74,20.04,122.96,SAFE (< 143°C),95.95,121236.49,4939.96,0.0,1.11
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,120.0,28.39,20.03,122.97,SAFE (< 143°C),96.81,94677.79,3892.31,0.0,1.117
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,150.0,31.2,20.04,122.96,SAFE (< 143°C),95.78,126438.18,5142.97,0.0,1.129
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,500.0,34.83,20.06,122.94,SAFE (< 143°C),94.49,167409.02,6717.77,0.0,1.119
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_25,25.0,open_cage_no_tube,Open Cage (No Tube),False,1000.0,38.22,20.07,122.93,SAFE (< 143°C),93.32,205660.86,8150.29,0.0,1.117
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,25.0,26.56,20.02,122.98,SAFE (< 143°C),97.49,125630.26,5201.14,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,50.0,26.65,20.02,122.98,SAFE (< 143°C),97.45,127388.89,5272.09,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,60.0,26.66,20.02,122.98,SAFE (< 143°C),97.45,127692.52,5284.34,0.0,1.116
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,100.0,26.62,20.02,122.98,SAFE (< 143°C),97.47,126809.15,5248.71,0.0,1.105
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,120.0,25.19,20.02,122.98,SAFE (< 143°C),98.0,99367.95,4135.58,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,150.0,26.9,20.02,122.98,SAFE (< 143°C),97.36,132161.85,5464.41,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,500.0,29.08,20.03,122.97,SAFE (< 143°C),96.55,174074.97,7137.63,0.0,1.114
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,inner_cu_tube,Inner Coils + Cu Tube,True,1000.0,31.11,20.03,122.97,SAFE (< 143°C),95.82,212815.29,8659.69,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,25.0,27.59,20.02,122.98,SAFE (< 143°C),97.1,145417.29,5996.6,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,50.0,27.69,20.02,122.98,SAFE (< 143°C),97.06,147461.07,6078.41,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,60.0,27.71,20.02,122.98,SAFE (< 143°C),97.06,147813.96,6092.53,0.0,1.116
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,100.0,27.66,20.02,122.98,SAFE (< 143°C),97.08,146787.3,6051.45,0.0,1.105
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,120.0,26.0,20.02,122.98,SAFE (< 143°C),97.7,114923.57,4768.08,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,150.0,27.98,20.02,122.98,SAFE (< 143°C),96.96,153009.09,6300.14,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,500.0,30.53,20.03,122.97,SAFE (< 143°C),96.03,201799.96,8229.27,0.0,1.114
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,chiral_diode_tube,Chiral Diode + Tube,True,1000.0,32.89,20.04,122.96,SAFE (< 143°C),95.18,247012.22,9984.11,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,25.0,26.95,20.02,122.98,SAFE (< 143°C),97.34,133222.17,5507.09,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,50.0,27.05,20.02,122.98,SAFE (< 143°C),97.3,135089.95,5582.21,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,60.0,27.07,20.02,122.98,SAFE (< 143°C),97.3,135412.43,5595.18,0.0,1.116
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,100.0,27.02,20.02,122.98,SAFE (< 143°C),97.32,134474.22,5557.45,0.0,1.105
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,120.0,25.5,20.02,122.98,SAFE (< 143°C),97.89,105339.39,4378.85,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,150.0,27.31,20.02,122.98,SAFE (< 143°C),97.21,140159.53,5785.85,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,500.0,29.64,20.03,122.97,SAFE (< 143°C),96.35,184702.53,7557.5,0.0,1.114
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,toroid_24c_tube,Toroidal 24C + Tube,True,1000.0,31.79,20.04,122.96,SAFE (< 143°C),95.57,225913.79,9169.08,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,25.0,27.91,20.02,122.98,SAFE (< 143°C),96.99,151537.14,6241.36,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,50.0,28.02,20.02,122.98,SAFE (< 143°C),96.94,153669.57,6326.51,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,60.0,28.04,20.02,122.98,SAFE (< 143°C),96.94,154037.76,6341.2,0.0,1.116
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,100.0,27.98,20.02,122.98,SAFE (< 143°C),96.96,152966.56,6298.45,0.0,1.105
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,120.0,26.25,20.02,122.98,SAFE (< 143°C),97.6,119729.51,4962.7,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,150.0,28.32,20.02,122.98,SAFE (< 143°C),96.83,159458.58,6557.29,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,500.0,30.98,20.03,122.97,SAFE (< 143°C),95.86,210392.07,8565.16,0.0,1.114
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,toroid_apex_tube,Toroidal Apex + Tube,True,1000.0,33.44,20.04,122.96,SAFE (< 143°C),94.98,257627.0,10391.62,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,25.0,27.35,20.02,122.98,SAFE (< 143°C),97.19,140837.17,5813.03,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,50.0,27.45,20.02,122.98,SAFE (< 143°C),97.15,142814.75,5892.34,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,60.0,27.47,20.02,122.98,SAFE (< 143°C),97.15,143156.2,5906.02,0.0,1.116
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,100.0,27.42,20.02,122.98,SAFE (< 143°C),97.17,142162.81,5866.2,0.0,1.105
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,120.0,25.81,20.02,122.98,SAFE (< 143°C),97.77,111325.19,4622.12,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,150.0,27.73,20.02,122.98,SAFE (< 143°C),97.05,148182.8,6107.28,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,500.0,30.2,20.03,122.97,SAFE (< 143°C),96.15,195374.91,7977.36,0.0,1.114
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,dual_90_tube,Dual 90° 48C + Tube,True,1000.0,32.48,20.04,122.96,SAFE (< 143°C),95.33,239079.89,9678.47,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,25.0,42.2,20.08,122.92,SAFE (< 143°C),91.98,250650.89,9790.37,0.0,1.129
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,50.0,42.52,20.08,122.92,SAFE (< 143°C),91.87,254372.46,9923.93,0.0,1.126
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,60.0,42.58,20.08,122.92,SAFE (< 143°C),91.85,255015.62,9946.98,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,100.0,42.42,20.08,122.92,SAFE (< 143°C),91.9,253144.93,9879.92,0.0,1.11
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,120.0,37.35,20.07,122.93,SAFE (< 143°C),93.62,195805.57,7784.62,0.0,1.117
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,150.0,43.42,20.09,122.91,SAFE (< 143°C),91.57,264504.27,10285.95,0.0,1.129
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,500.0,51.46,20.12,122.88,SAFE (< 143°C),89.0,355489.86,13435.55,0.0,1.119
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,interm_50,50.0,open_cage_no_tube,Open Cage (No Tube),False,1000.0,59.17,20.15,122.85,SAFE (< 143°C),86.66,442932.1,16300.59,0.0,1.117
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,25.0,33.46,20.04,122.96,SAFE (< 143°C),94.98,257904.96,10402.27,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,50.0,33.65,20.04,122.96,SAFE (< 143°C),94.91,261612.08,10544.18,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,60.0,33.68,20.04,122.96,SAFE (< 143°C),94.9,262252.39,10568.67,0.0,1.116
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,100.0,33.59,20.04,122.96,SAFE (< 143°C),94.93,260389.69,10497.41,0.0,1.105
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,120.0,30.59,20.03,122.97,SAFE (< 143°C),96.01,202869.92,8271.16,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,150.0,34.18,20.04,122.96,SAFE (< 143°C),94.72,271687.11,10928.82,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,500.0,38.84,20.06,122.94,SAFE (< 143°C),93.11,361037.9,14275.27,0.0,1.114
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,inner_cu_tube,Inner Coils + Cu Tube,True,1000.0,43.22,20.07,122.93,SAFE (< 143°C),91.64,445052.87,17319.37,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,25.0,35.64,20.05,122.95,SAFE (< 143°C),94.21,299774.02,11993.21,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,50.0,35.87,20.05,122.95,SAFE (< 143°C),94.13,304118.61,12156.82,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,60.0,35.91,20.05,122.95,SAFE (< 143°C),94.12,304869.13,12185.06,0.0,1.116
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,100.0,35.79,20.05,122.95,SAFE (< 143°C),94.16,302685.92,12102.9,0.0,1.105
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,120.0,32.28,20.04,122.96,SAFE (< 143°C),95.39,235394.84,9536.16,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,150.0,36.49,20.05,122.95,SAFE (< 143°C),93.92,315931.27,12600.29,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,500.0,41.97,20.07,122.93,SAFE (< 143°C),92.05,421022.62,16458.55,0.0,1.114
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,chiral_diode_tube,Chiral Diode + Tube,True,1000.0,47.15,20.08,122.92,SAFE (< 143°C),90.36,520382.83,19968.22,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,25.0,34.29,20.04,122.96,SAFE (< 143°C),94.68,273928.04,11014.17,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,50.0,34.5,20.04,122.96,SAFE (< 143°C),94.61,277877.94,11164.43,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,60.0,34.54,20.04,122.96,SAFE (< 143°C),94.6,278560.22,11190.36,0.0,1.116
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,100.0,34.43,20.04,122.96,SAFE (< 143°C),94.63,276575.46,11114.91,0.0,1.105
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,120.0,31.24,20.03,122.97,SAFE (< 143°C),95.77,215330.4,8757.7,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,150.0,35.06,20.04,122.96,SAFE (< 143°C),94.41,288614.57,11571.69,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,500.0,40.03,20.06,122.94,SAFE (< 143°C),92.7,383947.5,15114.99,0.0,1.114
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,toroid_24c_tube,Toroidal 24C + Tube,True,1000.0,44.72,20.07,122.93,SAFE (< 143°C),91.14,473775.76,18338.16,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,25.0,36.32,20.05,122.95,SAFE (< 143°C),93.97,312794.53,12482.73,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,50.0,36.56,20.05,122.95,SAFE (< 143°C),93.89,317339.39,12653.02,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,60.0,36.6,20.05,122.95,SAFE (< 143°C),93.88,318124.54,12682.41,0.0,1.116
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,100.0,36.48,20.05,122.95,SAFE (< 143°C),93.92,315840.61,12596.89,0.0,1.105
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,120.0,32.81,20.04,122.96,SAFE (< 143°C),95.21,245486.47,9925.39,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,150.0,37.2,20.05,122.95,SAFE (< 143°C),93.67,329698.25,13114.59,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,500.0,42.95,20.07,122.93,SAFE (< 143°C),91.73,439756.82,17130.32,0.0,1.114
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,toroid_apex_tube,Toroidal Apex + Tube,True,1000.0,48.39,20.08,122.92,SAFE (< 143°C),89.96,543992.13,20783.25,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,25.0,35.14,20.04,122.96,SAFE (< 143°C),94.39,290051.44,11626.07,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,50.0,35.35,20.05,122.95,SAFE (< 143°C),94.31,294247.11,11784.67,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,60.0,35.39,20.05,122.95,SAFE (< 143°C),94.3,294971.88,11812.04,0.0,1.116
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,100.0,35.28,20.05,122.95,SAFE (< 143°C),94.33,292863.55,11732.4,0.0,1.105
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,120.0,31.89,20.04,122.96,SAFE (< 143°C),95.54,227852.17,9244.24,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,150.0,35.95,20.05,122.95,SAFE (< 143°C),94.1,305653.71,12214.56,0.0,1.124
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,500.0,41.24,20.06,122.94,SAFE (< 143°C),92.3,407058.37,15954.71,0.0,1.114
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,dual_90_tube,Dual 90° 48C + Tube,True,1000.0,46.24,20.08,122.92,SAFE (< 143°C),90.65,502810.35,19356.95,0.0,1.112
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,25.0,68.51,20.18,122.82,SAFE (< 143°C),83.99,548990.43,19580.75,0.0,1.129
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,50.0,69.3,20.18,122.82,SAFE (< 143°C),83.77,557923.6,19847.87,0.0,1.126
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,60.0,69.44,20.18,122.82,SAFE (< 143°C),83.73,559469.95,19893.97,0.0,1.121
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,100.0,69.04,20.18,122.82,SAFE (< 143°C),83.84,554974.32,19759.83,0.0,1.11
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,120.0,57.16,20.14,122.86,SAFE (< 143°C),87.26,420167.56,15569.25,0.0,1.117
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,150.0,71.45,20.19,122.81,SAFE (< 143°C),83.18,582370.09,20571.9,0.0,1.129
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,500.0,91.47,20.26,122.74,SAFE (< 143°C),78.07,810476.29,26871.09,0.0,1.119
+mw_scale,Atmospheric Platform (2.4 MW),2400000.0,20.0,cont_100,100.0,open_cage_no_tube,Open Cage (No Tube),False,1000.0,111.97,20.33,122.67,SAFE (< 143°C),73.45,1045160.6,32601.17,0.0,1.117

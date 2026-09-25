@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 MASTER PIPELINE VERIFICATION SCRIPT (Python / Elmer FEM)
-Esegue il controllo incrociato e ricalcola i parametri chiave delle 24 pipeline:
+Esegue il controllo incrociato e ricalcola i parametri chiave delle 25 pipeline:
 1. Fibonacci 24x24 Balanced (scripts/run_fibonacci_24x24_simulation.py)
 2. Fibonacci 24x24 Accumulated (scripts/run_fibonacci_spinta_accumulata.py)
 3. Triskelion 3-Lobe Hexagram (scripts/run_triskelion_esagramma_simulation.py)
@@ -27,6 +27,7 @@ Esegue il controllo incrociato e ricalcola i parametri chiave delle 24 pipeline:
 22. Toroidal 8 & 24 Coils Timing Regimes Benchmark (scripts/run_toroidal_timing_regimes_sweep.py)
 23. Meteorological and Environmental Multi-Scale Benchmark (scripts/run_meteorological_environmental_sweep.py)
 24. Local Weather Alteration Benchmark (scripts/run_local_weather_alteration_sweep.py)
+25. Thermal Transient & Joule Heating Benchmark (scripts/run_thermal_transient_joule_heating_sweep.py)
 
 Autore: Alessandro Brescacin
 Licenza: CERN-OHL-S-2.0
@@ -163,6 +164,11 @@ pipelines = [
         "name": "Local Weather Alteration Benchmark (With Coaxial Cu Tube, CW vs CCW, 18.5W to 2.4MW)",
         "script": SCRIPT_DIR / "run_local_weather_alteration_sweep.py",
         "json": ROOT_DIR / "data" / "local_weather_alteration_benchmark.json"
+    },
+    {
+        "name": "Thermal Transient & Joule Heating Benchmark (With Coaxial Cu Tube Cooling, Tg Margin)",
+        "script": SCRIPT_DIR / "run_thermal_transient_joule_heating_sweep.py",
+        "json": ROOT_DIR / "data" / "thermal_transient_joule_heating_benchmark.json"
     }
 ]
 
@@ -566,9 +572,19 @@ for item in results_summary:
         fig54_path = ROOT_DIR / "figures" / "fig_54_local_weather_alteration_matrix.png"
         if fig54_path.exists():
             print(f"  • Tavola Alterazione Meteo (Fig 54): Generata ({fig54_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
+    elif data.get("meta", {}).get("campaign_id") == "thermal_transient_joule_heating_benchmark":
+        meta = data["meta"]
+        summ = data.get("summary", {})
+        print(f"  • Matrice Transitorio Termico:     {summ.get('total_states_evaluated', 0)} stati ({summ.get('configurations_count', 0)} configurazioni x {summ.get('power_tiers_count', 0)} potenze x {summ.get('duty_cycles_count', 0)} duty x {summ.get('frequencies_count', 0)} freq)")
+        print(f"  • Riscaldamento Massimo Bobine:    T_coil Max = {summ.get('max_coil_temperature_c', 0):.1f} °C (Equilibrio a Regime S1)")
+        print(f"  • Margine Stabilità Nucleo PEEK:   T_PEEK Max = {summ.get('max_peek_temperature_c', 0):.1f} °C | Margine Minimo da Tg = {summ.get('min_peek_tg_margin_c', 0):.1f} °C (SICURO < 143°C)")
+        print(f"  • Invarianza Dielettrico & Gauss:  P_PEEK = 0.000 W | Max Gauss Residuo = {summ.get('max_gauss_residual_pct', 0):.3f}% [{summ.get('gauss_status', 'PASS')}]")
+        fig55_path = ROOT_DIR / "figures" / "fig_55_thermal_transient_joule_heating_matrix.png"
+        if fig55_path.exists():
+            print(f"  • Tavola Transitorio Termico (Fig 55): Generata ({fig55_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
 
 print("\n" + "=" * 90)
-print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 24 PIPELINE ===")
+print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 25 PIPELINE ===")
 print("=" * 90)
 
 

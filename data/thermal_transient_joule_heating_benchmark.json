@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "project": "Open Chiral Flux Shaper",
+    "campaign_id": "thermal_transient_joule_heating_benchmark",
+    "title": "Coupled Electro-Thermal Transient & Joule Heating Benchmark",
+    "author": "Alessandro Brescacin",
+    "license": "CERN-OHL-S-2.0",
+    "timestamp": "2026-09-25T20:30:00Z"
+  },
+  "summary": {
+    "total_states_evaluated": 768,
+    "power_tiers_count": 4,
+    "duty_cycles_count": 4,
+    "configurations_count": 6,
+    "frequencies_count": 8,
+    "max_coil_temperature_c": 871.58,
+    "max_peek_temperature_c": 367.83,
+    "min_peek_tg_margin_c": -224.83,
+    "peek_dielectric_loss_invariance_w": 0.0,
+    "max_gauss_residual_pct": 1.129,
+    "gauss_status": "PASS (< 2.0%)",
+    "timestamp": "2026-09-25T20:30:00Z"
+  },
+  "power_tiers": [
+    {
+      "id": "bench_18w",
+      "name": "Benchtop Lab (18.5 W)",
+      "p_active_w": 18.5,
+      "scale": 1.0,
+      "m_cu_kg": 1.15,
+      "m_peek_kg": 0.82,
+      "a_ext_m2": 0.048,
+      "h_default": 12.0,
+      "color": "#64748b"
+    },
+    {
+      "id": "rated_2kw",
+      "name": "Industrial Stator (2.4 kW)",
+      "p_active_w": 2400.0,
+      "scale": 1.0,
+      "m_cu_kg": 1.85,
+      "m_peek_kg": 0.82,
+      "a_ext_m2": 0.075,
+      "h_default": 65.0,
+      "color": "#38bdf8"
+    },
+    {
+      "id": "field_50kw",
+      "name": "Field Station (50 kW)",
+      "p_active_w": 50000.0,
+      "scale": 5.0,
+      "m_cu_kg": 145.0,
+      "m_peek_kg": 64.0,
+      "a_ext_m2": 1.85,
+      "h_default": 140.0,
+      "color": "#f59e0b"
+    },
+    {
+      "id": "mw_scale",
+      "name": "Atmospheric Platform (2.4 MW)",
+      "p_active_w": 2400000.0,
+      "scale": 20.0,
+      "m_cu_kg": 9250.0,
+      "m_peek_kg": 4100.0,
+      "a_ext_m2": 32.0,
+      "h_default": 550.0,
+      "color": "#ef4444"
+    }
+  ],
+  "duty_cycles": [
+    {
+      "id": "burst_10",
+      "name": "Burst Pulse (10%)",
+      "duty": 0.1,
+      "linestyle": ":"
+    },
+    {
+      "id": "interm_25",
+      "name": "Intermittent S3 (25%)",
+      "duty": 0.25,
+      "linestyle": "-."
+    },
+    {
+      "id": "interm_50",
+      "name": "Intermittent S3 (50%)",
+      "duty": 0.5,
+      "linestyle": "--"
+    },
+    {
+      "id": "cont_100",
+      "name": "Continuous S1 (100%)",
+      "duty": 1.0,
+      "linestyle": "-"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "inner_cu_tube",
+      "name": "Inner Coils + Cu Tube",
+      "tube": true,
+      "thermal_gain": 1.35,
+      "eta_em": 0.915
+    },
+    {
+      "id": "chiral_diode_tube",
+      "name": "Chiral Diode + Tube",
+      "tube": true,
+      "thermal_gain": 1.25,
+      "eta_em": 0.902
+    },
+    {
+      "id": "toroid_24c_tube",
+      "name": "Toroidal 24C + Tube",
+      "tube": true,
+      "thermal_gain": 1.3,
+      "eta_em": 0.91
+    },
+    {
+      "id": "toroid_apex_tube",
+      "name": "Toroidal Apex + Tube",
+      "tube": true,
+      "thermal_gain": 1.2,
+      "eta_em": 0.898
+    },
+    {
+      "id": "dual_90_tube",
+      "name": "Dual 90\u00b0 48C + Tube",
+      "tube": true,
+      "thermal_gain": 1.28,
+      "eta_em": 0.905
+    },
+    {
+      "id": "open_cage_no_tube",
+      "name": "Open Cage (No Tube)",
+      "tube": false,
+      "thermal_gain": 0.72,
+      "eta_em": 0.84
+    }
+  ]
+}
