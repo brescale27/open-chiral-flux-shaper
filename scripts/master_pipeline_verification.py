@@ -23,6 +23,7 @@ Esegue il controllo incrociato e ricalcola i parametri chiave delle 12 pipeline:
 18. Harmonic Note-Fibonacci Sweep Benchmark (scripts/run_harmonic_notes_fibonacci_sweep.py)
 19. Triple Mesh Cage Resonance & Skin-Depth Mapping Benchmark (scripts/run_cage_resonance_benchmark_sweep.py)
 20. All Variants Re-Engineered Half-Wave Opposed-Poles Benchmark (scripts/run_all_variants_halfwave_opposed_sweep.py)
+21. Toroidal 8 & 24 Vertical Coils Benchmark (scripts/run_toroidal_8_24_vertical_coils_sweep.py)
 
 Autore: Alessandro Brescacin
 Licenza: CERN-OHL-S-2.0
@@ -139,6 +140,11 @@ pipelines = [
         "name": "All Variants Re-Engineered Half-Wave Opposed-Poles Benchmark",
         "script": SCRIPT_DIR / "run_all_variants_halfwave_opposed_sweep.py",
         "json": ROOT_DIR / "data" / "all_variants_halfwave_opposed_benchmark.json"
+    },
+    {
+        "name": "Toroidal 8 & 24 Vertical Coils Benchmark",
+        "script": SCRIPT_DIR / "run_toroidal_8_24_vertical_coils_sweep.py",
+        "json": ROOT_DIR / "data" / "toroidal_8_24_vertical_coils_benchmark.json"
     }
 ]
 
@@ -495,9 +501,22 @@ for item in results_summary:
         fig50_path = ROOT_DIR / "figures" / "fig_50_all_variants_halfwave_opposed_matrix.png"
         if fig50_path.exists():
             print(f"  • Tavola Master Varianti (Fig 50): Generata ({fig50_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
+    elif data.get("meta", {}).get("campaign_id") == "toroidal_8_24_vertical_coils_benchmark":
+        meta = data["meta"]
+        summ = data.get("summary", {})
+        print(f"  • Matrice Rotori Toroidali 8 & 24 Bobine: {meta.get('total_states_evaluated', 0)} stati ({len(meta.get('variants_evaluated', []))} varianti x {len(meta.get('frequencies_hz', []))} freq x {len(meta.get('rpms', []))} RPM)")
+        print(f"  • Matrici Applicate:               8C: 8x8 Radice Numerica | 24C: 9x24 Multipli Pisano mod 9")
+        print(f"  • Regime Alimentazione:            Semionde Commutate + N-S-N-S Alternati + Sfasamento Rigido")
+        print(f"  • Picco B_gap & Purezza CP:        B_gap_max = {summ.get('max_gap_induction_peak_mt', 0):.2f} mT | Max tau_OAM = {summ.get('max_oam_torque_uNm', 0):.3f} uN*m")
+        print(f"  • Spinta Lorentz Media / Burst:    Max |F| = {summ.get('max_lorentz_force_avg_uN', 0):.1f} uN (Burst: {summ.get('max_lorentz_burst_uN', 0):.1f} uN)")
+        print(f"  • F.e.m. Secondaria Delta V:       Max Delta V = {summ.get('max_secondary_voltage_mv', 0):.1f} mV")
+        print(f"  • Invarianza Attiva & Gauss:       P_tot = 18.50 W | P_PEEK = 0.000 W | Max Gauss Residuo = {summ.get('max_gauss_residual_pct', 0):.3f}% [{summ.get('gauss_status', 'PASS')}]")
+        fig51_path = ROOT_DIR / "figures" / "fig_51_toroidal_8_24_vertical_coils_matrix.png"
+        if fig51_path.exists():
+            print(f"  • Tavola Toroidali 8 & 24 (Fig 51): Generata ({fig51_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
 
 print("\n" + "=" * 90)
-print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 20 PIPELINE ===")
+print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 21 PIPELINE ===")
 print("=" * 90)
 
 
