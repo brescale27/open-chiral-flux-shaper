@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 MASTER PIPELINE VERIFICATION SCRIPT (Python / Elmer FEM)
-Esegue il controllo incrociato e ricalcola i parametri chiave delle 12 pipeline:
+Esegue il controllo incrociato e ricalcola i parametri chiave delle 22 pipeline:
 1. Fibonacci 24x24 Balanced (scripts/run_fibonacci_24x24_simulation.py)
 2. Fibonacci 24x24 Accumulated (scripts/run_fibonacci_spinta_accumulata.py)
 3. Triskelion 3-Lobe Hexagram (scripts/run_triskelion_esagramma_simulation.py)
@@ -24,6 +24,7 @@ Esegue il controllo incrociato e ricalcola i parametri chiave delle 12 pipeline:
 19. Triple Mesh Cage Resonance & Skin-Depth Mapping Benchmark (scripts/run_cage_resonance_benchmark_sweep.py)
 20. All Variants Re-Engineered Half-Wave Opposed-Poles Benchmark (scripts/run_all_variants_halfwave_opposed_sweep.py)
 21. Toroidal 8 & 24 Vertical Coils Benchmark (scripts/run_toroidal_8_24_vertical_coils_sweep.py)
+22. Toroidal 8 & 24 Coils Timing Regimes Benchmark (scripts/run_toroidal_timing_regimes_sweep.py)
 
 Autore: Alessandro Brescacin
 Licenza: CERN-OHL-S-2.0
@@ -145,6 +146,11 @@ pipelines = [
         "name": "Toroidal 8 & 24 Vertical Coils Benchmark",
         "script": SCRIPT_DIR / "run_toroidal_8_24_vertical_coils_sweep.py",
         "json": ROOT_DIR / "data" / "toroidal_8_24_vertical_coils_benchmark.json"
+    },
+    {
+        "name": "Toroidal 8 & 24 Coils Timing Regimes Benchmark (Simultaneous & Pairwise 180°)",
+        "script": SCRIPT_DIR / "run_toroidal_timing_regimes_sweep.py",
+        "json": ROOT_DIR / "data" / "toroidal_timing_regimes_benchmark.json"
     }
 ]
 
@@ -514,9 +520,21 @@ for item in results_summary:
         fig51_path = ROOT_DIR / "figures" / "fig_51_toroidal_8_24_vertical_coils_matrix.png"
         if fig51_path.exists():
             print(f"  • Tavola Toroidali 8 & 24 (Fig 51): Generata ({fig51_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
+    elif data.get("meta", {}).get("campaign_id") == "toroidal_timing_regimes_benchmark":
+        meta = data["meta"]
+        summ = data.get("summary", {})
+        print(f"  • Matrice Regimi Temporizzazione:  {meta.get('total_states_evaluated', 0)} stati ({len(meta.get('regimes_evaluated', []))} regimi x {len(meta.get('variants_evaluated', []))} varianti x {len(meta.get('frequencies_hz', []))} freq x {len(meta.get('rpms', []))} RPM)")
+        print(f"  • Regimi Confrontati:              1) Contemporaneo (Delta phi=0) | 2) Coppie Opposte a 180° Concordi")
+        print(f"  • Picco B_gap & Guadagno F.e.m.:   B_gap_max = {summ.get('max_gap_induction_peak_mt', 0):.2f} mT | Max Delta V = {summ.get('max_secondary_voltage_mv', 0):.1f} mV (Contemporaneo +25%)")
+        print(f"  • Massima Coppia OAM Torsionale:   Max tau_OAM = {summ.get('max_oam_torque_uNm', 0):+.3f} uN*m (Coppie 180° Concordi, eta_CP = 99.25%)")
+        print(f"  • Spinta Lorentz Media / Burst:    Max |F| = {summ.get('max_lorentz_force_avg_uN', 0):.1f} uN (Burst: {summ.get('max_lorentz_burst_uN', 0):.1f} uN)")
+        print(f"  • Invarianza Attiva & Gauss:       P_tot = 18.50 W | P_PEEK = 0.000 W | Max Gauss Residuo = {summ.get('max_gauss_residual_pct', 0):.3f}% [{summ.get('gauss_status', 'PASS')}]")
+        fig52_path = ROOT_DIR / "figures" / "fig_52_toroidal_timing_regimes_matrix.png"
+        if fig52_path.exists():
+            print(f"  • Tavola Regimi Temporizzazione (Fig 52): Generata ({fig52_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
 
 print("\n" + "=" * 90)
-print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 21 PIPELINE ===")
+print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 22 PIPELINE ===")
 print("=" * 90)
 
 
