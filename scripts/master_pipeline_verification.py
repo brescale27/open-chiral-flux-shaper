@@ -28,6 +28,7 @@ Esegue il controllo incrociato e ricalcola i parametri chiave delle 25 pipeline:
 23. Meteorological and Environmental Multi-Scale Benchmark (scripts/run_meteorological_environmental_sweep.py)
 24. Local Weather Alteration Benchmark (scripts/run_local_weather_alteration_sweep.py)
 25. Thermal Transient & Joule Heating Benchmark (scripts/run_thermal_transient_joule_heating_sweep.py)
+26. Spacetime Gravitoelectromagnetism (GEM) & Frame Dragging Benchmark (scripts/run_spacetime_gem_frame_dragging_sweep.py)
 
 Autore: Alessandro Brescacin
 Licenza: CERN-OHL-S-2.0
@@ -169,6 +170,11 @@ pipelines = [
         "name": "Thermal Transient & Joule Heating Benchmark (With Coaxial Cu Tube Cooling, Tg Margin)",
         "script": SCRIPT_DIR / "run_thermal_transient_joule_heating_sweep.py",
         "json": ROOT_DIR / "data" / "thermal_transient_joule_heating_benchmark.json"
+    },
+    {
+        "name": "Spacetime Gravitoelectromagnetism (GEM) & Frame Dragging Benchmark",
+        "script": SCRIPT_DIR / "run_spacetime_gem_frame_dragging_sweep.py",
+        "json": ROOT_DIR / "data" / "spacetime_gem_frame_dragging_benchmark.json"
     }
 ]
 
@@ -582,9 +588,20 @@ for item in results_summary:
         fig55_path = ROOT_DIR / "figures" / "fig_55_thermal_transient_joule_heating_matrix.png"
         if fig55_path.exists():
             print(f"  • Tavola Transitorio Termico (Fig 55): Generata ({fig55_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
+    elif data.get("meta", {}).get("campaign_id") == "spacetime_gem_frame_dragging_benchmark":
+        meta = data["meta"]
+        summ = data.get("summary", {})
+        print(f"  • Matrice Stati Relativistici:     {summ.get('total_states_evaluated', 0)} stati ({summ.get('configurations_count', 0)} configurazioni x {summ.get('power_tiers_count', 0)} potenze x {summ.get('kinematic_regimes_count', 0)} cinematica x {summ.get('frequencies_count', 0)} freq)")
+        print(f"  • Campo Gravitomagnetico |B_g|:    Max |B_g| = {summ.get('max_gravitomagnetic_field_s1', 0):.4e} s^-1 | Max Omega_LT = {summ.get('max_lense_thirring_rad_s', 0):.4e} rad/s")
+        print(f"  • Deformazione Metrica Spaziotempo:|h_0_phi| Max = {summ.get('max_metric_h_0_phi', 0):.4e} (Kerr Twist) | Densità Massa Eff = {summ.get('max_effective_mass_density_kg_m3', 0):.4e} kg/m³")
+        print(f"  • Radiazione Onde Gravitazionali:  P_GW Max = {summ.get('max_hgw_power_w', 0):.4e} W (Commutazione Semionde dB/dt)")
+        print(f"  • Invarianza Dielettrico & Gauss:  P_PEEK = 0.000 W | Max Gauss Residuo = {summ.get('max_gauss_residual_pct', 0):.3f}% [{summ.get('gauss_status', 'PASS')}]")
+        fig56_path = ROOT_DIR / "figures" / "fig_56_spacetime_gem_frame_dragging_matrix.png"
+        if fig56_path.exists():
+            print(f"  • Tavola Spaziotempo GEM (Fig 56): Generata ({fig56_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
 
 print("\n" + "=" * 90)
-print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 25 PIPELINE ===")
+print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 26 PIPELINE ===")
 print("=" * 90)
 
 

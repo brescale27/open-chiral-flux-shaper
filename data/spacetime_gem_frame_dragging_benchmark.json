@@ -1,0 +1,146 @@
+{
+  "meta": {
+    "project": "Open Chiral Flux Shaper",
+    "campaign_id": "spacetime_gem_frame_dragging_benchmark",
+    "title": "Spacetime Gravitoelectromagnetism (GEM), Stress-Energy Tensor & Frame-Dragging Benchmark",
+    "author": "Alessandro Brescacin",
+    "license": "CERN-OHL-S-2.0",
+    "timestamp": "2026-09-25T22:45:00Z"
+  },
+  "summary": {
+    "total_states_evaluated": 576,
+    "power_tiers_count": 4,
+    "configurations_count": 6,
+    "kinematic_regimes_count": 3,
+    "frequencies_count": 8,
+    "max_gravitomagnetic_field_s1": 1.4620669231860641e-52,
+    "max_lense_thirring_rad_s": 7.310334615930321e-53,
+    "max_metric_h_0_phi": 3.0682164566371313e-44,
+    "max_effective_mass_density_kg_m3": 1.3162853826733371e-11,
+    "max_hgw_power_w": 3.849704513961437e-55,
+    "peek_dielectric_loss_invariance_w": 0.0,
+    "max_gauss_residual_pct": 1.1294898461935556,
+    "gauss_status": "PASS (< 2.0%)",
+    "timestamp": "2026-09-25T22:45:00Z"
+  },
+  "power_tiers": [
+    {
+      "id": "bench_18w",
+      "name": "Benchtop Lab (18.5 W)",
+      "p_active_w": 18.5,
+      "scale": 1.0,
+      "r_core_m": 0.035,
+      "v_vol_m3": 0.00052,
+      "color": "#64748b"
+    },
+    {
+      "id": "rated_2kw",
+      "name": "Industrial Stator (2.4 kW)",
+      "p_active_w": 2400.0,
+      "scale": 1.0,
+      "r_core_m": 0.035,
+      "v_vol_m3": 0.00052,
+      "color": "#0284c7"
+    },
+    {
+      "id": "station_50kw",
+      "name": "Field Station (50 kW)",
+      "p_active_w": 50000.0,
+      "scale": 2.0,
+      "r_core_m": 0.07,
+      "v_vol_m3": 0.00416,
+      "color": "#ea580c"
+    },
+    {
+      "id": "megawatt_2mw",
+      "name": "Megawatt Platform (2.4 MW)",
+      "p_active_w": 2400000.0,
+      "scale": 10.0,
+      "r_core_m": 0.35,
+      "v_vol_m3": 0.52,
+      "color": "#dc2626"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "toroid_24c_pairwise",
+      "name": "Toroidal 24C (Pisano Pairwise 180\u00b0)",
+      "b_base_mt": 30.3,
+      "s3_cw": 0.985,
+      "has_oam": true,
+      "cusp_factor": 1.0,
+      "color": "#2563eb",
+      "hgw_harmonic_boost": 2.45
+    },
+    {
+      "id": "toroid_24c_simultaneous",
+      "name": "Toroidal 24C (Pisano Simultaneous)",
+      "b_base_mt": 37.74,
+      "s3_cw": 0.02,
+      "has_oam": false,
+      "cusp_factor": 1.0,
+      "color": "#ea580c",
+      "hgw_harmonic_boost": 3.2
+    },
+    {
+      "id": "toroid_8c_pairwise",
+      "name": "Toroidal 8C (8x8 Roots Pairwise 180\u00b0)",
+      "b_base_mt": 27.0,
+      "s3_cw": 0.905,
+      "has_oam": true,
+      "cusp_factor": 1.0,
+      "color": "#16a34a",
+      "hgw_harmonic_boost": 2.1
+    },
+    {
+      "id": "toroid_2c_apex",
+      "name": "Toroidal 2C Apex Kissing (Cusp)",
+      "b_base_mt": 18.42,
+      "s3_cw": 0.944,
+      "has_oam": true,
+      "cusp_factor": 2.26,
+      "color": "#9333ea",
+      "hgw_harmonic_boost": 2.65
+    },
+    {
+      "id": "inner_coils_tube",
+      "name": "Inner Coils + Cu Tube Collimator",
+      "b_base_mt": 28.6,
+      "s3_cw": 0.968,
+      "has_oam": true,
+      "cusp_factor": 1.35,
+      "color": "#0d9488",
+      "hgw_harmonic_boost": 2.3
+    },
+    {
+      "id": "single_rotor_baseline",
+      "name": "Single Rotor Dipole (Baseline)",
+      "b_base_mt": 7.8,
+      "s3_cw": 0.0,
+      "has_oam": false,
+      "cusp_factor": 1.0,
+      "color": "#64748b",
+      "hgw_harmonic_boost": 1.0
+    }
+  ],
+  "kinematic_regimes": [
+    {
+      "id": "cw_1200",
+      "rpm": 1200.0,
+      "dir": 1.0,
+      "name": "CW (+1200 RPM)"
+    },
+    {
+      "id": "ccw_1200",
+      "rpm": -1200.0,
+      "dir": -1.0,
+      "name": "CCW (-1200 RPM)"
+    },
+    {
+      "id": "static_0",
+      "rpm": 0.0,
+      "dir": 0.0,
+      "name": "Static (0 RPM)"
+    }
+  ]
+}
