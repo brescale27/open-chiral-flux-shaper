@@ -581,7 +581,7 @@ To assist engineers and researchers in navigating the multidimensional parameter
 
 The repository provides high-resolution 300 DPI analytical plates, multiphysics diagnostic suites, and synchronized dynamic simulation records.
 
-### 9.1 Scientific Illustration Standards & Multi-Panel Diagnostic Guidelines
+### Scientific Illustration Standards & Multi-Panel Diagnostic Guidelines
 
 All technical diagnostic plates within the Open Chiral Flux Shaper repository are rendered according to strict academic and industrial illustration standards:
 - **Spatial Resolution & Typography:** Exported at $\ge 300\text{ DPI}$ with vector anti-aliased font rendering (Helvetica / Latin Modern Math). All subplot panels are indexed with bold lowercase labels: `(a)`, `(b)`, `(c)`, `(d)`, `(e)`, `(f)`.
@@ -789,41 +789,6 @@ All technical diagnostic plates within the Open Chiral Flux Shaper repository ar
 | *Synchronized high-resolution simulation video over 16.0 ms transient electrical cycle (64 timesteps, 100 Hz). Left: 3D perspective wireframe of spherical mantle showing the 48 active solenoids with current density color-modulation and resultant dynamic magnetic vector. Top Right: 3D state-space force hodograph. Bottom Right: Real-time scrolling waveforms.* |
 
 </div>
-
-### 9.2 Detailed Scientific Illustration Prompts for Diagnostic Figures
-
-For graphic artists, technical illustrators, and generative AI visual pipelines, the exact multiphysics prompt specifications for creating or enhancing the core diagnostic plates are cataloged below:
-
-#### Prompt Specification 1: Figure 47 — Vertical Toroidal Rotor 2 Coils Apex Kissing & Cusp Concentration Plate
-> **Technical Description & Generation Prompt:**
-> "Create a 6-panel technical diagnostic plate (300 DPI, white background, aspect ratio 19:12) illustrating the electrodynamic behavior of a vertical toroidal rotor with 2 vertical arched coils that converge to kiss at the upper apex ($z = +47\text{ mm}$), enclosed in a spherical triple-layer copper woven wire mesh ($R = 48, 49, 50\text{ mm}$).
-> - **Panel (a) [Apex vs Equator Induction]:** Semi-log line chart plotting magnetic induction $B$ (mT) vs electric frequency $f_e$ (25–1000 Hz at 1200 RPM). Show curves for Half-Wave $B_{\text{apex}}$ (dark blue, peaking at 18.42 mT), Half-Wave $B_{\text{eq}}$ (light blue, 8.15 mT), Pure Sine $B_{\text{apex}}$ (green, 14.1 mT), and Pure Sine $B_{\text{eq}}$ (light green, 7.6 mT). Include a prominent callout bubble: 'Cusp Concentration Boost: 2.26x ($B_{\text{apex}}/B_{\text{eq}}$)'.
-> - **Panel (b) [Stokes $s_3$ & Parity Inversion]:** Semi-log plot of normalized Stokes parameter $s_3$ vs $f_e$ (25–1000 Hz). Plot CW rotation as positive ($s_3 \approx +0.944$, dark blue) and CCW rotation as negative ($s_3 \approx -0.944$, orange), demonstrating exact parity inversion. Add dashed reference lines for high circular purity ($s_3 = \pm 0.85$, gray) and IEEE circular threshold ($\text{AR} \le 3.0\text{ dB}$).
-> - **Panel (c) [Apex Axial Lorentz Stress]:** Linear plot of Lorentz force ($\mu\text{N}$) vs rotor speed (0–2400 RPM at 100 Hz). Display the axial tractive tension $F_{z,\text{apex}}$ (crimson red, 36.68 µN to 39.12 µN), resultant total force $|F_{\text{tot}}|$ (dark gray, 50.86 µN), and transverse lateral forces $F_x, F_y$ (teal, $< 15\ \mu\text{N}$).
-> - **Panel (d) [OAM & Reluctance Torques]:** Dual-axis plot vs RPM (0–2400 RPM). Left axis: Contactless OAM torque $\tau_{\text{OAM}}$ ($\mu\text{N}\cdot\text{m}$, purple circles for CW, violet dashed for CCW, $\pm 1.865\ \mu\text{N}\cdot\text{m}$). Right axis: Reluctance drive torque $\tau_{\text{drive}}$ ($\text{mN}\cdot\text{m}$, amber squares, $+3.42\text{ mN}\cdot\text{m}$ at 1200 RPM).
-> - **Panel (e) [Subbody Dissipation & Gauss Solenoidality]:** Dual-axis plot vs frequency. Left axis: Active Joule loss partition under strict invariant power ($P_{\text{tot}} \equiv 18.50\text{ W}$), showing triple copper mesh eddy dissipation $P_{\text{mesh}}$ (red, 2.02 W), coil losses $P_{\text{coils}}$ (blue, 16.48 W), and dielectric PEEK core losses (solid green line at identically 0.000 W). Right axis: Gauss solenoidality residual percentage (green diamonds, $\le 1.210\%$) with red dotted ceiling at 2.0%.
-> - **Panel (f) [Comparative Multi-Variant Bar Benchmark]:** Grouped bar chart comparing Single Rotor (1x), Dual Orthogonal (48 coils), Copper Collimator Tube, and Toroidale Apex Kissing. Plot peak $B$ field (mT, blue bars), axial force $F_z$ ($\mu\text{N}$, red bars), and Stokes $s_3$ (black diamond line on twin axis). Ensure clean Helvetica typography and CERN-OHL-S-2.0 metadata banner."
-
-#### Prompt Specification 2: Figure 55 — Coupled Electro-Thermal Transient & Joule Heating Diagnostic Plate
-> **Technical Description & Generation Prompt:**
-> "Create a 6-panel technical diagnostic plate (300 DPI, white background, aspect ratio 19:12) illustrating the coupled electro-thermal transient and Joule dissipation behavior of the Open Chiral Flux Shaper across power tiers (18.5 W to 2.4 MW) and duty cycles (10% to 100% S1), certifying PEEK dielectric core integrity ($T_g = 143^\circ\text{C}$).
-> - **Panel (a) [Coil Heating Transient $T_{\text{coil}}(t)$]:** Transient heating curves over 30 minutes (0–1800 s) for Benchtop 18.5 W (gray, 21.9°C), Industrial 2.4 kW (blue, 45.4°C), 50 kW Field Station (orange), and 2.4 MW Megawatt Platform (red).
-> - **Panel (b) [PEEK Core Temperature vs Duty Cycle]:** Linear plot of $T_{\text{PEEK}}$ vs duty cycle (10% to 100%) at 2.4 kW and 50 kW comparing Coaxial Cu Tube vs Open Cage. Include horizontal dashed thresholds for PEEK $T_g = 143^\circ\text{C}$ (red) and Class B safe threshold 90°C (green).
-> - **Panel (c) [Copper Conductivity Drift & Resistance Growth]:** Dual-axis plot vs temperature (20°C to 160°C). Left axis: Conductivity retention $\sigma(T)/\sigma_0$ (blue, dropping to 81% at 80°C). Right axis: Joule resistance increase $\Delta R/R_0$ (dashed orange, +24% at 80°C).
-> - **Panel (d) [Cooling Airflow Demand]:** Log-log plot of required convective airflow ($m^3/h$) vs dissipated thermal power (10 W to 1 MW) for $\Delta T = 50\text{ K}$, annotating benchmarks (Lab 0.11 m³/h passive, 2.4 kW 14.3 m³/h fan, 50 kW 268 m³/h blower, 2.4 MW 12100 m³/h vortex).
-> - **Panel (e) [Joule Loss Spectral Response & 120 Hz Resonance]:** Semi-log plot of dissipated thermal power vs electric frequency $f_e$ (7.83 Hz to 1000 Hz) at 50 kW S1, highlighting the 120 Hz resonance notch (-18% Joule heat) and Cu tube cooling benefit.
-> - **Panel (f) [Architectural Comparison & Gauss Audit]:** Grouped bar chart comparing the 6 core architectures at 50 kW (50% duty) showing coil temperature $T_{\text{coil}}$ (blue) and PEEK temperature $T_{\text{PEEK}}$ (teal) below 90°C, with Gauss solenoidality residual line on twin axis ($\le 1.129\%$ PASS)."
-
-#### Prompt Specification 3: Figure 56 — Spacetime Gravitoelectromagnetism (GEM) & Frame-Dragging Diagnostic Plate
-> **Technical Description & Generation Prompt:**
-> "Create a 6-panel technical diagnostic plate (300 DPI, white background, aspect ratio 19:12) illustrating the relativistic gravitoelectromagnetic (GEM) field, stress-energy tensor $T_{\mu\nu}$, and spacetime metric perturbations of the Open Chiral Flux Shaper across power tiers (18.5 W to 2.4 MW) and kinematic regimes (-2400 to +2400 RPM).
-> - **Panel (a) [Axial Gravitomagnetic Field $B_{g,z}(z)$]:** Line chart plotting $B_{g,z}$ ($s^{-1}$) vs axial elevation $z$ (-15 cm to +15 cm) at 2.4 kW. Show curves for Toroidal 24C Pairwise (blue, peaking at center), Toroidal 8C Pairwise (green), Simultaneous In-Phase (orange dashed, identically zero), and Single Rotor Baseline (gray dotted, zero).
-> - **Panel (b) [Off-Diagonal Metric Distortion $\vert h_{0\phi}(r)\vert$]:** Log-log plot of Kerr-like spacetime twist $\vert h_{0\phi}\vert$ vs radial distance $r$ (0.03 m to 3.0 m) for Benchtop 18.5 W (gray), Industrial 2.4 kW (blue), 50 kW Field Station (orange), and 2.4 MW Megawatt Platform (red).
-> - **Panel (c) [Effective Mass Density & Kissing Cusp]:** Linear plot of relativistic mass density $\rho_{\text{eff}} = u_{\text{EM}}/c^2$ ($kg/m^3$) vs axial elevation $z$ (0 to 100 mm), highlighting the 5.11× energy density concentration spike at the kissing apex ($z = +47\text{ mm}$, purple curve) vs uniform equatorial Toroidal 24C (blue dashed).
-> - **Panel (d) [HFGW Radiated Power $P_{\text{GW}}(f_e)$]:** Log-log plot of gravitational wave power vs electric frequency (7.83 Hz to 1000 Hz) comparing 2.4 MW Commutated Half-Wave (red), 2.4 MW Pure Sine (orange dashed), and 2.4 kW Commutated (blue), showing the 120 Hz cavity resonance boost.
-> - **Panel (e) [Kinematic Parity Inversion $\Omega_{\text{LT}}$]:** Linear plot of Lense-Thirring frame dragging frequency $\Omega_{\text{LT}}$ (rad/s) vs rotor speed (-2400 to +2400 RPM) demonstrating exact anti-symmetric inversion $\Omega_{\text{LT}}(-\text{RPM}) = -\Omega_{\text{LT}}(+\text{RPM})$ for Toroidal 24C (blue) and Toroidal 8C (green).
-> - **Panel (f) [Architectural Comparison & Gauss Audit]:** Grouped bar chart comparing the 6 core architectures showing peak gravitomagnetic field $\vert B_g\vert$ with Gauss solenoidality residual line on twin axis ($\le 1.130\%$ PASS)."
-
 
 ---
 
