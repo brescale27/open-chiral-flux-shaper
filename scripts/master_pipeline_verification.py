@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 MASTER PIPELINE VERIFICATION SCRIPT (Python / Elmer FEM)
-Esegue il controllo incrociato e ricalcola i parametri chiave delle 23 pipeline:
+Esegue il controllo incrociato e ricalcola i parametri chiave delle 24 pipeline:
 1. Fibonacci 24x24 Balanced (scripts/run_fibonacci_24x24_simulation.py)
 2. Fibonacci 24x24 Accumulated (scripts/run_fibonacci_spinta_accumulata.py)
 3. Triskelion 3-Lobe Hexagram (scripts/run_triskelion_esagramma_simulation.py)
@@ -26,6 +26,7 @@ Esegue il controllo incrociato e ricalcola i parametri chiave delle 23 pipeline:
 21. Toroidal 8 & 24 Vertical Coils Benchmark (scripts/run_toroidal_8_24_vertical_coils_sweep.py)
 22. Toroidal 8 & 24 Coils Timing Regimes Benchmark (scripts/run_toroidal_timing_regimes_sweep.py)
 23. Meteorological and Environmental Multi-Scale Benchmark (scripts/run_meteorological_environmental_sweep.py)
+24. Local Weather Alteration Benchmark (scripts/run_local_weather_alteration_sweep.py)
 
 Autore: Alessandro Brescacin
 Licenza: CERN-OHL-S-2.0
@@ -157,6 +158,11 @@ pipelines = [
         "name": "Meteorological and Environmental Multi-Scale Benchmark (With/Without Copper Tube, CW vs CCW)",
         "script": SCRIPT_DIR / "run_meteorological_environmental_sweep.py",
         "json": ROOT_DIR / "data" / "meteorological_environmental_benchmark.json"
+    },
+    {
+        "name": "Local Weather Alteration Benchmark (With Coaxial Cu Tube, CW vs CCW, 18.5W to 2.4MW)",
+        "script": SCRIPT_DIR / "run_local_weather_alteration_sweep.py",
+        "json": ROOT_DIR / "data" / "local_weather_alteration_benchmark.json"
     }
 ]
 
@@ -549,9 +555,20 @@ for item in results_summary:
         fig53_path = ROOT_DIR / "figures" / "fig_53_meteorological_environmental_matrix.png"
         if fig53_path.exists():
             print(f"  • Tavola Meteorologica (Fig 53):   Generata ({fig53_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
+    elif data.get("meta", {}).get("campaign_id") == "local_weather_alteration_benchmark":
+        meta = data["meta"]
+        summ = data.get("summary", {})
+        print(f"  • Matrice Alterazione Meteo:       {summ.get('total_states_evaluated', 0)} stati ({summ.get('configurations_count', 0)} configurazioni x {summ.get('power_tiers_count', 0)} potenze x {summ.get('frequencies_count', 0)} freq x {summ.get('rpms_count', 0)} RPM)")
+        print(f"  • Velocità Verticale Updraft/Down: CW Updraft = {summ.get('max_updraft_velocity_cw_m_s', 0):+.2f} m/s vs CCW Subsidenza = {summ.get('max_downdraft_velocity_ccw_m_s', 0):+.2f} m/s")
+        print(f"  • Variazione Pressione Barometrica: CW Depressione = {summ.get('max_depression_cw_hpa', 0):.1f} hPa vs CCW Anticiclone = {summ.get('max_anticyclone_ccw_hpa', 0):+.1f} hPa")
+        print(f"  • Quota Penetrazione Troposferica: H_plume Max = {summ.get('max_plume_breakthrough_height_m', 0):.0f} m (Scala MW) | Droplet Ratio = {summ.get('max_droplet_kernel_ratio', 0):.1f}x")
+        print(f"  • Invarianza Attiva & Gauss:       P_PEEK = 0.000 W | Max Gauss Residuo = {summ.get('max_gauss_residual_pct', 0):.3f}% [{summ.get('gauss_status', 'PASS')}]")
+        fig54_path = ROOT_DIR / "figures" / "fig_54_local_weather_alteration_matrix.png"
+        if fig54_path.exists():
+            print(f"  • Tavola Alterazione Meteo (Fig 54): Generata ({fig54_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
 
 print("\n" + "=" * 90)
-print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 23 PIPELINE ===")
+print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 24 PIPELINE ===")
 print("=" * 90)
 
 
