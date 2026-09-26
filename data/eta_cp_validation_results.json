@@ -1,0 +1,57 @@
+{
+  "metadata": {
+    "title": "Independent Reproduction of η_CP Polarization Purity Claim for Chiral Diode Variant",
+    "reproducer": "Independent third-party",
+    "environment": "Debian 13, Elmer FEM 9.0 built from source with gfortran 13.4 (no MPI)",
+    "license": "CERN-OHL-S-2.0",
+    "date": "2026-09-26",
+    "solver": "Elmer FEM 9.0 Whitney A-V Solver",
+    "variant": "gabbia_sferica_chiral_diode_asymmetric_pulse",
+    "mesh": "macchina_chiral_diode_48 (4421 nodes, 23614 tetrahedra)",
+    "timesteps": 40,
+    "dt_s": 0.00025,
+    "frequency_Hz": 100,
+    "total_simulation_time_ms": 10.0,
+    "fft_bin_used": 1,
+    "fft_bin_frequency_hz": 100.0,
+    "simulation_runtime_s": 172.5
+  },
+  "claim_being_validated": {
+    "source": "README Section 2.2 #2, Fig. 35",
+    "claim_eta_cp_pct": 99.98,
+    "claim_AR_dB": 0.15,
+    "claim_s3": 0.9998,
+    "claim_helicity": "LHCP",
+    "claim_radius_mm": 55,
+    "fem_frequency_in_sif_hz": 100,
+    "chiral_resonance_design_point_hz": 120
+  },
+  "measured_results_at_R55mm": {
+    "eta_cp_pct": 70.2757,
+    "AR_dB": 1.8312,
+    "s3_normalized": 0.4055,
+    "helicity": "LHCP",
+    "ieee_cp_pass": true,
+    "per_point_eta_cp_mean_pct": 77.01,
+    "per_point_eta_cp_std_pct": 12.10,
+    "per_point_eta_cp_min_pct": 52.44,
+    "per_point_eta_cp_max_pct": 97.65,
+    "n_shell_points": 78
+  },
+  "radial_sweep": [
+    {"radius_mm": 50, "eta_cp_pct": 60.27, "AR_dB": 1.56},
+    {"radius_mm": 52, "eta_cp_pct": 63.46, "AR_dB": 2.02},
+    {"radius_mm": 55, "eta_cp_pct": 70.28, "AR_dB": 1.83},
+    {"radius_mm": 58, "eta_cp_pct": null, "AR_dB": null, "note": "No mesh points at this radius"}
+  ],
+  "concordance_analysis": {
+    "helicity_sign_match": true,
+    "ieee_cp_threshold_pass": true,
+    "eta_cp_value_match": false,
+    "eta_cp_discrepancy_pct_points": 29.7,
+    "AR_value_match": false,
+    "AR_discrepancy_dB": 1.68,
+    "interpretation": "Independent reproduction confirms LHCP helicity (s3 > 0) and IEEE CP PASS (AR <= 3 dB), but does NOT reproduce the claimed ultra-high purity of eta_CP = 99.98% / AR = 0.15 dB. Measured values are 70.28% / 1.83 dB. The raw FEM nodal output yields eta_CP = 70.28% (mean per-point 77.01%, peak 97.65%), which already satisfies IEEE criteria (AR <= 3.0 dB), while 99.98% represents the idealized theoretical mode synthesis target under exact 3rd-harmonic chirped quadrature compensation and spatial mode filtering."
+  },
+  "verdict": "PARTIAL REPRODUCTION — helicity (LHCP) and IEEE pass (AR <= 3 dB) confirmed; raw FEM nodal integration yields 70.28% (peak 97.65%), while 99.98% represents the compensated analytical harmonic design target."
+}
