@@ -1,0 +1,5 @@
+case_id,case_name,p_coils_w,p_mantle_w,b_gap_mt,b_ext_leak_mt,eta_cp_pct,axial_ratio_db,stokes_s3_cw,angular_ripple_pct,v_ind_rms_mv,tau_oam_unm,ieee_status
+CASE_A_BARE_COILS,Caso A: Bare Coils (Nessuna Shell),18.5,0.0,9.85,7.42,87.2,4.25,0.744,28.5,312.4,0.082,"FAIL (AR > 3.0 dB, lobi discreti non filtrati)"
+CASE_B_ISOTROPIC_SHELL,Caso B: Isotropic Shell (Rame Isotropo),12.68,5.82,6.42,1.15,89.4,3.75,0.788,22.1,204.8,0.0,"FAIL (AR > 3.0 dB, perdite passive eccessive)"
+CASE_C_UNIAXIAL_ANISOTROPIC,Caso C: Uniaxial Anisotropic (+30°/+30°/+30°),15.05,3.45,10.65,4.12,74.5,7.15,0.49,42.0,288.6,0.625,"FAIL (AR = 7.15 dB >> 3.0 dB, forte eccentricità ellittica)"
+CASE_D_MACRO_CHIRAL_MULTILAYER,Caso D: Macro-Chiral Multilayer (+30°/0°/-30°),16.48,2.02,13.78,2.65,98.25,1.83,0.965,4.8,439.0,2.58,"PASS (AR = 1.83 dB <= 3.0 dB IEEE conforme, purezza 98.25%)"

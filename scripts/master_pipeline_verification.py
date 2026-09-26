@@ -175,6 +175,11 @@ pipelines = [
         "name": "Spacetime Gravitoelectromagnetism (GEM) & Frame Dragging Benchmark",
         "script": SCRIPT_DIR / "run_spacetime_gem_frame_dragging_sweep.py",
         "json": ROOT_DIR / "data" / "spacetime_gem_frame_dragging_benchmark.json"
+    },
+    {
+        "name": "Chiral Shell Ablation Benchmark (Bare Coils vs Isotropic vs Anisotropic vs Macro-Chiral)",
+        "script": SCRIPT_DIR / "run_chiral_shell_ablation_study.py",
+        "json": ROOT_DIR / "data" / "chiral_shell_ablation_study.json"
     }
 ]
 
@@ -599,9 +604,18 @@ for item in results_summary:
         fig56_path = ROOT_DIR / "figures" / "fig_56_spacetime_gem_frame_dragging_matrix.png"
         if fig56_path.exists():
             print(f"  • Tavola Spaziotempo GEM (Fig 56): Generata ({fig56_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
+    elif data.get("metadata", {}).get("title", "").startswith("Chiral Shell Ablation Benchmark"):
+        meta = data["metadata"]
+        cases = data.get("cases", [])
+        print(f"  • Casi di Ablazione Valutati:     {len(cases)} configurazioni controllate a P_tot = 18.50 W")
+        for c in cases:
+            print(f"    - {c['name'][:30]}: eta_CP = {c['eta_cp_pct']:.1f}% | AR = {c['axial_ratio_db']:.2f} dB | B_gap = {c['b_gap_nominal_mt']:.2f} mT | P_eddy = {c['p_mantle_w']:.2f} W [{c['ieee_cp_status'][:4]}]")
+        fig57_path = ROOT_DIR / "figures" / "fig_57_chiral_shell_ablation_benchmark.png"
+        if fig57_path.exists():
+            print(f"  • Tavola Ablazione Mantello (Fig 57): Generata ({fig57_path.stat().st_size / 1e6:.2f} MB, 300 DPI) [OK]")
 
 print("\n" + "=" * 90)
-print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 26 PIPELINE ===")
+print("=== VERIFICA COMPLETATA CON SUCCESSO SU TUTTE LE 27 PIPELINE ===")
 print("=" * 90)
 
 
