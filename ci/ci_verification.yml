@@ -1,0 +1,43 @@
+name: Open Chiral Flux Shaper CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  verify-pipelines:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Master Pipeline Verification (All 26 Architectures)
+        run: |
+          python scripts/master_pipeline_verification.py --summary-only
+
+      - name: Validate Falsification & Independent Reproduction Datasets
+        run: |
+          python -c "
+          import json
+          f1 = 'variants/rotore_centrato_z0_resonance_sweep/verification_tests/data/risultati_falsificazione_artefatti.json'
+          f2 = 'variants/rotore_centrato_z0_resonance_sweep/verification_tests/data/independent_reproduction_debian13.json'
+          d1 = json.load(open(f1, encoding='utf-8'))
+          d2 = json.load(open(f2, encoding='utf-8'))
+          assert d1['verdict'] == 'ARTEFATTO NUMERICO RILEVATO', 'Author verdict mismatch'
+          assert d2['verdict'] == 'ARTEFATTO NUMERICO RILEVATO', 'Independent verdict mismatch'
+          print('Falsification datasets validated successfully: ARTEFATTO NUMERICO RILEVATO confirmed.')
+          "

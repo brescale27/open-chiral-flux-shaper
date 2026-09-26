@@ -61,7 +61,24 @@ FIG_VAR_DIR = VAR_DIR / "figures"
 FIG_VAR_DIR.mkdir(parents=True, exist_ok=True)
 FIG_35_NAME = "fig_35_chiral_diode_asymmetric_pulse.png"
 
-ELMER_SOLVER = r"C:\Users\bresc\ElmerFEM\ElmerFEM-nogui-nompi-Windows-AMD64\bin\ElmerSolver.exe"
+def find_elmersolver():
+    cmd = os.environ.get("ELMER_SOLVER") or shutil.which("ElmerSolver")
+    if cmd:
+        return cmd
+    candidates = [
+        r"C:\Users\bresc\ElmerFEM\ElmerFEM-nogui-nompi-Windows-AMD64\bin\ElmerSolver.exe",
+        os.path.expanduser(r"~\ElmerFEM\ElmerFEM-nogui-nompi-Windows-AMD64\bin\ElmerSolver.exe"),
+        r"C:\Program Files\Elmer 9.0-Release\bin\ElmerSolver.exe",
+        r"C:\Program Files (x86)\Elmer\bin\ElmerSolver.exe",
+        "/usr/local/bin/ElmerSolver",
+        "/usr/bin/ElmerSolver",
+    ]
+    for c in candidates:
+        if os.path.isfile(c):
+            return c
+    return "ElmerSolver"
+
+ELMER_SOLVER = find_elmersolver()
 
 # Parametri operativi e costanti fisiche
 MU0 = 4.0 * np.pi * 1e-7

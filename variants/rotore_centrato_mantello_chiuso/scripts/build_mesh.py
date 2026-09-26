@@ -16,7 +16,24 @@ MESH_DIR = VARIANT_DIR / "mesh"
 MSH_FILE = MESH_DIR / "macchina_mantello_chiuso.msh"
 GEO_FILE = MESH_DIR / "macchina_mantello_chiuso.geo"
 OUT_MESH_DIR = MESH_DIR / "macchina_mantello_chiuso"
-ELMERGRID_BIN = r"C:\Users\bresc\ElmerFEM\ElmerFEM-nogui-nompi-Windows-AMD64\bin\ElmerGrid.exe"
+def find_elmergrid():
+    cmd = os.environ.get("ELMERGRID_BIN") or shutil.which("ElmerGrid")
+    if cmd:
+        return cmd
+    candidates = [
+        r"C:\Users\bresc\ElmerFEM\ElmerFEM-nogui-nompi-Windows-AMD64\bin\ElmerGrid.exe",
+        os.path.expanduser(r"~\ElmerFEM\ElmerFEM-nogui-nompi-Windows-AMD64\bin\ElmerGrid.exe"),
+        r"C:\Program Files\Elmer 9.0-Release\bin\ElmerGrid.exe",
+        r"C:\Program Files (x86)\Elmer\bin\ElmerGrid.exe",
+        "/usr/local/bin/ElmerGrid",
+        "/usr/bin/ElmerGrid",
+    ]
+    for c in candidates:
+        if os.path.isfile(c):
+            return c
+    return "ElmerGrid"
+
+ELMERGRID_BIN = find_elmergrid()
 
 def build():
     print("=" * 80)

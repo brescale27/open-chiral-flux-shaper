@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "title": "Independent Third-Party Reproduction of the Falsification Protocol",
+    "organization": "Independent External Peer Review",
+    "platform": "Debian GNU/Linux 13 (trixie/sid)",
+    "compiler": "gfortran 16.2 (source build, no MPI)",
+    "solver": "Elmer FEM 9.0 Whitney A-V Solver",
+    "date": "2026-09-26",
+    "mesh": "macchina_centrata (6346 nodes, 37253 tetrahedra)",
+    "timesteps": 10,
+    "dt_s": 0.0005,
+    "frequency_Hz": 100,
+    "rpm": 0,
+    "notes": "10 timesteps (half electrical cycle = 5.0 ms) evaluated sequentially (~8 min per case, ~32 min total)"
+  },
+  "verdict": "ARTEFATTO NUMERICO RILEVATO",
+  "concordance_with_author": "CONFIRMED (100% sign & FAIL/FAIL/PASS pattern match)",
+  "validation_criteria_comparison": {
+    "test1_chirality_reversal": {
+      "metric": "Symmetry error <= 5.0%",
+      "independent_mean_Fz_uN": 4.5519,
+      "author_mean_Fz_uN": 4.7924,
+      "independent_symmetry_error_pct": 164.62,
+      "author_symmetry_error_pct": 174.04,
+      "threshold_pct": 5.0,
+      "independent_passed": false,
+      "author_passed": false,
+      "status": "FAIL (Discretization asymmetry confirmed)"
+    },
+    "test2_isotropic_mantle": {
+      "metric": "Isotropic residual < 0.1 uN",
+      "independent_mean_Fz_uN": 47.4621,
+      "author_mean_Fz_uN": 40.7404,
+      "threshold_abs_uN": 0.1,
+      "independent_passed": false,
+      "author_passed": false,
+      "status": "FAIL (Numerical noise floor dominates chiral signal)"
+    },
+    "test3_phase_inversion": {
+      "metric": "<F_z> < 0",
+      "independent_mean_Fz_uN": -5.7281,
+      "author_mean_Fz_uN": -6.2107,
+      "condition": "<F_z> < 0",
+      "independent_passed": true,
+      "author_passed": true,
+      "status": "PASS (Phase inversion symmetry verified)"
+    }
+  },
+  "cases": {
+    "baseline_ref": {
+      "description": "Baseline (+30 deg, +w)",
+      "independent_mean_Fz_uN": 7.0441,
+      "author_mean_Fz_uN": 6.4725,
+      "sign_match": true,
+      "relative_delta_pct": 8.83
+    },
+    "test1_chirality_reversal": {
+      "description": "Test 1: Chirality Reversal (-30 deg, +w)",
+      "independent_mean_Fz_uN": 4.5519,
+      "author_mean_Fz_uN": 4.7924,
+      "sign_match": true,
+      "relative_delta_pct": -5.02
+    },
+    "test2_isotropic": {
+      "description": "Test 2: Pure Isotropic Mantle (0 deg, +w)",
+      "independent_mean_Fz_uN": 47.4621,
+      "author_mean_Fz_uN": 40.7404,
+      "sign_match": true,
+      "relative_delta_pct": 16.50
+    },
+    "test3_phase_inversion": {
+      "description": "Test 3: Phase Inversion (+30 deg, -w)",
+      "independent_mean_Fz_uN": -5.7281,
+      "author_mean_Fz_uN": -6.2107,
+      "sign_match": true,
+      "relative_delta_pct": -7.77
+    }
+  }
+}

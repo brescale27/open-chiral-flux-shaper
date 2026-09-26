@@ -62,7 +62,24 @@ FIG_VAR_DIR.mkdir(parents=True, exist_ok=True)
 FIG_29_NAME = "fig_29_triskelion_esagramma_24pulse.png"
 VIDEO_NAME = "video_dinamica_triskelion_esagramma.gif"
 
-ELMER_SOLVER = r"C:\Users\bresc\ElmerFEM\ElmerFEM-nogui-nompi-Windows-AMD64\bin\ElmerSolver.exe"
+def find_elmersolver():
+    cmd = os.environ.get("ELMER_SOLVER") or shutil.which("ElmerSolver")
+    if cmd:
+        return cmd
+    candidates = [
+        r"C:\Users\bresc\ElmerFEM\ElmerFEM-nogui-nompi-Windows-AMD64\bin\ElmerSolver.exe",
+        os.path.expanduser(r"~\ElmerFEM\ElmerFEM-nogui-nompi-Windows-AMD64\bin\ElmerSolver.exe"),
+        r"C:\Program Files\Elmer 9.0-Release\bin\ElmerSolver.exe",
+        r"C:\Program Files (x86)\Elmer\bin\ElmerSolver.exe",
+        "/usr/local/bin/ElmerSolver",
+        "/usr/bin/ElmerSolver",
+    ]
+    for c in candidates:
+        if os.path.isfile(c):
+            return c
+    return "ElmerSolver"
+
+ELMER_SOLVER = find_elmersolver()
 MU0 = 4.0 * np.pi * 1e-7
 SIGMA_SB = 5.670374419e-8  # Stefan-Boltzmann W / (m^2 K^4)
 EMISSIVITY_MANTLE = 0.85
